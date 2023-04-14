@@ -15,6 +15,10 @@ public class PlayerPickUpTest {
         cistern1.attachPipe(pipe1);
         cistern1.addPlayer(mechanic1);
         mechanic1.setMapElement(cistern1);
+
+        mechanic1.pickUpPump();
+
+        mechanic1.pickUpPipe(pipe1);
     }
 
     public static void mechanicPickUpOnPump(){
@@ -28,5 +32,9 @@ public class PlayerPickUpTest {
         pump1.addPlayer(mechanic1);
         mechanic1.setMapElement(pump1);
         occupiedPipe1.setOccupied(true);
+
+        mechanic1.pickUpPipe(occupiedPipe1);
+
+        mechanic1.pickUpPipe(pipe1);
     }
 }

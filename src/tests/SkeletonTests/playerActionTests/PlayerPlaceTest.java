@@ -16,6 +16,8 @@ public class PlayerPlaceTest {
         mechanic1.addPumpToInventory(pump1);
         mechanic1.setMapElement(pipe1);
         pipe1.addPlayer(mechanic1);
+
+        mechanic1.placePump();
     }
 
     public static void mechanicPlacesPipeOnPump(){
@@ -26,6 +28,8 @@ public class PlayerPlaceTest {
         mechanic1.setMapElement(pump1);
         mechanic1.setPipeInHand(pipe1);
         pump1.addPlayer(mechanic1);
+
+        mechanic1.placePipe();
     }
 
     public static void mechanicPlacesPipeOnCistern(){
@@ -36,6 +40,8 @@ public class PlayerPlaceTest {
         mechanic1.setMapElement(cistern1);
         mechanic1.setPipeInHand(pipe1);
         cistern1.addPlayer(mechanic1);
+
+        mechanic1.placePipe();
     }
 
     public static void mechanicPlacesPipeOnSpring(){
@@ -46,5 +52,7 @@ public class PlayerPlaceTest {
         mechanic1.setMapElement(spring1);
         mechanic1.setPipeInHand(pipe1);
         spring1.addPlayer(mechanic1);
+
+        mechanic1.placePipe();
     }
 }
