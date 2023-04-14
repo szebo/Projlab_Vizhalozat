@@ -5,7 +5,7 @@ import main.interfaces.IControllable;
 import java.util.List;
 
 public abstract class ActiveElement extends MapElement implements IControllable {
-    private List<Pipe> pipes;
+    protected List<Pipe> pipes;
 
     @Override
     public void setBroken(boolean value){
