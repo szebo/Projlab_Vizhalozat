@@ -2,6 +2,13 @@ package main.map;
 
 public class Pump extends ActiveElement {
 
+    public Pump(){
+        this.capacity = 20;
+    }
+    public Pump(int capacity){
+        this.capacity = capacity;
+    }
+
     /**
      *
      */

@@ -21,7 +21,7 @@ public abstract class MapElement {
     /**
      * Statikus tag, tárolja, hogy a mennyi a kapacitása az elemeknek.
      */
-    protected static int capacity;
+    protected int capacity;
 
     /**
      * Abstract metódus, a cső lecsatolásra szolgál a leszármazottaknál.

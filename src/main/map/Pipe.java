@@ -7,9 +7,13 @@ import main.players.Player;
  * Csak egyetlen játékos állhat rajta
  * **/
 public class Pipe extends MapElement {
-    /** Azt adja meg, hogy mennyi víz folyik el, amennyiben a cső lyukas **/
-    private int sabotagedWater;
 
+    public Pipe(){
+        this.capacity = 20;
+    }
+    public Pipe(int capacity){
+        this.capacity = capacity;
+    }
     /** Eltöri a csövet, aminek következményében a
      * **/
     @Override
