@@ -40,23 +40,31 @@ public class Pipe extends MapElement {
     }
 
     /**
+     * Hozzáadja a csőhőz a paraméterül kapott vízmennyiséget, de nem engedi túlcsordulni.
      * @param water
-     * @return
+     * @return Az átvett vízmennyiség
      */
     @Override
     public int addWater(int water) {
-        this.water += water;
-        return water;
+        if(isBroken) return 0; /**TODO Pontozás*/
+        int waterTaken = this.water + water > capacity ? capacity-this.water : water;
+        this.water += waterTaken;
+        return waterTaken;
     }
 
     /**
      * Hozzáadja a water vízmennyiséget az objektum vizéhez
      * @param water
-     * @return A vízszint új értéke
+     * @return A kivett vízmennyiség
      */
     @Override
     public int removeWater(int water) {
-    return addWater(-1*water);
+        if(!isBroken) {
+            int pumpedWater = this.water < water ? this.water : water;
+            this.water -= pumpedWater;
+            return pumpedWater;
+        }
+        else return 0;
     }
 
     /** Beállítja az objektum töröttségi állapotát (boolean)
