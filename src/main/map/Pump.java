@@ -2,8 +2,35 @@ package main.map;
 
 public class Pump extends ActiveElement {
 
+    /**
+     *
+     */
     @Override
-    public void attachPipe() {
-        super.attachPipe();
+    public void control() {
+
+    }
+
+    /**
+     * @param pipe
+     */
+    @Override
+    public void detachPipe(Pipe pipe) {
+
+    }
+
+    /**
+     * @param pipe
+     */
+    @Override
+    public void attachPipe(Pipe pipe) {
+
+    }
+
+    /**
+     *
+     */
+    @Override
+    public void interact() {
+
     }
 }

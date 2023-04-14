@@ -7,12 +7,13 @@ package main.map;
 public class Pipe extends MapElement {
     /** A csövek kapacitását adja meg **/
     private static int capacity;
-    /**  **/
+    /** Azt adja meg, hogy mennyi víz folyik el, amennyiben a cső lyukas **/
     private int sabotagedWater;
 
     /** Eltöri a csövet, aminek következményében a
      * **/
-    public void _break(){
+    @Override
+    public void breakElement(){
         setBroken(true);
     }
 
@@ -31,7 +32,7 @@ public class Pipe extends MapElement {
     public void attachPipe(Pipe pipe) {}
 
     /**
-     *
+     * TODO
      */
     @Override
     public void interact() {
@@ -44,16 +45,18 @@ public class Pipe extends MapElement {
      */
     @Override
     public int addWater(int water) {
-        return 0;
+        this.water += water;
+        return water;
     }
 
     /**
+     * Hozzáadja a water vízmennyiséget az objektum vizéhez
      * @param water
-     * @return
+     * @return A vízszint új értéke
      */
     @Override
     public int removeWater(int water) {
-        return 0;
+    return addWater(-1*water);
     }
 
     /** Beállítja az objektum töröttségi állapotát (boolean)
@@ -64,5 +67,9 @@ public class Pipe extends MapElement {
     }
 
     /** Elfelezi a csövet, hogy be lehessen helyezni közéjük egy pumpát **/
-    public void cut(){}
+    public Pipe[] cut(){
+        Pipe uj_pipe_1 = new Pipe();
+        Pipe uj_pipe_2 = new Pipe();
+        return new Pipe[] {uj_pipe_1, uj_pipe_2};
+    }
 }
