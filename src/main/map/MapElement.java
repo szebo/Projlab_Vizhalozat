@@ -8,7 +8,7 @@ public abstract class MapElement {
 
     //Attributes
     protected boolean isBroken;
-    protected List<Player> playerList;
+    protected List<Player> players;
 
     //Abstract Methods
     public abstract void detachPipe(Pipe pipe);
@@ -16,10 +16,6 @@ public abstract class MapElement {
     public abstract void attachPipe(Pipe pipe);
 
     public abstract void interact();
-
-    public abstract int addWater(int water);
-
-    public abstract int removeWater(int water);
 
     //Methods
     public void heal(){
@@ -31,11 +27,23 @@ public abstract class MapElement {
     }
 
     public void acceptPlayer(Player player){
+        addPlayer(player);
+    }
 
+    public void addPlayer(Player player){
+        players.add(player);
     }
 
     public void removePlayer(Player player){
+        players.remove(player);
+    }
 
+    public int addWater(int water){
+        return 0;
+    }
+
+    public int removeWater(int water) {
+        return 0;
     }
 
     public void setBroken(boolean value){
