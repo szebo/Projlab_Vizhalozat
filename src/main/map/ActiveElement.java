@@ -26,9 +26,4 @@ public abstract class ActiveElement extends MapElement implements IControllable 
             pipes.add(pipe);
         }
     }
-
-    @Override
-    public int addWater(int water) {
-        return super.addWater(water);
-    }
 }
