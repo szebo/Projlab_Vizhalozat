@@ -39,7 +39,7 @@ public abstract class MapElement {
     }
 
     public void setBroken(boolean value){
-
+        isBroken = value;
     }
 
     public boolean isBroken(){
