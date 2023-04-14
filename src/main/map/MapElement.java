@@ -9,6 +9,7 @@ public abstract class MapElement {
     //Attributes
     protected boolean isBroken;
     protected List<Player> players;
+    protected int water;
 
     //Abstract Methods
     public abstract void detachPipe(Pipe pipe);
