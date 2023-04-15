@@ -40,7 +40,7 @@ public abstract class MapElement {
      * Abstract metódus, implementáció függő a viselkedése.
      * A játékosok számára biztosít elérhetőséget egy-két különböző akcióhoz.
      */
-    public abstract void interact();
+    public void interact(){}
 
     /**
      * Megjavítja az elemet.

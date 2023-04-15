@@ -2,34 +2,19 @@ package main.map;
 
 public class Spring extends ActiveElement {
     /**
-     *
+     * controller hív
      */
     @Override
     public void control() {
-
+        giveWater();
     }
 
     /**
-     * @param pipe
+     *  minden rákötött Pipe-ra a Spring vizet küld controller hívásra
      */
-    @Override
-    public void detachPipe(Pipe pipe) {
-
-    }
-
-    /**
-     * @param pipe
-     */
-    @Override
-    public void attachPipe(Pipe pipe) {
-
-    }
-
-    /**
-     *
-     */
-    @Override
-    public void interact() {
-
+    public void giveWater(){
+        for(Pipe p: pipes){
+            p.addWater(20); //random adtam hozzá 20-at mert kér egy értéket, nem akartam kapacitást adni.
+        }
     }
 }

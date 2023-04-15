@@ -14,9 +14,9 @@ public abstract class ActiveElement extends MapElement implements IControllable 
 
     @Override
     public void detachPipe(Pipe pipe)  {
-        if(false) {
-        pipes.remove(pipe);
-        //TODO exception vagy jelzés
+        if(!pipe.isOccupied()) {
+            this.pipes.remove(pipe);
+            pipe.removeWater(pipe.water);
         }
 
     }

@@ -2,6 +2,10 @@ package main.map;
 
 public class Pump extends ActiveElement {
 
+
+
+    private Pipe input;
+    private Pipe output;
     public Pump(){
         this.capacity = 20;
     }
@@ -14,30 +18,31 @@ public class Pump extends ActiveElement {
      */
     @Override
     public void control() {
-
+        breakElement();
     }
 
-    /**
-     * @param pipe
-     */
-    @Override
-    public void detachPipe(Pipe pipe) {
-
-    }
-
-    /**
-     * @param pipe
-     */
-    @Override
-    public void attachPipe(Pipe pipe) {
-
-    }
 
     /**
      *
      */
     @Override
     public void interact() {
+        //létezik, de soha senki nem hívja. Dokumentációban is hiányzik, csak az osztálydiagramon van fent.
+    }
 
+    public Pipe getInput() {
+        return input;
+    }
+
+    public void setInput(Pipe input) {
+        this.input = input;
+    }
+
+    public Pipe getOutput() {
+        return output;
+    }
+
+    public void setOutput(Pipe output) {
+        this.output = output;
     }
 }

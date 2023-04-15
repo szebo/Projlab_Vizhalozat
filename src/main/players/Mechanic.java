@@ -29,4 +29,8 @@ public class Mechanic extends Player {
 
     }
 
+    public void addPumpToInventory(Pump pump){
+
+    }
+
 }
