@@ -7,14 +7,16 @@ public class Spring extends ActiveElement {
     @Override
     public void control() {
         giveWater();
+        System.out.println("Új víz fakad a forrásból.");
     }
 
     /**
      *  minden rákötött Pipe-ra a Spring vizet küld controller hívásra
+     *  a vizet maximális kapacitással tolja ki
      */
     public void giveWater(){
         for(Pipe p: pipes){
-            p.addWater(p.capacity); //maxra tolja a csövet
+            p.addWater(p.capacity);
         }
     }
 }

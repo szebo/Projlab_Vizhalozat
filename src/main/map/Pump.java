@@ -14,7 +14,7 @@ public class Pump extends ActiveElement {
     }
 
     /**
-     *
+     * controller hívásra eltörik a pumpa.
      */
     @Override
     public void control() {
@@ -35,15 +35,27 @@ public class Pump extends ActiveElement {
         return input;
     }
 
+    /**
+     * Beállítja a pumpa bemenetét a paraméterben kapott csőre.
+     * @param input a cső amire a bemenetet szeretnénk állítani.
+     */
     public void setInput(Pipe input) {
-        this.input = input;
+        if(this.input != input)
+            this.input = input;
+        System.out.println("Pumpa Input beállítva.");
     }
 
     public Pipe getOutput() {
         return output;
     }
 
+    /**
+     * Beállítja a pumpa kimenetét a paraméterben kapott csőre.
+     * @param output a cső amire a kimenetet szeretnénk állítani.
+     */
     public void setOutput(Pipe output) {
-        this.output = output;
+        if(this.output != output)
+            this.output = output;
+        System.out.println("Pumpa Output beállítva.");
     }
 }

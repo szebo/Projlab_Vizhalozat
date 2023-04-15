@@ -1,8 +1,6 @@
 package tests.SkeletonTests;
 
-import tests.SkeletonTests.playerActionTests.PlayerPickUpTest;
-import tests.SkeletonTests.playerActionTests.PlayerPlaceTest;
-import tests.SkeletonTests.playerActionTests.PlayerConfigurePumpTest;
+import tests.SkeletonTests.playerActionTests.*;
 
 public class TestController {
 
@@ -16,6 +14,10 @@ public class TestController {
 
         PlayerConfigurePumpTest.mechanicRotatePump();
         PlayerConfigurePumpTest.saboteurRotatePump();
+
+        SaboteurBreaksTest.SaboteurBreaksPipe();
+        MechanicRepairTest.MechanicRepairPump();
+        MechanicRepairTest.MechanicRepairPipe();
     }
 
 }

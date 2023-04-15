@@ -14,6 +14,7 @@ public class Cistern extends ActiveElement {
     @Override
     public void control() {
         newPipe();
+        System.out.println("Új cső készült el a Ciszternánál.");
     }
 
     /**
@@ -23,6 +24,7 @@ public class Cistern extends ActiveElement {
     public void givePump(Mechanic mechanic){
         mechanic.addPumpToInventory(pumpsInReserve.get(pumpsInReserve.size()-1));
         pumpsInReserve.remove(pumpsInReserve.size()-1);
+        System.out.println("A pumpát odaadja a Ciszterna a Mechanicnak.");
     }
 
     /**
