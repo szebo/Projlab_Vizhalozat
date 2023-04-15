@@ -13,7 +13,7 @@ public class Cistern extends ActiveElement {
      */
     @Override
     public void control() {
-        pumpsInReserve.add(new Pump());
+        newPipe();
     }
 
     /**
@@ -25,8 +25,12 @@ public class Cistern extends ActiveElement {
         pumpsInReserve.remove(pumpsInReserve.size()-1);
     }
 
+    /**
+     * létrehoz egy új Pipe objektumot controller hívásra és hozzáköti a Cistern-hez
+     */
     public void newPipe(){
-
+        Pipe newpipe = new Pipe();
+        this.attachPipe(newpipe);
     }
 
 

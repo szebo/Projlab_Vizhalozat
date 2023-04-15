@@ -14,7 +14,7 @@ public class Spring extends ActiveElement {
      */
     public void giveWater(){
         for(Pipe p: pipes){
-            p.addWater(20); //random adtam hozzá 20-at mert kér egy értéket, nem akartam kapacitást adni.
+            p.addWater(p.capacity); //maxra tolja a csövet
         }
     }
 }

@@ -1,6 +1,7 @@
 package main.players;
 
 import main.map.MapElement;
+import main.map.Pipe;
 
 public abstract class Player {
     protected MapElement mapElement;
@@ -11,6 +12,10 @@ public abstract class Player {
     }
 
     public void configurePump(){
+
+    }
+
+    public void configurePump(Pipe p1, Pipe p2){
 
     }
 

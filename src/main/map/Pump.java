@@ -28,6 +28,7 @@ public class Pump extends ActiveElement {
     @Override
     public void interact() {
         //létezik, de soha senki nem hívja. Dokumentációban is hiányzik, csak az osztálydiagramon van fent.
+        //TODO ha nem lát el funkciót, ki kell venni
     }
 
     public Pipe getInput() {
