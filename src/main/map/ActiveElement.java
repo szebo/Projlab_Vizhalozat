@@ -22,8 +22,7 @@ public abstract class ActiveElement extends MapElement implements IControllable 
     }
     @Override
     public void attachPipe(Pipe pipe){
-        if(!pipes.contains(pipe)){
-            pipes.add(pipe);
-        }
+        pipes.add(pipe);
+        pipe.addElement(this);
     }
 }

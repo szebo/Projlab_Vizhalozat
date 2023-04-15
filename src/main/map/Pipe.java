@@ -2,12 +2,15 @@ package main.map;
 
 import main.players.Player;
 
+import java.util.List;
+
 /**
  * A csövet megvalósító osztály, amelyben a víz folyik két pumpa között.
  * Csak egyetlen játékos állhat rajta
  * **/
 public class Pipe extends MapElement {
 
+    private List<ActiveElement> elements;
     public Pipe(){
         this.capacity = 20;
     }
@@ -60,5 +63,9 @@ public class Pipe extends MapElement {
     @Override
     public void acceptPlayer(Player player){
         if(!this.isOccupied()) addPlayer(player);
+    }
+
+    public void addElement(ActiveElement element){
+        this.elements.add(element);
     }
 }
