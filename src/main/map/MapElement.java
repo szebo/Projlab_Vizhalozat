@@ -1,6 +1,7 @@
 package main.map;
 
 import main.players.Player;
+import main.players.SaboteurTeam;
 
 import java.util.List;
 
@@ -45,6 +46,7 @@ public abstract class MapElement {
      * Megjavítja az elemet.
      */
     public void heal(){
+        System.out.println("Elem megjavítva!");
         setBroken(false);
     }
 
@@ -52,6 +54,7 @@ public abstract class MapElement {
      * Tönkre teszi az elemet.
      */
     public void breakElement(){
+        System.out.println("Elem elrontva!");
         setBroken(true);
     }
 
@@ -60,6 +63,7 @@ public abstract class MapElement {
      * @param player
      */
     public void acceptPlayer(Player player){
+        System.out.println("Játékos ráléphet az elemre!");
         addPlayer(player);
     }
 
@@ -68,6 +72,7 @@ public abstract class MapElement {
      * @param player
      */
     public void addPlayer(Player player){
+        System.out.println("Játékos hozzáadva az elemhez!");
         players.add(player);
     }
 
@@ -76,6 +81,7 @@ public abstract class MapElement {
      * @param player
      */
     public void removePlayer(Player player){
+        System.out.println("Játékos eltávolítva az elemről!");
         players.remove(player);
     }
 
@@ -85,9 +91,14 @@ public abstract class MapElement {
      * @return Az átvett vízmennyiség
      */
     public int addWater(int water){
-        if(isBroken) return 0; /**TODO Pontozás*/
+        if(isBroken) {
+            System.out.println("Az elem el van romolva!");
+            /**TODO Pontozás*/
+            return 0;
+        }
         int waterTaken = this.water + water > capacity ? capacity-this.water : water;
         this.water += waterTaken;
+        System.out.println("Az elemhez "+waterTaken+" mennyiségű víz került hozzáadásra!");
         return waterTaken;
     }
 
@@ -100,9 +111,13 @@ public abstract class MapElement {
         if(!isBroken) {
             int pumpedWater = this.water < water ? this.water : water;
             this.water -= pumpedWater;
+            System.out.println("Az elemből el lett távlítva "+pumpedWater+" mennyiségű víz!");
             return pumpedWater;
         }
-        else return 0;
+        else {
+            System.out.println("Az elem el van romolva!");
+            return 0;
+        }
     }
 
     /**
