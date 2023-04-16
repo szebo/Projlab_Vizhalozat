@@ -5,7 +5,7 @@ import main.interfaces.IControllable;
 import java.util.List;
 
 public abstract class ActiveElement extends MapElement implements IControllable {
-    private List<Pipe> pipes;
+    protected List<Pipe> pipes;
 
     @Override
     public void setBroken(boolean value){
@@ -14,21 +14,20 @@ public abstract class ActiveElement extends MapElement implements IControllable 
 
     @Override
     public void detachPipe(Pipe pipe)  {
-        if(false) {
-        pipes.remove(pipe);
-        //TODO exception vagy jelzés
+        if(!pipe.isOccupied()) {
+            this.pipes.remove(pipe);
+            pipe.removeWater(pipe.water);
         }
 
     }
     @Override
     public void attachPipe(Pipe pipe){
-        if(!pipes.contains(pipe)){
-            pipes.add(pipe);
-        }
+        pipes.add(pipe);
+        pipe.addElement(this);
     }
 
-    @Override
-    public int addWater(int water) {
-        return super.addWater(water);
-    }
+    /**
+     * B Terv Vízmozgásra
+     */
+    public abstract void pumpWater();
 }

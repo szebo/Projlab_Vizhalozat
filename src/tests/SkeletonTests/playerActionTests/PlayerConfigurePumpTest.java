@@ -3,7 +3,7 @@ package tests.SkeletonTests.playerActionTests;
 import main.map.*;
 import main.players.*;
 
-public class PlayerRotatePumpTest {
+public class PlayerConfigurePumpTest {
     public static void mechanicRotatePump(){
         Mechanic m = new Mechanic();
         Pipe p1 = new Pipe();

@@ -1,35 +1,38 @@
 package main.map;
 
+import java.util.ArrayList;
+
 public class Spring extends ActiveElement {
     /**
-     *
+     * controller hív
      */
+
+    public Spring(){
+        pipes = new ArrayList<>();
+        players = new ArrayList<>();
+    }
+
     @Override
     public void control() {
-
+        giveWater();
+        System.out.println("Új víz fakad a forrásból.");
     }
 
     /**
-     * @param pipe
+     *  minden rákötött Pipe-ra a Spring vizet küld controller hívásra
+     *  a vizet maximális kapacitással tolja ki
      */
-    @Override
-    public void detachPipe(Pipe pipe) {
-
+    public void giveWater(){
+        for(Pipe p: pipes){
+            p.addWater(p.capacity);
+        }
     }
 
     /**
-     * @param pipe
+     * B Terv Vízmozgatásra
      */
     @Override
-    public void attachPipe(Pipe pipe) {
-
-    }
-
-    /**
-     *
-     */
-    @Override
-    public void interact() {
-
+    public void pumpWater() {
+        giveWater();
     }
 }

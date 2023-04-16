@@ -1,15 +1,25 @@
 package main.map;
 
+import main.players.Player;
+
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * A csövet megvalósító osztály, amelyben a víz folyik két pumpa között.
  * Csak egyetlen játékos állhat rajta
  * **/
 public class Pipe extends MapElement {
-    /** A csövek kapacitását adja meg **/
-    private static int capacity;
-    /** Azt adja meg, hogy mennyi víz folyik el, amennyiben a cső lyukas **/
-    private int sabotagedWater;
 
+    private List<ActiveElement> elements;
+    public Pipe(){
+        this.capacity = 20;
+        elements = new ArrayList<>();
+        players = new ArrayList<>();
+    }
+    public Pipe(int capacity){
+        this.capacity = capacity;
+    }
     /** Eltöri a csövet, aminek következményében a
      * **/
     @Override
@@ -31,45 +41,22 @@ public class Pipe extends MapElement {
     @Override
     public void attachPipe(Pipe pipe) {}
 
-    /**
-     * TODO
-     */
-    @Override
-    public void interact() {
-
-    }
-
-    /**
-     * @param water
-     * @return
-     */
-    @Override
-    public int addWater(int water) {
-        this.water += water;
-        return water;
-    }
-
-    /**
-     * Hozzáadja a water vízmennyiséget az objektum vizéhez
-     * @param water
-     * @return A vízszint új értéke
-     */
-    @Override
-    public int removeWater(int water) {
-    return addWater(-1*water);
-    }
-
-    /** Beállítja az objektum töröttségi állapotát (boolean)
-     * @param value a beállítandó állapot **/
-    @Override
-    public void setBroken(boolean value) {
-        super.setBroken(value);
-    }
-
     /** Elfelezi a csövet, hogy be lehessen helyezni közéjük egy pumpát **/
     public Pipe[] cut(){
         Pipe uj_pipe_1 = new Pipe();
         Pipe uj_pipe_2 = new Pipe();
         return new Pipe[] {uj_pipe_1, uj_pipe_2};
+    }
+
+    @Override
+    public void acceptPlayer(Player player){
+        if(!this.isOccupied()) addPlayer(player);
+    }
+
+    public void addElement(ActiveElement element){
+        if(elements.size()<2) {
+            this.elements.add(element);
+            System.out.println("Elem hozzáadva a csőhöz");
+        }
     }
 }
