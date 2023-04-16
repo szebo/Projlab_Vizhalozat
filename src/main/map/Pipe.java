@@ -2,6 +2,7 @@ package main.map;
 
 import main.players.Player;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -13,6 +14,8 @@ public class Pipe extends MapElement {
     private List<ActiveElement> elements;
     public Pipe(){
         this.capacity = 20;
+        elements = new ArrayList<ActiveElement>();
+
     }
     public Pipe(int capacity){
         this.capacity = capacity;

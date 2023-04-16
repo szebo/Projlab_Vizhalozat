@@ -1,9 +1,16 @@
 package main.map;
 
+import java.util.ArrayList;
+
 public class Spring extends ActiveElement {
     /**
      * controller hív
      */
+
+    public Spring(){
+        pipes = new ArrayList<>();
+    }
+
     @Override
     public void control() {
         giveWater();
