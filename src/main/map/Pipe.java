@@ -61,10 +61,15 @@ public class Pipe extends MapElement {
 
     /** Elfelezi a csövet, hogy be lehessen helyezni közéjük egy pumpát
      * @return A félbevágott két cső objektumot adjva vissza **/
-    public Pipe[] cut(){
+    public void cut(Pump pumpPlaced){
         Pipe uj_pipe_1 = new Pipe();
         Pipe uj_pipe_2 = new Pipe();
-        return new Pipe[] {uj_pipe_1, uj_pipe_2};
+        elements.get(0).detachPipe(this);
+        elements.get(0).attachPipe(uj_pipe_1);
+        elements.get(1).detachPipe(this);
+        elements.get(1).attachPipe(uj_pipe_2);
+        pumpPlaced.attachPipe(uj_pipe_1);
+        pumpPlaced.attachPipe(uj_pipe_2);
     }
 
     /**
@@ -88,5 +93,9 @@ public class Pipe extends MapElement {
             this.elements.add(element);
             System.out.println("Elem hozzáadva a csőhöz");
         }
+    }
+
+    public List<ActiveElement> getElements(){
+        return elements;
     }
 }

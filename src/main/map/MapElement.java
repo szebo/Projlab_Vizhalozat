@@ -142,7 +142,7 @@ public abstract class MapElement {
         return players.size() > 0;
     }
 
-    public Pipe[] cut(){return null;}
+    public void cut(Pump pumpPlaced){}
 
     public void givePump(){}
 }

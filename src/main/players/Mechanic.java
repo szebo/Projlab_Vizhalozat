@@ -22,7 +22,9 @@ public class Mechanic extends Player {
     }
 
     public void placePump(){
-
+        mapElement.cut(pumpsInInventory.get(0));
+        this.setMapElement(pumpsInInventory.get(0));
+        pumpsInInventory.remove(0);
     }
 
     public void repair(){
