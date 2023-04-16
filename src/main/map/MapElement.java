@@ -46,16 +46,16 @@ public abstract class MapElement {
      * Megjavítja az elemet.
      */
     public void heal(){
-        System.out.println("Elem megjavítva!");
         setBroken(false);
+        System.out.println("Elem megjavítva!");
     }
 
     /**
      * Tönkre teszi az elemet.
      */
     public void breakElement(){
-        System.out.println("Elem elrontva!");
         setBroken(true);
+        System.out.println("Elem elrontva!");
     }
 
     /**
@@ -63,8 +63,8 @@ public abstract class MapElement {
      * @param player
      */
     public void acceptPlayer(Player player){
-        System.out.println("Játékos ráléphet az elemre!");
         addPlayer(player);
+        System.out.println("Játékos ráléphet az elemre!");
     }
 
     /**
@@ -72,8 +72,8 @@ public abstract class MapElement {
      * @param player
      */
     public void addPlayer(Player player){
-        System.out.println("Játékos hozzáadva az elemhez!");
         players.add(player);
+        System.out.println("Játékos hozzáadva az elemhez!");
     }
 
     /**
@@ -81,8 +81,8 @@ public abstract class MapElement {
      * @param player
      */
     public void removePlayer(Player player){
-        System.out.println("Játékos eltávolítva az elemről!");
         players.remove(player);
+        System.out.println("Játékos eltávolítva az elemről!");
     }
 
     /**
