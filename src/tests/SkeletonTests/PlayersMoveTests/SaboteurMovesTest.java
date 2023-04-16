@@ -20,10 +20,10 @@ public class SaboteurMovesTest {
         spring1.addPlayer(saboteur1);
         saboteur1.setMapElement(spring1);
 
-        System.out.println("Saboteur position before step: " + saboteur1.getMapElement());
+        System.out.println("Saboteur position before step: " + saboteur1.getElementInformationString());
                                                                                                             //A tényleges teszteset eseményének indulása
         saboteur1.step(freePipe1);
-        System.out.println("Saboteur position after step: " + saboteur1.getMapElement());                   //A teszt utáni pozíció, sikeresség ellenőrzése
+        System.out.println("Saboteur position after step: " + saboteur1.getElementInformationString());                   //A teszt utáni pozíció, sikeresség ellenőrzése
         System.out.println();
     }
 
@@ -38,10 +38,10 @@ public class SaboteurMovesTest {
         freePipe1.addPlayer(saboteur1);
         saboteur1.setMapElement(freePipe1);
 
-        System.out.println("Saboteur position before step: " + saboteur1.getMapElement());
+        System.out.println("Saboteur position before step: " + saboteur1.getElementInformationString());
                                                                                                             //A tényleges teszteset eseményének indulása
         saboteur1.step(spring1);
-        System.out.println("Saboteur position after step: " + saboteur1.getMapElement());                   //A teszt utáni pozíció, sikeresség ellenőrzése
+        System.out.println("Saboteur position after step: " + saboteur1.getElementInformationString());                   //A teszt utáni pozíció, sikeresség ellenőrzése
         System.out.println();
     }
 
@@ -56,10 +56,10 @@ public class SaboteurMovesTest {
         freePipe1.addPlayer(saboteur1);
         saboteur1.setMapElement(freePipe1);
 
-        System.out.println("Saboteur position before step: " + saboteur1.getMapElement());
+        System.out.println("Saboteur position before step: " + saboteur1.getElementInformationString());
                                                                                                             //A tényleges teszteset eseményének indulása
         saboteur1.step(pump1);
-        System.out.println("Saboteur position after step: " + saboteur1.getMapElement());                   //A teszt utáni pozíció, sikeresség ellenőrzése
+        System.out.println("Saboteur position after step: " + saboteur1.getElementInformationString());                   //A teszt utáni pozíció, sikeresség ellenőrzése
         System.out.println();
     }
 
@@ -74,10 +74,10 @@ public class SaboteurMovesTest {
         pump1.addPlayer(saboteur1);
         saboteur1.setMapElement(pump1);
 
-        System.out.println("Saboteur position before step: " + saboteur1.getMapElement());
+        System.out.println("Saboteur position before step: " + saboteur1.getElementInformationString());
                                                                                                             //A tényleges teszteset eseményének indulása
         saboteur1.step(freePipe1);
-        System.out.println("Saboteur position after step: " + saboteur1.getMapElement());                   //A teszt utáni pozíció, sikeresség ellenőrzése
+        System.out.println("Saboteur position after step: " + saboteur1.getElementInformationString());                   //A teszt utáni pozíció, sikeresség ellenőrzése
         System.out.println();
     }
 
@@ -92,10 +92,10 @@ public class SaboteurMovesTest {
         freePipe1.addPlayer(saboteur1);
         saboteur1.setMapElement(freePipe1);
 
-        System.out.println("Saboteur position before step: " + saboteur1.getMapElement());
+        System.out.println("Saboteur position before step: " + saboteur1.getElementInformationString());
                                                                                                             //A tényleges teszteset eseményének indulása
         saboteur1.step(cistern1);
-        System.out.println("Saboteur position after step: " + saboteur1.getMapElement());                   //A teszt utáni pozíció, sikeresség ellenőrzése
+        System.out.println("Saboteur position after step: " + saboteur1.getElementInformationString());                   //A teszt utáni pozíció, sikeresség ellenőrzése
         System.out.println();
     }
 
@@ -110,10 +110,10 @@ public class SaboteurMovesTest {
         cistern1.addPlayer(saboteur1);
         saboteur1.setMapElement(cistern1);
 
-        System.out.println("Saboteur position before step: " + saboteur1.getMapElement());
+        System.out.println("Saboteur position before step: " + saboteur1.getElementInformationString());
                                                                                                             //A tényleges teszteset eseményének indulása
         saboteur1.step(freePipe1);
-        System.out.println("Saboteur position after step: " + saboteur1.getMapElement());                   //A teszt utáni pozíció, sikeresség ellenőrzése
+        System.out.println("Saboteur position after step: " + saboteur1.getElementInformationString());                   //A teszt utáni pozíció, sikeresség ellenőrzése
         System.out.println();
     }
 
@@ -131,10 +131,10 @@ public class SaboteurMovesTest {
         occupiedPipe.addPlayer(mechanic1);
         mechanic1.setMapElement(occupiedPipe);
 
-        System.out.println("Saboteur position before step: " + saboteur1.getMapElement());
+        System.out.println("Saboteur position before step: " + saboteur1.getElementInformationString());
                                                                                                             //A tényleges teszteset eseményének indulása
         saboteur1.step(occupiedPipe);
-        System.out.println("Saboteur position after step: " + saboteur1.getMapElement());                   //A teszt utáni pozíció, sikeresség ellenőrzése
+        System.out.println("Saboteur position after step: " + saboteur1.getElementInformationString());                   //A teszt utáni pozíció, sikeresség ellenőrzése
         System.out.println();
     }
 
@@ -152,10 +152,10 @@ public class SaboteurMovesTest {
         occupiedPipe.addPlayer(mechanic1);
         mechanic1.setMapElement(occupiedPipe);
 
-        System.out.println("Saboteur position before step: " + saboteur1.getMapElement());
+        System.out.println("Saboteur position before step: " + saboteur1.getElementInformationString());
                                                                                                             //A tényleges teszteset eseményének indulása
         saboteur1.step(occupiedPipe);
-        System.out.println("Saboteur position after step: " + saboteur1.getMapElement());                   //A teszt utáni pozíció, sikeresség ellenőrzése
+        System.out.println("Saboteur position after step: " + saboteur1.getElementInformationString());                   //A teszt utáni pozíció, sikeresség ellenőrzése
         System.out.println();
     }
 
@@ -173,10 +173,10 @@ public class SaboteurMovesTest {
         occupiedPipe.addPlayer(mechanic1);
         mechanic1.setMapElement(occupiedPipe);
 
-        System.out.println("Saboteur position before step: " + saboteur1.getMapElement());
+        System.out.println("Saboteur position before step: " + saboteur1.getElementInformationString());
                                                                                                             //A tényleges teszteset eseményének indulása
         saboteur1.step(occupiedPipe);
-        System.out.println("Saboteur position after step: " + saboteur1.getMapElement());                   //A teszt utáni pozíció, sikeresség ellenőrzése
+        System.out.println("Saboteur position after step: " + saboteur1.getElementInformationString());                   //A teszt utáni pozíció, sikeresség ellenőrzése
         System.out.println();
     }
 }

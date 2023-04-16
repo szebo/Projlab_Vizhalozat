@@ -2,6 +2,7 @@ package tests.SkeletonTests.playerActionTests;
 
 import main.map.*;
 import main.players.*;
+import tests.SkeletonTests.TestController;
 
 public class PlayerConfigurePumpTest {
     public static void mechanicRotatePump(){
@@ -13,7 +14,7 @@ public class PlayerConfigurePumpTest {
         p.attachPipe(p1);
         p.attachPipe(p2);
         m.setMapElement(p);
-        m.configurePump(p1, p2);        //A fő dolog ennek a belsejében történik
+        TestController.testConfigurePump(p1, p2, m);        //A fő dolog ennek a belsejében történik
     }
 
     public static void saboteurRotatePump(){
@@ -25,6 +26,6 @@ public class PlayerConfigurePumpTest {
         s.setMapElement(p);
         p.attachPipe(p1);
         p.attachPipe(p2);
-        s.configurePump(p1, p2);        //A fő dolog ennek a belsejében történik
+        TestController.testConfigurePump(p1, p2, s);        //A fő dolog ennek a belsejében történik
     }
 }

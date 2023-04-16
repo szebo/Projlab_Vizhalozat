@@ -20,10 +20,10 @@ public class MechanicMovesTest {
         spring1.addPlayer(mechanic1);
         mechanic1.setMapElement(spring1);
 
-        System.out.println("Mechanic position before step: " + mechanic1.getMapElement());
+        System.out.println("Mechanic position before step: " + mechanic1.getElementInformationString());
                                                                                                         //A tényleges teszteset eseményének indulása
         mechanic1.step(freePipe1);
-        System.out.println("Mechanic position after step: " + mechanic1.getMapElement());               //A teszt utáni pozíció, sikeresség ellenőrzése
+        System.out.println("Mechanic position after step: " + mechanic1.getElementInformationString());               //A teszt utáni pozíció, sikeresség ellenőrzése
         System.out.println();
 
     }
@@ -39,10 +39,10 @@ public class MechanicMovesTest {
         freePipe1.addPlayer(mechanic1);
         mechanic1.setMapElement(freePipe1);
 
-        System.out.println("Mechanic position before step: " + mechanic1.getMapElement());
+        System.out.println("Mechanic position before step: " + mechanic1.getElementInformationString());
                                                                                                         //A tényleges teszteset eseményének indulása
         mechanic1.step(spring1);
-        System.out.println("Mechanic position after step: " + mechanic1.getMapElement());               //A teszt utáni pozíció, sikeresség ellenőrzése
+        System.out.println("Mechanic position after step: " + mechanic1.getElementInformationString());               //A teszt utáni pozíció, sikeresség ellenőrzése
         System.out.println();
     }
 
@@ -57,10 +57,10 @@ public class MechanicMovesTest {
         freePipe1.addPlayer(mechanic1);
         mechanic1.setMapElement(freePipe1);
 
-        System.out.println("Mechanic position before step: " + mechanic1.getMapElement());
+        System.out.println("Mechanic position before step: " + mechanic1.getElementInformationString());
                                                                                                         //A tényleges teszteset eseményének indulása
         mechanic1.step(pump1);
-        System.out.println("Mechanic position after step: " + mechanic1.getMapElement());               //A teszt utáni pozíció, sikeresség ellenőrzése
+        System.out.println("Mechanic position after step: " + mechanic1.getElementInformationString());               //A teszt utáni pozíció, sikeresség ellenőrzése
         System.out.println();
     }
 
@@ -75,10 +75,10 @@ public class MechanicMovesTest {
         pump1.addPlayer(mechanic1);
         mechanic1.setMapElement(pump1);
 
-        System.out.println("Mechanic position before step: " + mechanic1.getMapElement());
+        System.out.println("Mechanic position before step: " + mechanic1.getElementInformationString());
                                                                                                         //A tényleges teszteset eseményének indulása
         mechanic1.step(freePipe1);
-        System.out.println("Mechanic position after step: " + mechanic1.getMapElement());               //A teszt utáni pozíció, sikeresség ellenőrzése
+        System.out.println("Mechanic position after step: " + mechanic1.getElementInformationString());               //A teszt utáni pozíció, sikeresség ellenőrzése
         System.out.println();
     }
 
@@ -93,10 +93,10 @@ public class MechanicMovesTest {
         freePipe1.addPlayer(mechanic1);
         mechanic1.setMapElement(freePipe1);
 
-        System.out.println("Mechanic position before step: " + mechanic1.getMapElement());
+        System.out.println("Mechanic position before step: " + mechanic1.getElementInformationString());
                                                                                                         //A tényleges teszteset eseményének indulása
         mechanic1.step(cistern1);
-        System.out.println("Mechanic position after step: " + mechanic1.getMapElement());               //A teszt utáni pozíció, sikeresség ellenőrzése
+        System.out.println("Mechanic position after step: " + mechanic1.getElementInformationString());               //A teszt utáni pozíció, sikeresség ellenőrzése
         System.out.println();
     }
 
@@ -111,10 +111,10 @@ public class MechanicMovesTest {
         cistern1.addPlayer(mechanic1);
         mechanic1.setMapElement(cistern1);
 
-        System.out.println("Mechanic position before step: " + mechanic1.getMapElement());
+        System.out.println("Mechanic position before step: " + mechanic1.getElementInformationString());
                                                                                                         //A tényleges teszteset eseményének indulása
         mechanic1.step(freePipe1);
-        System.out.println("Mechanic position after step: " + mechanic1.getMapElement());               //A teszt utáni pozíció, sikeresség ellenőrzése
+        System.out.println("Mechanic position after step: " + mechanic1.getElementInformationString());               //A teszt utáni pozíció, sikeresség ellenőrzése
         System.out.println();
     }
 
@@ -132,11 +132,11 @@ public class MechanicMovesTest {
         occupiedPipe.addPlayer(saboteur1);
         saboteur1.setMapElement(occupiedPipe);
 
-        System.out.println("Mechanic position before step: " + mechanic1.getMapElement());
+        System.out.println("Mechanic position before step: " + mechanic1.getElementInformationString());
                                                                                                         //A tényleges teszteset eseményének indulása
 
         mechanic1.step(occupiedPipe);
-        System.out.println("Mechanic position after step: " + mechanic1.getMapElement());               //A teszt utáni pozíció, sikeresség ellenőrzése
+        System.out.println("Mechanic position after step: " + mechanic1.getElementInformationString());               //A teszt utáni pozíció, sikeresség ellenőrzése
         System.out.println();
 
     }
@@ -155,10 +155,10 @@ public class MechanicMovesTest {
         occupiedPipe.addPlayer(saboteur1);
         saboteur1.setMapElement(occupiedPipe);
 
-        System.out.println("Mechanic position before step: " + mechanic1.getMapElement());
+        System.out.println("Mechanic position before step: " + mechanic1.getElementInformationString());
                                                                                                         //A tényleges teszteset eseményének indulása
         mechanic1.step(occupiedPipe);
-        System.out.println("Mechanic position after step: " + mechanic1.getMapElement());               //A teszt utáni pozíció, sikeresség ellenőrzése
+        System.out.println("Mechanic position after step: " + mechanic1.getElementInformationString());               //A teszt utáni pozíció, sikeresség ellenőrzése
         System.out.println();
     }
 
@@ -176,10 +176,10 @@ public class MechanicMovesTest {
         occupiedPipe.addPlayer(saboteur1);
         saboteur1.setMapElement(occupiedPipe);
 
-        System.out.println("Mechanic position before step: " + mechanic1.getMapElement());
+        System.out.println("Mechanic position before step: " + mechanic1.getElementInformationString());
                                                                                                         //A tényleges teszteset eseményének indulása
         mechanic1.step(occupiedPipe);
-        System.out.println("Mechanic position after step: " + mechanic1.getMapElement());               //A teszt utáni pozíció, sikeresség ellenőrzése
+        System.out.println("Mechanic position after step: " + mechanic1.getElementInformationString());               //A teszt utáni pozíció, sikeresség ellenőrzése
         System.out.println();
     }
 }
