@@ -12,7 +12,7 @@ public abstract class ActiveElement extends MapElement implements IControllable 
 
     /**
      * Beállítja az isBroken értékét a paraméterül kapottra.
-     * @param value
+     * @param value A beállítandó bináris érték
      */
     @Override
     public void setBroken(boolean value){
