@@ -12,7 +12,8 @@ public class Mechanic extends Player {
     /**
      * Ezzel a függvénnyel veszi fel a mechanic a kezébe a csövet.
      * Megvizsgálja, hogy állnak-e a csövön, és van-e már a szerelő kezében cső.
-     * Ha nem, akkor felveszi a csövet a kezébe, feltéve, ha az nem null, egyébként NullPointerExceptiont dob, hogy ne próbáljunk meg később ezzel dolgozni.
+     * Ha nem, akkor felveszi a csövet a kezébe, feltéve, ha az nem null, egyébként NullPointerExceptiont dob,
+     * hogy ne próbáljunk meg később ezzel dolgozni.
      * Ezután lecsatolja a csövet pályaelemről.
      * @param pipe a cső, amit velvesz a mechanic a kezébe
      */
@@ -29,7 +30,7 @@ public class Mechanic extends Player {
      * sikerült lerakni a csövet és a mechanic kezében lévő pipe null, lesz.
      */
     public void placePipe(){
-        if(mapElement.attachPipe(pipeInHand)) pipeInHand = null;
+        pipeInHand = (mapElement.attachPipe(pipeInHand)) ? null : pipeInHand;
     }
 
     /**
