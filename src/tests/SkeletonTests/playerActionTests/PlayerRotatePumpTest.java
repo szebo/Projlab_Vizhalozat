@@ -10,6 +10,8 @@ public class PlayerRotatePumpTest {
         Pipe p2 = new Pipe();
         Pump p = new Pump();
 
+        p.attachPipe(p1);
+        p.attachPipe(p2);
         m.setMapElement(p);
         m.configurePump(p1, p2);        //A fő dolog ennek a belsejében történik
     }
