@@ -7,7 +7,7 @@ import java.util.*;
 public class Mechanic extends Player {
 
     private Pipe pipeInHand;
-    private List<Pump> pumpsInInventory;
+    private final List<Pump> pumpsInInventory = new ArrayList<>() ;
 
     /**
      * Ezzel a függvénnyel veszi fel a mechanic a kezébe a csövet.
