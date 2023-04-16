@@ -1,5 +1,7 @@
 package main.map;
 
+import java.util.ArrayList;
+
 public class Pump extends ActiveElement {
 
 
@@ -8,9 +10,12 @@ public class Pump extends ActiveElement {
     private Pipe output;
     public Pump(){
         this.capacity = 20;
+        pipes = new ArrayList<>();
+        players = new ArrayList<>();
     }
     public Pump(int capacity){
         this.capacity = capacity;
+        pipes = new ArrayList<>();
     }
 
     /**

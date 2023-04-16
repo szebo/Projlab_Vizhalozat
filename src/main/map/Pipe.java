@@ -14,8 +14,8 @@ public class Pipe extends MapElement {
     private List<ActiveElement> elements;
     public Pipe(){
         this.capacity = 20;
-        elements = new ArrayList<ActiveElement>();
-
+        elements = new ArrayList<>();
+        players = new ArrayList<>();
     }
     public Pipe(int capacity){
         this.capacity = capacity;

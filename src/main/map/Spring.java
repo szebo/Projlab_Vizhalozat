@@ -9,6 +9,7 @@ public class Spring extends ActiveElement {
 
     public Spring(){
         pipes = new ArrayList<>();
+        players = new ArrayList<>();
     }
 
     @Override

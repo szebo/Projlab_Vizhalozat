@@ -2,11 +2,18 @@ package main.map;
 
 import main.players.Mechanic;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Cistern extends ActiveElement {
 
     private List<Pump> pumpsInReserve;
+
+    public Cistern(){
+        pipes = new ArrayList<>();
+        players = new ArrayList<>();
+        pumpsInReserve = new ArrayList<>();
+    }
 
     /**
      *  létrehoz egy új pumpát és eltárolja a cisternen.
