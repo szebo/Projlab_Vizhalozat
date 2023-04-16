@@ -23,7 +23,7 @@ public class Pump extends ActiveElement {
      */
     @Override
     public void control() {
-        breakElement();
+        setBroken(true);
     }
 
 
