@@ -19,9 +19,7 @@ public abstract class Player {
      * **/
     public void setMapElement(MapElement mapElement) {this.mapElement = mapElement;}
 
-    public MapElement getMapElement(){
-        return mapElement;
-    }
+    public MapElement getMapElement(){return mapElement;}
 
     /**
     * A játékost aktuális helyzete kérdezhető le
