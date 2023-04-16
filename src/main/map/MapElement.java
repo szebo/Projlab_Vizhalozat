@@ -69,7 +69,7 @@ public abstract class MapElement {
 
     /**
      * Hozzáadja az elemhez a paraméterül kapott játékost.
-     * @param player
+     * @param player A hozzáadandó játékos
      */
     public void addPlayer(Player player){
         players.add(player);
@@ -126,6 +126,7 @@ public abstract class MapElement {
      */
     public void setBroken(boolean value){
         isBroken = value;
+        System.out.println("MapElement töröttségi állapota beállítva.");
     }
 
     /**

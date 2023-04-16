@@ -10,10 +10,6 @@ public abstract class Player {
     public void setMapElement(MapElement mapElement) {this.mapElement = mapElement;}
     public String getMapElement(){return this.mapElement.toString();}
 
-    public void configurePump(){
-
-    }
-
     public void configurePump(Pipe p1, Pipe p2){
 
     }
