@@ -41,8 +41,8 @@ public class Cistern extends ActiveElement {
      * @param mechanic a mechanic akinek átadjuk a pumpát
      */
     public void givePump(Mechanic mechanic){
-        mechanic.addPumpToInventory(pumpsInReserve.get(pumpsInReserve.size()-1));
-        pumpsInReserve.remove(pumpsInReserve.size()-1);
+        mechanic.addPumpToInventory(pumpsInReserve.get(0));
+        pumpsInReserve.remove(0);
         System.out.println("A pumpát odaadja a Ciszterna a Mechanicnak.");
     }
 

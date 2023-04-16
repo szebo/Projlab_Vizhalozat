@@ -1,5 +1,6 @@
 package main.map;
 
+import main.players.Mechanic;
 import main.players.Player;
 import main.players.SaboteurTeam;
 
@@ -147,6 +148,7 @@ public abstract class MapElement {
 
     /**
      * A Cistern givePump metódusát elérhetővé teszi a játékos számára, más leszármazotton nem csinál semmit.
+     * @param mechanic a mechanic-ot átadjuk aki átveszi a pumpát.
      */
-    public void givePump(){}
+    public void givePump(Mechanic mechanic){}
 }
