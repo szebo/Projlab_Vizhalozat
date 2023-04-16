@@ -23,7 +23,7 @@ public class TestController {
         MechanicRepairTest.MechanicRepairPump();
         MechanicRepairTest.MechanicRepairPipe();
 
-        //Noel mozgás tesztek, ha a step meg lesz valósítva, működnek
+        //Noel mozgás tesztek, ha a step meg   lesz valósítva, működnek
         MechanicMovesTest.SpringToPipe();
         MechanicMovesTest.PipeToSpring();
         MechanicMovesTest.CisternToPipe();
