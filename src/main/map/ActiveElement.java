@@ -4,6 +4,9 @@ import main.interfaces.IControllable;
 
 import java.util.List;
 
+/**
+ * Közös ős minden aktiv elemnek, amik a víz mozgatásáért felelnek.
+ */
 public abstract class ActiveElement extends MapElement implements IControllable {
    /**
     * Az aktív elemre felcsatolt csövek gyűjteménye
@@ -19,9 +22,8 @@ public abstract class ActiveElement extends MapElement implements IControllable 
         super.setBroken(value);
     }
 
-
     /**
-     * Lecsatolja “p” csövet az elemről, attól függetlenül, hogy ki-/bemeneti cső-e éppen.
+     * Lecsatolja “pipe” csövet az elemről, attól függetlenül, hogy ki-/bemeneti cső-e éppen.
      * Ha a cső foglalt, akkor nem lehet lecsatolni.
      * A csőben lévő víz ilyenkor kifolyik.
      * @param pipe A lecsatolandó cső
@@ -31,11 +33,12 @@ public abstract class ActiveElement extends MapElement implements IControllable 
         if(!pipe.isOccupied()) {
             this.pipes.remove(pipe);
             pipe.removeWater(pipe.water);
+            pipe.removeElement(this);
         }
         System.out.println("Pumpáról cső lecsatolva.");
     }
     /**
-     * Felcsatolja “p” csövet az aktív elemre.
+     * Felcsatolja “pipe” csövet az aktív elemre.
      * @param pipe A felcsatolandó cső
     * **/
     @Override

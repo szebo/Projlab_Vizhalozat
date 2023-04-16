@@ -2,17 +2,32 @@ package main.map;
 
 import java.util.ArrayList;
 
+/**
+ * Pumpákat, és azok viselkedését leíró osztály
+ */
 public class Pump extends ActiveElement {
-
-
-
+    /**
+     * A pumpa bemeneti csövét tárolja
+     */
     private Pipe input;
+    /**
+     * A pumpa kimeneti csövét tárolja
+     */
     private Pipe output;
+
+    /**
+     * Alapvető konstruktor
+     */
     public Pump(){
         this.capacity = 20;
         pipes = new ArrayList<>();
         players = new ArrayList<>();
     }
+
+    /**
+     * Kapacitást beállító konstuktor
+     * @param capacity A pumpa belső kapacitása
+     */
     public Pump(int capacity){
         this.capacity = capacity;
         pipes = new ArrayList<>();
@@ -27,14 +42,9 @@ public class Pump extends ActiveElement {
     }
 
     /**
-     *
+     * Getter
+     * @return input cső
      */
-    @Override
-    public void interact() {
-        //létezik, de soha senki nem hívja. Dokumentációban is hiányzik, csak az osztálydiagramon van fent.
-        //TODO ha nem lát el funkciót, ki kell venni
-    }
-
     public Pipe getInput() {
         return input;
     }
@@ -64,14 +74,14 @@ public class Pump extends ActiveElement {
     }
 
     /**
-     * B Terv Vízmozgatásra
+     * Vízet szív a tárolójába a bementi csőből, aztán kipumpál a kimeneti csőbe.
      */
     @Override
     public void pumpWater() {
         int taken = input.removeWater(input.water);
         int cached = this.addWater(taken);
         if(output.isBroken()){
-            //Pontozás
+            //TODO Pontozás
             this.removeWater(this.water);
         }
         else {

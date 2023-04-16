@@ -5,14 +5,26 @@ import main.players.Mechanic;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Reprezentálja a ciszternákat, és azok működését írja le.
+ */
 public class Cistern extends ActiveElement {
 
+    /**
+     * Egy lista a tartalék pumpákról amit felvehetnek a szerelők. Inicializálásál feltöltődik egyszer nagy számra.
+     */
     private List<Pump> pumpsInReserve;
 
+    /**
+     * Cistern alapvető konstruktora
+     */
     public Cistern(){
         pipes = new ArrayList<>();
         players = new ArrayList<>();
         pumpsInReserve = new ArrayList<>();
+        for(int i = 0; i < 100; i++){
+            pumpsInReserve.add(new Pump());
+        }
     }
 
     /**
@@ -42,11 +54,14 @@ public class Cistern extends ActiveElement {
         this.attachPipe(newpipe);
     }
 
+    /**
+     * Vízet szív az összes hozzácsatlakozó csőből.
+     */
     @Override
     public void pumpWater() {
         for(Pipe p : pipes){
             int taken = p.removeWater(p.water);
-            //Pontozás
+            //TODO Pontozas
         }
     }
 }

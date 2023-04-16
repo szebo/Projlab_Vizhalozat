@@ -5,6 +5,9 @@ import main.players.SaboteurTeam;
 
 import java.util.List;
 
+/**
+ * Ősosztály minden pályaelemhez, elérést biztosít a játékosok számára a különböző metódus hívásokhoz.
+ */
 public abstract class MapElement {
 
     /**
@@ -35,12 +38,6 @@ public abstract class MapElement {
      * @param pipe
      */
     public abstract boolean attachPipe(Pipe pipe);
-
-    /**
-     * Abstract metódus, implementáció függő a viselkedése.
-     * A játékosok számára biztosít elérhetőséget egy-két különböző akcióhoz.
-     */
-    public void interact(){}
 
     /**
      * Megjavítja az elemet.
@@ -142,7 +139,14 @@ public abstract class MapElement {
         return players.size() > 0;
     }
 
+    /**
+     * A játékos számára elérhetővé teszi a Pipe cut metódusát, minden más fajta leszármazottra nem csinál semmit.
+     * @param pumpPlaced A lerakni kívánt pumpa
+     */
     public void cut(Pump pumpPlaced){}
 
+    /**
+     * A Cistern givePump metódusát elérhetővé teszi a játékos számára, más leszármazotton nem csinál semmit.
+     */
     public void givePump(){}
 }

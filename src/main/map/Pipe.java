@@ -95,7 +95,11 @@ public class Pipe extends MapElement {
         }
     }
 
-    public List<ActiveElement> getElements(){
-        return elements;
+    /**
+     * Kivesz egy elemet az elements listából.
+     * @param element
+     */
+    public void removeElement(ActiveElement element){
+        elements.remove(element);
     }
 }
