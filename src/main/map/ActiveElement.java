@@ -39,11 +39,14 @@ public abstract class ActiveElement extends MapElement implements IControllable 
      * @param pipe A felcsatolandó cső
     * **/
     @Override
-    public void attachPipe(Pipe pipe){
-        pipes.add(pipe);
-        pipe.addElement(this);
-        System.out.println("Pumpához cső hozzáadva");
-
+    public boolean attachPipe(Pipe pipe){
+        boolean hasPlace = pipes.size() < 10;
+        if(hasPlace) {
+            pipes.add(pipe);
+            pipe.addElement(this);
+            System.out.println("Pumpához cső hozzáadva");
+        }
+        return hasPlace;
     }
 
     /**

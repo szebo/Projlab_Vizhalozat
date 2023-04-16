@@ -42,6 +42,7 @@ public class Pipe extends MapElement {
     @Override
     public void breakElement(){
         setBroken(true);
+        System.out.println("Elem elrontva!");
     }
 
     /**
@@ -56,7 +57,7 @@ public class Pipe extends MapElement {
      * @param pipe
      */
     @Override
-    public void attachPipe(Pipe pipe) {}
+    public boolean attachPipe(Pipe pipe) {return false;}
 
     /** Elfelezi a csövet, hogy be lehessen helyezni közéjük egy pumpát
      * @return A félbevágott két cső objektumot adjva vissza **/

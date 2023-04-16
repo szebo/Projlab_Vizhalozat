@@ -34,7 +34,7 @@ public abstract class MapElement {
      * Abstract metódus, a cső felcsatolására szolgál a leszármazottaknál.
      * @param pipe
      */
-    public abstract void attachPipe(Pipe pipe);
+    public abstract boolean attachPipe(Pipe pipe);
 
     /**
      * Abstract metódus, implementáció függő a viselkedése.
@@ -53,10 +53,7 @@ public abstract class MapElement {
     /**
      * Tönkre teszi az elemet.
      */
-    public void breakElement(){
-        setBroken(true);
-        System.out.println("Elem elrontva!");
-    }
+    public void breakElement(){}
 
     /**
      * Elfogadja a paraméterül kapott játékost.
@@ -144,4 +141,8 @@ public abstract class MapElement {
     public boolean isOccupied(){
         return players.size() > 0;
     }
+
+    public Pipe[] cut(){return null;}
+
+    public void givePump(){}
 }

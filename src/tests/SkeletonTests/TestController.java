@@ -1,5 +1,7 @@
 package tests.SkeletonTests;
 
+import main.map.*;
+import main.players.Player;
 import tests.SkeletonTests.PlayersMoveTests.MechanicMovesTest;
 import tests.SkeletonTests.PlayersMoveTests.SaboteurMovesTest;
 import tests.SkeletonTests.playerActionTests.*;
@@ -21,7 +23,7 @@ public class TestController {
         MechanicRepairTest.MechanicRepairPump();
         MechanicRepairTest.MechanicRepairPipe();
 
-        //Noel mozgás tesztek, ha a step meg lesz valósítva, működnek
+        //Noel mozgás tesztek, ha a step meg   lesz valósítva, működnek
         MechanicMovesTest.SpringToPipe();
         MechanicMovesTest.PipeToSpring();
         MechanicMovesTest.CisternToPipe();
@@ -41,6 +43,14 @@ public class TestController {
         SaboteurMovesTest.SpringToOccupiedPipe();
         SaboteurMovesTest.PumpToOccupiedPipe();
         SaboteurMovesTest.CisternToOccupiedPipe();
+    }
+
+    public static void testConfigurePump(Pipe p1, Pipe p2, Player player){
+        if(player.getMapElement() instanceof Pump){
+            Pump place = (Pump)player.getMapElement();
+            place.setInput(p1);
+            place.setOutput(p2);
+        }
     }
 
 }
