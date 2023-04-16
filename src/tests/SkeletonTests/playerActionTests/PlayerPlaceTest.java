@@ -29,7 +29,7 @@ public class PlayerPlaceTest {
         Mechanic mechanic1 = new Mechanic();
 
         mechanic1.setMapElement(pump1);
-        mechanic1.setPipeInHand(pipe1);
+        //mechanic1.setPipeInHand(pipe1);
         pump1.addPlayer(mechanic1);
 
         System.out.println("A szerelő megpróbál lerakni egy csövet");
@@ -43,7 +43,7 @@ public class PlayerPlaceTest {
         Mechanic mechanic1 = new Mechanic();
 
         mechanic1.setMapElement(cistern1);
-        mechanic1.setPipeInHand(pipe1);
+        //mechanic1.setPipeInHand(pipe1);
         cistern1.addPlayer(mechanic1);
 
         System.out.println("A szerelő megpróbál lerakni egy csövet");
@@ -57,7 +57,7 @@ public class PlayerPlaceTest {
         Mechanic mechanic1 = new Mechanic();
 
         mechanic1.setMapElement(spring1);
-        mechanic1.setPipeInHand(pipe1);
+       // mechanic1.setPipeInHand(pipe1);
         spring1.addPlayer(mechanic1);
 
         System.out.println("A szerelő megpróbál lerakni egy csövet");

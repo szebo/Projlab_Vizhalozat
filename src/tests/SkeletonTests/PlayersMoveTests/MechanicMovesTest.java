@@ -7,7 +7,7 @@ import main.map.Spring;
 import main.players.Mechanic;
 import main.players.Saboteur;
 
-public class MechanicMoves {
+public class MechanicMovesTest {
 
     public static void SpringToPipe(){
         System.out.println("Mechanic moves from Spring to Pipe");
@@ -29,6 +29,7 @@ public class MechanicMoves {
     }
 
     public static void PipeToSpring(){
+        System.out.println("Mechanic moves from Pipe to Spring");
                                                                                                         //Szereplők létrehozása
         Spring spring1 = new Spring();
         Pipe freePipe1 = new Pipe();
@@ -46,6 +47,7 @@ public class MechanicMoves {
     }
 
     public static void PipeToPump(){
+        System.out.println("Mechanic moves from Pipe to Pump");
                                                                                                         //Szereplők létrehozása
         Pump pump1 = new Pump();
         Pipe freePipe1 = new Pipe();
@@ -63,6 +65,7 @@ public class MechanicMoves {
     }
 
     public static void PumpToPipe(){
+        System.out.println("Mechanic moves from Pump to Pipe");
                                                                                                         //Szereplők létrehozása
         Pump pump1 = new Pump();
         Pipe freePipe1 = new Pipe();
@@ -80,6 +83,7 @@ public class MechanicMoves {
     }
 
     public static void PipeToCistern(){
+        System.out.println("Mechanic moves from Pipe to Cistern");
                                                                                                         //Szereplők létrehozása
         Cistern cistern1 = new Cistern();
         Pipe freePipe1 = new Pipe();
@@ -97,6 +101,7 @@ public class MechanicMoves {
     }
 
     public static void CisternToPipe(){
+        System.out.println("Mechanic moves from Cistern to Pipe");
                                                                                                         //Szereplők létrehozása
         Cistern cistern1 = new Cistern();
         Pipe freePipe1 = new Pipe();
@@ -114,6 +119,7 @@ public class MechanicMoves {
     }
 
     public static void SpringToOccupiedPipe(){
+        System.out.println("Mechanic moves from Spring to Occupied Pipe");
                                                                                                         //Szereplők létrehozása
         Spring spring1 = new Spring();
         Pipe occupiedPipe = new Pipe();
@@ -136,6 +142,7 @@ public class MechanicMoves {
     }
 
     public static void PumpToOccupiedPipe(){
+        System.out.println("Mechanic moves from Pump to Occupied Pipe");
                                                                                                         //Szereplők létrehozása
         Pump pump1 = new Pump();
         Pipe occupiedPipe = new Pipe();
@@ -156,6 +163,7 @@ public class MechanicMoves {
     }
 
     public static void CisternToOccupiedPipe(){
+        System.out.println("Mechanic moves from Cistern to Occupied Pipe");
                                                                                                         //Szereplők létrehozása
         Cistern cistern1 = new Cistern();
         Pipe occupiedPipe = new Pipe();
