@@ -8,7 +8,11 @@ public abstract class Player {
     protected int stepsLeft;
 
     public void setMapElement(MapElement mapElement) {this.mapElement = mapElement;}
-    public String getMapElement(){return this.mapElement.toString();}
+    public String getMapElement(){ return this.mapElement.toString();}
+
+    public void configurePump() {
+
+    }
 
     public void configurePump(Pipe p1, Pipe p2){
 
