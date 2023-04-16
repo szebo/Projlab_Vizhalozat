@@ -38,21 +38,6 @@ public class Pipe extends MapElement {
     @Override
     public void attachPipe(Pipe pipe) {}
 
-    /**
-     * TODO
-     */
-    @Override
-    public void interact() {
-
-    }
-
-    /** Beállítja az objektum töröttségi állapotát (boolean)
-     * @param value a beállítandó állapot **/
-    @Override
-    public void setBroken(boolean value) {
-        super.setBroken(value);
-    }
-
     /** Elfelezi a csövet, hogy be lehessen helyezni közéjük egy pumpát **/
     public Pipe[] cut(){
         Pipe uj_pipe_1 = new Pipe();
@@ -66,6 +51,9 @@ public class Pipe extends MapElement {
     }
 
     public void addElement(ActiveElement element){
-        this.elements.add(element);
+        if(elements.size()<2) {
+            this.elements.add(element);
+            System.out.println("Elem hozzáadva a csőhöz");
+        }
     }
 }

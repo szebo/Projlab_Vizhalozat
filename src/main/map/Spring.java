@@ -19,4 +19,12 @@ public class Spring extends ActiveElement {
             p.addWater(p.capacity);
         }
     }
+
+    /**
+     * B Terv Vízmozgatásra
+     */
+    @Override
+    public void pumpWater() {
+        giveWater();
+    }
 }

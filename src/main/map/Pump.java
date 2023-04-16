@@ -58,4 +58,21 @@ public class Pump extends ActiveElement {
             this.output = output;
         System.out.println("Pumpa Output beállítva.");
     }
+
+    /**
+     * B Terv Vízmozgatásra
+     */
+    @Override
+    public void pumpWater() {
+        int taken = input.removeWater(input.water);
+        int cached = this.addWater(taken);
+        if(output.isBroken()){
+            //Pontozás
+            this.removeWater(this.water);
+        }
+        else {
+            int pumped = output.addWater(cached);
+            this.removeWater(pumped);
+        }
+    }
 }

@@ -35,5 +35,11 @@ public class Cistern extends ActiveElement {
         this.attachPipe(newpipe);
     }
 
-
+    @Override
+    public void pumpWater() {
+        for(Pipe p : pipes){
+            int taken = p.removeWater(p.water);
+            //Pontozás
+        }
+    }
 }

@@ -25,4 +25,9 @@ public abstract class ActiveElement extends MapElement implements IControllable 
         pipes.add(pipe);
         pipe.addElement(this);
     }
+
+    /**
+     * B Terv Vízmozgásra
+     */
+    public abstract void pumpWater();
 }
