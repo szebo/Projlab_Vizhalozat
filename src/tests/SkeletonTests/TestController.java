@@ -9,6 +9,7 @@ import tests.SkeletonTests.playerActionTests.*;
 public class TestController {
 
     public static void runTests(){
+
         PlayerPickUpTest.mechanicPickUpOnCistern();
         PlayerPickUpTest.mechanicPickUpOnPump();
         PlayerPlaceTest.mechanicPlacesPipeOnPump();

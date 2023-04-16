@@ -57,9 +57,10 @@ public abstract class MapElement {
      * Elfogadja a paraméterül kapott játékost.
      * @param player
      */
-    public void acceptPlayer(Player player){
+    public boolean acceptPlayer(Player player){
         addPlayer(player);
         System.out.println("Játékos ráléphet az elemre!");
+        return true;
     }
 
     /**

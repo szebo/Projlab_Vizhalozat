@@ -78,10 +78,12 @@ public class Pipe extends MapElement {
      * @param player A csőre lépni kívánó játékos
      * **/
     @Override
-    public void acceptPlayer(Player player){
+    public boolean acceptPlayer(Player player){
         if(!this.isOccupied()) {
             addPlayer(player);
+            return true;
         }
+        return false;
     }
 
     /**

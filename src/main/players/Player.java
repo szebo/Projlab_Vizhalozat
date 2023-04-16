@@ -39,6 +39,10 @@ public abstract class Player {
      * @param element A MapElement amelyre lép a játékos
      * **/
     public void step(MapElement element){
+        if(element.acceptPlayer(this)) {
+            getMapElement().removePlayer(this);
+            setMapElement(element);
+        }
 
     }
 }
