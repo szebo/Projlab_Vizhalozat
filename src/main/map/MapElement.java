@@ -141,4 +141,8 @@ public abstract class MapElement {
     public boolean isOccupied(){
         return players.size() > 0;
     }
+
+    public Pipe[] cut(){return null;}
+
+    public void givePump(){}
 }
