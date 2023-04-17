@@ -76,19 +76,20 @@ public class Pump extends ActiveElement {
     }
 
     /**
-     * Vízet szív a tárolójába a bementi csőből, aztán kipumpál a kimeneti csőbe.
+     * Vízet szív a tárolójába a bemeneti csőből, aztán kipumpál a kimeneti csőbe.
      */
     @Override
     public void pumpWater() {
-        int taken = input.removeWater(input.water);
-        int cached = this.addWater(taken);
-        if(output.isBroken()){
-            int removedWater = this.removeWater(this.water);
-            SaboteurTeam.getInstance().addPoints(removedWater);
-        }
-        else {
-            int pumped = output.addWater(cached);
-            this.removeWater(pumped);
+        if(!isBroken) {
+            int taken = input.removeWater(input.water);
+            int cached = this.addWater(taken);
+            if (output.isBroken()) {
+                int removedWater = this.removeWater(this.water);
+                SaboteurTeam.getInstance().addPoints(removedWater);
+            } else {
+                int pumped = output.addWater(cached);
+                this.removeWater(pumped);
+            }
         }
     }
 }

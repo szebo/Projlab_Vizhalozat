@@ -53,7 +53,7 @@ public abstract class ActiveElement extends MapElement implements IControllable 
     }
 
     /**
-     * B Terv Vízmozgásra
+     * Pumpál az elem, az ActiveElement osztály leszármazottai implementálják érdemlegesen.
      */
     public abstract void pumpWater();
 }

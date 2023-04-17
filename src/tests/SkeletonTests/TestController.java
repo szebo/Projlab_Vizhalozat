@@ -2,8 +2,8 @@ package tests.SkeletonTests;
 
 import main.map.*;
 import main.players.Player;
-import tests.SkeletonTests.PlayersMoveTests.MechanicMovesTest;
-import tests.SkeletonTests.PlayersMoveTests.SaboteurMovesTest;
+import tests.SkeletonTests.playerMovementTests.MechanicMovesTest;
+import tests.SkeletonTests.playerMovementTests.SaboteurMovesTest;
 import tests.SkeletonTests.playerActionTests.*;
 
 public class TestController {

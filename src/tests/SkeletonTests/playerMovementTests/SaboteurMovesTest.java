@@ -1,4 +1,4 @@
-package tests.SkeletonTests.PlayersMoveTests;
+package tests.SkeletonTests.playerMovementTests;
 
 import main.map.Cistern;
 import main.map.Pipe;

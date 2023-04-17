@@ -7,7 +7,7 @@ public class SaboteurTeam {
     private static SaboteurTeam instance = null;
     public List<Saboteur> players = new ArrayList<Saboteur>() ;
     private int points = 0;
-    private SaboteurTeam(){System.out.println("saboteur team created");}
+    private SaboteurTeam(){System.out.println("Szabotőr csapat létrehozva");}
     public static synchronized SaboteurTeam getInstance()
     {
         if (instance == null)
@@ -16,11 +16,11 @@ public class SaboteurTeam {
     }
     public void addPlayer(Player player)
     {
-        if(players.size() < 3){
+        if(players.size() < 5){
             players.add((Saboteur)player);
-        System.out.println("player added to saboteur team");
+        System.out.println("Játékos hozzáadva a szabotőrőkhoz");
         }
-        System.out.println("player NOT added to saboteur team, too many members");
+        System.out.println("Játékost nem lehetett hozzáadni a csapathoz, túl népesedés miatt.");
     }
 
     public void addPoints(int point)

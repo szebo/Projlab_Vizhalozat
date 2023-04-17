@@ -9,7 +9,7 @@ public class MechanicTeam {
 
     public List<Mechanic> players = new ArrayList<Mechanic>() ;
     private int points = 0;
-    private MechanicTeam(){System.out.println("mechanic team created");}
+    private MechanicTeam(){System.out.println("Szerelő csapat létrehozva");}
     public static synchronized MechanicTeam getInstance()
     {
         if (instance == null)
@@ -20,14 +20,14 @@ public class MechanicTeam {
     {
         if(players.size() < 3) {
             players.add((Mechanic) player);
-            System.out.println("player added to mechanic team");
+            System.out.println("Játékos hozzáadva a szabotőrőkhoz");
         }
-        System.out.println("player NOT added to mechanic team, too many members");
+        System.out.println("Játékost nem lehetett hozzáadni a csapathoz, túlnépesedés miatt.");
     }
 
     public void addPoints(int point)
     {
         points+=point;
-        System.out.println("point added to mechanic team. current points: "+ points);
+        System.out.println("Pontok rögzítve, jelenleg "+ points +" pontja van a Szerelőknek.");
     }
 }

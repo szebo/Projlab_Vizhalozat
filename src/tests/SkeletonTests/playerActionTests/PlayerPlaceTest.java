@@ -13,8 +13,11 @@ public class PlayerPlaceTest {
         Pump pump1 = new Pump();
         Mechanic mechanic1 = new Mechanic();
         Pipe pipe1 = new Pipe();
-        pipe1.addElement(pump1);
+        Pump pump2 = new Pump();
+        Pump pump3 = new Pump();
 
+        pump2.attachPipe(pipe1);
+        pump3.attachPipe(pipe1);
         mechanic1.addPumpToInventory(pump1);
         mechanic1.setMapElement(pipe1);
         pipe1.addPlayer(mechanic1);
