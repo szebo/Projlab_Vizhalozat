@@ -1,6 +1,7 @@
 package main.map;
 
 import main.players.Mechanic;
+import main.players.MechanicTeam;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -61,7 +62,7 @@ public class Cistern extends ActiveElement {
     public void pumpWater() {
         for(Pipe p : pipes){
             int taken = p.removeWater(p.water);
-            //TODO Pontozas
+            MechanicTeam.getInstance().addPoints(taken);
         }
     }
 }
