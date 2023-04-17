@@ -5,6 +5,7 @@ import main.players.Player;
 import tests.SkeletonTests.playerMovementTests.MechanicMovesTest;
 import tests.SkeletonTests.playerMovementTests.SaboteurMovesTest;
 import tests.SkeletonTests.playerActionTests.*;
+import tests.SkeletonTests.waterMovementTests.WaterMoveTest;
 
 public class TestController {
 
@@ -19,7 +20,7 @@ public class TestController {
         PlayerPlaceTest.mechanicPlacesPipeOnPump();
         PlayerPlaceTest.mechanicPlacesPipeOnSpring();
         PlayerPlaceTest.mechanicPlacesPipeOnCistern();
-        PlayerPlaceTest.mechanicPlacesPump(); //TODO: Javítva, de nem biztos hogy jó. Bővebben Pipe.java(74, 60)
+        PlayerPlaceTest.mechanicPlacesPump();
 
         PlayerConfigurePumpTest.mechanicRotatePump();
         PlayerConfigurePumpTest.saboteurRotatePump();
@@ -27,6 +28,9 @@ public class TestController {
         SaboteurBreaksTest.SaboteurBreaksPipe();
         MechanicRepairTest.MechanicRepairPump();
         MechanicRepairTest.MechanicRepairPipe();
+
+        WaterMoveTest.waterBrokenPipeMoveTest();
+        WaterMoveTest.waterNormalMoveTest();
 
         //Noel mozgás tesztek, ha a step meg lesz valósítva, működnek
         MechanicMovesTest.SpringToPipe();
