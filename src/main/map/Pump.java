@@ -1,5 +1,7 @@
 package main.map;
 
+import main.players.SaboteurTeam;
+
 import java.util.ArrayList;
 
 /**
@@ -81,8 +83,8 @@ public class Pump extends ActiveElement {
         int taken = input.removeWater(input.water);
         int cached = this.addWater(taken);
         if(output.isBroken()){
-            //TODO Pontozás
-            this.removeWater(this.water);
+            int removedWater = this.removeWater(this.water);
+            SaboteurTeam.getInstance().addPoints(removedWater);
         }
         else {
             int pumped = output.addWater(cached);

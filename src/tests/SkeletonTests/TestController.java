@@ -10,6 +10,10 @@ public class TestController {
 
     public static void runTests(){
 
+        PlayerTeamsTest.addPlayerToMechanicTeam();
+        PlayerTeamsTest.addPlayerToSaboteurTeam();
+        PlayerTeamsTest.addPointsToTeams();
+
         PlayerPickUpTest.mechanicPickUpOnCistern();
         PlayerPickUpTest.mechanicPickUpOnPump();
         PlayerPlaceTest.mechanicPlacesPipeOnPump();
