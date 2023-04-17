@@ -67,4 +67,8 @@ public class Mechanic extends Player {
         pumpsInInventory.add(pump);
     }
 
+    public void setPipeInHand(Pipe pipeInHand) {
+        this.pipeInHand = pipeInHand;
+    }
+
 }
