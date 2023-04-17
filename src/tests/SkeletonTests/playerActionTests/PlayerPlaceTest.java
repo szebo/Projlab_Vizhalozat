@@ -13,6 +13,7 @@ public class PlayerPlaceTest {
         Pump pump1 = new Pump();
         Mechanic mechanic1 = new Mechanic();
         Pipe pipe1 = new Pipe();
+        pipe1.addElement(pump1);
 
         mechanic1.addPumpToInventory(pump1);
         mechanic1.setMapElement(pipe1);

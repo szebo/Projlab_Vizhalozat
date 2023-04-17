@@ -19,7 +19,7 @@ public class TestController {
         PlayerPlaceTest.mechanicPlacesPipeOnPump();
         PlayerPlaceTest.mechanicPlacesPipeOnSpring();
         PlayerPlaceTest.mechanicPlacesPipeOnCistern();
-        //PlayerPlaceTest.mechanicPlacesPump(); //TODO: NEM MŰKÖDIK
+        PlayerPlaceTest.mechanicPlacesPump(); //TODO: Javítva, de nem biztos hogy jó. Bővebben Pipe.java(74, 60)
 
         PlayerConfigurePumpTest.mechanicRotatePump();
         PlayerConfigurePumpTest.saboteurRotatePump();
@@ -28,7 +28,7 @@ public class TestController {
         MechanicRepairTest.MechanicRepairPump();
         MechanicRepairTest.MechanicRepairPipe();
 
-        //Noel mozgás tesztek, ha a step meg   lesz valósítva, működnek
+        //Noel mozgás tesztek, ha a step meg lesz valósítva, működnek
         MechanicMovesTest.SpringToPipe();
         MechanicMovesTest.PipeToSpring();
         MechanicMovesTest.CisternToPipe();

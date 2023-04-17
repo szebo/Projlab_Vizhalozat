@@ -67,10 +67,14 @@ public class Pipe extends MapElement {
     public void cut(Pump pumpPlaced){
         Pipe uj_pipe_1 = new Pipe();
         Pipe uj_pipe_2 = new Pipe();
-        elements.get(0).detachPipe(this);
-        elements.get(0).attachPipe(uj_pipe_1);
-        elements.get(1).detachPipe(this);
-        elements.get(1).attachPipe(uj_pipe_2);
+        if(elements.size() > 0) {
+            elements.get(0).detachPipe(this);
+            elements.get(0).attachPipe(uj_pipe_1);
+        }
+        if(elements.size() > 1) {                        //TODO: Átdolgozni, így működik, de: 1. kódduplikáció,
+            elements.get(1).detachPipe(this);           //      2. szerintem nem a tervezett működést írja le.
+            elements.get(1).attachPipe(uj_pipe_2);
+        }
         pumpPlaced.attachPipe(uj_pipe_1);
         pumpPlaced.attachPipe(uj_pipe_2);
     }
