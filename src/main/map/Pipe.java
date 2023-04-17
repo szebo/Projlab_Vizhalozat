@@ -63,6 +63,7 @@ public class Pipe extends MapElement {
 
     /**
      * Elfelezi a csövet, hogy be lehessen helyezni közéjük egy pumpát
+     * @param pumpPlaced A cső közepére elhelyezni kívánt pumpa
      */
     public void cut(Pump pumpPlaced){
         Pipe uj_pipe_1 = new Pipe();
