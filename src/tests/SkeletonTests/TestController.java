@@ -7,14 +7,18 @@ import tests.SkeletonTests.playerMovementTests.SaboteurMovesTest;
 import tests.SkeletonTests.playerActionTests.*;
 import tests.SkeletonTests.waterMovementTests.WaterMoveTest;
 
+import java.util.Objects;
+
 public class TestController {
 
     public static void runTests(){
 
+        //Csapatkezelés tesztek
         PlayerTeamsTest.addPlayerToMechanicTeam();
         PlayerTeamsTest.addPlayerToSaboteurTeam();
         PlayerTeamsTest.addPointsToTeams();
 
+        //Elem mozgatás tesztek
         PlayerPickUpTest.mechanicPickUpOnCistern();
         PlayerPickUpTest.mechanicPickUpOnPump();
         PlayerPlaceTest.mechanicPlacesPipeOnPump();
@@ -22,17 +26,20 @@ public class TestController {
         PlayerPlaceTest.mechanicPlacesPipeOnCistern();
         PlayerPlaceTest.mechanicPlacesPump();
 
+        //Pumpa beállítás tesztek
         PlayerConfigurePumpTest.mechanicRotatePump();
         PlayerConfigurePumpTest.saboteurRotatePump();
 
+        //Akció tesztek
         SaboteurBreaksTest.SaboteurBreaksPipe();
         MechanicRepairTest.MechanicRepairPump();
         MechanicRepairTest.MechanicRepairPipe();
 
+        //Víz mozgatás tesztek.
         WaterMoveTest.waterBrokenPipeMoveTest();
         WaterMoveTest.waterNormalMoveTest();
 
-        //Noel mozgás tesztek, ha a step meg lesz valósítva, működnek
+        //Szerelő mozgatás tesztek.
         MechanicMovesTest.SpringToPipe();
         MechanicMovesTest.PipeToSpring();
         MechanicMovesTest.CisternToPipe();
@@ -43,6 +50,7 @@ public class TestController {
         MechanicMovesTest.PumpToOccupiedPipe();
         MechanicMovesTest.CisternToOccupiedPipe();
 
+        //Szabotőr mozgás tesztek.
         SaboteurMovesTest.SpringToPipe();
         SaboteurMovesTest.PipeToSpring();
         SaboteurMovesTest.CisternToPipe();
@@ -55,6 +63,7 @@ public class TestController {
     }
 
     public static void testConfigurePump(Pipe p1, Pipe p2, Player player){
+        Objects.requireNonNull(player, "Null értékű paramétert kapott a testConfigurePump!");
         if(player.getMapElement() instanceof Pump place){
             place.setInput(p1);
             place.setOutput(p2);
