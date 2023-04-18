@@ -3,7 +3,6 @@ package tests.SkeletonTests.playerActionTests;
 import main.map.Cistern;
 import main.map.Pipe;
 import main.map.Pump;
-import main.map.Spring;
 import main.players.Mechanic;
 
 public class PlayerPickUpTest {

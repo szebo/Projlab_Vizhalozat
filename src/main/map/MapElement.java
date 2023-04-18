@@ -2,7 +2,6 @@ package main.map;
 
 import main.players.Mechanic;
 import main.players.Player;
-import main.players.SaboteurTeam;
 
 import java.util.List;
 

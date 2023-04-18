@@ -55,8 +55,7 @@ public class TestController {
     }
 
     public static void testConfigurePump(Pipe p1, Pipe p2, Player player){
-        if(player.getMapElement() instanceof Pump){
-            Pump place = (Pump)player.getMapElement();
+        if(player.getMapElement() instanceof Pump place){
             place.setInput(p1);
             place.setOutput(p2);
         }

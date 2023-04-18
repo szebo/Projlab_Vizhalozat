@@ -1,8 +1,6 @@
 package tests.SkeletonTests.waterMovementTests;
 
 import main.map.*;
-import main.players.MechanicTeam;
-import main.players.SaboteurTeam;
 
 public class WaterMoveTest {
 

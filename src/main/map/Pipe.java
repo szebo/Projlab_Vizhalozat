@@ -49,14 +49,14 @@ public class Pipe extends MapElement {
 
     /**
      * Örökölt függvény, amit ez az osztály nem valósít meg
-     * @param pipe
+     * @param pipe not used
      */
     @Override
     public void detachPipe(Pipe pipe) {}
 
     /**
      * Örökölt függvény, amit ez az osztály nem valósít meg
-     * @param pipe
+     * @param pipe not used
      */
     @Override
     public boolean attachPipe(Pipe pipe) {return false;}
@@ -113,7 +113,7 @@ public class Pipe extends MapElement {
 
     /**
      * Kivesz egy elemet az elements listából.
-     * @param element
+     * @param element a kivenni való aktív elem
      */
     public void removeElement(ActiveElement element){
         elements.remove(element);

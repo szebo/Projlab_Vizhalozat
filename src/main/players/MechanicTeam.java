@@ -1,13 +1,12 @@
 package main.players;
 
-import main.map.Pump;
 import java.util.ArrayList;
 import java.util.List;
 
 public class MechanicTeam {
     private static MechanicTeam instance = null;
 
-    public List<Mechanic> players = new ArrayList<Mechanic>() ;
+    public List<Mechanic> players = new ArrayList<>() ;
     private int points = 0;
     private MechanicTeam(){System.out.println("Szerelő csapat létrehozva");}
     public static synchronized MechanicTeam getInstance()
