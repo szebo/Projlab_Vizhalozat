@@ -18,10 +18,11 @@ public class Mechanic extends Player {
      * @param pipe a cső, amit velvesz a mechanic a kezébe
      */
     public void pickUpPipe(Pipe pipe){
+        Objects.requireNonNull(pipe, "Null értékű paramétert kapott a pickUpPipe!");
         if(pipe.isOccupied() && pipeInHand != null)
             return;
-        this.pipeInHand = Objects.requireNonNull(pipe, "Null értéket kapott a pipeInHand!");
         mapElement.detachPipe(pipe);
+        this.pipeInHand = pipe;
     }
 
     /**
