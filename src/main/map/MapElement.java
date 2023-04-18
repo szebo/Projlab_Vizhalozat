@@ -30,13 +30,13 @@ public abstract class MapElement {
 
     /**
      * Abstract metódus, a cső lecsatolásra szolgál a leszármazottaknál.
-     * @param pipe
+     * @param pipe a cső amit leválasztunk a MapElementről.
      */
     public abstract void detachPipe(Pipe pipe);
 
     /**
      * Abstract metódus, a cső felcsatolására szolgál a leszármazottaknál.
-     * @param pipe
+     * @param pipe a cső amit hozzákötünk a MapElementhez.
      */
     public abstract boolean attachPipe(Pipe pipe);
 
@@ -55,7 +55,7 @@ public abstract class MapElement {
 
     /**
      * Elfogadja a paraméterül kapott játékost.
-     * @param player
+     * @param player a játékos, aki rálép a pályaelemre.
      */
     public boolean acceptPlayer(Player player){
         addPlayer(player);
@@ -74,7 +74,7 @@ public abstract class MapElement {
 
     /**
      * Eltávolítja az elemről a paraméterül kapott játékost.
-     * @param player
+     * @param player a játékos, aki lekerül az elemről.
      */
     public void removePlayer(Player player){
         players.remove(player);
@@ -83,13 +83,13 @@ public abstract class MapElement {
 
     /**
      * Hozzáadja a csőhőz a paraméterül kapott vízmennyiséget, de nem engedi túlcsordulni.
-     * @param water
+     * @param water víz mennyisége egész számmal kifejezve.
      * @return Az átvett vízmennyiség
      */
     public int addWater(int water){
         if(isBroken) {
             System.out.println("Az elem el van romolva!");
-            /**TODO Pontozás*/
+            //TODO Pontozás
             return 0;
         }
         int waterTaken = this.water + water > capacity ? capacity-this.water : water;
@@ -100,7 +100,7 @@ public abstract class MapElement {
 
     /**
      * Elveszi a paraméterül kapott vízmennyiséget az elem tárolójából, vagy ha a paraméter több, mint ami benne van, akkor kiüríti az elemet.
-     * @param water
+     * @param water víz mennyisége, egész számmal kifejezve.
      * @return A kivett vízmennyiség
      */
     public int removeWater(int water) {
@@ -118,7 +118,7 @@ public abstract class MapElement {
 
     /**
      * Beállítja az isBroken értékét a paraméterül kapottra.
-     * @param value
+     * @param value true = törött, false = üzemképes.
      */
     public void setBroken(boolean value){
         isBroken = value;

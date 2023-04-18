@@ -3,6 +3,7 @@ package main.map;
 import main.interfaces.IControllable;
 
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Közös ős minden aktiv elemnek, amik a víz mozgatásáért felelnek.
@@ -30,6 +31,7 @@ public abstract class ActiveElement extends MapElement implements IControllable 
      * **/
     @Override
     public void detachPipe(Pipe pipe)  {
+        Objects.requireNonNull(pipe, "Null értékű paramétert kapott a detachPipe!");
         if(!pipe.isOccupied()) {
             this.pipes.remove(pipe);
             pipe.removeWater(pipe.water);
@@ -43,6 +45,7 @@ public abstract class ActiveElement extends MapElement implements IControllable 
     * **/
     @Override
     public boolean attachPipe(Pipe pipe){
+        Objects.requireNonNull(pipe, "Null értékű paramétert kapott az attachPipe!");
         boolean hasPlace = pipes.size() < 10;
         if(hasPlace) {
             pipes.add(pipe);

@@ -2,6 +2,8 @@ package main.players;
 
 import main.map.MapElement;
 
+import java.util.Objects;
+
 /**
  * A két játékostípus közös működését megvalósító absztrakt osztály
  * **/
@@ -39,6 +41,7 @@ public abstract class Player {
      * @param element A MapElement amelyre lép a játékos
      * **/
     public void step(MapElement element){
+        Objects.requireNonNull(element, "Null értékű paramétert kapott a step!");
         if(element.acceptPlayer(this)) {
             getMapElement().removePlayer(this);
             setMapElement(element);

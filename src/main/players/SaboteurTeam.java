@@ -5,7 +5,7 @@ import java.util.List;
 
 public class SaboteurTeam {
     private static SaboteurTeam instance = null;
-    public List<Saboteur> players = new ArrayList<Saboteur>() ;
+    public List<Saboteur> players = new ArrayList<>() ;
     private int points = 0;
     private SaboteurTeam(){System.out.println("Szabotőr csapat létrehozva");}
     public static synchronized SaboteurTeam getInstance()
