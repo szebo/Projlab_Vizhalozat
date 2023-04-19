@@ -75,7 +75,7 @@ public class Pipe extends MapElement {
         if(elements.size() > 1) end2 =  elements.get(1);
         System.out.println("Eredeti cső vég elemei elmentve.");
 
-        end1.detachPipe(this);
+        end1.detachPipe(this);      //szekvencián a cuton kívül vannak ezek todo
         end1.attachPipe(uj_pipe_1);
         if(end2 != null) {
             end2.detachPipe(this);
