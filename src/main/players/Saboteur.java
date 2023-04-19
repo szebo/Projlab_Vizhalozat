@@ -21,6 +21,6 @@ public class Saboteur extends Player implements IPipeAction {
      */
     @Override
     public void useStickyGoo() {
-        mapElement.makeSticky(10);
+        mapElement.makeSticky(2);
     }
 }
