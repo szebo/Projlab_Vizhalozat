@@ -8,7 +8,7 @@
                  | |                                   
                  |_|                                   
 ```
-# **Sivatagi Víhzálózat**
+# **Sivatagi Vízhálózat**
 
 ---
 # *Fejlesztők*

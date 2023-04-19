@@ -56,6 +56,7 @@ public abstract class Player {
         if(element.acceptPlayer(this)) {
             getMapElement().removePlayer(this);
             setMapElement(element);
+            this.stepsLeft--;
             if(element.checkSticky()) {
                 setStuck(5);
                 element.makeSticky(0); //TODO: Itt leesik a stickyFor a csőről, de kéne valami, hogy magáltól is leessen, pl amikor a köröket léptetjük.
