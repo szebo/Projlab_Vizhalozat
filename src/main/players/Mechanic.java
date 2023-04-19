@@ -1,10 +1,11 @@
 package main.players;
 
+import main.interfaces.IPipeAction;
 import main.map.Pipe;
 import main.map.Pump;
 import java.util.*;
 
-public class Mechanic extends Player {
+public class Mechanic extends Player implements IPipeAction {
 
     private Pipe pipeInHand;
     private final List<Pump> pumpsInInventory = new ArrayList<>() ;
@@ -72,4 +73,19 @@ public class Mechanic extends Player {
         this.pipeInHand = pipeInHand;
     }
 
+    /**
+     * Eltöri azt az elemet amelyen áll a játékos.
+     */
+    @Override
+    public void breakElement() {
+        mapElement.breakElement();
+    }
+
+    /**
+     * Ragacsossá teszi a csövet, amin áll a játékos.
+     */
+    @Override
+    public void useStickyGoo() {
+        mapElement.makeSticky(10);
+    }
 }

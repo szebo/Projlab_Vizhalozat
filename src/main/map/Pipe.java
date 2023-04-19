@@ -14,6 +14,11 @@ import java.util.List;
 public class Pipe extends MapElement {
 
     /**
+     * Ennyi ?kör? ideig ragacsos a cső.
+     */
+    int stickyFor;
+
+    /**
      * A cső két végén elhelyezkedő pumpákat tároló lista
      * **/
     private List<ActiveElement> elements;
@@ -118,4 +123,27 @@ public class Pipe extends MapElement {
     public void removeElement(ActiveElement element){
         elements.remove(element);
     }
+
+    /**
+     * Beállítja a ragacsosság értékét.
+     * @param stickyFor mennyi ideig ragacsos a cső
+     */
+    public void setStickyFor(int stickyFor) {
+        this.stickyFor = stickyFor;
+    }
+
+    /**
+     * Ragacsossá teszi a csövet.
+     */
+    @Override
+    public void makeSticky(int value){
+        setStickyFor(value);
+    }
+
+    /**
+     * Megvizsgálja, hogy ragacsos-e a cső.
+     * @return true, ha a stickyFor értéke nagyobb mint 0.
+     */
+    @Override
+    public boolean checkSticky(){return stickyFor > 0;}
 }

@@ -133,12 +133,13 @@ public abstract class MapElement {
     }
 
     /**
-     * Eldönti, hogy az elem foglalt-e éppen. Ez a csőnél lényeges igazán, részben, hogy ráléphetnek-e, részben pedig, hogy fellehet-e venni.
+     * Eldönti, hogy az elem foglalt-e éppen. Ez a csőnél lényeges igazán, részben, hogy ráléphetnek-e,
+     * részben pedig, hogy fellehet-e venni.
      * @return Foglalt-e az elem.
      */
     public boolean isOccupied(){
         return players.size() > 0;
-    }
+    } //itt akkor is true értéket ad, ha egyébként pumpa az elem.
 
     /**
      * A játékos számára elérhetővé teszi a Pipe cut metódusát, minden más fajta leszármazottra nem csinál semmit.
@@ -151,4 +152,16 @@ public abstract class MapElement {
      * @param mechanic a mechanic-ot átadjuk aki átveszi a pumpát.
      */
     public void givePump(Mechanic mechanic){}
+
+    /**
+     * Ragacsossá teszi a csövet.
+     * A függvény csak a Pipe osztályban van megvalósítva.
+     */
+    public void makeSticky(int value){}
+
+    /**
+     * Megnézi, hogy ragacsos-e a cső.
+     * A függvény csak a Pipe osztályban van megvalósítva.
+     */
+    public abstract boolean checkSticky();
 }

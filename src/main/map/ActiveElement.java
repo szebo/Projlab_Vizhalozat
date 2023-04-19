@@ -59,4 +59,11 @@ public abstract class ActiveElement extends MapElement implements IControllable 
      * Pumpál az elem, az ActiveElement osztály leszármazottai implementálják érdemlegesen.
      */
     public abstract void pumpWater();
+
+    /**
+     * Megnézi, hogy ragacsos-e az elem.
+     * @return mindig false, az aktív elemek nem lehetnek ragacsosak.
+     */
+    @Override
+    public boolean checkSticky(){ return false; }
 }

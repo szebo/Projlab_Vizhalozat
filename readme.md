@@ -53,11 +53,11 @@ hogy minél több víz jusson a ciszternákba. Az a csapat nyer, amelyik a ját�
 ```
 
 ##  [*Változtatások*](https://www.iit.bme.hu/file/11582/feladat "iit.bme.hu")
-* Szerelő is tud lyukasztani.
-* Foltozott cső véletlen hosszúságú ideig nem ~~lyukadhat~~ lyukasztható ki.
-* A csöveknek mindkét vége egyidőben le lehet csatolva.
-* A szabotőr azt a csövet, amin áll, rövid időre csúszóssá tudja tenni. Ilyenkor aki rálép, véletlenszerűen a cső 
+- [ ] Szerelő is tud lyukasztani.
+- [ ] Foltozott cső véletlen hosszúságú ideig nem ~~lyukadhat~~ lyukasztható ki.
+- [ ] A csöveknek mindkét vége egyidőben le lehet csatolva.
+- [ ] A szabotőr azt a csövet, amin áll, rövid időre csúszóssá tudja tenni. Ilyenkor aki rálép, véletlenszerűen a cső 
 valamelyik végéhez kapcsolódó elemre kerül.
-* Mind a szabotőrök, mind a szerelők azt a csövet, amin állnak, rövid időre ragadóssá tudják tenni.
+- [x] Mind a szabotőrök, mind a szerelők azt a csövet, amin állnak, rövid időre ragadóssá tudják tenni.
 Aki legközelebb rálép, egy ideig nem tud továbblépni.
 
