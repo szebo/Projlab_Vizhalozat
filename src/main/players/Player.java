@@ -53,7 +53,7 @@ public abstract class Player {
             setStuck(stuck - 1);
             return;
         }
-        if(element.acceptPlayer(this)) {
+        if(element.acceptPlayer(this) && this.stepsLeft > 0) {
             getMapElement().removePlayer(this);
             setMapElement(element);
             this.stepsLeft--;
