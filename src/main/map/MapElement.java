@@ -164,4 +164,18 @@ public abstract class MapElement {
      * A függvény csak a Pipe osztályban van megvalósítva.
      */
     public abstract boolean checkSticky();
+
+    /**
+     * Ragacsossá teszi a csövet.
+     * A függvény csak a Pipe osztályban van megvalósítva.
+     */
+    public void makeSlippery(int value){}
+
+    /**
+     * Megnézi, hogy ragacsos-e a cső.
+     * A függvény csak a Pipe osztályban van megvalósítva.
+     */
+    public abstract boolean checkSlippery();
+
+    public abstract MapElement getRandomEnd();
 }

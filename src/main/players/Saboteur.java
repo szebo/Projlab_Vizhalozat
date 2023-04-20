@@ -23,4 +23,11 @@ public class Saboteur extends Player implements IPipeAction {
     public void useStickyGoo() {
         mapElement.makeSticky(2);
     }
+
+    /**
+     * Csúszóssá teszi a csövet, amin áll a játékos.
+     */
+    public void useSlipperyGoo(){
+        mapElement.makeSlippery(2);
+    }
 }

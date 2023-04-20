@@ -66,4 +66,19 @@ public abstract class ActiveElement extends MapElement implements IControllable 
      */
     @Override
     public boolean checkSticky(){ return false; }
+
+    /**
+     * Megnézi, hogy csúszós-e az elem.
+     * @return mindig false, az aktív elemek nem lehetnek csúszósak.
+     */
+    @Override
+    public boolean checkSlippery(){ return false; }
+
+    /**
+     * Visszaadja a csőnek az egyik végét, ActiveElementben nem lesz implementálva.
+     */
+    @Override
+    public MapElement getRandomEnd() {
+        return null;
+    }
 }

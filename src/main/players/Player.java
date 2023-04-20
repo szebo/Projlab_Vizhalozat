@@ -3,6 +3,7 @@ package main.players;
 import main.map.MapElement;
 
 import java.util.Objects;
+import java.util.Random;
 
 /**
  * A két játékostípus közös működését megvalósító absztrakt osztály
@@ -60,6 +61,10 @@ public abstract class Player {
             if(element.checkSticky()) {
                 setStuck(5);
                 element.makeSticky(0); //TODO: Itt leesik a stickyFor a csőről, de kéne valami, hogy magáltól is leessen, pl amikor a köröket léptetjük.
+            }
+            if(element.checkSlippery()){
+                getMapElement().removePlayer(this);
+                setMapElement(element.getRandomEnd()); //TODO: Ugyan az mint a stickyFor esetében, itt is le kell essen majd kör léptetéskor a slippery effect.
             }
         }
 

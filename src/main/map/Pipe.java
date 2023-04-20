@@ -4,6 +4,7 @@ import main.players.Player;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 /**
  * Egy olyan eleme a hálózatnak, amely a belevezetett vizet továbbítja a másik vége felé,
@@ -16,7 +17,12 @@ public class Pipe extends MapElement {
     /**
      * Ennyi ?kör? ideig ragacsos a cső.
      */
-    int stickyFor;
+    private int stickyFor = 0;
+
+    /**
+     * Ennyi ?kör? ideig csúszós a cső.
+     */
+    private int slipperyFor = 0;
 
     /**
      * A cső két végén elhelyezkedő pumpákat tároló lista
@@ -146,4 +152,43 @@ public class Pipe extends MapElement {
      */
     @Override
     public boolean checkSticky(){return stickyFor > 0;}
+
+    /**
+     * Beállítja a csúszósság értékét.
+     * @param slipperyFor mennyi ideig csúszós a cső
+     */
+    public void setSlipperyFor(int slipperyFor) {
+        this.slipperyFor = slipperyFor;
+    }
+
+    /**
+     * Csúszóssá teszi a csövet.
+     */
+    @Override
+    public void makeSlippery(int value){
+        setSlipperyFor(value);
+    }
+
+    /**
+     * Megvizsgálja, hogy csúszós-e a cső.
+     * @return true, ha a slipperyFor értéke nagyobb mint 0.
+     */
+    @Override
+    public boolean checkSlippery() {
+        return slipperyFor > 0;
+    }
+
+    /**
+     * A csőnek véletlenszerűen sorsolja ki az egyik végét, és visszaadja azt.
+     * @return ActiveElement: Véletlenszerűen visszakapott vége a csőnek.
+     */
+    @Override
+    public MapElement getRandomEnd() {
+        Random rand = new Random();
+        int randomInt = rand.nextInt(2);
+        if(randomInt == 0)
+            return elements.get(0);
+        else
+            return elements.get(1);
+    }
 }
