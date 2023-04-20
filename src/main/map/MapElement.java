@@ -104,7 +104,7 @@ public abstract class MapElement {
      */
     public int removeWater(int water) {
         if(!isBroken) {
-            int pumpedWater = this.water < water ? this.water : water;
+            int pumpedWater = Math.min(this.water, water);
             this.water -= pumpedWater;
             System.out.println("Az elemből el lett távlítva "+pumpedWater+" mennyiségű víz!");
             return pumpedWater;

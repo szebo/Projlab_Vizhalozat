@@ -184,6 +184,8 @@ public class Pipe extends MapElement {
      */
     @Override
     public MapElement getRandomEnd() {
+        if(elements.size() == 1)
+            return elements.get(0);
         Random rand = new Random();
         int randomInt = rand.nextInt(2);
         if(randomInt == 0)
