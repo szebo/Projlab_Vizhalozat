@@ -31,7 +31,7 @@ public class TestController {
         PlayerConfigurePumpTest.saboteurRotatePump();
 
         //Akció tesztek
-        SaboteurBreaksTest.SaboteurBreaksPipe();
+        PlayerBreaksTest.SaboteurBreaksPipe();
         MechanicRepairTest.MechanicRepairPump();
         MechanicRepairTest.MechanicRepairPipe();
 
