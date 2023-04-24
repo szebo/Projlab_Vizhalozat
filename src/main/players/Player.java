@@ -44,6 +44,20 @@ public abstract class Player {
     }
 
     /**
+     * Eltöri azt az elemet amelyen áll a játékos.
+     */
+    public void breakElement(){
+        mapElement.breakElement();
+    }
+
+    /**
+     * Ragacsossá teszi a csövet, amin áll a játékos.
+     */
+    public void useStickyGoo() {
+        mapElement.makeSticky(2);
+    }
+
+    /**
      * A játékos lépését valósítja meg.
      * Megvizsgálja, hogy be van-e ragadva a játékos, ha igen, nem lép.
      * @param element A MapElement amelyre lép a játékos
@@ -58,7 +72,7 @@ public abstract class Player {
             getMapElement().removePlayer(this);
             setMapElement(element);
             this.stepsLeft--;
-            if(element.checkSticky()) {
+            if (element.checkSticky()) {
                 setStuck(5);
                 element.makeSticky(0); //TODO: Itt leesik a stickyFor a csőről, de kéne valami, hogy magáltól is leessen, pl amikor a köröket léptetjük.
             }
@@ -69,6 +83,5 @@ public abstract class Player {
                 //TODO: Ugyan az mint a stickyFor esetében, itt is le kell essen majd kör léptetéskor a slippery effect.
             }
         }
-
     }
 }

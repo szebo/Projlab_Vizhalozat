@@ -1,11 +1,10 @@
 package main.players;
 
-import main.interfaces.IPipeAction;
 import main.map.Pipe;
 import main.map.Pump;
 import java.util.*;
 
-public class Mechanic extends Player implements IPipeAction {
+public class Mechanic extends Player {
 
     private Pipe pipeInHand;
     private final List<Pump> pumpsInInventory = new ArrayList<>() ;
