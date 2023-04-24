@@ -10,6 +10,7 @@ import java.util.ArrayList;
  */
 public class Cistern extends ActiveElement {
 
+    private static int nextID;
 
     /**
      * Cistern alapvető konstruktora
@@ -17,6 +18,7 @@ public class Cistern extends ActiveElement {
     public Cistern(){
         pipes = new ArrayList<>();
         players = new ArrayList<>();
+        this.ID = nextID++;
     }
 
     /**
@@ -54,5 +56,9 @@ public class Cistern extends ActiveElement {
             int taken = p.removeWater(p.water);
             MechanicTeam.getInstance().addPoints(taken);
         }
+    }
+
+    public String getLogID(){
+        return "Cistern"+this.ID;
     }
 }

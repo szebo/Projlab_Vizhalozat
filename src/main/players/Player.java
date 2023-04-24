@@ -84,4 +84,13 @@ public abstract class Player {
             }
         }
     }
+
+    public void repair() {
+    }
+
+    public void useSlipperyGoo() {
+    }
+
+    public void placePipe() {
+    }
 }

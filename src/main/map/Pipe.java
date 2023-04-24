@@ -14,6 +14,8 @@ import java.util.Random;
  **/
 public class Pipe extends MapElement {
 
+    private static int nextID = 0;
+
     /**
      * Ennyi ?kör? ideig ragacsos a cső.
      */
@@ -37,6 +39,7 @@ public class Pipe extends MapElement {
         this.capacity = 20;
         elements = new ArrayList<>();
         players = new ArrayList<>();
+        this.ID = nextID++;
     }
 
     /**
@@ -192,5 +195,9 @@ public class Pipe extends MapElement {
             return elements.get(0);
         else
             return elements.get(1);
+    }
+
+    public String getLogID(){
+        return "Pipe"+this.ID;
     }
 }

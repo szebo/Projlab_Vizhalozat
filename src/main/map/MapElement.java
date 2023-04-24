@@ -10,6 +10,8 @@ import java.util.List;
  */
 public abstract class MapElement {
 
+    protected int ID;
+
     /**
      * Mutatja, hogy törött-e a cső
      */
@@ -178,4 +180,14 @@ public abstract class MapElement {
     public abstract boolean checkSlippery();
 
     public abstract MapElement getRandomEnd();
+
+    public abstract String getLogID();
+
+    public int getID(){
+        return this.ID;
+    }
+
+    public String printInfo() {
+        return "";
+    }
 }

@@ -81,4 +81,6 @@ public abstract class ActiveElement extends MapElement implements IControllable 
     public MapElement getRandomEnd() {
         return null;
     }
+
+    public abstract String getLogID();
 }

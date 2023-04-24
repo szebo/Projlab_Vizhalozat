@@ -8,6 +8,9 @@ import java.util.ArrayList;
  * Pumpákat, és azok viselkedését leíró osztály
  */
 public class Pump extends ActiveElement {
+
+    private static int nextID = 0;
+
     /**
      * A pumpa bemeneti csövét tárolja
      */
@@ -24,6 +27,7 @@ public class Pump extends ActiveElement {
         this.capacity = 20;
         pipes = new ArrayList<>();
         players = new ArrayList<>();
+        this.ID = nextID++;
     }
 
     /**
@@ -91,5 +95,9 @@ public class Pump extends ActiveElement {
                 this.removeWater(pumped);
             }
         }
+    }
+
+    public String getLogID(){
+        return "Pump"+this.ID;
     }
 }

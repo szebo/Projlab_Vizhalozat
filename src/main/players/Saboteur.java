@@ -9,6 +9,7 @@ public class Saboteur extends Player {
     /**
      * Csúszóssá teszi a csövet, amin áll a játékos.
      */
+    @Override
     public void useSlipperyGoo(){
         mapElement.makeSlippery(2);
     }

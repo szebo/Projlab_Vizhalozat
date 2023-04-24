@@ -56,6 +56,7 @@ public class Mechanic extends Player {
     /**
      * Ezzel a függvénnyel javítja meg a pályaelemet a mechanic amin áll.
      */
+    @Override
     public void repair(){
         if(mapElement.isBroken()) mapElement.heal();
     }
