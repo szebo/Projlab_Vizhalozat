@@ -107,6 +107,15 @@ public class CommandInterpreter {
             case "save_map":
                 break;
 
+            case "force_start":
+                break;
+
+            case "debug_slippery":
+                break;
+
+            case "debug_sticky":
+                break;
+
             default:
                 break;
         }
