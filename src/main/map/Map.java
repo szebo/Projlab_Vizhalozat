@@ -1,5 +1,7 @@
 package main.map;
 
+import main.interfaces.Updatable;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -7,6 +9,7 @@ public class Map {
 
     private List<MapElement> mapElements;
     private List<ActiveElement> activeElements;
+    private List<Updatable> updatableMapElements;
 
     public Map(){
         mapElements = new ArrayList<>();

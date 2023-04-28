@@ -18,8 +18,6 @@ public class Spring extends ActiveElement {
 
     @Override
     public void control() {
-        giveWater();
-        System.out.println("Új víz fakad a forrásból.");
     }
 
     /**

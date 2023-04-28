@@ -88,11 +88,6 @@ public abstract class MapElement {
      * @return Az átvett vízmennyiség
      */
     public int addWater(int water){
-        if(isBroken) {
-            System.out.println("Az elem el van romolva!");
-            //TODO Pontozás
-            return 0;
-        }
         int waterTaken = this.water + water > capacity ? capacity-this.water : water;
         this.water += waterTaken;
         System.out.println("Az elemhez "+waterTaken+" mennyiségű víz került hozzáadásra!");

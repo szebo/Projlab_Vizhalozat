@@ -1,6 +1,8 @@
 package main.map;
 
+import main.interfaces.Updatable;
 import main.players.Player;
+import main.players.SaboteurTeam;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,7 +14,7 @@ import java.util.Random;
  * attól függően, milyen játékosról beszélünk.
  * Egyetlen játékos állhat csak rajta
  **/
-public class Pipe extends MapElement {
+public class Pipe extends MapElement implements Updatable {
 
     private static int nextID = 0;
 
@@ -107,11 +109,19 @@ public class Pipe extends MapElement {
      * **/
     @Override
     public boolean acceptPlayer(Player player){
+        boolean accepted = false;
         if(!this.isOccupied()) {
-            addPlayer(player);
-            return true;
+            if(checkSlippery()){
+                player.step(getRandomEnd());
+                accepted = false;
+            }
+            else if(checkSticky()){
+                player.setStuck(stickyFor);
+                addPlayer(player);
+                accepted = true;
+            }
         }
-        return false;
+        return accepted;
     }
 
     /**
@@ -199,5 +209,20 @@ public class Pipe extends MapElement {
 
     public String getLogID(){
         return "Pipe"+this.ID;
+    }
+
+    public void update(){
+
+    }
+
+    @Override
+    public int addWater(int water){
+        if(isBroken || elements.size() < 2){
+            SaboteurTeam.getInstance().addPoints(water);
+            return water;
+        }
+        else{
+            return super.addWater(water);
+        }
     }
 }
