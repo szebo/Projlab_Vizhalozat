@@ -179,7 +179,7 @@ public abstract class MapElement {
      */
     public abstract boolean checkSlippery();
 
-    public abstract MapElement getRandomEnd();
+    public abstract ActiveElement getRandomEnd();
 
     public abstract String getLogID();
 

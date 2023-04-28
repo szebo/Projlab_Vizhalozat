@@ -78,7 +78,7 @@ public abstract class ActiveElement extends MapElement implements IControllable 
      * Visszaadja a csőnek az egyik végét, ActiveElementben nem lesz implementálva.
      */
     @Override
-    public MapElement getRandomEnd() {
+    public ActiveElement getRandomEnd() {
         return null;
     }
 

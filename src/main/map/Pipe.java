@@ -186,7 +186,7 @@ public class Pipe extends MapElement {
      * @return ActiveElement: Véletlenszerűen visszakapott vége a csőnek.
      */
     @Override
-    public MapElement getRandomEnd() {
+    public ActiveElement getRandomEnd() {
         if(elements.size() == 1)
             return elements.get(0);
         Random rand = new Random();
