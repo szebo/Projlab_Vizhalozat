@@ -174,6 +174,10 @@ public abstract class MapElement {
      */
     public abstract boolean checkSlippery();
 
+    /**
+     * Visszaadja a csőnek egy véletlenszerű végét. (Csak a csövön van implementálva.)
+     * @return ActiveElement
+     */
     public abstract ActiveElement getRandomEnd();
 
     public abstract String getLogID();
