@@ -4,6 +4,7 @@ import main.players.Mechanic;
 import main.players.MechanicTeam;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Reprezentálja a ciszternákat, és azok működését írja le.
@@ -11,6 +12,7 @@ import java.util.ArrayList;
 public class Cistern extends ActiveElement {
 
     private static int nextID;
+    private List<Pump> pumpsInReserve;
 
     /**
      * Cistern alapvető konstruktora
@@ -18,6 +20,10 @@ public class Cistern extends ActiveElement {
     public Cistern(){
         pipes = new ArrayList<>();
         players = new ArrayList<>();
+        pumpsInReserve = new ArrayList<>();
+        for(int i = 0; i < 50; i++){
+            pumpsInReserve.add(new Pump());
+        }
         this.ID = nextID++;
     }
 
@@ -35,7 +41,8 @@ public class Cistern extends ActiveElement {
      * @param mechanic a mechanic akinek átadjuk a pumpát
      */
     public void givePump(Mechanic mechanic){
-        mechanic.addPumpToInventory(new Pump());
+        mechanic.addPumpToInventory(pumpsInReserve.get(0));
+        pumpsInReserve.remove(0);
         System.out.println("A pumpát odaadja a Ciszterna a Mechanicnak.");
     }
 
