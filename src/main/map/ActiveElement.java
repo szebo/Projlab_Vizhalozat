@@ -2,6 +2,7 @@ package main.map;
 
 import main.interfaces.IControllable;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -83,4 +84,12 @@ public abstract class ActiveElement extends MapElement implements IControllable 
     }
 
     public abstract String getLogID();
+
+    public List<MapElement> getNeighbours(){
+        List<MapElement> res = new ArrayList<>();
+        for(Pipe p : pipes){
+            res.add(p);
+        }
+        return res;
+    }
 }

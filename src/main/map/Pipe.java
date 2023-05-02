@@ -225,4 +225,12 @@ public class Pipe extends MapElement implements Updatable {
             return super.addWater(water);
         }
     }
+
+    public List<MapElement> getNeighbours(){
+        List<MapElement> res = new ArrayList<>();
+        for(ActiveElement e : elements){
+            res.add(e);
+        }
+        return res;
+    }
 }
