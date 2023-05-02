@@ -1,6 +1,7 @@
 package main.players;
 
 import main.map.MapElement;
+import main.map.Pipe;
 
 import java.util.Objects;
 import java.util.Random;
@@ -39,7 +40,7 @@ public abstract class Player {
     /**
      * A játékos ebben a függvényben állítja be az új ki- és bemeneti csöveket
      * **/
-    public void configurePump() {
+    public void configurePump(Pipe pipe1, Pipe pipe2) {
 
     }
 
