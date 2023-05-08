@@ -38,6 +38,8 @@ public class Map {
 
     public void removeActive(ActiveElement element) { activeElements.remove(element); }
 
+    public void addUpdatable(Updatable element) { updatableMapElements.add(element); }
+
     public MapElement getElement(String id){
         for(MapElement mapElement : mapElements){
             if(mapElement.getLogID().equals(id)){
@@ -47,4 +49,9 @@ public class Map {
         return null;
     }
 
+    public MapElement getElement(int number){
+        if(number < mapElements.size())
+            return mapElements.get(number);
+        else return null;
+    }
 }
