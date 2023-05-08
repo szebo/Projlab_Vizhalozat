@@ -1,6 +1,7 @@
 package main.players;
 
 import main.map.MapElement;
+import main.map.Pipe;
 
 import java.util.Objects;
 import java.util.Random;
@@ -39,7 +40,7 @@ public abstract class Player {
     /**
      * A játékos ebben a függvényben állítja be az új ki- és bemeneti csöveket
      * **/
-    public void configurePump() {
+    public void configurePump(Pipe pipe1, Pipe pipe2) {
 
     }
 
@@ -62,11 +63,10 @@ public abstract class Player {
      * Megvizsgálja, hogy be van-e ragadva a játékos, ha igen, nem lép.
      * @param element A MapElement amelyre lép a játékos
      * **/
-    public void step(MapElement element){
+    public boolean step(MapElement element){
         Objects.requireNonNull(element, "Null értékű paramétert kapott a step!");
         if(stuck != 0){
-            setStuck(stuck - 1);
-            return;
+            return false;
         }
         if(element.acceptPlayer(this) && this.stepsLeft > 0) {
             getMapElement().removePlayer(this);
@@ -74,7 +74,8 @@ public abstract class Player {
             this.stepsLeft--;
             if (element.checkSticky()) {
                 setStuck(5);
-                element.makeSticky(0); //TODO: Itt leesik a stickyFor a csőről, de kéne valami, hogy magáltól is leessen, pl amikor a köröket léptetjük.
+                element.makeSticky(0);
+                //TODO: Itt leesik a stickyFor a csőről, de kéne valami, hogy magáltól is leessen, pl amikor a köröket léptetjük.
             }
             if(element.checkSlippery()){            //Itt nem lenne ertelemszerubb egy else if?
                 getMapElement().removePlayer(this);
@@ -82,7 +83,9 @@ public abstract class Player {
                 this.mapElement.addPlayer(this); //A mapElementre, amire átdobódik, is hozzá kell adni a playert
                 //TODO: Ugyan az mint a stickyFor esetében, itt is le kell essen majd kör léptetéskor a slippery effect.
             }
+            return true;
         }
+        return false;
     }
 
     public void repair() {
