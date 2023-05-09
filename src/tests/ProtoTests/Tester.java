@@ -55,13 +55,13 @@ public class Tester {
         /* Comparing part */
         for (int i = 0; i < testOutput.size() && i < expOutput.size(); i++) {
             if(!expOutput.get(i).equals(testOutput.get(i))){
-                System.out.println("Nem egyező teszt kimenet:" +
-                        "\nElvárt: " + expOutput.get(i) +
-                        "\nAktuális:" + testOutput.get(i));
+                System.out.println("Nem egyezo teszt kimenet:" +
+                        "\nElvart: " + expOutput.get(i) +
+                        "\nAktualis:" + testOutput.get(i));
                 return false;
             }
         }
-        System.out.println("Egyező kimenet a " + expectedOutputFile + "fájllal!\n---- Sikeres teszt! ----");
+        System.out.println("Egyezo kimenet a " + expectedOutputFile + "fajllal!\n---- Sikeres teszt! ----");
         return true;
     }
 
