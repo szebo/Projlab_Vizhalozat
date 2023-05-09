@@ -77,7 +77,7 @@ public abstract class Player {
                 element.makeSticky(0);
                 //TODO: Itt leesik a stickyFor a csőről, de kéne valami, hogy magáltól is leessen, pl amikor a köröket léptetjük.
             }
-            if(element.checkSlippery()){            //Itt nem lenne ertelemszerubb egy else if?
+            if(element.checkSlippery()) {            //Itt nem lenne ertelemszerubb egy else if?
                 getMapElement().removePlayer(this);
                 setMapElement(element.getRandomEnd());
                 this.mapElement.addPlayer(this); //A mapElementre, amire átdobódik, is hozzá kell adni a playert

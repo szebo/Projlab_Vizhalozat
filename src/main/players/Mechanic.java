@@ -36,7 +36,7 @@ public class Mechanic extends Player {
 
     /**
      * A mechanic felvesz egy pumpát a mapElementen.
-     * A givePump() a Cirsten -be van implementálva.
+     * A givePump() a Cistern -be van implementálva.
      */
     public void pickUpPump(){
        mapElement.givePump(this);
