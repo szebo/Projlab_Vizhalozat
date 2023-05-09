@@ -11,6 +11,11 @@ import java.util.Scanner;
 public class Tester {
     public static CommandInterpreter commandInterpreter = new CommandInterpreter();
 
+    /**
+     * A tesztek során automatikusan kiadott parancsokat fájlból olvasó függvény.
+     * @param filename A parancsokat soronként tartalmazó szöveges fájl
+     * @return Soronként parsolt parancsok
+     * **/
     public static List<String> commandFileReader(String filename) {
         List<String> cmds = new ArrayList<String>();
         try {
@@ -26,7 +31,15 @@ public class Tester {
         return cmds;
     }
 
+    /**
+     * Az összehasonlítást végzi az elvárt és a kapott kimenet között
+     * @param expedtedOutputFile Az elvárt kimenet előre megírt sorait tartalmazó fájl neve
+     * @param testOutput Az aktuálisan végrehajtott teszt kimenete soronként külön tárolva
+     * @return Igazat ha az összehasonlítás sikeres volt, ha valamely sor nem illeszkedett, akkor hamisat
+     * **/
     public static boolean outputComparator(String expedtedOutputFile, ArrayList<String> testOutput /*vagy ezt is fájlból*/) {
+
+        /*Parsing part*/
         ArrayList<String> expOutput = new ArrayList<String>();
         try {
             File file = new File(expedtedOutputFile);
@@ -40,7 +53,6 @@ public class Tester {
         }
 
         /* Comparing part */
-
         for (int i = 0; i < testOutput.size() && i < expOutput.size(); i++) {
             if(!expOutput.get(i).equals(testOutput.get(i))){
                 System.out.println("Nem egyező teszt kimenet:" +
@@ -53,6 +65,11 @@ public class Tester {
         return true;
     }
 
+    /**
+     * Futtatja a paraméterben megadott parancsokat sorban.
+     * @param cmds A kiadandó parancsok soronként szedve
+     * //@return hamis, ha valamely parancsnak nem volt sikeres a végrehajtása
+     * **/
     public static void runTest(String[] cmds){
         for (String s: cmds ) commandInterpreter.runCommand(s);
     }
