@@ -70,7 +70,8 @@ public class Tester {
      * @param cmds A kiadandó parancsok soronként szedve
      * //@return hamis, ha valamely parancsnak nem volt sikeres a végrehajtása
      * **/
-    public static void runTest(String[] cmds){
+    public static void runTest(String filename){
+        ArrayList<String> cmds = commandFileReader(filename);
         for (String s: cmds ) commandInterpreter.runCommand(s);
     }
 }
