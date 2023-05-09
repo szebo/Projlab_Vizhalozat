@@ -62,5 +62,3 @@ hogy minél több víz jusson a ciszternákba. Az a csapat nyer, amelyik a ját�
 valamelyik végéhez kapcsolódó elemre kerül.
 - [x] Mind a szabotőrök, mind a szerelők azt a csövet, amin állnak, rövid időre ragadóssá tudják tenni.
 Aki legközelebb rálép, egy ideig nem tud továbblépni.
-
-![alt text](https://pbs.twimg.com/profile_images/3626454736/125a872edf2d09ea049828b138533e45_400x400.jpeg "+9feka")
