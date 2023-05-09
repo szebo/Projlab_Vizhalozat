@@ -33,16 +33,16 @@ public class Tester {
 
     /**
      * Az összehasonlítást végzi az elvárt és a kapott kimenet között
-     * @param expedtedOutputFile Az elvárt kimenet előre megírt sorait tartalmazó fájl neve
+     * @param expectedOutputFile Az elvárt kimenet előre megírt sorait tartalmazó fájl neve
      * @param testOutput Az aktuálisan végrehajtott teszt kimenete soronként külön tárolva
      * @return Igazat ha az összehasonlítás sikeres volt, ha valamely sor nem illeszkedett, akkor hamisat
      * **/
-    public static boolean outputComparator(String expedtedOutputFile, ArrayList<String> testOutput /*vagy ezt is fájlból*/) {
+    public static boolean outputComparator(String expectedOutputFile, ArrayList<String> testOutput /*vagy ezt is fájlból*/) {
 
         /*Parsing part*/
         ArrayList<String> expOutput = new ArrayList<String>();
         try {
-            File file = new File(expedtedOutputFile);
+            File file = new File(expectedOutputFile);
             Scanner Reader = new Scanner(file);
             while (Reader.hasNextLine()) {
                 expOutput.add(Reader.nextLine());
@@ -61,7 +61,7 @@ public class Tester {
                 return false;
             }
         }
-        System.out.println("Egyező kimenet a " + expedtedOutputFile + "fájllal!\tSikeres teszt!");
+        System.out.println("Egyező kimenet a " + expectedOutputFile + "fájllal!\n---- Sikeres teszt! ----");
         return true;
     }
 
