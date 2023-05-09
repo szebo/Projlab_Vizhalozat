@@ -1,9 +1,11 @@
 package tests.SkeletonTests.playerActionTests;
 
+import commands.CommandInterpreter;
 import main.map.*;
 import main.players.Mechanic;
 
-public class MechanicRepairTest {
+public class MechanicRepairsTest {
+
     /**
      * Létrejön egy Mechanic és egy Pump
      * A Pumpát beállítjük töröttre
