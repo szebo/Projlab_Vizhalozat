@@ -86,4 +86,9 @@ public abstract class ActiveElement extends MapElement implements IControllable 
     }
 
     public abstract String getLogID();
+
+    @Override
+    public MapElement[] getNeighbours() {
+        return pipes.toArray(new MapElement[pipes.size()]);
+    }
 }

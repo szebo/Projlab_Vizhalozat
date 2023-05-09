@@ -9,12 +9,13 @@ import java.util.List;
 public class Map {
 
     private List<MapElement> mapElements;
-    private List<IControllable> controllableElements;
+    private List<IControllable> controllableMapElements;
     private List<Updatable> updatableMapElements;
 
     public Map(){
         mapElements = new ArrayList<>();
-        controllableElements = new ArrayList<>();
+        controllableMapElements = new ArrayList<>();
+        updatableMapElements = new ArrayList<>();
     }
 
     /**
@@ -23,7 +24,7 @@ public class Map {
      */
     public void waterFlow(int iterations){
         for(int i = 0; i < iterations; i++){
-            for(IControllable e : controllableElements){
+            for(IControllable e : controllableMapElements){
                 e.pumpWater();
             }
         }
@@ -35,9 +36,9 @@ public class Map {
 
     //--------------------------------------------------------------
     //B Terv
-    public void addActive(ActiveElement element) { controllableElements.add(element); }
+    public void addActive(ActiveElement element) { controllableMapElements.add(element); }
 
-    public void removeActive(ActiveElement element) { controllableElements.remove(element); }
+    public void removeActive(ActiveElement element) { controllableMapElements.remove(element); }
 
     //--------------------------------------------------------------
 
@@ -53,7 +54,6 @@ public class Map {
     }
 
     public void updateMap(){
-
         //TODO Minden elemre iterálva meghívjuk az update-ot. Ezt hívja meg a controller.
     }
 

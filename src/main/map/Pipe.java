@@ -17,6 +17,7 @@ import java.util.Random;
 public class Pipe extends MapElement implements Updatable {
 
     private static int nextID = 0;
+    private int unbreakableFor = 0;
 
     /**
      * Ennyi ?kör? ideig ragacsos a cső.
@@ -170,9 +171,7 @@ public class Pipe extends MapElement implements Updatable {
      * Beállítja a csúszósság értékét.
      * @param slipperyFor mennyi ideig csúszós a cső
      */
-    public void setSlipperyFor(int slipperyFor) {
-        this.slipperyFor = slipperyFor;
-    }
+    public void setSlipperyFor(int slipperyFor) {this.slipperyFor = slipperyFor;}
 
     /**
      * Csúszóssá teszi a csövet.
@@ -190,6 +189,12 @@ public class Pipe extends MapElement implements Updatable {
     public boolean checkSlippery() {
         return slipperyFor > 0;
     }
+
+
+    public void setUnbreakableFor(){this.unbreakableFor = 2;}
+    public boolean checkUnbreakableFor(){return unbreakableFor > 0;}
+
+
 
     /**
      * A csőnek véletlenszerűen sorsolja ki az egyik végét, és visszaadja azt.
@@ -212,7 +217,9 @@ public class Pipe extends MapElement implements Updatable {
     }
 
     public void update(){
-
+        if(this.slipperyFor!=0) this.slipperyFor -= 1;
+        if(this.stickyFor!=0) this.stickyFor -= 1;
+        if(this.unbreakableFor!=0) this.unbreakableFor -=1;
     }
 
     @Override
@@ -224,5 +231,16 @@ public class Pipe extends MapElement implements Updatable {
         else{
             return super.addWater(water);
         }
+    }
+
+    @Override
+    public void heal(){
+        setBroken(false);
+        setUnbreakableFor();
+    }
+
+    @Override
+    public MapElement[] getNeighbours(){
+        return elements.toArray(new MapElement[2]);
     }
 }

@@ -189,4 +189,6 @@ public abstract class MapElement {
     public String printInfo() {
         return "";
     }
+
+    public abstract MapElement[] getNeighbours();
 }
