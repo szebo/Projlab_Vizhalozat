@@ -11,6 +11,7 @@ import main.players.Mechanic;
 import main.players.MechanicTeam;
 import main.players.Saboteur;
 import main.players.SaboteurTeam;
+import tests.ProtoTests.Tester;
 
 import java.io.*;
 import java.util.List;
@@ -100,6 +101,9 @@ public class CommandInterpreter {
                 break;
 
             case "setplayerposition":
+                //TODO player = getPlayer(splits[1]);
+                //TODO player.setElement(Main.map.getElement(splits[2]));
+                //TODO Main.map.getElement(splits[2]).addPlayer(player);
                 break;
 
             case "create_pipe":
@@ -144,12 +148,19 @@ public class CommandInterpreter {
                 break;
 
             case "force_start":
+                Controller.run();
                 break;
 
             case "debug_slippery":
+                Main.map.getElement(splits[1]).makeSlippery(3);
                 break;
 
             case "debug_sticky":
+                Main.map.getElement(splits[1]).makeSticky(3);
+                break;
+
+            case "runtest":
+                Tester.runTest(splits[1]);
                 break;
 
             default:
@@ -202,9 +213,12 @@ public class CommandInterpreter {
     private void saveMap(String id){
         try {
             BufferedWriter writer = new BufferedWriter(new FileWriter("maps/"+id+".txt"));
-            for(){
-
+            writer.append("ActiveElements\n");
+            for(ActiveElement element : Main.map.activeElements){
+                writer.append(element.getLogID()+","+element.getCapacity()+"\n");
             }
+            writer.append("Connectins\n");
+            for()
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
