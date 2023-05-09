@@ -1,0 +1,12 @@
+create Spring1
+create Pipe1
+create Pipe2
+create_mechanic
+create_mechanic
+attach Pipe1 Spring1
+attach Pipe2 Spring1
+setplayerposition Saboteur1 Spring1
+setplayerposition Saboteur2 Pipe2
+move Pipe1
+move Spring1
+move Pipe2

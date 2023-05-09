@@ -1,13 +1,12 @@
 create Pump1
 create Pipe1
+create Pipe2
+create_mechanic
 create_mechanic
 attach Pipe1 Pump1
-debug_break Pump1
-debug_break Pipe1
+attach Pipe2 Pump1
 setplayerposition Mechanic1 Pump1
-repair
+setplayerposition Mechanic2 Pipe2
 move Pipe1
-repair
-repair
 move Pump1
-repair
+move Pipe2
