@@ -146,18 +146,11 @@ public class Pipe extends MapElement implements Updatable {
 
     /**
      * Beállítja a ragacsosság értékét.
-     * @param stickyFor mennyi ideig ragacsos a cső
-     */
-    public void setStickyFor(int stickyFor) {
-        this.stickyFor = stickyFor;
-    }
-
-    /**
-     * Ragacsossá teszi a csövet.
+     * @param value mennyi ideig ragacsos a cső
      */
     @Override
     public void makeSticky(int value){
-        setStickyFor(value);
+        this.stickyFor = value;
     }
 
     /**
@@ -168,17 +161,12 @@ public class Pipe extends MapElement implements Updatable {
     public boolean checkSticky(){return stickyFor > 0;}
 
     /**
-     * Beállítja a csúszósság értékét.
-     * @param slipperyFor mennyi ideig csúszós a cső
-     */
-    public void setSlipperyFor(int slipperyFor) {this.slipperyFor = slipperyFor;}
-
-    /**
      * Csúszóssá teszi a csövet.
+     * @param value mennyi ideig csúszós a cső
      */
     @Override
     public void makeSlippery(int value){
-        setSlipperyFor(value);
+        this.slipperyFor = value;
     }
 
     /**
@@ -191,7 +179,7 @@ public class Pipe extends MapElement implements Updatable {
     }
 
 
-    public void setUnbreakableFor(){this.unbreakableFor = 2;}
+    public void makeUnbreakable(){this.unbreakableFor = 2;}
     public boolean checkUnbreakableFor(){return unbreakableFor > 0;}
 
 
@@ -236,7 +224,7 @@ public class Pipe extends MapElement implements Updatable {
     @Override
     public void heal(){
         setBroken(false);
-        setUnbreakableFor();
+        makeUnbreakable();
     }
 
     @Override
