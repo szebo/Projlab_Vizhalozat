@@ -113,7 +113,6 @@ public class Pipe extends MapElement implements Updatable {
         if(!this.isOccupied()) {
             if(checkSlippery()){
                 player.step(getRandomEnd());
-                accepted = false;
             }
             else if(checkSticky()){
                 player.setStuck(stickyFor);
