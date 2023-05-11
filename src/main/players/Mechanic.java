@@ -74,14 +74,6 @@ public class Mechanic extends Player {
     }
 
     /**
-     * Eltöri azt az elemet amelyen áll a játékos.
-     */
-    @Override
-    public void breakElement() {
-        mapElement.breakElement();
-    }
-
-    /**
      * Ragacsossá teszi a csövet, amin áll a játékos.
      */
     @Override

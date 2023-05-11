@@ -4,7 +4,6 @@ import main.map.MapElement;
 import main.map.Pipe;
 
 import java.util.Objects;
-import java.util.Random;
 
 /**
  * A két játékostípus közös működését megvalósító absztrakt osztály
@@ -48,7 +47,8 @@ public abstract class Player {
      * Eltöri azt az elemet amelyen áll a játékos.
      */
     public void breakElement(){
-        mapElement.breakElement();
+        if(!mapElement.checkUnbreakable())
+            mapElement.breakElement();
     }
 
     /**

@@ -11,6 +11,7 @@ import java.util.List;
 public abstract class MapElement {
 
     protected int ID;
+    protected int unbreakableFor = 0;
 
     /**
      * Mutatja, hogy törött-e a cső
@@ -191,4 +192,15 @@ public abstract class MapElement {
     }
 
     public abstract MapElement[] getNeighbours();
+
+    /**
+     * Javítás esetén törhetetlenné teszi a csövet pár körig.
+     */
+    public void makeUnbreakable(){this.unbreakableFor = 2;}
+
+    /**
+     * Megvizsgálja, hogy el lehet-e törni az elemet.
+     * @return True, ha az unbreakableFor nagyobb mint 0.
+     */
+    public boolean checkUnbreakable(){return unbreakableFor > 0;}
 }

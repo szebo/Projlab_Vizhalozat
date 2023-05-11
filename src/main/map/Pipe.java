@@ -17,7 +17,6 @@ import java.util.Random;
 public class Pipe extends MapElement implements Updatable {
 
     private static int nextID = 0;
-    private int unbreakableFor = 0;
 
     /**
      * Ennyi ?kör? ideig ragacsos a cső.
@@ -179,8 +178,6 @@ public class Pipe extends MapElement implements Updatable {
     }
 
 
-    public void makeUnbreakable(){this.unbreakableFor = 2;}
-    public boolean checkUnbreakableFor(){return unbreakableFor > 0;}
 
 
 
