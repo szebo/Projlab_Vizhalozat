@@ -1,9 +1,11 @@
 package main.map;
 
+import main.Main;
 import main.interfaces.IControllable;
 import main.interfaces.Updatable;
 import main.players.SaboteurTeam;
 
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -52,15 +54,6 @@ public class Map implements Updatable{
 
     public void addUpdatable(Updatable element) { updatableMapElements.add(element); }
 
-    public MapElement getElement(String id){
-        for(MapElement mapElement : mapElements){
-            if(mapElement.getLogID().equals(id)){
-                return mapElement;
-            }
-        }
-        return null;
-    }
-
     public void update(){
         for(Updatable ume : updatableMapElements)
         {
@@ -74,6 +67,98 @@ public class Map implements Updatable{
         {
             cme.control();
         }
+    }
+
+    public void create(String type){
+        switch (type){
+            case "Pump":
+                Pump pump = new Pump();
+                Main.map.storeNewMapElement(pump);
+                Main.map.addActive(pump);
+                break;
+            case "Cistern":
+                Cistern cistern = new Cistern();
+                Main.map.storeNewMapElement(cistern);
+                Main.map.addActive(cistern);
+                break;
+            case "Spring":
+                Spring spring = new Spring();
+                Main.map.storeNewMapElement(spring);
+                Main.map.addActive(spring);
+                break;
+            case "Pipe":
+                Pipe pipe = new Pipe();
+                Main.map.storeNewMapElement(pipe);
+                Main.map.addUpdatable(pipe);
+                break;
+        }
+    }
+
+    public void loadMap(String id){
+        try {
+            BufferedReader reader = new BufferedReader(new FileReader("maps/"+id+".txt"));
+            List<String> lines = reader.lines().toList();
+            boolean readingElements = true;
+            for(String line : lines){
+                if(line.equals("Pipes")) readingElements = false;
+                String[] splits = line.split(",");
+                if(readingElements) {
+                    ActiveElement element = null;
+                    switch (splits[0]) {
+                        case "Cistern":
+                            element = new Cistern();
+                            break;
+
+                        case "Spring":
+                            element = new Spring();
+                            break;
+
+                        case "Pump":
+                            element = new Pump(Integer.parseInt(splits[1]));
+                            break;
+                    }
+                    Main.map.storeNewMapElement(element);
+                    Main.map.addActive(element);
+                }
+                else{
+                    Pipe pipe = new Pipe(Integer.parseInt(splits[2]));
+                    Main.map.storeNewMapElement(pipe);
+                    Main.map.getElement(Integer.parseInt(splits[0])).attachPipe(pipe);
+                    Main.map.getElement(Integer.parseInt(splits[1])).attachPipe(pipe);
+                    Main.map.addUpdatable(pipe);
+                }
+            }
+            reader.close();
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public void saveMap(String id){
+        try {
+            BufferedWriter writer = new BufferedWriter(new FileWriter("maps/"+id+".txt"));
+            writer.append("ActiveElements\n");
+            for(ActiveElement element : Map.getInstance().getElement()){ //használj egy while(true)-t meg egy counter és a már meglévő getElementet
+                //hogy elért a MapelElementeket. Ha csak az active elementeken akarsz végig menni akkor csinalj arra is egy gettert.
+                //TODO FIX!!
+                writer.append(element.getLogID()+","+element.getCapacity()+"\n");
+            }
+            writer.append("Pipes\n");
+            //for()
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public MapElement getElement(String id){
+        for(MapElement mapElement : mapElements){
+            if(mapElement.getLogID().equals(id)){
+                return mapElement;
+            }
+        }
+        return null;
     }
 
     public MapElement getElement(int number){

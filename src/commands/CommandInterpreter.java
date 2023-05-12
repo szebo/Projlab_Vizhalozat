@@ -20,7 +20,7 @@ import java.util.Scanner;
 
 public class CommandInterpreter {
 
-    public void runCommand(String cmd){
+    public static void runCommand(String cmd){
         String[] splits = cmd.split(" ");
         switch (splits[0]) {
             case "move":
@@ -91,7 +91,7 @@ public class CommandInterpreter {
                 break;
 
             case "load_map":
-                loadMap(splits[1]);
+                Map.getInstance().loadMap(splits[1]);
                 break;
 
             case "create_saboteur":
@@ -117,7 +117,7 @@ public class CommandInterpreter {
                 break;
 
             case "create":
-                create(splits[1]);
+                Map.getInstance().create(splits[1]);
                 break;
 
             case "attach":
@@ -125,7 +125,7 @@ public class CommandInterpreter {
                 break;
 
             case "save_map":
-                saveMap(splits[1]);
+                Map.getInstance().saveMap(splits[1]);
                 break;
 
             case "force_start":
@@ -141,6 +141,7 @@ public class CommandInterpreter {
                 break;
 
             case "runtest":
+                //TODO parameres feldolgozas
                 Tester.runTest(splits[1]);
                 break;
 
@@ -149,17 +150,18 @@ public class CommandInterpreter {
         }
     }
 
-    private void move(){
+    private static void move(){
         MapElement element = Main.currentPlayer.getMapElement(); //holymoly...
         for(MapElement neighbour : element.getNeighbours()){
             System.out.println(neighbour.getLogID());
         }
         Scanner scanner = new Scanner(System.in);
         String target = scanner.nextLine();
+        scanner.close();
         Main.currentPlayer.step(Main.map.getElement(target));
     }
 
-    private void configure(){
+    private static void configure(){
         MapElement playerMapElement = Main.currentPlayer.getMapElement();
         for(MapElement neighbour : playerMapElement.getNeighbours()){
             System.out.println(neighbour.getLogID());
@@ -167,89 +169,7 @@ public class CommandInterpreter {
         Scanner scanner = new Scanner(System.in);
         String input = scanner.nextLine();
         String output = scanner.nextLine();
+        scanner.close();
         Main.currentPlayer.configurePump((Pipe)Main.map.getElement(input), (Pipe)Main.map.getElement(output));
-    }
-
-    private void create(String type){ //ennek is a mapben kéne lennie
-        switch (type){
-            case "Pump":
-                Pump pump = new Pump();
-                Main.map.storeNewMapElement(pump);
-                Main.map.addActive(pump);
-                break;
-            case "Cistern":
-                Cistern cistern = new Cistern();
-                Main.map.storeNewMapElement(cistern);
-                Main.map.addActive(cistern);
-                break;
-            case "Spring":
-                Spring spring = new Spring();
-                Main.map.storeNewMapElement(spring);
-                Main.map.addActive(spring);
-                break;
-            case "Pipe":
-                Pipe pipe = new Pipe();
-                Main.map.storeNewMapElement(pipe);
-                Main.map.addUpdatable(pipe);
-                break;
-        }
-    }
-
-    private void loadMap(String id){ //ennek is a mapben kéne lennie
-        try {
-            BufferedReader reader = new BufferedReader(new FileReader("maps/"+id+".txt"));
-            List<String> lines = reader.lines().toList();
-            boolean readingElements = true;
-            for(String line : lines){
-                if(line.equals("Pipes")) readingElements = false;
-                String[] splits = line.split(",");
-                if(readingElements) {
-                    ActiveElement element = null;
-                    switch (splits[0]) {
-                        case "Cistern":
-                            element = new Cistern();
-                            break;
-
-                        case "Spring":
-                            element = new Spring();
-                            break;
-
-                        case "Pump":
-                            element = new Pump(Integer.parseInt(splits[1]));
-                            break;
-                    }
-                    Main.map.storeNewMapElement(element);
-                    Main.map.addActive(element);
-                }
-                else{
-                    Pipe pipe = new Pipe(Integer.parseInt(splits[2]));
-                    Main.map.storeNewMapElement(pipe);
-                    Main.map.getElement(Integer.parseInt(splits[0])).attachPipe(pipe);
-                    Main.map.getElement(Integer.parseInt(splits[1])).attachPipe(pipe);
-                    Main.map.addUpdatable(pipe);
-                }
-            }
-            reader.close();
-        } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-    private void saveMap(String id){ //ennek az egésznek a mapben kéne lennie
-        try {
-            BufferedWriter writer = new BufferedWriter(new FileWriter("maps/"+id+".txt"));
-            writer.append("ActiveElements\n");
-            for(ActiveElement element : Map.getInstance().getElement()){ //használj egy while(true)-t meg egy counter és a már meglévő getElementet
-                //hogy elért a MapelElementeket. Ha csak az active elementeken akarsz végig menni akkor csinalj arra is egy gettert.
-                //TODO FIX!!
-                writer.append(element.getLogID()+","+element.getCapacity()+"\n");
-            }
-            writer.append("Connectins\n");
-            //for()
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
     }
 }

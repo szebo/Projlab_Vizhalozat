@@ -1,5 +1,6 @@
 package main;
 
+import commands.CommandInterpreter;
 import main.map.Map;
 import main.players.Player;
 import tests.ProtoTests.Tester;
@@ -10,6 +11,11 @@ public class Main {
 
     public static Map map = null;
     public static void main(String[] args) {
+        boolean exit = false;
+        while(!exit) {
+            String cmd = System.console().readLine();
+            CommandInterpreter.runCommand(cmd);
+        }
 
         //Tester.runTest();
         TestController.runTests();
