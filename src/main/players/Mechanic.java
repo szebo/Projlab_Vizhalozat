@@ -1,5 +1,6 @@
 package main.players;
 
+import main.logging.Logger;
 import main.map.Pipe;
 import main.map.Pump;
 import java.util.*;
@@ -26,8 +27,11 @@ public class Mechanic extends Player {
      */
     public void pickUpPipe(Pipe pipe){
         Objects.requireNonNull(pipe, "Null értékű paramétert kapott a pickUpPipe!");
-        if(pipe.isOccupied() && pipeInHand != null)
+        if(pipe.isOccupied() && pipeInHand != null){
+            Logger.logToConsole("log.txt", getLogID()+": "+pipe.getLogID()+" could not be picked up");
             return;
+        }
+        Logger.logToConsole("log.txt", getLogID()+": "+pipe.getLogID()+" picked up");
         mapElement.detachPipe(pipe);
         this.pipeInHand = pipe;
     }
@@ -38,7 +42,10 @@ public class Mechanic extends Player {
      * sikerült lerakni a csövet és a mechanic kezében lévő pipe null, lesz.
      */
     public void placePipe(){
+        String pipeString = pipeInHand.getLogID();
         pipeInHand = (mapElement.attachPipe(pipeInHand)) ? null : pipeInHand;
+        if(pipeInHand == null) Logger.logToConsole("log.txt", getLogID()+": "+pipeString+" placed");
+        else Logger.logToConsole("log.txt", getLogID()+": "+pipeString+" could not be placed");
     }
 
     /**
@@ -47,6 +54,7 @@ public class Mechanic extends Player {
      */
     public void pickUpPump(){
        mapElement.givePump(this);
+       Logger.logToConsole("log.txt", getLogID()+": "+pumpsInInventory.get(0).getLogID()+" picked up");
     }
 
     /**
@@ -57,6 +65,7 @@ public class Mechanic extends Player {
     public void placePump(){
         mapElement.cut(pumpsInInventory.get(0));
         this.setMapElement(pumpsInInventory.get(0));
+        Logger.logToConsole("log.txt", getLogID()+": "+pumpsInInventory.get(0).getLogID()+" placed");
         pumpsInInventory.remove(0);
     }
 

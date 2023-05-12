@@ -1,5 +1,6 @@
 package main.map;
 
+import main.logging.Logger;
 import main.players.Mechanic;
 import main.players.Player;
 
@@ -61,7 +62,7 @@ public abstract class MapElement {
      */
     public boolean acceptPlayer(Player player){
         addPlayer(player);
-        System.out.println("Játékos ráléphet az elemre!");
+        Logger.logToConsole("log.txt", getLogID()+": "+player.getLogID()+" moved");
         return true;
     }
 
@@ -195,6 +196,8 @@ public abstract class MapElement {
         return this.ID;
     }
 
+    public int getCapacity(){ return capacity; }
+
     /**
      * A leszármazott osztálytól függően visszaad egy Stringet az objektum összes elérhető információjáról.
      * @return
@@ -213,4 +216,6 @@ public abstract class MapElement {
      * @return True, ha az unbreakableFor nagyobb mint 0.
      */
     public boolean checkUnbreakable(){return unbreakableFor > 0;}
+
+    public void newPipe(){}
 }

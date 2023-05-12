@@ -1,6 +1,7 @@
 package main.map;
 
 import main.interfaces.Updatable;
+import main.logging.Logger;
 import main.players.Player;
 import main.players.SaboteurTeam;
 
@@ -57,9 +58,10 @@ public class Pipe extends MapElement implements Updatable {
      * **/
     @Override
     public void breakElement(){
-        if(!this.isBroken()) {
+        if(checkUnbreakable()) Logger.logToConsole("log.txt", getLogID()+": can't break");
+        else if(!this.isBroken()) {
             setBroken(true);
-            System.out.println("Elem elrontva!");
+            Logger.logToConsole("log.txt", getLogID()+": broken");
         }
     }
 
@@ -111,6 +113,7 @@ public class Pipe extends MapElement implements Updatable {
     public boolean acceptPlayer(Player player){
         boolean accepted = false;
         if(!this.isOccupied()) {
+            Logger.logToConsole("log.txt", getLogID()+": "+player.getLogID()+" moved");
             if(checkSlippery()){
                 player.step(getRandomEnd());
             }
@@ -119,6 +122,9 @@ public class Pipe extends MapElement implements Updatable {
                 addPlayer(player);
                 accepted = true;
             }
+        }
+        else{
+            Logger.logToConsole("log.txt", getLogID()+": "+player.getLogID()+" could not move");
         }
         return accepted;
     }
@@ -148,7 +154,13 @@ public class Pipe extends MapElement implements Updatable {
      */
     @Override
     public void makeSticky(int value){
-        this.stickyFor = value;
+        if(stickyFor <= 0) {
+            this.stickyFor = value;
+            Logger.logToConsole("log.txt", getLogID() + ": made sticky for " + value + " turns");
+        }
+        else{
+            Logger.logToConsole("log.txt", getLogID()+": can't become sticky");
+        }
     }
 
     /**
@@ -164,7 +176,13 @@ public class Pipe extends MapElement implements Updatable {
      */
     @Override
     public void makeSlippery(int value){
-        this.slipperyFor = value;
+        if(slipperyFor <= 0) {
+            this.slipperyFor = value;
+            Logger.logToConsole("log.txt", getLogID() + ": made slippery for " + value + " turns");
+        }
+        else{
+            Logger.logToConsole("log.txt", getLogID()+": can't become slippery");
+        }
     }
 
     /**

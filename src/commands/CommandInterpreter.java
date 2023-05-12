@@ -15,6 +15,7 @@ import tests.ProtoTests.Tester;
 
 import java.io.*;
 import java.util.List;
+import java.util.Scanner;
 
 
 public class CommandInterpreter {
@@ -23,7 +24,7 @@ public class CommandInterpreter {
         String[] splits = cmd.split(" ");
         switch (splits[0]) {
             case "move":
-                Main.currentPlayer.step(Main.map.getElement(splits[1]));
+                move();
                 break;
 
             case "place":
@@ -36,9 +37,9 @@ public class CommandInterpreter {
 
             case "pickup":
                 if (splits[1].equals("pipe")) {
-                    Main.currentPlayer.pickupPipe(Main.map.getElement(splits[2]));
+                    Main.currentPlayer.pickUpPipe(Main.map.getElement(splits[2]));
                 } else if (splits[1].equals("pump")) {
-                    Main.currentPlayer.pickupPump();
+                    Main.currentPlayer.pickUpPump();
                 }
                 break;
 
@@ -51,7 +52,7 @@ public class CommandInterpreter {
                 break;
 
             case "configure":
-                Main.currentPlayer.configurePump();
+                configure();
                 break;
 
             case "make_slippery":
@@ -63,6 +64,7 @@ public class CommandInterpreter {
                 break;
 
             case "end_turn":
+                Logger.logToConsole("log.txt", Main.currentPlayer.getLogID()+": turn ended");
                 break;
 
             case "debug_break":
@@ -115,28 +117,7 @@ public class CommandInterpreter {
                 break;
 
             case "create":
-                switch (splits[1]){
-                    case "Pump":
-                        Pump pump = new Pump();
-                        Main.map.storeNewMapElement(pump);
-                        Main.map.addActive(pump);
-                        break;
-                    case "Cistern":
-                        Cistern cistern = new Cistern();
-                        Main.map.storeNewMapElement(cistern);
-                        Main.map.addActive(cistern);
-                        break;
-                    case "Spring":
-                        Spring spring = new Spring();
-                        Main.map.storeNewMapElement(spring);
-                        Main.map.addActive(spring);
-                        break;
-                    case "Pipe":
-                        Pipe pipe = new Pipe();
-                        Main.map.storeNewMapElement(pipe);
-                        Main.map.addUpdatable(pipe);
-                        break;
-                }
+                create(splits[1]);
                 break;
 
             case "attach":
@@ -164,6 +145,52 @@ public class CommandInterpreter {
                 break;
 
             default:
+                break;
+        }
+    }
+
+    private void move(){
+        MapElement element = Main.currentPlayer.getMapElement();
+        for(MapElement neighbour : element.getNeighbours()){
+            System.out.println(neighbour.getLogID());
+        }
+        Scanner scanner = new Scanner(System.in);
+        String target = scanner.nextLine();
+        Main.currentPlayer.step(Main.map.getElement(target));
+    }
+
+    private void configure(){
+        MapElement playerMapElement = Main.currentPlayer.getMapElement();
+        for(MapElement neighbour : playerMapElement.getNeighbours()){
+            System.out.println(neighbour.getLogID());
+        }
+        Scanner scanner = new Scanner(System.in);
+        String input = scanner.nextLine();
+        String output = scanner.nextLine();
+        Main.currentPlayer.configurePump(Main.map.getElement(input), Main.map.getElement(output));
+    }
+
+    private void create(String type){
+        switch (type){
+            case "Pump":
+                Pump pump = new Pump();
+                Main.map.storeNewMapElement(pump);
+                Main.map.addActive(pump);
+                break;
+            case "Cistern":
+                Cistern cistern = new Cistern();
+                Main.map.storeNewMapElement(cistern);
+                Main.map.addActive(cistern);
+                break;
+            case "Spring":
+                Spring spring = new Spring();
+                Main.map.storeNewMapElement(spring);
+                Main.map.addActive(spring);
+                break;
+            case "Pipe":
+                Pipe pipe = new Pipe();
+                Main.map.storeNewMapElement(pipe);
+                Main.map.addUpdatable(pipe);
                 break;
         }
     }

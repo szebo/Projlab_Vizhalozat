@@ -1,5 +1,6 @@
 package main.players;
 
+import main.logging.Logger;
 import main.map.MapElement;
 import main.map.Pipe;
 
@@ -42,9 +43,21 @@ public abstract class Player {
 
     /**
      * A játékos ebben a függvényben állítja be az új ki- és bemeneti csöveket
+     * @param pipe1 A bemeneti cső referenciája
+     * @param pipe2 A kimeneti cső referenciája
      * **/
     public void configurePump(Pipe pipe1, Pipe pipe2) {
-
+        if(pipe1 == null){
+            Logger.logToConsole("log.txt", mapElement.getLogID()+": no such pipe connected: "+pipe1.getLogID());
+            return;
+        }
+        if(pipe2 == null){
+            Logger.logToConsole("log.txt", mapElement.getLogID()+": no such pipe connected: "+pipe2.getLogID());
+            return;
+        }
+        mapElement.setInput(pipe1);
+        mapElement.setOutput(pipe2);
+        Logger.logToConsole("log.txt", mapElement.getLogID()+": input is: "+pipe1.getLogID()+", output is: "+pipe2.getLogID());
     }
 
     /**
@@ -92,14 +105,12 @@ public abstract class Player {
         return false;
     }
 
-    public void repair() {
-    }
-
-    public void useSlipperyGoo() {
-    }
-
-    public void placePipe() {
-    }
+    public void repair() {}
+    public void useSlipperyGoo() {}
+    public void placePipe() {}
+    public void placePump(){}
+    public void pickUpPipe(Pipe pipe){}
+    public void pickUpPump(){}
 
     /**
      * Leszármazott osztálytól függően visszaad egy stringet az osztály nevével és az osbejtum azonosítójával
