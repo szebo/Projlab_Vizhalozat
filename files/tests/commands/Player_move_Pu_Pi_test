@@ -1,0 +1,12 @@
+create Pump1
+create Pipe1
+create Pipe2
+create_mechanic
+create_mechanic
+attach Pipe1 Pump1
+attach Pipe2 Pump1
+setplayerposition Mechanic1 Pump1
+setplayerposition Mechanic2 Pipe2
+move Pipe1
+move Pump1
+move Pipe2

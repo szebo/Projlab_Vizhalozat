@@ -91,7 +91,7 @@ public class Pipe extends MapElement implements Updatable {
         if(elements.size() > 1) end2 =  elements.get(1);
         System.out.println("Eredeti cső vég elemei elmentve.");
 
-        end1.detachPipe(this);      //szekvencián a cuton kívül vannak ezek todo
+        end1.detachPipe(this);
         end1.attachPipe(uj_pipe_1);
         if(end2 != null) {
             end2.detachPipe(this);
@@ -113,7 +113,6 @@ public class Pipe extends MapElement implements Updatable {
         if(!this.isOccupied()) {
             if(checkSlippery()){
                 player.step(getRandomEnd());
-                accepted = false;
             }
             else if(checkSticky()){
                 player.setStuck(stickyFor);
@@ -145,18 +144,11 @@ public class Pipe extends MapElement implements Updatable {
 
     /**
      * Beállítja a ragacsosság értékét.
-     * @param stickyFor mennyi ideig ragacsos a cső
-     */
-    public void setStickyFor(int stickyFor) {
-        this.stickyFor = stickyFor;
-    }
-
-    /**
-     * Ragacsossá teszi a csövet.
+     * @param value mennyi ideig ragacsos a cső
      */
     @Override
     public void makeSticky(int value){
-        setStickyFor(value);
+        this.stickyFor = value;
     }
 
     /**
@@ -167,19 +159,12 @@ public class Pipe extends MapElement implements Updatable {
     public boolean checkSticky(){return stickyFor > 0;}
 
     /**
-     * Beállítja a csúszósság értékét.
-     * @param slipperyFor mennyi ideig csúszós a cső
-     */
-    public void setSlipperyFor(int slipperyFor) {
-        this.slipperyFor = slipperyFor;
-    }
-
-    /**
      * Csúszóssá teszi a csövet.
+     * @param value mennyi ideig csúszós a cső
      */
     @Override
     public void makeSlippery(int value){
-        setSlipperyFor(value);
+        this.slipperyFor = value;
     }
 
     /**
@@ -190,6 +175,10 @@ public class Pipe extends MapElement implements Updatable {
     public boolean checkSlippery() {
         return slipperyFor > 0;
     }
+
+
+
+
 
     /**
      * A csőnek véletlenszerűen sorsolja ki az egyik végét, és visszaadja azt.
@@ -212,7 +201,9 @@ public class Pipe extends MapElement implements Updatable {
     }
 
     public void update(){
-
+        if(this.slipperyFor!=0) this.slipperyFor -= 1;
+        if(this.stickyFor!=0) this.stickyFor -= 1;
+        if(this.unbreakableFor!=0) this.unbreakableFor -=1;
     }
 
     @Override
@@ -226,11 +217,14 @@ public class Pipe extends MapElement implements Updatable {
         }
     }
 
-    public List<MapElement> getNeighbours(){
-        List<MapElement> res = new ArrayList<>();
-        for(ActiveElement e : elements){
-            res.add(e);
-        }
-        return res;
+    @Override
+    public void heal(){
+        setBroken(false);
+        makeUnbreakable();
+    }
+
+    @Override
+    public MapElement[] getNeighbours(){
+        return elements.toArray(new MapElement[2]);
     }
 }

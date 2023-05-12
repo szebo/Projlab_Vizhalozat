@@ -32,8 +32,8 @@ public class TestController {
 
         //Akció tesztek
         PlayerBreaksTest.SaboteurBreaksPipe();
-        MechanicRepairTest.MechanicRepairPump();
-        MechanicRepairTest.MechanicRepairPipe();
+        MechanicRepairsTest.MechanicRepairPump();
+        MechanicRepairsTest.MechanicRepairPipe();
 
         //Víz mozgatás tesztek.
         WaterMoveTest.waterBrokenPipeMoveTest();

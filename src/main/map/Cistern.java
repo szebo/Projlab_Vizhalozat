@@ -12,7 +12,7 @@ import java.util.List;
 public class Cistern extends ActiveElement {
 
     private static int nextID;
-    private List<Pump> pumpsInReserve;
+    private final List<Pump> pumpsInReserve;
 
     /**
      * Cistern alapvető konstruktora
@@ -68,4 +68,6 @@ public class Cistern extends ActiveElement {
     public String getLogID(){
         return "Cistern"+this.ID;
     }
+
+
 }

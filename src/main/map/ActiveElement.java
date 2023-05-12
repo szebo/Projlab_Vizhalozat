@@ -37,8 +37,10 @@ public abstract class ActiveElement extends MapElement implements IControllable 
             this.pipes.remove(pipe);
             pipe.removeWater(pipe.water);
             pipe.removeElement(this);
+            System.out.println("Pumpáról cső lecsatolva.");
         }
-        System.out.println("Pumpáról cső lecsatolva.");
+        else
+            System.out.println("Foglalt a cső!");
     }
     /**
      * Felcsatolja “pipe” csövet az aktív elemre.
@@ -51,6 +53,7 @@ public abstract class ActiveElement extends MapElement implements IControllable 
         if(hasPlace) {
             pipes.add(pipe);
             pipe.addElement(this);
+            //TODO Itt kerül majd ki a cső a player inventoryjából
             System.out.println("Pumpához cső hozzáadva");
         }
         return hasPlace;
@@ -85,11 +88,8 @@ public abstract class ActiveElement extends MapElement implements IControllable 
 
     public abstract String getLogID();
 
-    public List<MapElement> getNeighbours(){
-        List<MapElement> res = new ArrayList<>();
-        for(Pipe p : pipes){
-            res.add(p);
-        }
-        return res;
+    @Override
+    public MapElement[] getNeighbours() {
+        return pipes.toArray(new MapElement[pipes.size()]);
     }
 }

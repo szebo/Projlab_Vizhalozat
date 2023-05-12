@@ -1,5 +1,6 @@
 package main.map;
 
+import main.interfaces.IControllable;
 import main.interfaces.Updatable;
 
 import java.util.ArrayList;
@@ -8,12 +9,13 @@ import java.util.List;
 public class Map {
 
     private List<MapElement> mapElements;
-    private List<ActiveElement> activeElements;
+    private List<IControllable> controllableMapElements;
     private List<Updatable> updatableMapElements;
 
     public Map(){
         mapElements = new ArrayList<>();
-        activeElements = new ArrayList<>();
+        controllableMapElements = new ArrayList<>();
+        updatableMapElements = new ArrayList<>();
     }
 
     /**
@@ -22,7 +24,7 @@ public class Map {
      */
     public void waterFlow(int iterations){
         for(int i = 0; i < iterations; i++){
-            for(ActiveElement e : activeElements){
+            for(IControllable e : controllableMapElements){
                 e.pumpWater();
             }
         }
@@ -34,9 +36,13 @@ public class Map {
 
     //--------------------------------------------------------------
     //B Terv
-    public void addActive(ActiveElement element) { activeElements.add(element); }
+    public void addActive(ActiveElement element) { controllableMapElements.add(element); }
 
-    public void removeActive(ActiveElement element) { activeElements.remove(element); }
+    public void removeActive(ActiveElement element) { controllableMapElements.remove(element); }
+
+    //--------------------------------------------------------------
+
+    public void addUpdatable(Updatable element) { updatableMapElements.add(element); }
 
     public MapElement getElement(String id){
         for(MapElement mapElement : mapElements){
@@ -47,4 +53,13 @@ public class Map {
         return null;
     }
 
+    public void updateMap(){
+        //TODO Minden elemre iterálva meghívjuk az update-ot. Ezt hívja meg a controller.
+    }
+
+    public MapElement getElement(int number){
+        if(number < mapElements.size())
+            return mapElements.get(number);
+        else return null;
+    }
 }

@@ -1,0 +1,13 @@
+create Pump1
+create Pipe1
+create_mechanic
+attach Pipe1 Pump1
+debug_break Pump1
+debug_break Pipe1
+setplayerposition Mechanic1 Pump1
+repair
+move Pipe1
+repair
+repair
+move Pump1
+repair
