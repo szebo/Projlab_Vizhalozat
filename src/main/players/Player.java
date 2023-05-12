@@ -49,14 +49,6 @@ public abstract class Player {
      * @param pipe2 A kimeneti cső referenciája
      * **/
     public void configurePump(Pipe pipe1, Pipe pipe2) {
-        if(pipe1 == null){
-            Logger.logToConsole("log.txt", mapElement.getLogID()+": no such pipe connected: "+pipe1.getLogID());
-            return;
-        }
-        if(pipe2 == null){
-            Logger.logToConsole("log.txt", mapElement.getLogID()+": no such pipe connected: "+pipe2.getLogID());
-            return;
-        }
         Pump p = (Pump)mapElement;
         p.setInput(pipe1); //itt castolva javitottam vagy csináljátok meg rendesen a származtatást meg a tárolást vagy ez van
         p.setInput(pipe2);
