@@ -198,6 +198,7 @@ public class Pipe extends MapElement implements Updatable {
 
 
 
+
     /**
      * A csőnek véletlenszerűen sorsolja ki az egyik végét, és visszaadja azt.
      * @return ActiveElement: Véletlenszerűen visszakapott vége a csőnek.

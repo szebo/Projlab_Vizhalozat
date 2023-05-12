@@ -155,10 +155,20 @@ public class CommandInterpreter {
         for(MapElement neighbour : element.getNeighbours()){
             System.out.println(neighbour.getLogID());
         }
+
+        boolean validInput = false;
         Scanner scanner = new Scanner(System.in);
         String target = scanner.nextLine();
         scanner.close();
-        Main.currentPlayer.step(Map.getInstance().getElement(target));
+
+        for(MapElement neighbour : element.getNeighbours()){
+            if(target.equals(neighbour)) validInput = true;
+        }
+
+        if(validInput)
+            Main.currentPlayer.step(Map.getInstance().getElement(target));
+        else
+            Logger.logToConsole("log.txt", "Nem létező szomszéd lett megadva.");
     }
 
     private static void configure(){
@@ -166,11 +176,27 @@ public class CommandInterpreter {
         for(MapElement neighbour : playerMapElement.getNeighbours()){
             System.out.println(neighbour.getLogID());
         }
+
+        boolean validInput = false;
+        boolean validOutput = false;
         Scanner scanner = new Scanner(System.in);
         String input = scanner.nextLine();
         String output = scanner.nextLine();
+
+        for(MapElement neighbour : playerMapElement.getNeighbours()){
+            if(!input.equals(output)){
+                if(input.equals(neighbour)) validInput = true;
+
+                else if(output.equals(neighbour)) validOutput = true;
+            }
+            else Logger.logToConsole("log.txt", "Az input és az output ugyan az lett!");
+        }
+
         scanner.close();
-        Main.currentPlayer.configurePump((Pipe)Map.getInstance().getElement(input), (Pipe)Map.getInstance().getElement(output));
+        if(validOutput && validInput) Main.currentPlayer.configurePump((Pipe)Main.map.getElement(input), (Pipe)Main.map.getElement(output));
+        else if(!validOutput) Logger.logToConsole("log.txt", "Az outputnak nem létező cső lett megadva.");
+        else if(!validInput) Logger.logToConsole("log.txt", "Az inputnak nem létező cső lett megadva.");
+        else Logger.logToConsole("log.txt", "Az inputnak és outputnak is nem létező cső lett megadva.");
     }
 
     private static void pickUp(String cmd){

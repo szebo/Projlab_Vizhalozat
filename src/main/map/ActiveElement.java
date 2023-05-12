@@ -16,6 +16,7 @@ public abstract class ActiveElement extends MapElement implements IControllable 
     **/
     protected List<Pipe> pipes;
 
+
     /**
      * Beállítja az isBroken értékét a paraméterül kapottra.
      * @param value A beállítandó bináris érték
@@ -99,4 +100,6 @@ public abstract class ActiveElement extends MapElement implements IControllable 
     public MapElement[] getNeighbours() {
         return pipes.toArray(new MapElement[pipes.size()]);
     }
+
+    //TODO Control függvény megvalósítása
 }

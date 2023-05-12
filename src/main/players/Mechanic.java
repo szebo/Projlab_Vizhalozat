@@ -1,5 +1,6 @@
 package main.players;
 
+import commands.CommandInterpreter;
 import main.logging.Logger;
 import main.map.Pipe;
 import main.map.Pump;
@@ -127,30 +128,33 @@ public class Mechanic extends Player {
             switch (playerInput) {
                 case "break":
                     numberOfActions--;
+                    breakElement();
                     break;
                 case "move":
                     numberOfActions--;
+                    CommandInterpreter.runCommand("move");
                     break;
                 case "repair":
                     numberOfActions--;
+                    repair();
                     break;
                 case "make_sticky":
                     numberOfActions--;
+                    useStickyGoo();
                     break;
                 case "pickup pipe":
-                    numberOfActions--;
-                    break;
-                case "place pipe":
-                    numberOfActions--;
-                    break;
                 case "pickup pump":
                     numberOfActions--;
+                    CommandInterpreter.runCommand("pickup");
                     break;
+                case "place pipe":
                 case "place pump":
                     numberOfActions--;
+                    CommandInterpreter.runCommand("place");
                     break;
                 case "configure":
                     numberOfActions--;
+                    CommandInterpreter.runCommand("configure");
                     break;
                 default:
                     System.out.println("thats not a valid command");

@@ -1,6 +1,8 @@
 package main.players;
 
 import commands.CommandInterpreter;
+import main.Main;
+import main.map.MapElement;
 
 /**
  * Olyan játékos, amely feladata, hogy a csöveken és pumpákon haladva akadályozza a víz folyását.
@@ -45,18 +47,22 @@ public class Saboteur extends Player {
             switch (playerInput) {
                 case "break":
                     numberOfActions--;
+                    breakElement();
                     break;
                 case "move":
                     numberOfActions--;
+                    CommandInterpreter.runCommand("move");
                     break;
                 case "make_slippery":
                     numberOfActions--;
+                    useSlipperyGoo();
                     break;
                 case "make_sticky":
                     numberOfActions--;
+                    useStickyGoo();
                     break;
                 default:
-                    System.out.println("thats not a valid command");
+                    System.out.println("Thats not a valid command");
                     break;
             }
         }
