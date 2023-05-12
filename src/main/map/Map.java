@@ -3,6 +3,7 @@ package main.map;
 import main.Main;
 import main.interfaces.IControllable;
 import main.interfaces.Updatable;
+import main.logging.Logger;
 import main.players.SaboteurTeam;
 
 import java.io.*;
@@ -75,28 +76,32 @@ public class Map implements Updatable{
                 Pump pump = new Pump();
                 Main.map.storeNewMapElement(pump);
                 Main.map.addActive(pump);
+                Logger.logToConsole("log.txt", "[Map]: "+pump.getLogID()+" has been created");
                 break;
             case "Cistern":
                 Cistern cistern = new Cistern();
                 Main.map.storeNewMapElement(cistern);
                 Main.map.addActive(cistern);
+                Logger.logToConsole("log.txt", "[Map]: "+cistern.getLogID()+" has been created");
                 break;
             case "Spring":
                 Spring spring = new Spring();
                 Main.map.storeNewMapElement(spring);
                 Main.map.addActive(spring);
+                Logger.logToConsole("log.txt", "[Map]: "+spring.getLogID()+" has been created");
                 break;
             case "Pipe":
                 Pipe pipe = new Pipe();
                 Main.map.storeNewMapElement(pipe);
                 Main.map.addUpdatable(pipe);
+                Logger.logToConsole("log.txt", "[Map]: "+pipe.getLogID()+" has been created");
                 break;
         }
     }
 
     public void loadMap(String id){
         try {
-            BufferedReader reader = new BufferedReader(new FileReader("maps/"+id+".txt"));
+            BufferedReader reader = new BufferedReader(new FileReader("/files/maps/"+id+".txt"));
             List<String> lines = reader.lines().toList();
             boolean readingElements = true;
             for(String line : lines){
@@ -138,7 +143,7 @@ public class Map implements Updatable{
 
     public void saveMap(String id){
         try {
-            BufferedWriter writer = new BufferedWriter(new FileWriter("maps/"+id+".txt"));
+            BufferedWriter writer = new BufferedWriter(new FileWriter("/files/maps/"+id+".txt"));
             writer.append("ActiveElements\n");
             for(ActiveElement element : Map.getInstance().getElement()){ //használj egy while(true)-t meg egy counter és a már meglévő getElementet
                 //hogy elért a MapelElementeket. Ha csak az active elementeken akarsz végig menni akkor csinalj arra is egy gettert.
@@ -147,6 +152,8 @@ public class Map implements Updatable{
             }
             writer.append("Pipes\n");
             //for()
+
+            writer.close();
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

@@ -74,7 +74,12 @@ public class Mechanic extends Player {
      */
     @Override
     public void repair(){
-        if(mapElement.isBroken()) mapElement.heal();
+        if(mapElement.isBroken()) {
+            mapElement.heal();
+            Logger.logToConsole("log.txt", mapElement.getLogID()+": repaired");
+        }
+        else
+            Logger.logToConsole("log.txt", mapElement.getLogID()+": repair not needed");
     }
 
     /**

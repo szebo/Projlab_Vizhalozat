@@ -1,6 +1,7 @@
 package main.map;
 
 import main.interfaces.IControllable;
+import main.logging.Logger;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -54,8 +55,10 @@ public abstract class ActiveElement extends MapElement implements IControllable 
             pipes.add(pipe);
             pipe.addElement(this);
             //TODO Itt kerül majd ki a cső a player inventoryjából
-            System.out.println("Pumpához cső hozzáadva");
+            Logger.logToConsole("log.txt", getLogID()+": "+pipe.getLogID()+" has been attached");
         }
+        else
+            Logger.logToConsole("log.txt", getLogID()+": "+pipe.getLogID()+" could not be attached");
         return hasPlace;
     }
 

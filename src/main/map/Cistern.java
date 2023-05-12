@@ -1,5 +1,6 @@
 package main.map;
 
+import main.logging.Logger;
 import main.players.Mechanic;
 import main.players.MechanicTeam;
 import main.players.Player;
@@ -53,6 +54,7 @@ public class Cistern extends ActiveElement {
     public void newPipe(){
         Pipe newpipe = new Pipe();
         this.attachPipe(newpipe);
+        Logger.logToConsole("log.txt", newpipe.getLogID()+": created");
     }
 
     /**

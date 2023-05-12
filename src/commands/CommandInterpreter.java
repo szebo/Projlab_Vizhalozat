@@ -36,11 +36,7 @@ public class CommandInterpreter {
                 break;
 
             case "pickup":
-                if (splits[1].equals("pipe")) {
-                    Main.currentPlayer.pickUpPipe((Pipe)Main.map.getElement(splits[2]));
-                } else if (splits[1].equals("pump")) {
-                    Main.currentPlayer.pickUpPump();
-                }
+                pickUp(splits[1]);
                 break;
 
             case "break":
@@ -68,15 +64,15 @@ public class CommandInterpreter {
                 break;
 
             case "debug_break":
-                Main.map.getElement(splits[1]).breakElement();
+                Map.getInstance().getElement(splits[1]).breakElement();
                 break;
 
             case "debug_repair":
-                Main.map.getElement(splits[1]).heal();
+                Map.getInstance().getElement(splits[1]).heal();
                 break;
 
             case "flow":
-                Main.map.waterFlow(Integer.parseInt(splits[1]));
+                Map.getInstance().waterFlow(Integer.parseInt(splits[1]));
                 break;
 
             case "exit":
@@ -95,11 +91,15 @@ public class CommandInterpreter {
                 break;
 
             case "create_saboteur":
-                SaboteurTeam.getInstance().addPlayer(new Saboteur());
+                Saboteur newSaboteur = new Saboteur();
+                SaboteurTeam.getInstance().addPlayer(newSaboteur);
+                Logger.logToConsole("log.txt", newSaboteur.getLogID()+": created");
                 break;
 
             case "create_mechanic":
-                MechanicTeam.getInstance().addPlayer(new Mechanic());
+                Mechanic newMechanic = new Mechanic();
+                MechanicTeam.getInstance().addPlayer(newMechanic);
+                Logger.logToConsole("log.txt", newMechanic.getLogID()+": created");
                 break;
 
             case "setplayerposition":
@@ -109,11 +109,11 @@ public class CommandInterpreter {
                 break;
 
             case "create_pipe":
-                Main.map.getElement(splits[1]).newPipe();
+                Map.getInstance().getElement(splits[1]).newPipe();
                 break;
 
             case "debug_info":
-                Logger.logToConsole("console.txt", Main.map.getElement(splits[1]).printInfo());
+                Logger.logToConsole("console.txt", Map.getInstance().getElement(splits[1]).printInfo());
                 break;
 
             case "create":
@@ -121,7 +121,7 @@ public class CommandInterpreter {
                 break;
 
             case "attach":
-                Main.map.getElement(splits[2]).attachPipe((Pipe)Main.map.getElement(splits[1]));
+                Map.getInstance().getElement(splits[2]).attachPipe((Pipe)Map.getInstance().getElement(splits[1]));
                 break;
 
             case "save_map":
@@ -133,11 +133,11 @@ public class CommandInterpreter {
                 break;
 
             case "debug_slippery":
-                Main.map.getElement(splits[1]).makeSlippery(3);
+                Map.getInstance().getElement(splits[1]).makeSlippery(3);
                 break;
 
             case "debug_sticky":
-                Main.map.getElement(splits[1]).makeSticky(3);
+                Map.getInstance().getElement(splits[1]).makeSticky(3);
                 break;
 
             case "runtest":
@@ -158,7 +158,7 @@ public class CommandInterpreter {
         Scanner scanner = new Scanner(System.in);
         String target = scanner.nextLine();
         scanner.close();
-        Main.currentPlayer.step(Main.map.getElement(target));
+        Main.currentPlayer.step(Map.getInstance().getElement(target));
     }
 
     private static void configure(){
@@ -170,6 +170,27 @@ public class CommandInterpreter {
         String input = scanner.nextLine();
         String output = scanner.nextLine();
         scanner.close();
-        Main.currentPlayer.configurePump((Pipe)Main.map.getElement(input), (Pipe)Main.map.getElement(output));
+        Main.currentPlayer.configurePump((Pipe)Map.getInstance().getElement(input), (Pipe)Map.getInstance().getElement(output));
+    }
+
+    private static void pickUp(String cmd){
+        if (cmd.equals("pipe")) {
+            MapElement playerMapElement = Main.currentPlayer.getMapElement();
+            for(MapElement neighbour : playerMapElement.getNeighbours()){
+                System.out.println(neighbour.getLogID());
+            }
+            String target = System.console().readLine();
+            boolean valid = false;
+            for(MapElement neighbour : playerMapElement.getNeighbours()){
+                if(neighbour.getLogID().equals(target)) valid = true;
+            }
+
+            if(valid)
+                Main.currentPlayer.pickUpPipe((Pipe)Map.getInstance().getElement(target));
+            else
+                Logger.logToConsole("log.txt", "Invalid target!");
+        } else if (cmd.equals("pump")) {
+            Main.currentPlayer.pickUpPump();
+        }
     }
 }

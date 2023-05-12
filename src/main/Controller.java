@@ -2,6 +2,7 @@ package main;
 
 import main.map.Map;
 import main.players.MechanicTeam;
+import main.players.Player;
 import main.players.SaboteurTeam;
 import tests.ProtoTests.Tester;
 
