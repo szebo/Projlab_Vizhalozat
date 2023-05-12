@@ -8,6 +8,13 @@ public class Mechanic extends Player {
 
     private Pipe pipeInHand;
     private final List<Pump> pumpsInInventory = new ArrayList<>() ;
+    /**
+     * Az osztályból a következő létrehozott objektum által kapható ID.
+     */
+    private static int nextID = 0;
+    public Mechanic(){
+        ID = nextID++;
+    }
 
     /**
      * Ezzel a függvénnyel veszi fel a mechanic a kezébe a csövet.
@@ -79,5 +86,23 @@ public class Mechanic extends Player {
     @Override
     public void useStickyGoo() {
         mapElement.makeSticky(2);
+    }
+
+    public String getLogID(){
+        return "Mechanic"+ID;
+    }
+
+    /**
+     * Létrehoz egy stringet a szerelő információival
+     * @return info
+     */
+    public String printInfo(){
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append("["+getLogID()+"]");
+        stringBuilder.append("\nElement: "+mapElement.getLogID());
+        stringBuilder.append("Inventory: "+(pumpsInInventory.size() < 1? " -" : pumpsInInventory.get(0).getLogID())+"\n");
+        stringBuilder.append("Hand: "+(pipeInHand != null ? pipeInHand.getLogID() : " -")+"\n");
+        stringBuilder.append("Steps left: "+stepsLeft+"\n");
+        return stringBuilder.toString();
     }
 }

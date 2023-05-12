@@ -14,6 +14,10 @@ public abstract class Player {
      * **/
     protected MapElement mapElement;
 
+    /**
+     * Az objektum azonosítója.
+     */
+    protected int ID;
     protected int stepsLeft;
 
     public void setStuck(int stuck) {
@@ -96,4 +100,16 @@ public abstract class Player {
 
     public void placePipe() {
     }
+
+    /**
+     * Leszármazott osztálytól függően visszaad egy stringet az osztály nevével és az osbejtum azonosítójával
+     * @return StringID
+     */
+    public abstract String getLogID();
+
+    /**
+     * Leszármazott osztálytól függően létrehoz egy stringet az objektum információval.
+     * @return string
+     */
+    public abstract String printInfo();
 }

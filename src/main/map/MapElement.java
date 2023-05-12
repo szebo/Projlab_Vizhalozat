@@ -181,15 +181,25 @@ public abstract class MapElement {
      */
     public abstract ActiveElement getRandomEnd();
 
+    /**
+     * Leszármazott osztálytól függően visszaad egy String az osztály nevével és az objektum azonosítójával.
+     * @return StringID
+     */
     public abstract String getLogID();
 
+    /**
+     * Visszaadja az objektum azonosító számát.
+     * @return
+     */
     public int getID(){
         return this.ID;
     }
 
-    public String printInfo() {
-        return "";
-    }
+    /**
+     * A leszármazott osztálytól függően visszaad egy Stringet az objektum összes elérhető információjáról.
+     * @return
+     */
+    public abstract String printInfo();
 
     public abstract MapElement[] getNeighbours();
 

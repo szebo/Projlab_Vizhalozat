@@ -2,6 +2,7 @@ package main.map;
 
 import main.players.Mechanic;
 import main.players.MechanicTeam;
+import main.players.Player;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -65,9 +66,39 @@ public class Cistern extends ActiveElement {
         }
     }
 
+    /**
+     * Leszármazott osztálytól függően visszaad egy String az osztály nevével és az objektum azonosítójával.
+     * @return StringID
+     */
     public String getLogID(){
         return "Cistern"+this.ID;
     }
 
+    /**
+     * Létrehoz egy stringet a ciszterna információival
+     * @return info
+     */
+    public String printInfo(){
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append("["+getLogID()+"]");
+        stringBuilder.append("\nPlayers: ");
+        if(players.size()<1) stringBuilder.append(" -");
+        else {
+            for (int i = 0; i < players.size(); i++) {
+                if (i == 0) stringBuilder.append(players.get(i).getLogID());
+                else stringBuilder.append(", " + players.get(i).getLogID());
+            }
+        }
+        stringBuilder.append("\nPipes: ");
+        if(pipes.size()<1) stringBuilder.append(" -");
+        else {
+            for (int i = 0; i < players.size(); i++) {
+                if (i == 0) stringBuilder.append(pipes.get(i).getLogID());
+                else stringBuilder.append(", " + pipes.get(i).getLogID());
+            }
+        }
+        stringBuilder.append("\nPumps in Reserve: "+pumpsInReserve+"\n");
+        return stringBuilder.toString();
+    }
 
 }

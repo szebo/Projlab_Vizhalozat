@@ -86,6 +86,10 @@ public abstract class ActiveElement extends MapElement implements IControllable 
         return null;
     }
 
+    /**
+     * Leszármazott osztálytól függően visszaad egy String az osztály nevével és az objektum azonosítójával.
+     * @return StringID
+     */
     public abstract String getLogID();
 
     @Override

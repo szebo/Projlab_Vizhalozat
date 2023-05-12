@@ -100,4 +100,33 @@ public class Pump extends ActiveElement {
     public String getLogID(){
         return "Pump"+this.ID;
     }
+
+    /**
+     * Létrehoz egy stringet a pumpa információival
+     * @return info
+     */
+    public String printInfo(){
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append("["+getLogID()+"]");
+        stringBuilder.append("\nPlayers: ");
+        if(players.size()<1) stringBuilder.append(" -");
+        else {
+            for (int i = 0; i < players.size(); i++) {
+                if (i == 0) stringBuilder.append(players.get(i).getLogID());
+                else stringBuilder.append(", " + players.get(i).getLogID());
+            }
+        }
+        stringBuilder.append("\nPipes: ");
+        if(pipes.size()<1) stringBuilder.append(" -");
+        else {
+            for (int i = 0; i < players.size(); i++) {
+                if (i == 0) stringBuilder.append(pipes.get(i).getLogID());
+                else stringBuilder.append(", " + pipes.get(i).getLogID());
+            }
+        }
+        stringBuilder.append(isBroken ? "\nBroken\n" : "\nNot Broken\n");
+        stringBuilder.append("Water: "+water+"\nCapacity: "+capacity+"\n");
+        stringBuilder.append("Input: "+input.getLogID()+"\nOutput: "+output.getLogID()+"\n");
+        return stringBuilder.toString();
+    }
 }

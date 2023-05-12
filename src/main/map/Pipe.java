@@ -227,4 +227,28 @@ public class Pipe extends MapElement implements Updatable {
     public MapElement[] getNeighbours(){
         return elements.toArray(new MapElement[2]);
     }
+
+    /**
+     * Létrehoz egy stringet a cső információival
+     * @return info
+     */
+    public String printInfo(){
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append("["+getLogID()+"]");
+        stringBuilder.append("\nPlayer: ");
+        if(players.size()>0) stringBuilder.append(players.get(0).getLogID());
+        else stringBuilder.append(" -");
+        stringBuilder.append("\nEnds: ");
+        if(elements.size()<1) stringBuilder.append(" -");
+        else {
+            for (int i = 0; i < players.size(); i++) {
+                if (i == 0) stringBuilder.append(elements.get(i).getLogID());
+                else stringBuilder.append(", " + elements.get(i).getLogID());
+            }
+        }
+        stringBuilder.append(isBroken ? "\nBroken\n" : "\nNot Broken\n");
+        stringBuilder.append("Sticky for: "+stickyFor+" turn\n");
+        stringBuilder.append("Slippery for: "+slipperyFor+" turn\n");
+        return stringBuilder.toString();
+    }
 }
