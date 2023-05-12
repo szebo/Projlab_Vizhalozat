@@ -71,7 +71,7 @@ public class Tester {
      * //@return hamis, ha valamely parancsnak nem volt sikeres a végrehajtása
      * **/
     public static void runTest(String filename){
-        ArrayList<String> cmds = commandFileReader(filename);
+        ArrayList<String> cmds = (ArrayList<String>) commandFileReader(filename);
         for (String s: cmds ) commandInterpreter.runCommand(s);
     }
 }

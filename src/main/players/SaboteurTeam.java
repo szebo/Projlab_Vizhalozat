@@ -6,6 +6,7 @@ import java.util.List;
 public class SaboteurTeam {
     private static SaboteurTeam instance = null;
     public List<Saboteur> players = new ArrayList<>() ;
+    private int counter = 0;
     private int points = 0;
     private SaboteurTeam(){System.out.println("Szabotőr csapat létrehozva");}
     public static synchronized SaboteurTeam getInstance()
@@ -27,5 +28,16 @@ public class SaboteurTeam {
     {
         points+=point;
         System.out.println("point added to mechanic team. current points: "+ points);
+    }
+
+    public Saboteur getSabotuer()
+    {
+        counter++;
+        return players.get(counter%2);
+    }
+
+    public boolean hasWon()
+    {
+        return points > 50; //mitoménmennnyilgyen
     }
 }

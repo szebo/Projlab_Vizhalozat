@@ -7,6 +7,7 @@ public class MechanicTeam {
     private static MechanicTeam instance = null;
 
     public List<Mechanic> players = new ArrayList<>() ;
+    private int counter = 0;
     private int points = 0;
     private MechanicTeam(){System.out.println("Szerelő csapat létrehozva");}
     public static synchronized MechanicTeam getInstance()
@@ -28,5 +29,16 @@ public class MechanicTeam {
     {
         points+=point;
         System.out.println("Pontok rögzítve, jelenleg "+ points +" pontja van a Szerelőknek.");
+    }
+
+    public Mechanic getMechanic()
+    {
+        counter++;
+        return players.get(counter%2);
+    }
+
+    public boolean hasWon()
+    {
+        return points > 100; //mitoménmennnyilgyen
     }
 }

@@ -37,7 +37,7 @@ public class CommandInterpreter {
 
             case "pickup":
                 if (splits[1].equals("pipe")) {
-                    Main.currentPlayer.pickUpPipe(Main.map.getElement(splits[2]));
+                    Main.currentPlayer.pickUpPipe((Pipe)Main.map.getElement(splits[2]));
                 } else if (splits[1].equals("pump")) {
                     Main.currentPlayer.pickUpPump();
                 }
@@ -121,7 +121,7 @@ public class CommandInterpreter {
                 break;
 
             case "attach":
-                Main.map.getElement(splits[2]).attachPipe(Main.map.getElement(splits[1]));
+                Main.map.getElement(splits[2]).attachPipe((Pipe)Main.map.getElement(splits[1]));
                 break;
 
             case "save_map":
@@ -150,7 +150,7 @@ public class CommandInterpreter {
     }
 
     private void move(){
-        MapElement element = Main.currentPlayer.getMapElement();
+        MapElement element = Main.currentPlayer.getMapElement(); //holymoly...
         for(MapElement neighbour : element.getNeighbours()){
             System.out.println(neighbour.getLogID());
         }
@@ -167,10 +167,10 @@ public class CommandInterpreter {
         Scanner scanner = new Scanner(System.in);
         String input = scanner.nextLine();
         String output = scanner.nextLine();
-        Main.currentPlayer.configurePump(Main.map.getElement(input), Main.map.getElement(output));
+        Main.currentPlayer.configurePump((Pipe)Main.map.getElement(input), (Pipe)Main.map.getElement(output));
     }
 
-    private void create(String type){
+    private void create(String type){ //ennek is a mapben kéne lennie
         switch (type){
             case "Pump":
                 Pump pump = new Pump();
@@ -195,7 +195,7 @@ public class CommandInterpreter {
         }
     }
 
-    private void loadMap(String id){
+    private void loadMap(String id){ //ennek is a mapben kéne lennie
         try {
             BufferedReader reader = new BufferedReader(new FileReader("maps/"+id+".txt"));
             List<String> lines = reader.lines().toList();
@@ -237,15 +237,17 @@ public class CommandInterpreter {
         }
     }
 
-    private void saveMap(String id){
+    private void saveMap(String id){ //ennek az egésznek a mapben kéne lennie
         try {
             BufferedWriter writer = new BufferedWriter(new FileWriter("maps/"+id+".txt"));
             writer.append("ActiveElements\n");
-            for(ActiveElement element : Main.map.activeElements){
+            for(ActiveElement element : Map.getInstance().getElement()){ //használj egy while(true)-t meg egy counter és a már meglévő getElementet
+                //hogy elért a MapelElementeket. Ha csak az active elementeken akarsz végig menni akkor csinalj arra is egy gettert.
+                //TODO FIX!!
                 writer.append(element.getLogID()+","+element.getCapacity()+"\n");
             }
             writer.append("Connectins\n");
-            for()
+            //for()
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

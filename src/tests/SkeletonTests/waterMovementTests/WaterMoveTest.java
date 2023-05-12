@@ -19,7 +19,7 @@ public class WaterMoveTest {
         pump1.setInput(pipe2);
         pump1.setOutput(pipe1);
 
-        Map map1 = new Map();
+        Map map1 = Map.getInstance();
         map1.addActive(pump1);
         map1.addActive(cistern1);
         map1.addActive(spring1);
@@ -44,7 +44,7 @@ public class WaterMoveTest {
         pump1.setOutput(pipe1);
         pipe1.breakElement();
 
-        Map map1 = new Map();
+        Map map1 = Map.getInstance();
         map1.addActive(pump1);
         map1.addActive(cistern1);
         map1.addActive(spring1);

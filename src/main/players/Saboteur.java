@@ -1,5 +1,7 @@
 package main.players;
 
+import commands.CommandInterpreter;
+
 /**
  * Olyan játékos, amely feladata, hogy a csöveken és pumpákon haladva akadályozza a víz folyását.
  * Ezt a csövek kilyukasztásával teheti meg, illetve a pumpák forgatására is van lehetősége.
@@ -34,5 +36,30 @@ public class Saboteur extends Player {
         stringBuilder.append("\nElement: "+mapElement.getLogID());
         stringBuilder.append("\nSteps left: "+stepsLeft+"\n");
         return stringBuilder.toString();
+    }
+
+    public void doAction()
+    {
+        while(numberOfActions > 0) {
+            String playerInput = System.console().readLine();
+            switch (playerInput) {
+                case "break":
+                    numberOfActions--;
+                    break;
+                case "move":
+                    numberOfActions--;
+                    break;
+                case "make_slippery":
+                    numberOfActions--;
+                    break;
+                case "make_sticky":
+                    numberOfActions--;
+                    break;
+                default:
+                    System.out.println("thats not a valid command");
+                    break;
+            }
+        }
+        numberOfActions = 2;
     }
 }

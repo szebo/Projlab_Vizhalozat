@@ -114,4 +114,44 @@ public class Mechanic extends Player {
         stringBuilder.append("Steps left: "+stepsLeft+"\n");
         return stringBuilder.toString();
     }
+
+    public void doAction()
+    {
+        while(numberOfActions > 0) {
+            String playerInput = System.console().readLine();
+            switch (playerInput) {
+                case "break":
+                    numberOfActions--;
+                    break;
+                case "move":
+                    numberOfActions--;
+                    break;
+                case "repair":
+                    numberOfActions--;
+                    break;
+                case "make_sticky":
+                    numberOfActions--;
+                    break;
+                case "pickup pipe":
+                    numberOfActions--;
+                    break;
+                case "place pipe":
+                    numberOfActions--;
+                    break;
+                case "pickup pump":
+                    numberOfActions--;
+                    break;
+                case "place pump":
+                    numberOfActions--;
+                    break;
+                case "configure":
+                    numberOfActions--;
+                    break;
+                default:
+                    System.out.println("thats not a valid command");
+                    break;
+            }
+        }
+        numberOfActions = 2;
+    }
 }

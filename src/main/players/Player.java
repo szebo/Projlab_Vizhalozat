@@ -3,6 +3,7 @@ package main.players;
 import main.logging.Logger;
 import main.map.MapElement;
 import main.map.Pipe;
+import main.map.Pump;
 
 import java.util.Objects;
 
@@ -20,6 +21,7 @@ public abstract class Player {
      */
     protected int ID;
     protected int stepsLeft;
+    protected int numberOfActions = 2;
 
     public void setStuck(int stuck) {
         this.stuck = stuck;
@@ -55,8 +57,9 @@ public abstract class Player {
             Logger.logToConsole("log.txt", mapElement.getLogID()+": no such pipe connected: "+pipe2.getLogID());
             return;
         }
-        mapElement.setInput(pipe1);
-        mapElement.setOutput(pipe2);
+        Pump p = (Pump)mapElement;
+        p.setInput(pipe1); //itt castolva javitottam vagy csináljátok meg rendesen a származtatást meg a tárolást vagy ez van
+        p.setInput(pipe2);
         Logger.logToConsole("log.txt", mapElement.getLogID()+": input is: "+pipe1.getLogID()+", output is: "+pipe2.getLogID());
     }
 

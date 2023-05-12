@@ -2,20 +2,28 @@ package main.map;
 
 import main.interfaces.IControllable;
 import main.interfaces.Updatable;
+import main.players.SaboteurTeam;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Map {
+public class Map implements Updatable{
 
     private List<MapElement> mapElements;
     private List<IControllable> controllableMapElements;
     private List<Updatable> updatableMapElements;
-
-    public Map(){
+    private static Map instance = null;
+    private Map(){
         mapElements = new ArrayList<>();
         controllableMapElements = new ArrayList<>();
         updatableMapElements = new ArrayList<>();
+    }
+
+    public static synchronized Map getInstance()
+    {
+        if (instance == null)
+            instance = new Map();
+        return instance;
     }
 
     /**
@@ -53,8 +61,19 @@ public class Map {
         return null;
     }
 
-    public void updateMap(){
-        //TODO Minden elemre iterálva meghívjuk az update-ot. Ezt hívja meg a controller.
+    public void update(){
+        for(Updatable ume : updatableMapElements)
+        {
+            ume.update();
+        }
+    }
+
+    public void control()
+    {
+        for(IControllable cme : controllableMapElements)
+        {
+            cme.control();
+        }
     }
 
     public MapElement getElement(int number){
