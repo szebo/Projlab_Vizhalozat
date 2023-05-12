@@ -5,6 +5,7 @@ attach Pipe1 Pump1
 debug_break Pump1
 debug_break Pipe1
 setplayerposition Mechanic1 Pump1
+force_start
 repair
 move Pipe1
 repair

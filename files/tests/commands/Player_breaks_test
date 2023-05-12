@@ -7,6 +7,7 @@ attach Pipe1 Pump1
 attach Pipe2 Pump1
 setplayerposition Mechanic1 Pipe1
 setplayerposition Saboteur1 Pipe2
+force_start
 break
 end_turn
 break

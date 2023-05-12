@@ -12,6 +12,7 @@ create_mechanic
 setplayerposition Saboteur1 Pump1
 setplayerposition Mechanic1 Pump2
 force_start
+force_start
 pickup Pipe1
 end_turn
 pickup Pipe1

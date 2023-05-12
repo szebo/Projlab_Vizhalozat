@@ -7,6 +7,7 @@ attach Pipe1 Spring1
 attach Pipe2 Spring1
 setplayerposition Saboteur1 Spring1
 setplayerposition Saboteur2 Pipe2
+force_start
 move Pipe1
 move Spring1
 move Pipe2
