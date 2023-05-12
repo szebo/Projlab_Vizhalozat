@@ -1,0 +1,13 @@
+create Pump1
+create Pump2
+create Pipe1
+create_saboteur
+attach Pipe1 Pump1
+attach Pipe1 Pump2
+setplayerposition Saboteur1 Pipe1
+force_start
+make_slippery
+move Pump1
+move Pipe1
+debug_clear Pipe1
+move Pipe1

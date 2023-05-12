@@ -1,0 +1,13 @@
+create Cistern1
+create Pipe1
+create Pipe2
+create_mechanic
+create_mechanic
+attach Pipe1 Cistern1
+attach Pipe2 Cistern1
+setplayerposition Mechanic1 Cistern1
+setplayerposition Mechanic2 Pipe2
+force_start
+move Pipe1
+move Cistern1
+move Pipe2

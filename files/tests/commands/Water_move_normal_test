@@ -1,0 +1,10 @@
+create Cistern1
+create Spring1
+create Pipe1
+create Pump1
+create Pipe2
+attach Pipe1 Spring1
+attach Pipe1 Pump1
+attach Pip2 Pump1
+attach Pipe2 Cistern1
+flow 3

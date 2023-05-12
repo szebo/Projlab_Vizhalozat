@@ -1,0 +1,16 @@
+create Pump1
+create Pump2
+create Pipe1
+create_mechanic
+create_saboteur
+attach Pipe1 Pump1
+attach Pipe1 Pump2
+setplayerposition Mechanic1 Pipe1
+setplayerposition Saboteur1 Pump2
+force_start
+make_sticky
+move Pump1
+end_turn
+move Pipe1
+end_turn
+move Pipe1
