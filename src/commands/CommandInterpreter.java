@@ -64,11 +64,13 @@ public class CommandInterpreter {
                 break;
 
             case "debug_break":
-                Map.getInstance().getElement(splits[1]).breakElement();
+                Map.getInstance().getElement(splits[1]).setBroken(true);
+                Logger.logToConsole("log.txt", Map.getInstance().getElement(splits[1]).getLogID()+": broken by tester");
                 break;
 
             case "debug_repair":
-                Map.getInstance().getElement(splits[1]).heal();
+                Map.getInstance().getElement(splits[1]).setBroken(false);
+                Logger.logToConsole("log.txt", Map.getInstance().getElement(splits[1]).getLogID()+": repaired by tester");
                 break;
 
             case "flow":
@@ -76,6 +78,7 @@ public class CommandInterpreter {
                 break;
 
             case "exit":
+                Logger.logToConsole("log.txt", "[Game]: exiting...");
                 System.exit(1);
                 break;
 
@@ -105,7 +108,8 @@ public class CommandInterpreter {
             case "setplayerposition":
                 //TODO player = getPlayer(splits[1]);
                 //TODO player.setElement(Main.map.getElement(splits[2]));
-                //TODO Main.map.getElement(splits[2]).addPlayer(player);
+                //TODO Map.getInstance().getElement(splits[2]).addPlayer(player);
+                //TODO Logger.logToConsole("log.txt", player.getLogID()+": position set to "+Map.getInstance().getElement(splits[2]).getLogID());
                 break;
 
             case "create_pipe":
@@ -121,28 +125,30 @@ public class CommandInterpreter {
                 break;
 
             case "attach":
-                Map.getInstance().getElement(splits[2]).attachPipe((Pipe)Map.getInstance().getElement(splits[1]));
+                Map.getInstance().getElement(splits[2]).attachPipe(Map.getInstance().getPipe(splits[1]));
                 break;
 
             case "save_map":
-                Map.getInstance().saveMap(splits[1]);
+                Map.getInstance().saveMap(Integer.parseInt(splits[1]));
                 break;
 
             case "force_start":
+                Logger.logToConsole("log.txt", "[Game]: forcefully started");
                 Controller.run();
                 break;
 
             case "debug_slippery":
                 Map.getInstance().getElement(splits[1]).makeSlippery(3);
+                Logger.logToConsole("log.txt", Map.getInstance().getElement(splits[1]).getLogID()+": now slippery");
                 break;
 
             case "debug_sticky":
                 Map.getInstance().getElement(splits[1]).makeSticky(3);
+                Logger.logToConsole("log.txt", Map.getInstance().getElement(splits[1]).getLogID()+": now sticky");
                 break;
 
             case "runtest":
-                //TODO parameres feldolgozas
-                Tester.runTest(splits[1]);
+                runTest(splits[1]);
                 break;
 
             default:
@@ -157,9 +163,7 @@ public class CommandInterpreter {
         }
 
         boolean validInput = false;
-        Scanner scanner = new Scanner(System.in);
-        String target = scanner.nextLine();
-        scanner.close();
+        String target = System.console().readLine();
 
         for(MapElement neighbour : element.getNeighbours()){
             if(target.equals(neighbour)) validInput = true;
@@ -179,9 +183,8 @@ public class CommandInterpreter {
 
         boolean validInput = false;
         boolean validOutput = false;
-        Scanner scanner = new Scanner(System.in);
-        String input = scanner.nextLine();
-        String output = scanner.nextLine();
+        String input = System.console().readLine();
+        String output = System.console().readLine();
 
         for(MapElement neighbour : playerMapElement.getNeighbours()){
             if(!input.equals(output)){
@@ -192,8 +195,7 @@ public class CommandInterpreter {
             else Logger.logToConsole("log.txt", "Az input és az output ugyan az lett!");
         }
 
-        scanner.close();
-        if(validOutput && validInput) Main.currentPlayer.configurePump((Pipe)Main.map.getElement(input), (Pipe)Main.map.getElement(output));
+        if(validOutput && validInput) Main.currentPlayer.configurePump(Map.getInstance().getPipe(input), Map.getInstance().getPipe(output));
         else if(!validOutput) Logger.logToConsole("log.txt", "Az outputnak nem létező cső lett megadva.");
         else if(!validInput) Logger.logToConsole("log.txt", "Az inputnak nem létező cső lett megadva.");
         else Logger.logToConsole("log.txt", "Az inputnak és outputnak is nem létező cső lett megadva.");
@@ -212,11 +214,29 @@ public class CommandInterpreter {
             }
 
             if(valid)
-                Main.currentPlayer.pickUpPipe((Pipe)Map.getInstance().getElement(target));
+                Main.currentPlayer.pickUpPipe(Map.getInstance().getPipe(target));
             else
                 Logger.logToConsole("log.txt", "Invalid target!");
         } else if (cmd.equals("pump")) {
             Main.currentPlayer.pickUpPump();
         }
+    }
+
+    private static void runTest(String cmd){
+        if(cmd.contains("-")){
+            int low = Integer.parseInt(cmd.split("-")[0]);
+            int high = Integer.parseInt(cmd.split("-")[1]);
+            for(int i = low; i <= high; i++){
+                Tester.runTest(i);
+            }
+        }
+        else if(cmd.contains(",")){
+            String[] params = cmd.split(",");
+            for(String p : params){
+                Tester.runTest(Integer.parseInt(p));
+            }
+        }
+        else
+            Tester.runTest(Integer.parseInt(cmd));
     }
 }

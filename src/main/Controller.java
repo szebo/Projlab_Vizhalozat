@@ -25,6 +25,6 @@ public class Controller {
      * A tesztek futtatásához, hogy lehessen egy játékossal is csinálni dolgokat, és ne keljen végig várni az egész játékot.
      */
     public static void debug_run(String test){
-        Tester.runTest(test);
+        Tester.runTest(Integer.parseInt(test));
     }
 }

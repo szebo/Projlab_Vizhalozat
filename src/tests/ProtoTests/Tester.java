@@ -16,10 +16,10 @@ public class Tester {
      * @param filename A parancsokat soronként tartalmazó szöveges fájl
      * @return Soronként parsolt parancsok
      * **/
-    public static List<String> commandFileReader(String filename) {
+    public static List<String> commandFileReader(int file) {
         List<String> cmds = new ArrayList<String>();
         try {
-            File commandsFile = new File(filename);
+            File commandsFile = new File("/files/tests/command/"+file);
             Scanner Reader = new Scanner(commandsFile);
             while (Reader.hasNextLine()) {
                 cmds.add(Reader.nextLine());
@@ -68,10 +68,10 @@ public class Tester {
     /**
      * Futtatja a paraméterben megadott parancsokat sorban.
      * @param cmds A kiadandó parancsok soronként szedve
-     * //@return hamis, ha valamely parancsnak nem volt sikeres a végrehajtása
+     * @return hamis, ha valamely parancsnak nem volt sikeres a végrehajtása
      * **/
-    public static void runTest(String filename){
-        ArrayList<String> cmds = (ArrayList<String>) commandFileReader(filename);
+    public static void runTest(int file){
+        ArrayList<String> cmds = (ArrayList<String>) commandFileReader(file);
         for (String s: cmds ) commandInterpreter.runCommand(s);
     }
 }
