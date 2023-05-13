@@ -43,7 +43,7 @@ public class Map implements Updatable{
                 e.pumpWater();
             }
         }
-        Logger.logToConsole("file.txt", "[Map]: water is pumped");
+        Logger.logToConsole("console.txt", "[Map]: water is pumped");
     }
 
     public void storeNewMapElement(MapElement element){ mapElements.add(element); }
@@ -82,28 +82,28 @@ public class Map implements Updatable{
                 mapElements.add(pump);
                 controllableMapElements.add(pump);
                 activeElements.add(pump);
-                Logger.logToConsole("log.txt", "[Map]: "+pump.getLogID()+" has been created");
+                Logger.logToConsole("console.txt", "[Map]: "+pump.getLogID()+" has been created");
                 break;
             case "Cistern":
                 Cistern cistern = new Cistern();
                 mapElements.add(cistern);
                 controllableMapElements.add(cistern);
                 activeElements.add(cistern);
-                Logger.logToConsole("log.txt", "[Map]: "+cistern.getLogID()+" has been created");
+                Logger.logToConsole("console.txt", "[Map]: "+cistern.getLogID()+" has been created");
                 break;
             case "Spring":
                 Spring spring = new Spring();
                 mapElements.add(spring);
                 controllableMapElements.add(spring);
                 activeElements.add(spring);
-                Logger.logToConsole("log.txt", "[Map]: "+spring.getLogID()+" has been created");
+                Logger.logToConsole("console.txt", "[Map]: "+spring.getLogID()+" has been created");
                 break;
             case "Pipe":
                 Pipe pipe = new Pipe();
                 mapElements.add(pipe);
                 updatableMapElements.add(pipe);
                 pipeList.add(pipe);
-                Logger.logToConsole("log.txt", "[Map]: "+pipe.getLogID()+" has been created");
+                Logger.logToConsole("console.txt", "[Map]: "+pipe.getLogID()+" has been created");
                 break;
         }
     }
@@ -144,9 +144,9 @@ public class Map implements Updatable{
                 }
             }
             reader.close();
-            Logger.logToConsole("log.txt", "[Map]: map loaded");
+            Logger.logToConsole("console.txt", "[Map]: map loaded");
         } catch (FileNotFoundException e) {
-            Logger.logToConsole("log.txt", "[Map]: map not found");
+            Logger.logToConsole("console.txt", "[Map]: map not found");
             throw new RuntimeException(e);
         } catch (IOException e) {
             throw new RuntimeException(e);
@@ -167,7 +167,7 @@ public class Map implements Updatable{
             }
 
             writer.close();
-            Logger.logToConsole("log.txt", "[Map]: map saved as "+id);
+            Logger.logToConsole("console.txt", "[Map]: map saved as "+id);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

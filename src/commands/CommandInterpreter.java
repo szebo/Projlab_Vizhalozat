@@ -57,17 +57,17 @@ public class CommandInterpreter {
                 break;
 
             case "end_turn":
-                Logger.logToConsole("log.txt", exec.getLogID()+": turn ended");
+                Logger.logToConsole("console.txt", "["+exec.getLogID()+"]: turn ended");
                 break;
 
             case "debug_break":
                 Map.getInstance().getElement(splits[1]).setBroken(true);
-                Logger.logToConsole("log.txt", Map.getInstance().getElement(splits[1]).getLogID()+": broken by tester");
+                Logger.logToConsole("console.txt", "["+Map.getInstance().getElement(splits[1]).getLogID()+"]: broken by tester");
                 break;
 
             case "debug_repair":
                 Map.getInstance().getElement(splits[1]).setBroken(false);
-                Logger.logToConsole("log.txt", Map.getInstance().getElement(splits[1]).getLogID()+": repaired by tester");
+                Logger.logToConsole("console.txt", "["+Map.getInstance().getElement(splits[1]).getLogID()+"]: repaired by tester");
                 break;
 
             case "flow":
@@ -75,17 +75,17 @@ public class CommandInterpreter {
                 break;
 
             case "exit":
-                Logger.logToConsole("log.txt", "[Game]: exiting...");
+                Logger.logToConsole("console.txt", "[Game]: exiting...");
                 System.exit(1);
                 break;
 
             case "start":
                 if(MechanicTeam.getInstance().players.size()>1 && SaboteurTeam.getInstance().players.size()>1) {
-                    Logger.logToConsole("log.txt", "[Game]: starting...");
+                    Logger.logToConsole("console.txt", "[Game]: starting...");
                     Controller.run();
                 }
                 else
-                    Logger.logToConsole("log.txt", "[Game]: can’t start due to not having enough players");
+                    Logger.logToConsole("console.txt", "[Game]: can’t start due to not having enough players");
                 break;
 
             case "load_map":
@@ -95,19 +95,19 @@ public class CommandInterpreter {
             case "create_saboteur":
                 Saboteur newSaboteur = new Saboteur();
                 SaboteurTeam.getInstance().addPlayer(newSaboteur);
-                Logger.logToConsole("log.txt", newSaboteur.getLogID()+": created");
+                Logger.logToConsole("console.txt", "["+newSaboteur.getLogID()+"]: created");
                 break;
 
             case "create_mechanic":
                 Mechanic newMechanic = new Mechanic();
                 MechanicTeam.getInstance().addPlayer(newMechanic);
-                Logger.logToConsole("log.txt", newMechanic.getLogID()+": created");
+                Logger.logToConsole("console.txt", "["+newMechanic.getLogID()+"]: created");
                 break;
 
             case "setplayerposition":
                 exec.setMapElement(Map.getInstance().getElement(splits[2]));
                 Map.getInstance().getElement(splits[2]).addPlayer(exec);
-                Logger.logToConsole("log.txt", exec.getLogID()+": position set to "+Map.getInstance().getElement(splits[2]).getLogID());
+                Logger.logToConsole("console.txt", "["+exec.getLogID()+"]: position set to "+Map.getInstance().getElement(splits[2]).getLogID());
                 break;
 
             case "create_pipe":
@@ -131,18 +131,18 @@ public class CommandInterpreter {
                 break;
 
             case "force_start":
-                Logger.logToConsole("log.txt", "[Game]: forcefully started");
+                Logger.logToConsole("console.txt", "[Game]: forcefully started");
                 Controller.run();
                 break;
 
             case "debug_slippery":
                 Map.getInstance().getElement(splits[1]).makeSlippery(3);
-                Logger.logToConsole("log.txt", Map.getInstance().getElement(splits[1]).getLogID()+": now slippery");
+                Logger.logToConsole("console.txt", "["+Map.getInstance().getElement(splits[1]).getLogID()+"]: now slippery");
                 break;
 
             case "debug_sticky":
                 Map.getInstance().getElement(splits[1]).makeSticky(3);
-                Logger.logToConsole("log.txt", Map.getInstance().getElement(splits[1]).getLogID()+": now sticky");
+                Logger.logToConsole("console.txt", "["+Map.getInstance().getElement(splits[1]).getLogID()+"]: now sticky");
                 break;
 
             case "runtest":
@@ -170,7 +170,7 @@ public class CommandInterpreter {
         if(validInput)
             exec.step(Map.getInstance().getElement(target));
         else
-            Logger.logToConsole("log.txt", "Nem létező szomszéd lett megadva.");
+            Logger.logToConsole("console.txt", "["+element.getLogID()+"]: Nem létező szomszéd lett megadva.");
     }
 
     private static void configure(Player exec){
@@ -190,13 +190,13 @@ public class CommandInterpreter {
 
                 else if(output.equals(neighbour)) validOutput = true;
             }
-            else Logger.logToConsole("log.txt", "Az input és az output ugyan az lett!");
+            else Logger.logToConsole("console.txt", "["+playerMapElement.getLogID()+"]: Az input és az output ugyanaz lett!");
         }
 
         if(validOutput && validInput) exec.configurePump(Map.getInstance().getPipe(input), Map.getInstance().getPipe(output));
-        else if(!validOutput) Logger.logToConsole("log.txt", "Az outputnak nem létező cső lett megadva.");
-        else if(!validInput) Logger.logToConsole("log.txt", "Az inputnak nem létező cső lett megadva.");
-        else Logger.logToConsole("log.txt", "Az inputnak és outputnak is nem létező cső lett megadva.");
+        else if(!validOutput) Logger.logToConsole("console.txt", "["+playerMapElement.getLogID()+"]: Az outputnak nem létező cső lett megadva.");
+        else if(!validInput) Logger.logToConsole("console.txt", "["+playerMapElement.getLogID()+"]: Az inputnak nem létező cső lett megadva.");
+        else Logger.logToConsole("console.txt", "["+playerMapElement.getLogID()+"]: Az inputnak és outputnak is nem létező cső lett megadva.");
     }
 
     private static void pickUp(String cmd, Player exec){
@@ -214,7 +214,7 @@ public class CommandInterpreter {
             if(valid)
                 exec.pickUpPipe(Map.getInstance().getPipe(target));
             else
-                Logger.logToConsole("log.txt", "Invalid target!");
+                Logger.logToConsole("console.txt", "["+playerMapElement.getLogID()+"]: Invalid target!");
         } else if (cmd.equals("pump")) {
             exec.pickUpPump();
         }

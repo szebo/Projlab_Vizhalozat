@@ -48,7 +48,7 @@ public abstract class MapElement {
      */
     public void heal(){
         setBroken(false);
-        System.out.println("Elem megjavítva!");
+        Logger.log("log.txt", "Element repaired");
     }
 
     /**
@@ -62,7 +62,7 @@ public abstract class MapElement {
      */
     public boolean acceptPlayer(Player player){
         addPlayer(player);
-        Logger.logToConsole("log.txt", getLogID()+": "+player.getLogID()+" moved");
+        Logger.logToConsole("console.txt", "["+getLogID()+"]: "+player.getLogID()+" moved");
         return true;
     }
 
@@ -92,7 +92,7 @@ public abstract class MapElement {
     public int addWater(int water){
         int waterTaken = this.water + water > capacity ? capacity-this.water : water;
         this.water += waterTaken;
-        System.out.println("Az elemhez "+waterTaken+" mennyiségű víz került hozzáadásra!");
+        Logger.log("log.txt", "["+getLogID()+"]: "+waterTaken+" water added");
         return waterTaken;
     }
 
@@ -105,11 +105,11 @@ public abstract class MapElement {
         if(!isBroken) {
             int pumpedWater = Math.min(this.water, water);
             this.water -= pumpedWater;
-            System.out.println("Az elemből el lett távlítva "+pumpedWater+" mennyiségű víz!");
+            Logger.log("log.txt","["+getLogID()+"]: "+pumpedWater+" water removed");
             return pumpedWater;
         }
         else {
-            System.out.println("Az elem el van romolva!");
+            Logger.log("log.txt", "["+getLogID()+"]: pipe is not functional");
             return 0;
         }
     }
@@ -120,7 +120,6 @@ public abstract class MapElement {
      */
     public void setBroken(boolean value){
         isBroken = value;
-        System.out.println("MapElement töröttségi állapota beállítva.");
     }
 
     /**

@@ -1,5 +1,7 @@
 package main.players;
 
+import main.logging.Logger;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,7 +11,9 @@ public class MechanicTeam {
     public List<Mechanic> players = new ArrayList<>() ;
     private int counter = 0;
     private int points = 0;
-    private MechanicTeam(){System.out.println("Szerelő csapat létrehozva");}
+    private MechanicTeam(){
+        Logger.log("log.txt","Mechanic team created");
+    }
     public static synchronized MechanicTeam getInstance()
     {
         if (instance == null)
@@ -20,15 +24,15 @@ public class MechanicTeam {
     {
         if(players.size() < 3) {
             players.add((Mechanic) player);
-            System.out.println("Játékos hozzáadva a szabotőrőkhoz");
+            Logger.log("log.txt","Player added to MechanicTeam");
         }
-        System.out.println("Játékost nem lehetett hozzáadni a csapathoz, túlnépesedés miatt.");
+        Logger.log("log.txt","Player could not be added to MechanicTeam, due to overpopulation");
     }
 
     public void addPoints(int point)
     {
         points+=point;
-        System.out.println("Pontok rögzítve, jelenleg "+ points +" pontja van a Szerelőknek.");
+        Logger.log("log.txt","Points added, currently the Mechanics have "+ points +" points");
     }
 
     public Mechanic getMechanic()

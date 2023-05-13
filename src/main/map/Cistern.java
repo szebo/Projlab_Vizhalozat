@@ -35,7 +35,6 @@ public class Cistern extends ActiveElement {
     @Override
     public void control() {
         newPipe();
-        System.out.println("Új cső készült el a Ciszternánál.");
     }
 
     /**
@@ -45,7 +44,7 @@ public class Cistern extends ActiveElement {
     public void givePump(Mechanic mechanic){
         mechanic.addPumpToInventory(pumpsInReserve.get(0));
         pumpsInReserve.remove(0);
-        System.out.println("A pumpát odaadja a Ciszterna a Mechanicnak.");
+        Logger.log("log.txt", "Pump given to Mechanic");
     }
 
     /**
@@ -54,7 +53,7 @@ public class Cistern extends ActiveElement {
     public void newPipe(){
         Pipe newpipe = new Pipe();
         this.attachPipe(newpipe);
-        Logger.logToConsole("log.txt", newpipe.getLogID()+": created");
+        Logger.logToConsole("console.txt", "["+newpipe.getLogID()+"]: created");
     }
 
     /**

@@ -58,10 +58,10 @@ public class Pipe extends MapElement implements Updatable {
      * **/
     @Override
     public void breakElement(){
-        if(checkUnbreakable()) Logger.logToConsole("log.txt", getLogID()+": can't break");
+        if(checkUnbreakable()) Logger.logToConsole("log.txt", "["+getLogID()+"]: can't break");
         else if(!this.isBroken()) {
             setBroken(true);
-            Logger.logToConsole("log.txt", getLogID()+": broken");
+            Logger.logToConsole("log.txt", "["+getLogID()+"]: broken");
         }
     }
 
@@ -86,12 +86,12 @@ public class Pipe extends MapElement implements Updatable {
     public void cut(Pump pumpPlaced){
         Pipe uj_pipe_1 = new Pipe();
         Pipe uj_pipe_2 = new Pipe();
-        System.out.println("Új csövek létrehozva.");
+        Logger.log("log.txt","Pipe cut in two");
 
         ActiveElement end1 = elements.get(0);
         ActiveElement end2 = null;
         if(elements.size() > 1) end2 =  elements.get(1);
-        System.out.println("Eredeti cső vég elemei elmentve.");
+        Logger.log("log.txt","Pipe ends saved");
 
         end1.detachPipe(this);
         end1.attachPipe(uj_pipe_1);
@@ -101,7 +101,7 @@ public class Pipe extends MapElement implements Updatable {
         }
         pumpPlaced.attachPipe(uj_pipe_1);
         pumpPlaced.attachPipe(uj_pipe_2);
-        System.out.println("Új csövek csatlakoztatva.");
+        Logger.log("log.txt","New pipes attached to placed pump");
     }
 
     /**
@@ -113,7 +113,7 @@ public class Pipe extends MapElement implements Updatable {
     public boolean acceptPlayer(Player player){
         boolean accepted = false;
         if(!this.isOccupied()) {
-            Logger.logToConsole("log.txt", getLogID()+": "+player.getLogID()+" moved");
+            Logger.logToConsole("console.txt", "["+getLogID()+"]: "+player.getLogID()+" moved");
             if(checkSlippery()){
                 player.step(getRandomEnd());
             }
@@ -124,7 +124,7 @@ public class Pipe extends MapElement implements Updatable {
             }
         }
         else{
-            Logger.logToConsole("log.txt", getLogID()+": "+player.getLogID()+" could not move");
+            Logger.logToConsole("console.txt", "["+getLogID()+"]: "+player.getLogID()+" could not move");
         }
         return accepted;
     }
@@ -136,7 +136,7 @@ public class Pipe extends MapElement implements Updatable {
     public void addElement(ActiveElement element){
         if(elements.size()<2) {
             this.elements.add(element);
-            System.out.println("Elem hozzáadva a csőhöz");
+            Logger.log("log.txt", "["+getLogID()+"]: Element added");
         }
     }
 
@@ -156,10 +156,10 @@ public class Pipe extends MapElement implements Updatable {
     public void makeSticky(int value){
         if(stickyFor <= 0) {
             this.stickyFor = value;
-            Logger.logToConsole("log.txt", getLogID() + ": made sticky for " + value + " turns");
+            Logger.logToConsole("console.txt", "["+getLogID() + "]: made sticky for " + value + " turns");
         }
         else{
-            Logger.logToConsole("log.txt", getLogID()+": can't become sticky");
+            Logger.logToConsole("console.txt", "["+getLogID()+"]: can't become sticky");
         }
     }
 
@@ -178,10 +178,10 @@ public class Pipe extends MapElement implements Updatable {
     public void makeSlippery(int value){
         if(slipperyFor <= 0) {
             this.slipperyFor = value;
-            Logger.logToConsole("log.txt", getLogID() + ": made slippery for " + value + " turns");
+            Logger.logToConsole("console.txt", "["+getLogID() + "]: made slippery for " + value + " turns");
         }
         else{
-            Logger.logToConsole("log.txt", getLogID()+": can't become slippery");
+            Logger.logToConsole("console.txt", "["+getLogID()+"]: can't become slippery");
         }
     }
 

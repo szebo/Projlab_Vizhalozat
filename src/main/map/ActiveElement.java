@@ -39,10 +39,10 @@ public abstract class ActiveElement extends MapElement implements IControllable 
             this.pipes.remove(pipe);
             pipe.removeWater(pipe.water);
             pipe.removeElement(this);
-            System.out.println("Pumpáról cső lecsatolva.");
+            Logger.log("log.txt", "Element detached");
         }
         else
-            System.out.println("Foglalt a cső!");
+            Logger.log("log.txt", "Element occupied");
     }
     /**
      * Felcsatolja “pipe” csövet az aktív elemre.
@@ -56,10 +56,10 @@ public abstract class ActiveElement extends MapElement implements IControllable 
             pipes.add(pipe);
             pipe.addElement(this);
             //TODO Itt kerül majd ki a cső a player inventoryjából
-            Logger.logToConsole("log.txt", getLogID()+": "+pipe.getLogID()+" has been attached");
+            Logger.logToConsole("console.txt", "["+getLogID()+"]: "+pipe.getLogID()+" has been attached");
         }
         else
-            Logger.logToConsole("log.txt", getLogID()+": "+pipe.getLogID()+" could not be attached");
+            Logger.logToConsole("console.txt", "["+getLogID()+"]: "+pipe.getLogID()+" could not be attached");
         return hasPlace;
     }
 

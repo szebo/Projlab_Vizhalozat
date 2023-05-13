@@ -1,5 +1,6 @@
 package main.map;
 
+import main.logging.Logger;
 import main.players.SaboteurTeam;
 
 import java.util.ArrayList;
@@ -62,7 +63,7 @@ public class Pump extends ActiveElement {
     public void setInput(Pipe input) {
         if(this.input != input)
             this.input = input;
-        System.out.println("Pumpa Input beállítva.");
+        Logger.log("log.txt", "Input set");
     }
 
     public Pipe getOutput() {
@@ -76,7 +77,7 @@ public class Pump extends ActiveElement {
     public void setOutput(Pipe output) {
         if(this.output != output)
             this.output = output;
-        System.out.println("Pumpa Output beállítva.");
+        Logger.log("log.txt", "Output set");
     }
 
     /**

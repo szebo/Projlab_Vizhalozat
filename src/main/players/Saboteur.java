@@ -2,6 +2,7 @@ package main.players;
 
 import commands.CommandInterpreter;
 import main.Main;
+import main.logging.Logger;
 import main.map.MapElement;
 
 /**
@@ -47,7 +48,7 @@ public class Saboteur extends Player {
             switch (playerInput) {
                 case "break":
                     numberOfActions--;
-                    breakElement();
+                    CommandInterpreter.runCommand("break", this);
                     break;
                 case "move":
                     numberOfActions--;
@@ -55,14 +56,14 @@ public class Saboteur extends Player {
                     break;
                 case "make_slippery":
                     numberOfActions--;
-                    useSlipperyGoo();
+                    CommandInterpreter.runCommand("make_slippery", this);
                     break;
                 case "make_sticky":
                     numberOfActions--;
-                    useStickyGoo();
+                    CommandInterpreter.runCommand("make_sticky", this);
                     break;
                 default:
-                    System.out.println("Thats not a valid command");
+                    Logger.logToConsole("console.txt","[System]: Thats not a valid command");
                     break;
             }
         }

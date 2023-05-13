@@ -29,10 +29,10 @@ public class Mechanic extends Player {
     public void pickUpPipe(Pipe pipe){
         Objects.requireNonNull(pipe, "Null értékű paramétert kapott a pickUpPipe!");
         if(pipe.isOccupied() && pipeInHand != null){
-            Logger.logToConsole("log.txt", getLogID()+": "+pipe.getLogID()+" could not be picked up");
+            Logger.logToConsole("console.txt", "["+getLogID()+"]: "+pipe.getLogID()+" could not be picked up");
             return;
         }
-        Logger.logToConsole("log.txt", getLogID()+": "+pipe.getLogID()+" picked up");
+        Logger.logToConsole("console.txt", "["+getLogID()+"]: "+pipe.getLogID()+" picked up");
         mapElement.detachPipe(pipe);
         this.pipeInHand = pipe;
     }
@@ -45,8 +45,8 @@ public class Mechanic extends Player {
     public void placePipe(){
         String pipeString = pipeInHand.getLogID();
         pipeInHand = (mapElement.attachPipe(pipeInHand)) ? null : pipeInHand;
-        if(pipeInHand == null) Logger.logToConsole("log.txt", getLogID()+": "+pipeString+" placed");
-        else Logger.logToConsole("log.txt", getLogID()+": "+pipeString+" could not be placed");
+        if(pipeInHand == null) Logger.logToConsole("console.txt", "["+getLogID()+"]: "+pipeString+" placed");
+        else Logger.logToConsole("console.txt", "["+getLogID()+"]: "+pipeString+" could not be placed");
     }
 
     /**
@@ -55,7 +55,7 @@ public class Mechanic extends Player {
      */
     public void pickUpPump(){
        mapElement.givePump(this);
-       Logger.logToConsole("log.txt", getLogID()+": "+pumpsInInventory.get(0).getLogID()+" picked up");
+       Logger.logToConsole("console.txt", "["+getLogID()+"]: "+pumpsInInventory.get(0).getLogID()+" picked up");
     }
 
     /**
@@ -66,7 +66,7 @@ public class Mechanic extends Player {
     public void placePump(){
         mapElement.cut(pumpsInInventory.get(0));
         this.setMapElement(pumpsInInventory.get(0));
-        Logger.logToConsole("log.txt", getLogID()+": "+pumpsInInventory.get(0).getLogID()+" placed");
+        Logger.logToConsole("console.txt", "["+getLogID()+"]: "+pumpsInInventory.get(0).getLogID()+" placed");
         pumpsInInventory.remove(0);
     }
 
@@ -77,10 +77,10 @@ public class Mechanic extends Player {
     public void repair(){
         if(mapElement.isBroken()) {
             mapElement.heal();
-            Logger.logToConsole("log.txt", mapElement.getLogID()+": repaired");
+            Logger.logToConsole("console.txt", "["+mapElement.getLogID()+"]: repaired");
         }
         else
-            Logger.logToConsole("log.txt", mapElement.getLogID()+": repair not needed");
+            Logger.logToConsole("console.txt", "["+mapElement.getLogID()+"]: repair not needed");
     }
 
     /**
@@ -128,7 +128,7 @@ public class Mechanic extends Player {
             switch (playerInput) {
                 case "break":
                     numberOfActions--;
-                    breakElement();
+                    CommandInterpreter.runCommand("break", this);
                     break;
                 case "move":
                     numberOfActions--;
@@ -136,28 +136,22 @@ public class Mechanic extends Player {
                     break;
                 case "repair":
                     numberOfActions--;
-                    repair();
+                    CommandInterpreter.runCommand("repair", this);
                     break;
                 case "make_sticky":
                     numberOfActions--;
-                    useStickyGoo();
+                    CommandInterpreter.runCommand("make_sticky", this);
                     break;
-                case "pickup pipe":
-                case "pickup pump":
+                case "pickup pipe", "pickup pump", "place pipe", "place pump":
                     numberOfActions--;
-                    CommandInterpreter.runCommand("pickup", this);
-                    break;
-                case "place pipe":
-                case "place pump":
-                    numberOfActions--;
-                    CommandInterpreter.runCommand("place", this);
+                    CommandInterpreter.runCommand(playerInput, this);
                     break;
                 case "configure":
                     numberOfActions--;
                     CommandInterpreter.runCommand("configure", this);
                     break;
                 default:
-                    System.out.println("thats not a valid command");
+                    Logger.logToConsole("console.txt","[System]: Thats not a valid command");
                     break;
             }
         }
