@@ -7,10 +7,7 @@ import main.Main;
 import main.interfaces.Updatable;
 import main.logging.Logger;
 import main.map.*;
-import main.players.Mechanic;
-import main.players.MechanicTeam;
-import main.players.Saboteur;
-import main.players.SaboteurTeam;
+import main.players.*;
 import tests.ProtoTests.Tester;
 
 import java.io.*;
@@ -20,47 +17,47 @@ import java.util.Scanner;
 
 public class CommandInterpreter {
 
-    public static void runCommand(String cmd){
+    public static void runCommand(String cmd, Player exec){
         String[] splits = cmd.split(" ");
         switch (splits[0]) {
             case "move":
-                move();
+                move(exec);
                 break;
 
             case "place":
                 if (splits[1].equals("pipe")) {
-                    Main.currentPlayer.placePipe();
+                    exec.placePipe();
                 } else if (splits[1].equals("pump")) {
-                    Main.currentPlayer.placePump();
+                    exec.placePump();
                 }
                 break;
 
             case "pickup":
-                pickUp(splits[1]);
+                pickUp(splits[1], exec);
                 break;
 
             case "break":
-                Main.currentPlayer.breakElement();
+                exec.breakElement();
                 break;
 
             case "repair":
-                Main.currentPlayer.repair();
+                exec.repair();
                 break;
 
             case "configure":
-                configure();
+                configure(exec);
                 break;
 
             case "make_slippery":
-                Main.currentPlayer.useSlipperyGoo();
+                exec.useSlipperyGoo();
                 break;
 
             case "make_sticky":
-                Main.currentPlayer.useStickyGoo();
+                exec.useStickyGoo();
                 break;
 
             case "end_turn":
-                Logger.logToConsole("log.txt", Main.currentPlayer.getLogID()+": turn ended");
+                Logger.logToConsole("log.txt", exec.getLogID()+": turn ended");
                 break;
 
             case "debug_break":
@@ -83,10 +80,12 @@ public class CommandInterpreter {
                 break;
 
             case "start":
-                if(MechanicTeam.getInstance().players.size()>1 && SaboteurTeam.getInstance().players.size()>1)
+                if(MechanicTeam.getInstance().players.size()>1 && SaboteurTeam.getInstance().players.size()>1) {
+                    Logger.logToConsole("log.txt", "[Game]: starting...");
                     Controller.run();
+                }
                 else
-                    Logger.logToConsole("log.txt", "[Game]:Not enough players!");
+                    Logger.logToConsole("log.txt", "[Game]: can’t start due to not having enough players");
                 break;
 
             case "load_map":
@@ -106,10 +105,9 @@ public class CommandInterpreter {
                 break;
 
             case "setplayerposition":
-                //TODO player = getPlayer(splits[1]);
-                //TODO player.setElement(Main.map.getElement(splits[2]));
-                //TODO Map.getInstance().getElement(splits[2]).addPlayer(player);
-                //TODO Logger.logToConsole("log.txt", player.getLogID()+": position set to "+Map.getInstance().getElement(splits[2]).getLogID());
+                exec.setMapElement(Map.getInstance().getElement(splits[2]));
+                Map.getInstance().getElement(splits[2]).addPlayer(exec);
+                Logger.logToConsole("log.txt", exec.getLogID()+": position set to "+Map.getInstance().getElement(splits[2]).getLogID());
                 break;
 
             case "create_pipe":
@@ -156,8 +154,8 @@ public class CommandInterpreter {
         }
     }
 
-    private static void move(){
-        MapElement element = Main.currentPlayer.getMapElement(); //holymoly...
+    private static void move(Player exec){
+        MapElement element = exec.getMapElement(); //holymoly...
         for(MapElement neighbour : element.getNeighbours()){
             System.out.println(neighbour.getLogID());
         }
@@ -170,13 +168,13 @@ public class CommandInterpreter {
         }
 
         if(validInput)
-            Main.currentPlayer.step(Map.getInstance().getElement(target));
+            exec.step(Map.getInstance().getElement(target));
         else
             Logger.logToConsole("log.txt", "Nem létező szomszéd lett megadva.");
     }
 
-    private static void configure(){
-        MapElement playerMapElement = Main.currentPlayer.getMapElement();
+    private static void configure(Player exec){
+        MapElement playerMapElement = exec.getMapElement();
         for(MapElement neighbour : playerMapElement.getNeighbours()){
             System.out.println(neighbour.getLogID());
         }
@@ -195,15 +193,15 @@ public class CommandInterpreter {
             else Logger.logToConsole("log.txt", "Az input és az output ugyan az lett!");
         }
 
-        if(validOutput && validInput) Main.currentPlayer.configurePump(Map.getInstance().getPipe(input), Map.getInstance().getPipe(output));
+        if(validOutput && validInput) exec.configurePump(Map.getInstance().getPipe(input), Map.getInstance().getPipe(output));
         else if(!validOutput) Logger.logToConsole("log.txt", "Az outputnak nem létező cső lett megadva.");
         else if(!validInput) Logger.logToConsole("log.txt", "Az inputnak nem létező cső lett megadva.");
         else Logger.logToConsole("log.txt", "Az inputnak és outputnak is nem létező cső lett megadva.");
     }
 
-    private static void pickUp(String cmd){
+    private static void pickUp(String cmd, Player exec){
         if (cmd.equals("pipe")) {
-            MapElement playerMapElement = Main.currentPlayer.getMapElement();
+            MapElement playerMapElement = exec.getMapElement();
             for(MapElement neighbour : playerMapElement.getNeighbours()){
                 System.out.println(neighbour.getLogID());
             }
@@ -214,11 +212,11 @@ public class CommandInterpreter {
             }
 
             if(valid)
-                Main.currentPlayer.pickUpPipe(Map.getInstance().getPipe(target));
+                exec.pickUpPipe(Map.getInstance().getPipe(target));
             else
                 Logger.logToConsole("log.txt", "Invalid target!");
         } else if (cmd.equals("pump")) {
-            Main.currentPlayer.pickUpPump();
+            exec.pickUpPump();
         }
     }
 

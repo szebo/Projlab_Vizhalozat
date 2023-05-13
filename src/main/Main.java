@@ -14,7 +14,7 @@ public class Main {
         boolean exit = false;
         while(!exit) {
             String cmd = System.console().readLine();
-            CommandInterpreter.runCommand(cmd);
+            CommandInterpreter.runCommand(cmd, null);
         }
 
         //Tester.runTest();

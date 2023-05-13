@@ -13,7 +13,7 @@ public class Tester {
 
     /**
      * A tesztek során automatikusan kiadott parancsokat fájlból olvasó függvény.
-     * @param filename A parancsokat soronként tartalmazó szöveges fájl
+     * @param file A parancsokat soronként tartalmazó szöveges fájl
      * @return Soronként parsolt parancsok
      * **/
     public static List<String> commandFileReader(int file) {
@@ -67,11 +67,11 @@ public class Tester {
 
     /**
      * Futtatja a paraméterben megadott parancsokat sorban.
-     * @param cmds A kiadandó parancsok soronként szedve
+     * @param file file neve (id)
      * @return hamis, ha valamely parancsnak nem volt sikeres a végrehajtása
      * **/
     public static void runTest(int file){
         ArrayList<String> cmds = (ArrayList<String>) commandFileReader(file);
-        for (String s: cmds ) commandInterpreter.runCommand(s);
+        for (String s: cmds ) commandInterpreter.runCommand(s, null);
     }
 }

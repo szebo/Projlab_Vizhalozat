@@ -15,14 +15,15 @@ public class Map implements Updatable{
     private List<MapElement> mapElements;
     private List<IControllable> controllableMapElements;
     private List<Updatable> updatableMapElements;
-
     private List<Pipe> pipeList;
+    private List<ActiveElement> activeElements;
     private static Map instance = null;
     private Map(){
         mapElements = new ArrayList<>();
         controllableMapElements = new ArrayList<>();
         updatableMapElements = new ArrayList<>();
         pipeList = new ArrayList<>();
+        activeElements = new ArrayList<>();
     }
 
     public static synchronized Map getInstance()
@@ -80,18 +81,21 @@ public class Map implements Updatable{
                 Pump pump = new Pump();
                 mapElements.add(pump);
                 controllableMapElements.add(pump);
+                activeElements.add(pump);
                 Logger.logToConsole("log.txt", "[Map]: "+pump.getLogID()+" has been created");
                 break;
             case "Cistern":
                 Cistern cistern = new Cistern();
                 mapElements.add(cistern);
                 controllableMapElements.add(cistern);
+                activeElements.add(cistern);
                 Logger.logToConsole("log.txt", "[Map]: "+cistern.getLogID()+" has been created");
                 break;
             case "Spring":
                 Spring spring = new Spring();
                 mapElements.add(spring);
                 controllableMapElements.add(spring);
+                activeElements.add(spring);
                 Logger.logToConsole("log.txt", "[Map]: "+spring.getLogID()+" has been created");
                 break;
             case "Pipe":
@@ -127,15 +131,16 @@ public class Map implements Updatable{
                             element = new Pump(Integer.parseInt(splits[1]));
                             break;
                     }
-                    Main.map.storeNewMapElement(element);
-                    Main.map.addActive(element);
+                    mapElements.add(element);
+                    controllableMapElements.add(element);
                 }
                 else{
                     Pipe pipe = new Pipe(Integer.parseInt(splits[2]));
-                    Main.map.storeNewMapElement(pipe);
-                    Main.map.getElement(Integer.parseInt(splits[0])).attachPipe(pipe);
-                    Main.map.getElement(Integer.parseInt(splits[1])).attachPipe(pipe);
-                    Main.map.addUpdatable(pipe);
+                    mapElements.add(pipe);
+                    getElement(Integer.parseInt(splits[0])).attachPipe(pipe);
+                    getElement(Integer.parseInt(splits[1])).attachPipe(pipe);
+                    updatableMapElements.add(pipe);
+                    pipeList.add(pipe);
                 }
             }
             reader.close();
@@ -152,13 +157,14 @@ public class Map implements Updatable{
         try {
             BufferedWriter writer = new BufferedWriter(new FileWriter("/files/maps/"+id+".txt"));
             writer.append("ActiveElements\n");
-            for(ActiveElement element : Map.getInstance().getElement()){ //használj egy while(true)-t meg egy counter és a már meglévő getElementet
-                //hogy elért a MapelElementeket. Ha csak az active elementeken akarsz végig menni akkor csinalj arra is egy gettert.
-                //TODO FIX!!
+            for(ActiveElement element : activeElements){
                 writer.append(element.getLogID()+","+element.getCapacity()+"\n");
             }
             writer.append("Pipes\n");
-            //for()
+            for(Pipe pipe : pipeList){
+                MapElement[] neighbours = pipe.getNeighbours();
+                writer.append(activeElements.indexOf(neighbours[0])+","+activeElements.indexOf(neighbours[1])+","+pipe.getCapacity()+"\n");
+            }
 
             writer.close();
             Logger.logToConsole("log.txt", "[Map]: map saved as "+id);

@@ -132,7 +132,7 @@ public class Mechanic extends Player {
                     break;
                 case "move":
                     numberOfActions--;
-                    CommandInterpreter.runCommand("move");
+                    CommandInterpreter.runCommand("move", this);
                     break;
                 case "repair":
                     numberOfActions--;
@@ -145,16 +145,16 @@ public class Mechanic extends Player {
                 case "pickup pipe":
                 case "pickup pump":
                     numberOfActions--;
-                    CommandInterpreter.runCommand("pickup");
+                    CommandInterpreter.runCommand("pickup", this);
                     break;
                 case "place pipe":
                 case "place pump":
                     numberOfActions--;
-                    CommandInterpreter.runCommand("place");
+                    CommandInterpreter.runCommand("place", this);
                     break;
                 case "configure":
                     numberOfActions--;
-                    CommandInterpreter.runCommand("configure");
+                    CommandInterpreter.runCommand("configure", this);
                     break;
                 default:
                     System.out.println("thats not a valid command");

@@ -51,7 +51,7 @@ public class Saboteur extends Player {
                     break;
                 case "move":
                     numberOfActions--;
-                    CommandInterpreter.runCommand("move");
+                    CommandInterpreter.runCommand("move", this);
                     break;
                 case "make_slippery":
                     numberOfActions--;
