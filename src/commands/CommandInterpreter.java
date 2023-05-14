@@ -24,10 +24,18 @@ public class CommandInterpreter {
                 break;
 
             case "place":
-                if (splits[1].equals("pipe")) {
-                    player.placePipe();
-                } else if (splits[1].equals("pump")) {
-                    player.placePump();
+                if(debug_args != null) {
+                    if (splits[1].equals("pipe")) {
+                        player.placePipe();
+                    } else if (splits[1].equals("pump")) {
+                        player.placePump();
+                    }
+                }
+                else{
+                    if(debug_args.get(0).equals("pipe"))
+                        player.placePipe();
+                    else
+                        player.placePump();
                 }
                 break;
 
