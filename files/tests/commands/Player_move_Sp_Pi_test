@@ -1,8 +1,8 @@
 create Spring
 create Pipe
 create Pipe
-create_mechanic
-create_mechanic
+create_saboteur
+create_saboteur
 attach Pipe1 Spring1
 attach Pipe2 Spring1
 setplayerposition Saboteur1 Spring1
