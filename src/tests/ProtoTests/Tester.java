@@ -23,7 +23,7 @@ public class Tester {
     public static ArrayList<String> commandFileReader(String file) {
         ArrayList<String> cmds = new ArrayList<>();
         try {
-            File commandsFile = new File(Main.rootfolder+"/files/tests/commands/"+file);
+            File commandsFile = new File(Main.rootfolder+"/files/tests/commands/"+file+"_test");
             Scanner Reader = new Scanner(commandsFile);
             while (Reader.hasNextLine()) {
                 cmds.add(Reader.nextLine());
@@ -90,7 +90,7 @@ public class Tester {
             for (String s: testCommands){
                 CommandInterpreter.runCommand(s, null, null);
             }
-            outputComparator(Main.rootfolder+"/files/tests/expected_outputs/"+test);
+            outputComparator(Main.rootfolder+"/files/tests/expected_outputs/"+test+"_output");
             currentTestLog.clear();
             currentTestLog = null;
         }
