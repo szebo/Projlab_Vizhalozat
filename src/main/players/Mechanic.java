@@ -29,10 +29,10 @@ public class Mechanic extends Player {
     public void pickUpPipe(Pipe pipe){
         Objects.requireNonNull(pipe, "Null értékű paramétert kapott a pickUpPipe!");
         if(pipe.isOccupied() && pipeInHand != null){
-            Logger.logToConsole("console.txt", "["+getLogID()+"]: "+pipe.getLogID()+" could not be picked up");
+            Logger.log("console.txt", "["+getLogID()+"]: "+pipe.getLogID()+" could not be picked up", true);
             return;
         }
-        Logger.logToConsole("console.txt", "["+getLogID()+"]: "+pipe.getLogID()+" picked up");
+        Logger.log("console.txt", "["+getLogID()+"]: "+pipe.getLogID()+" picked up", true);
         mapElement.detachPipe(pipe);
         this.pipeInHand = pipe;
     }
@@ -45,8 +45,8 @@ public class Mechanic extends Player {
     public void placePipe(){
         String pipeString = pipeInHand.getLogID();
         pipeInHand = (mapElement.attachPipe(pipeInHand)) ? null : pipeInHand;
-        if(pipeInHand == null) Logger.logToConsole("console.txt", "["+getLogID()+"]: "+pipeString+" placed");
-        else Logger.logToConsole("console.txt", "["+getLogID()+"]: "+pipeString+" could not be placed");
+        if(pipeInHand == null) Logger.log("console.txt", "["+getLogID()+"]: "+pipeString+" placed", true);
+        else Logger.log("console.txt", "["+getLogID()+"]: "+pipeString+" could not be placed", true);
     }
 
     /**
@@ -55,7 +55,7 @@ public class Mechanic extends Player {
      */
     public void pickUpPump(){
        mapElement.givePump(this);
-       Logger.logToConsole("console.txt", "["+getLogID()+"]: "+pumpsInInventory.get(0).getLogID()+" picked up");
+       Logger.log("console.txt", "["+getLogID()+"]: "+pumpsInInventory.get(0).getLogID()+" picked up", true);
     }
 
     /**
@@ -66,7 +66,7 @@ public class Mechanic extends Player {
     public void placePump(){
         mapElement.cut(pumpsInInventory.get(0));
         this.setMapElement(pumpsInInventory.get(0));
-        Logger.logToConsole("console.txt", "["+getLogID()+"]: "+pumpsInInventory.get(0).getLogID()+" placed");
+        Logger.log("console.txt", "["+getLogID()+"]: "+pumpsInInventory.get(0).getLogID()+" placed", true);
         pumpsInInventory.remove(0);
     }
 
@@ -77,10 +77,10 @@ public class Mechanic extends Player {
     public void repair(){
         if(mapElement.isBroken()) {
             mapElement.heal();
-            Logger.logToConsole("console.txt", "["+mapElement.getLogID()+"]: repaired");
+            Logger.log("console.txt", "["+mapElement.getLogID()+"]: repaired", true);
         }
         else
-            Logger.logToConsole("console.txt", "["+mapElement.getLogID()+"]: repair not needed");
+            Logger.log("console.txt", "["+mapElement.getLogID()+"]: repair not needed", true);
     }
 
     /**
@@ -153,7 +153,7 @@ public class Mechanic extends Player {
                     CommandInterpreter.runCommand("configure", this);
                     break;
                 default:
-                    Logger.logToConsole("console.txt","[System]: Thats not a valid command");
+                    Logger.log("console.txt","[System]: Thats not a valid command", true);
                     break;
             }
         }

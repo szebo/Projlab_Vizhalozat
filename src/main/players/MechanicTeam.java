@@ -12,7 +12,7 @@ public class MechanicTeam {
     private int counter = 0;
     private int points = 0;
     private MechanicTeam(){
-        Logger.log("log.txt","Mechanic team created");
+        Logger.log("log.txt","Mechanic team created", false);
     }
     public static synchronized MechanicTeam getInstance()
     {
@@ -24,15 +24,15 @@ public class MechanicTeam {
     {
         if(players.size() < 3) {
             players.add((Mechanic) player);
-            Logger.log("log.txt","Player added to MechanicTeam");
+            Logger.log("log.txt","Player added to MechanicTeam", false);
         }
-        Logger.log("log.txt","Player could not be added to MechanicTeam, due to overpopulation");
+        Logger.log("log.txt","Player could not be added to MechanicTeam, due to overpopulation", false);
     }
 
     public void addPoints(int point)
     {
         points+=point;
-        Logger.log("log.txt","Points added, currently the Mechanics have "+ points +" points");
+        Logger.log("log.txt","Points added, currently the Mechanics have "+ points +" points", false);
     }
 
     public Mechanic getMechanic()

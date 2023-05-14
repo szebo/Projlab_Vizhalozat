@@ -11,7 +11,7 @@ public class SaboteurTeam {
     private int counter = 0;
     private int points = 0;
     private SaboteurTeam(){
-        Logger.log("log.txt","SaboteurTeam created");
+        Logger.log("log.txt","SaboteurTeam created", false);
     }
     public static synchronized SaboteurTeam getInstance()
     {
@@ -23,15 +23,15 @@ public class SaboteurTeam {
     {
         if(players.size() < 5){
             players.add((Saboteur)player);
-        Logger.log("log.txt","Player added to SaboteurTeam");
+        Logger.log("log.txt","Player added to SaboteurTeam", false);
         }
-        Logger.log("log.txt","Player could not be added to SaboteurTeam, due to overpopulation");
+        Logger.log("log.txt","Player could not be added to SaboteurTeam, due to overpopulation", false);
     }
 
     public void addPoints(int point)
     {
         points+=point;
-        Logger.log("log.txt","Points added the Saboteurs currently have "+ points+" points");
+        Logger.log("log.txt","Points added the Saboteurs currently have "+ points+" points", false);
     }
 
     public Saboteur getSabotuer()

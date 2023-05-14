@@ -1,1 +1,8 @@
-[Game]: forcefully started
+2023/05/14 12:37:27	[Map]: Pump1 has been created
+2023/05/14 12:37:27	[Map]: Pipe1 has been created
+2023/05/14 12:37:27	[Mechanic1]: created
+2023/05/14 12:37:27	[Pump1]: Pipe1 has been attached
+2023/05/14 12:37:27	[Pump1]: broken by tester
+2023/05/14 12:37:27	[Pipe1]: broken by tester
+2023/05/14 12:37:27	[Mechanic1]: position set to Pump1
+2023/05/14 12:37:27	[Game]: forcefully started

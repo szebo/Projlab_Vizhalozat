@@ -25,14 +25,11 @@ public class Controller {
      * A tesztek futtatásához, hogy lehessen egy játékossal is csinálni dolgokat, és ne keljen végig várni az egész játékot.
      */
     public static void debug_run(){
-        while(!win) {
-            for (int i = 0; i < 2; i++) {
-                if(SaboteurTeam.getInstance().getPlayers().size()> 0) SaboteurTeam.getInstance().getSabotuer().doAction();
-                if(MechanicTeam.getInstance().getPlayers().size()> 0) MechanicTeam.getInstance().getMechanic().doAction();
-            }
+        for (int i = 0; i < Tester.testCommands.size(); i++) {
+            if(SaboteurTeam.getInstance().getPlayers().size()> 0) SaboteurTeam.getInstance().getSabotuer().doAction();
+            if(MechanicTeam.getInstance().getPlayers().size()> 0) MechanicTeam.getInstance().getMechanic().doAction();
             Map.getInstance().update();
             Map.getInstance().control();
-            win = SaboteurTeam.getInstance().hasWon() || MechanicTeam.getInstance().hasWon();
         }
     }
 }

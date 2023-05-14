@@ -48,7 +48,7 @@ public abstract class MapElement {
      */
     public void heal(){
         setBroken(false);
-        Logger.log("log.txt", "Element repaired");
+        Logger.log("log.txt", "Element repaired", false);
     }
 
     /**
@@ -62,7 +62,7 @@ public abstract class MapElement {
      */
     public boolean acceptPlayer(Player player){
         addPlayer(player);
-        Logger.logToConsole("console.txt", "["+getLogID()+"]: "+player.getLogID()+" moved");
+        Logger.log("console.txt", "["+getLogID()+"]: "+player.getLogID()+" moved", true);
         return true;
     }
 
@@ -91,7 +91,7 @@ public abstract class MapElement {
     public int addWater(int water){
         int waterTaken = this.water + water > capacity ? capacity-this.water : water;
         this.water += waterTaken;
-        Logger.log("log.txt", "["+getLogID()+"]: "+waterTaken+" water added");
+        Logger.log("log.txt", "["+getLogID()+"]: "+waterTaken+" water added", false);
         return waterTaken;
     }
 
@@ -104,11 +104,11 @@ public abstract class MapElement {
         if(!isBroken) {
             int pumpedWater = Math.min(this.water, water);
             this.water -= pumpedWater;
-            Logger.log("log.txt","["+getLogID()+"]: "+pumpedWater+" water removed");
+            Logger.log("log.txt","["+getLogID()+"]: "+pumpedWater+" water removed", false);
             return pumpedWater;
         }
         else {
-            Logger.log("log.txt", "["+getLogID()+"]: pipe is not functional");
+            Logger.log("log.txt", "["+getLogID()+"]: pipe is not functional", false);
             return 0;
         }
     }

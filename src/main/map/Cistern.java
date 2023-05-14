@@ -44,7 +44,7 @@ public class Cistern extends ActiveElement {
     public void givePump(Mechanic mechanic){
         mechanic.addPumpToInventory(pumpsInReserve.get(0));
         pumpsInReserve.remove(0);
-        Logger.log("log.txt", "Pump given to Mechanic");
+        Logger.log("log.txt", "Pump given to Mechanic", false);
     }
 
     /**
@@ -53,7 +53,7 @@ public class Cistern extends ActiveElement {
     public void newPipe(){
         Pipe newpipe = new Pipe();
         this.attachPipe(newpipe);
-        Logger.logToConsole("console.txt", "["+newpipe.getLogID()+"]: created");
+        Logger.log("console.txt", "["+newpipe.getLogID()+"]: created", true);
     }
 
     /**

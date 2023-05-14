@@ -67,7 +67,7 @@ public class Saboteur extends Player {
                     CommandInterpreter.runCommand("make_sticky", this);
                     break;
                 default:
-                    Logger.logToConsole("console.txt","[System]: Thats not a valid command");
+                    Logger.log("console.txt","[System]: Thats not a valid command", true);
                     break;
             }
         }

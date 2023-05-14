@@ -13,6 +13,8 @@ import java.util.Scanner;
 public class Tester {
     public static CommandInterpreter commandInterpreter = new CommandInterpreter();
 
+    public static ArrayList<String> currentTestLog = null;
+    public static ArrayList<String> testCommands = new ArrayList<>();
     /**
      * A tesztek során automatikusan kiadott parancsokat fájlból olvasó függvény.
      * @param file A parancsokat soronként tartalmazó szöveges fájl
@@ -28,7 +30,7 @@ public class Tester {
             }
             Reader.close();
         } catch (FileNotFoundException e) {
-            Logger.log("log.txt","Test not found");
+            Logger.log("log.txt","Test not found", true);
         }
         return cmds;
     }
@@ -36,10 +38,9 @@ public class Tester {
     /**
      * Az összehasonlítást végzi az elvárt és a kapott kimenet között
      * @param expectedOutputFile Az elvárt kimenet előre megírt sorait tartalmazó fájl neve
-     * @param testOutput Az aktuálisan végrehajtott teszt kimenete soronként külön tárolva
      * @return Igazat ha az összehasonlítás sikeres volt, ha valamely sor nem illeszkedett, akkor hamisat
      * **/
-    public static boolean outputComparator(String expectedOutputFile, ArrayList<String> testOutput /*vagy ezt is fájlból*/) {
+    public static void outputComparator(String expectedOutputFile) {
 
         /*Parsing part*/
         ArrayList<String> expOutput = new ArrayList<String>();
@@ -51,29 +52,46 @@ public class Tester {
             }
             Reader.close();
         } catch (FileNotFoundException e) {
-            Logger.log("log.txt","File not found: "+expectedOutputFile);
+            Logger.log("log.txt","File not found: "+expectedOutputFile, true);
         }
 
         /* Comparing part */
-        for (int i = 0; i < testOutput.size() && i < expOutput.size(); i++) {
-            if(!expOutput.get(i).equals(testOutput.get(i))){
-                Logger.logToConsole("console.txt","Nem egyezo teszt kimenet:" +
+        for (int i = 0; i < currentTestLog.size() && i < expOutput.size(); i++) {
+            if(!expOutput.get(i).equals(currentTestLog.get(i))){
+                Logger.log("console.txt","Nem egyezo teszt kimenet:" +
                         "\nElvart: " + expOutput.get(i) +
-                        "\nAktualis:" + testOutput.get(i));
-                return false;
+                        "\nAktualis:" + currentTestLog.get(i), true);
+                return;
             }
         }
-        Logger.logToConsole("console.txt","Egyezo kimenet a " + expectedOutputFile + "fajllal!\n---- Sikeres teszt! ----");
-        return true;
+        Logger.log("console.txt","Egyezo kimenet a " + expectedOutputFile + "fajllal!\n---- Sikeres teszt! ----", true);
     }
 
     /**
-     * Futtatja a paraméterben megadott parancsokat sorban.
-     * @param file file neve (id)
-     * @return hamis, ha valamely parancsnak nem volt sikeres a végrehajtása
+     * Lefuttat egy vagy több testet, és összeveti a kimenetüket az elvárt kimenettel.
+     * @param files file(ok) neve(i)
      * **/
-    public static void runTest(String file){
-        List<String> cmds = commandFileReader(file);
-        for (String s: cmds ) commandInterpreter.runCommand(s, null);
+    public static void runTest(String files){
+        ArrayList<String> tests = new ArrayList<>();
+        if(files.contains(",")){
+            String[] params = files.split(",");
+            for(String p : params){
+                tests.add(p);
+            }
+        }
+        else
+            tests.add(files);
+
+        for(String test : tests){
+            currentTestLog = new ArrayList<>();
+            testCommands.clear();
+            testCommands = commandFileReader(test);
+            for (String s: testCommands ){
+                commandInterpreter.runCommand(s, null);
+            }
+            outputComparator(Main.rootfolder+"/files/tests/expected_outputs/"+test);
+            currentTestLog.clear();
+            currentTestLog = null;
+        }
     }
 }

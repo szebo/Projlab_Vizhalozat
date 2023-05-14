@@ -63,7 +63,7 @@ public class Pump extends ActiveElement {
     public void setInput(Pipe input) {
         if(this.input != input)
             this.input = input;
-        Logger.log("log.txt", "Input set");
+        Logger.log("log.txt", "Input set", false);
     }
 
     public Pipe getOutput() {
@@ -77,7 +77,7 @@ public class Pump extends ActiveElement {
     public void setOutput(Pipe output) {
         if(this.output != output)
             this.output = output;
-        Logger.log("log.txt", "Output set");
+        Logger.log("log.txt", "Output set", false);
     }
 
     /**
