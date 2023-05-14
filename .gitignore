@@ -1,3 +1,4 @@
 /out/
 /.idea/
-/files/logs/
+/files/logs/log.txt
+/files/logs/console.txt
