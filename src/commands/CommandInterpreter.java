@@ -145,10 +145,11 @@ public class CommandInterpreter {
 
             case "runtest":
                 Tester.runTest(splits[1]);
-                Tester.currentTestLog.clear();
+                if(Tester.currentTestLog != null) {
+                    Tester.currentTestLog.clear();
+                }
                 Tester.currentTestLog = null;
                 break;
-
             default:
                 break;
         }
