@@ -1,0 +1,11 @@
+[Map]: Spring1 has been created
+[Map]: Pipe1 has been created
+[Map]: Pump1 has been created
+[Map]: Pipe2 has been created
+[Map]: Cistern1 has been created
+[Spring1]: Pipe1 has been attached
+[Pump1]: Pipe1 has been attached
+[Pump1]: Pipe2 has been attached
+[Cistern1]: Pipe2 has been attached
+[Pump1]: broken by tester
+[Map]: water is pumped

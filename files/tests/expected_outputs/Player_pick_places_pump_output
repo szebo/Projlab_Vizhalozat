@@ -1,0 +1,11 @@
+[Map]: Pump1 has been created
+[Map]: Pipe1 has been created
+[Map]: Cistern1 has been created
+[Mechanic1]: created
+[Cistern1]: Pipe1 has been attached
+[Pump1]: Pipe1 has been attached
+[Mechanic1]: position set to Cistern1
+[Game]: forcefully started
+[Mechanic1]: Pump1 picked up
+[Pipe1]: Mechanic1 moved
+[Mechanic1]: Pump1 placed

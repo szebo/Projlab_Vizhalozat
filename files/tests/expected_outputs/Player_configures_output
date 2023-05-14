@@ -1,0 +1,15 @@
+[Map]: Pump1 has been created
+[Map]: Pipe1 has been created
+[Map]: Pipe2 has been created
+[Map]: Pipe3 has been created
+[Mechanic1]: created
+[Saboteur1]: created
+[Pump1]: Pipe1 has been attached
+[Pump1]: Pipe2 has been attached
+[Pump1]: Pipe3 has been attached
+[Mechanic1]: position set to Pump1
+[Saboteur1]: position set to Pump1
+[Game]: forcefully started
+[Pump1] input is Pipe1, output is Pipe2
+[Mechanic1]: turn ended
+[Pump1] input is Pipe2, output is Pipe3

@@ -72,7 +72,7 @@ public abstract class MapElement {
      */
     public void addPlayer(Player player){
         players.add(player);
-        System.out.println("Játékos hozzáadva az elemhez!");
+        System.out.println("Játékos hozzáadva az elemhez!");        //TODO kivenni
     }
 
     /**
@@ -81,7 +81,7 @@ public abstract class MapElement {
      */
     public void removePlayer(Player player){
         players.remove(player);
-        System.out.println("Játékos eltávolítva az elemről!");
+        System.out.println("Játékos eltávolítva az elemről!"); //TODO kivenni
     }
 
     /**

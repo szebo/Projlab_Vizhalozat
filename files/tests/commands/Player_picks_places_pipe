@@ -5,7 +5,7 @@ create Cistern1
 create_mechanic
 attach Pipe1 Pump1
 attach Pipe2 Pump1
-attach Pipe2 Cistern2
+attach Pipe2 Cistern1
 setplayerposition Mechanic1 Pump1
 force_start
 pickup Pipe1
