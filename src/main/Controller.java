@@ -10,7 +10,7 @@ public class Controller {
     public static void run(){
         while(!win) {
             for (int i = 0; i < 2; i++) {
-                SaboteurTeam.getInstance().getSabotuer().doAction();
+                SaboteurTeam.getInstance().getSaboteur().doAction();
                 MechanicTeam.getInstance().getMechanic().doAction();
             }
             Map.getInstance().update();
@@ -24,9 +24,9 @@ public class Controller {
      * A tesztek futtatásához, hogy lehessen egy játékossal is csinálni dolgokat, és ne keljen végig várni az egész játékot.
      */
     public static void debug_run(){
-        for (int i = 0; i < Tester.testCommands.size(); i++) {
+        /*for (int i = 0; i < Tester.testCommands.size(); i++) {
             if(SaboteurTeam.getInstance().getPlayers().size()> 0){
-                Saboteur s = SaboteurTeam.getInstance().getSabotuer();
+                Saboteur s = SaboteurTeam.getInstance().getSaboteur();
                 s.doCommand(Tester.testCommands.get(i));
                 s.doCommand(Tester.testCommands.get(i));
             }
@@ -37,6 +37,6 @@ public class Controller {
             }
             Map.getInstance().update();
             Map.getInstance().control();
-        }
+        }*/
     }
 }
