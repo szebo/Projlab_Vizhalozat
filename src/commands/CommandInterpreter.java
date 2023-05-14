@@ -153,7 +153,7 @@ public class CommandInterpreter {
     }
 
     private static void move(Player player){
-        MapElement element = player.getMapElement(); //holymoly...
+        MapElement element = player.getMapElement();
         for(MapElement neighbour : element.getNeighbours()){
             System.out.println(neighbour.getLogID());
         }
