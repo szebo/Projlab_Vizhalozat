@@ -10,6 +10,12 @@
 [Mechanic1]: position set to Pump1
 [Saboteur1]: position set to Pump1
 [Game]: forcefully started
-[Pump1] input is Pipe1, output is Pipe2
+Pipe1
+Pipe2
+Pipe3
+[Pump1]: input is: Pipe1, output is: Pipe2
 [Mechanic1]: turn ended
-[Pump1] input is Pipe2, output is Pipe3
+Pipe1
+Pipe2
+Pipe3
+[Pump1]: input is: Pipe2, output is: Pipe3

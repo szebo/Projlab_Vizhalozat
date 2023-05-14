@@ -19,24 +19,4 @@ public class Controller {
             win = SaboteurTeam.getInstance().hasWon() || MechanicTeam.getInstance().hasWon();
         }
     }
-
-    /**
-     * A tesztek futtatásához, hogy lehessen egy játékossal is csinálni dolgokat, és ne keljen végig várni az egész játékot.
-     */
-    public static void debug_run(){
-        /*for (int i = 0; i < Tester.testCommands.size(); i++) {
-            if(SaboteurTeam.getInstance().getPlayers().size()> 0){
-                Saboteur s = SaboteurTeam.getInstance().getSaboteur();
-                s.doCommand(Tester.testCommands.get(i));
-                s.doCommand(Tester.testCommands.get(i));
-            }
-            if(MechanicTeam.getInstance().getPlayers().size()> 0){
-                Mechanic m = MechanicTeam.getInstance().getMechanic();
-                m.doCommand(Tester.testCommands.get(i));
-                m.doCommand(Tester.testCommands.get(i));
-            }
-            Map.getInstance().update();
-            Map.getInstance().control();
-        }*/
-    }
 }
