@@ -8,11 +8,23 @@
 [Cistern1]: Pipe2 has been attached
 [Mechanic1]: position set to Pump1
 [Game]: forcefully started
+Pipe1
+Pipe2
 [Mechanic1]: Pipe1 picked up
+Pipe2
 [Pipe2]: Mechanic1 moved
+Pump1
+Cistern1
 [Cistern1]: Mechanic1 moved
+[Cistern1]: Pipe1 has been attached
 [Mechanic1]: Pipe1 placed
+Pipe2
+Pipe1
 [Mechanic1]: Pipe1 picked up
+Pipe2
 [Pipe2]: Mechanic1 moved
+Pump1
+Cistern1
 [Pump1]: Mechanic1 moved
+[Pump1]: Pipe1 has been attached
 [Mechanic1]: Pipe1 placed
