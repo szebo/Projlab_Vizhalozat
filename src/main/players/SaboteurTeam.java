@@ -35,7 +35,7 @@ public class SaboteurTeam {
         Logger.log("log.txt","Points added the Saboteurs currently have "+ points+" points", true);
     }
 
-    public Saboteur getSabotuer()
+    public Saboteur getSaboteur()
     {
         return players.get(counter++ % players.size());
     }

@@ -3,6 +3,9 @@ package tests.ProtoTests;
 import commands.CommandInterpreter;
 import main.Main;
 import main.logging.Logger;
+import main.players.MechanicTeam;
+import main.players.Player;
+import main.players.SaboteurTeam;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -14,7 +17,6 @@ public class Tester {
     public static CommandInterpreter commandInterpreter = new CommandInterpreter();
 
     public static ArrayList<String> currentTestLog = null;
-    public static ArrayList<String> testCommands = new ArrayList<>();
     /**
      * A tesztek során automatikusan kiadott parancsokat fájlból olvasó függvény.
      * @param file A parancsokat soronként tartalmazó szöveges fájl
@@ -64,7 +66,7 @@ public class Tester {
                 return;
             }
         }
-        Logger.log("console.txt","Egyezo kimenet a " + expectedOutputFile + "fajllal!\n---- Sikeres teszt! ----", true);
+        Logger.log("console.txt","Egyezo kimenet a " + expectedOutputFile + " fajllal!\n---- Sikeres teszt! ----", true);
     }
 
     /**
@@ -84,11 +86,37 @@ public class Tester {
 
         for(String test : tests) {
             currentTestLog = new ArrayList<>();
-            testCommands.clear();
+            ArrayList<String> testCommands = new ArrayList<>();
             testCommands = commandFileReader(test);
 
+            ArrayList<String> initCommands = new ArrayList<>();
+            ArrayList<String> playerCommands = new ArrayList<>();
+            boolean init = true;
+
             for (String s: testCommands){
+                if(init){
+                    initCommands.add(s);
+                    if(s.contains("force_start")) init = false;
+                }
+                else{
+                    playerCommands.add(s);
+                }
+            }
+            for(String s : initCommands){
                 CommandInterpreter.runCommand(s, null);
+            }
+            for(String s : playerCommands){
+                String[] splits = s.split(" ");
+                List<Player> players = new ArrayList<>();
+                players.addAll(MechanicTeam.getInstance().getPlayers());
+                players.addAll(SaboteurTeam.getInstance().getPlayers());
+                Player player = null;
+                for(Player p : players){
+                    if(p.getLogID().equals(splits[0])) player = p;
+                }
+                if(player != null){
+                    CommandInterpreter.runCommand(splits[1], player);
+                }
             }
             outputComparator(Main.rootfolder+"/files/tests/expected_outputs/"+test+"_output");
             currentTestLog.clear();
