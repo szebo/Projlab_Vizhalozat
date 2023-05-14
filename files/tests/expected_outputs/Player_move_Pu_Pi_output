@@ -6,8 +6,13 @@
 [Pump1]: Pipe1 has been attached
 [Pump1]: Pipe2 has been attached
 [Mechanic1]: position set to Pump1
-[Mechanic1]: position set to Pipe2
+[Mechanic2]: position set to Pipe2
 [Game]: forcefully started
+Pipe1
+Pipe2
 [Pipe1]: Mechanic1 moved
+Pump1
 [Pump1]: Mechanic1 moved
+Pipe1
+Pipe2
 [Pipe2]: Mechanic1 could not move

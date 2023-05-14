@@ -8,11 +8,11 @@ attach Pipe2 Pump1
 attach Pipe2 Cistern1
 setplayerposition Mechanic1 Pump1
 force_start
-pickup Pipe1
-move Pipe2
-move Cistern1
-place Pipe1
-pickup Pipe1
-move Pipe2
-move Pump1
-place Pipe1
+Mechanic1 pickup Pipe1
+Mechanic1 move Pipe2
+Mechanic1 move Cistern1
+Mechanic1 place Pipe1
+Mechanic1 pickup Pipe1
+Mechanic1 move Pipe2
+Mechanic1 move Pump1
+Mechanic1 place Pipe1
