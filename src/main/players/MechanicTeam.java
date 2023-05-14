@@ -9,7 +9,7 @@ import java.util.List;
 public class MechanicTeam {
     private static MechanicTeam instance = null;
 
-    public List<Mechanic> players = new ArrayList<>() ;
+    private List<Mechanic> players = new ArrayList<>() ;
     private int counter = 0;
     private int points = 0;
     private MechanicTeam(){
@@ -63,5 +63,10 @@ public class MechanicTeam {
     {
         Logger.log("console.txt", "[MechanicTeam] points: "+ points, true);
         return points;
+    }
+    public void reset(){
+        players.clear();
+        counter = 0;
+        points = 0;
     }
 }

@@ -8,6 +8,6 @@ attach Pipe2 Cistern1
 setplayerposition Mechanic1 Cistern1
 setplayerposition Mechanic2 Pipe2
 force_start
-move Pipe1
-move Cistern1
-move Pipe2
+Mechanic1 move Pipe1
+Mechanic1 move Cistern1
+Mechanic1 move Pipe2

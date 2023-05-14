@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-public class Map implements Updatable{
+public class Map implements Updatable {
 
     private List<MapElement> mapElements;
     private List<IControllable> controllableMapElements;
@@ -263,5 +263,13 @@ public class Map implements Updatable{
     public MapElement getStartPosition()
     {
         return pipeList.get(startPositionCounter++);
+    }
+    
+    public void resetAfterTest(){
+        activeElements.clear();
+        mapElements.clear();
+        updatableMapElements.clear();
+        controllableMapElements.clear();
+        pipeList.clear();
     }
 }

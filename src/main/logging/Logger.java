@@ -12,7 +12,7 @@ public class Logger {
 
     public static void log(String file, String message, boolean console){
         if(console) System.out.println(message);
-        if(Tester.currentTestLog != null){
+        if(Tester.currentTestLog != null && console){
             Tester.currentTestLog.add(message);
         }
         else {

@@ -6,9 +6,9 @@ attach Pipe1 Pump1
 attach Pipe1 Pump2
 setplayerposition Saboteur1 Pipe1
 force_start
-make_slippery
-move Pump1
-move Pipe1
-end_turn
-end_turn
-move Pipe1
+Saboteur1 make_slippery
+Saboteur1 move Pump1
+Saboteur1 move Pipe1
+Saboteur1 end_turn
+Saboteur1 end_turn
+Saboteur1 move Pipe1

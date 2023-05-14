@@ -41,7 +41,7 @@ public class Pump extends ActiveElement {
         pipes = new ArrayList<>();
         players = new ArrayList<>();
         this.ID = nextID++;
-        Logger.log("console.txt", "["+getLogID()+"]: created", true);
+        //Logger.log("console.txt", "["+getLogID()+"]: created", true);
     }
 
     /**
@@ -140,5 +140,9 @@ public class Pump extends ActiveElement {
         ArrayList<Pipe> ret = new ArrayList<Pipe>();
         ret.add(output);
         return ret;
+    }
+    
+    public static void resetAfterTest(){
+        nextID = 1;
     }
 }

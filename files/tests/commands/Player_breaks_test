@@ -8,6 +8,6 @@ attach Pipe2 Pump1
 setplayerposition Mechanic1 Pipe1
 setplayerposition Saboteur1 Pipe2
 force_start
-break
-end_turn
-break
+Mechanic1 break
+Mechanic1 end_turn
+Saboteur1 break

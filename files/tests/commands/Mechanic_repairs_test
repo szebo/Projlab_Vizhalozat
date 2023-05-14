@@ -6,9 +6,9 @@ debug_break Pump1
 debug_break Pipe1
 setplayerposition Mechanic1 Pump1
 force_start
-repair
-move Pipe1
-repair
-repair
-move Pump1
-repair
+Mechanic1 repair
+Mechanic1 move Pipe1
+Mechanic1 repair
+Mechanic1 repair
+Mechanic1 move Pump1
+Mechanic1 repair
