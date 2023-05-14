@@ -245,7 +245,6 @@ public class Pipe extends MapElement implements Updatable {
 
     @Override
     public MapElement[] getNeighbours(){
-        System.out.println(elements.get(0).toString());
         return elements.toArray(new MapElement[2]);
     }
 
