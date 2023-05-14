@@ -157,7 +157,8 @@ public class CommandInterpreter {
     private static void move(Player player){
         MapElement element = player.getMapElement();
         for(MapElement neighbour : element.getNeighbours()){
-            System.out.println(neighbour.getLogID());
+            if(neighbour!=null)
+                Logger.log("console.log",neighbour.getLogID(), true);
         }
 
         boolean validInput = false;
@@ -172,7 +173,7 @@ public class CommandInterpreter {
         }
 
         for(MapElement neighbour : element.getNeighbours()){
-            if(target.equals(neighbour.getLogID())) validInput = true;
+            if(neighbour != null && target.equals(neighbour.getLogID())) validInput = true;
         }
 
         if(validInput)
@@ -184,7 +185,8 @@ public class CommandInterpreter {
     private static void configure(Player player){
         MapElement playerMapElement = player.getMapElement();
         for(MapElement neighbour : playerMapElement.getNeighbours()){
-            System.out.println(neighbour.getLogID());
+            if(neighbour != null)
+                Logger.log("console.log",neighbour.getLogID(), true);
         }
 
         boolean validInput = false;
@@ -207,13 +209,13 @@ public class CommandInterpreter {
 
                 else if(output.equals(neighbour.getLogID())) validOutput = true;
             }
-            else Logger.log("console.txt", "["+playerMapElement.getLogID()+"]: Az input és az output ugyanaz lett!", true);
+            else Logger.log("console.txt", "["+playerMapElement.getLogID()+"]: Input and output are the same!", true);
         }
 
         if(validOutput && validInput) player.configurePump(Map.getInstance().getPipe(input), Map.getInstance().getPipe(output));
-        else if(!validOutput) Logger.log("console.txt", "["+playerMapElement.getLogID()+"]: Az outputnak nem létező cső lett megadva.", true);
-        else if(!validInput) Logger.log("console.txt", "["+playerMapElement.getLogID()+"]: Az inputnak nem létező cső lett megadva.", true);
-        else Logger.log("console.txt", "["+playerMapElement.getLogID()+"]: Az inputnak és outputnak is nem létező cső lett megadva.", true);
+        else if(!validOutput) Logger.log("console.txt", "["+playerMapElement.getLogID()+"]: Invalid output.", true);
+        else if(!validInput) Logger.log("console.txt", "["+playerMapElement.getLogID()+"]: Invalid input.", true);
+        else Logger.log("console.txt", "["+playerMapElement.getLogID()+"]: Invalid input and output.", true);
     }
 
     private static void pickUp(String cmd, Player player){
@@ -233,7 +235,7 @@ public class CommandInterpreter {
             }
             boolean valid = false;
             for(MapElement neighbour : playerMapElement.getNeighbours()){
-                if(neighbour.getLogID().equals(target)) valid = true;
+                if(neighbour != null && neighbour.getLogID().equals(target)) valid = true;
             }
 
             if(valid)
