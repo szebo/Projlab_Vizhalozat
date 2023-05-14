@@ -126,7 +126,7 @@ public class Mechanic extends Player {
         while(numberOfActions > 0) {
             Scanner scanner = new Scanner(System.in);
             String playerInput = scanner.nextLine();
-            scanner.close();
+            //scanner.close();
             doCommand(playerInput);
             numberOfActions--;
         }

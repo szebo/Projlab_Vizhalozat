@@ -7,10 +7,6 @@ import main.map.*;
 import main.players.*;
 import tests.ProtoTests.Tester;
 
-import java.io.BufferedReader;
-import java.io.Console;
-import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -156,29 +152,26 @@ public class CommandInterpreter {
         }
     }
 
-    private static void move(Mechanic mechanic, Saboteur saboteur) {
+    private static void move(Mechanic mechanic, Saboteur saboteur){
         MapElement element = (mechanic != null ? mechanic : saboteur).getMapElement(); //holymoly...
         for(MapElement neighbour : element.getNeighbours()){
             System.out.println(neighbour.getLogID());
         }
 
-        System.out.println("\n");
         boolean validInput = false;
-        BufferedReader scanner = new BufferedReader(new InputStreamReader(System.in));
-        String target = System.console().readLine();
-        try {
-            for(MapElement neighbour : element.getNeighbours()){
-                if(target.equals(neighbour.getLogID())) validInput = true;
-            }
+        Scanner scanner = new Scanner(System.in);
+        scanner.useDelimiter(System.lineSeparator());
+        String target = scanner.nextLine();
+        //scanner.close();
 
-            if(validInput)
-                (mechanic != null ? mechanic : saboteur).step(Map.getInstance().getElement(target));
-            else
-                Logger.log("console.txt", "["+element.getLogID()+"]: Nem létező szomszéd lett megadva.", true);
-            scanner.close();
-        } catch (IOException e) {
-
+        for(MapElement neighbour : element.getNeighbours()){
+            if(target.equals(neighbour.getLogID())) validInput = true;
         }
+
+        if(validInput)
+            (mechanic != null ? mechanic : saboteur).step(Map.getInstance().getElement(target));
+        else
+            Logger.log("console.txt", "["+element.getLogID()+"]: Nem létező szomszéd lett megadva.", true);
     }
 
     private static void configure(Mechanic mechanic, Saboteur saboteur){
@@ -192,7 +185,7 @@ public class CommandInterpreter {
         Scanner scanner = new Scanner(System.in);
         String input = scanner.nextLine();
         String output = scanner.nextLine();
-        scanner.close();
+        //scanner.close();
 
         for(MapElement neighbour : playerMapElement.getNeighbours()){
             if(!input.equals(output)){
@@ -217,7 +210,7 @@ public class CommandInterpreter {
             }
             Scanner scanner = new Scanner(System.in);
             String target = scanner.nextLine();
-            scanner.close();
+            //scanner.close();
             boolean valid = false;
             for(MapElement neighbour : playerMapElement.getNeighbours()){
                 if(neighbour.getLogID().equals(target)) valid = true;

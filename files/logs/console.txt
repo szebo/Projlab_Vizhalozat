@@ -6,3 +6,313 @@
 2023/05/14 12:37:27	[Pipe1]: broken by tester
 2023/05/14 12:37:27	[Mechanic1]: position set to Pump1
 2023/05/14 12:37:27	[Game]: forcefully started
+2023/05/14 19:02:33	[Cistern1]: created
+2023/05/14 19:02:33	[Cistern2]: created
+2023/05/14 19:02:33	[Spring1]: created
+2023/05/14 19:02:33	[Spring2]: created
+2023/05/14 19:03:26	[Pump101]: created
+2023/05/14 19:03:26	[Pump102]: created
+2023/05/14 19:03:26	[Pump103]: created
+2023/05/14 19:03:26	[Pump104]: created
+2023/05/14 19:03:26	[Pump105]: created
+2023/05/14 19:03:26	[Pump106]: created
+2023/05/14 19:03:26	[Pipe1]: created
+2023/05/14 19:03:26	[Cistern1]: Pipe1 has been attached
+2023/05/14 19:03:26	[Pump105]: Pipe1 has been attached
+2023/05/14 19:03:26	[Pipe2]: created
+2023/05/14 19:03:26	[Cistern1]: Pipe2 has been attached
+2023/05/14 19:03:26	[Pump104]: Pipe2 has been attached
+2023/05/14 19:03:26	[Pipe3]: created
+2023/05/14 19:03:26	[Cistern2]: Pipe3 has been attached
+2023/05/14 19:03:26	[Pump103]: Pipe3 has been attached
+2023/05/14 19:03:26	[Pipe4]: created
+2023/05/14 19:03:26	[Cistern2]: Pipe4 has been attached
+2023/05/14 19:03:26	[Pump101]: Pipe4 has been attached
+2023/05/14 19:03:26	[Pipe5]: created
+2023/05/14 19:03:26	[Spring2]: Pipe5 has been attached
+2023/05/14 19:03:26	[Pump101]: Pipe5 has been attached
+2023/05/14 19:03:26	[Pipe6]: created
+2023/05/14 19:03:26	[Spring2]: Pipe6 has been attached
+2023/05/14 19:03:26	[Pump102]: Pipe6 has been attached
+2023/05/14 19:03:26	[Pipe7]: created
+2023/05/14 19:03:26	[Spring1]: Pipe7 has been attached
+2023/05/14 19:03:26	[Pump102]: Pipe7 has been attached
+2023/05/14 19:03:26	[Pipe8]: created
+2023/05/14 19:03:26	[Spring1]: Pipe8 has been attached
+2023/05/14 19:03:26	[Pump106]: Pipe8 has been attached
+2023/05/14 19:03:26	[Pipe9]: created
+2023/05/14 19:03:26	[Pump103]: Pipe9 has been attached
+2023/05/14 19:03:26	[Pump102]: Pipe9 has been attached
+2023/05/14 19:03:26	[Pipe10]: created
+2023/05/14 19:03:26	[Pump104]: Pipe10 has been attached
+2023/05/14 19:03:26	[Pump102]: Pipe10 has been attached
+2023/05/14 19:03:26	[Pipe11]: created
+2023/05/14 19:03:26	[Pump104]: Pipe11 has been attached
+2023/05/14 19:32:25	[Cistern1]: created
+2023/05/14 19:32:25	[Cistern2]: created
+2023/05/14 19:32:25	[Spring1]: created
+2023/05/14 19:32:25	[Spring2]: created
+2023/05/14 19:32:25	[Pump101]: created
+2023/05/14 19:32:25	[Pump102]: created
+2023/05/14 19:32:25	[Pump103]: created
+2023/05/14 19:32:25	[Pump104]: created
+2023/05/14 19:32:25	[Pump105]: created
+2023/05/14 19:32:25	[Pump106]: created
+2023/05/14 19:32:25	[Pipe1]: created
+2023/05/14 19:32:25	[Cistern1]: Pipe1 has been attached
+2023/05/14 19:32:25	[Pump105]: Pipe1 has been attached
+2023/05/14 19:32:25	[Pipe2]: created
+2023/05/14 19:32:25	[Cistern1]: Pipe2 has been attached
+2023/05/14 19:32:25	[Pump104]: Pipe2 has been attached
+2023/05/14 19:32:25	[Pipe3]: created
+2023/05/14 19:32:25	[Cistern2]: Pipe3 has been attached
+2023/05/14 19:32:25	[Pump103]: Pipe3 has been attached
+2023/05/14 19:32:25	[Pipe4]: created
+2023/05/14 19:32:25	[Cistern2]: Pipe4 has been attached
+2023/05/14 19:32:25	[Pump101]: Pipe4 has been attached
+2023/05/14 19:32:25	[Pipe5]: created
+2023/05/14 19:32:25	[Spring2]: Pipe5 has been attached
+2023/05/14 19:32:25	[Pump101]: Pipe5 has been attached
+2023/05/14 19:32:25	[Pipe6]: created
+2023/05/14 19:32:25	[Spring2]: Pipe6 has been attached
+2023/05/14 19:32:25	[Pump102]: Pipe6 has been attached
+2023/05/14 19:32:25	[Pipe7]: created
+2023/05/14 19:32:25	[Spring1]: Pipe7 has been attached
+2023/05/14 19:32:25	[Pump102]: Pipe7 has been attached
+2023/05/14 19:32:25	[Pipe8]: created
+2023/05/14 19:32:25	[Spring1]: Pipe8 has been attached
+2023/05/14 19:32:25	[Pump106]: Pipe8 has been attached
+2023/05/14 19:32:25	[Pipe9]: created
+2023/05/14 19:32:25	[Pump103]: Pipe9 has been attached
+2023/05/14 19:32:25	[Pump102]: Pipe9 has been attached
+2023/05/14 19:32:25	[Pipe10]: created
+2023/05/14 19:32:25	[Pump104]: Pipe10 has been attached
+2023/05/14 19:32:25	[Pump102]: Pipe10 has been attached
+2023/05/14 19:32:25	[Pipe11]: created
+2023/05/14 19:32:25	[Pump104]: Pipe11 has been attached
+2023/05/14 19:32:25	[Pump106]: Pipe11 has been attached
+2023/05/14 19:32:25	[Pipe12]: created
+2023/05/14 19:32:25	[Pump105]: Pipe12 has been attached
+2023/05/14 19:32:25	[Pump106]: Pipe12 has been attached
+2023/05/14 19:32:25	[Map]: map loaded
+2023/05/14 19:32:57	[Mechanic1]: created
+2023/05/14 19:33:02	[Mechanic2]: created
+2023/05/14 19:33:26	[Saboteur1]: created
+2023/05/14 19:33:34	[Saboteur2]: created
+2023/05/14 19:34:38	[System]: Element doesn't exist
+2023/05/14 19:34:38	[System]: Element doesn't exist
+2023/05/14 19:35:11	[Cistern1]: created
+2023/05/14 19:35:11	[Cistern2]: created
+2023/05/14 19:35:11	[Spring1]: created
+2023/05/14 19:35:11	[Spring2]: created
+2023/05/14 19:35:11	[Pump101]: created
+2023/05/14 19:35:11	[Pump102]: created
+2023/05/14 19:35:11	[Pump103]: created
+2023/05/14 19:35:11	[Pump104]: created
+2023/05/14 19:35:11	[Pump105]: created
+2023/05/14 19:35:11	[Pump106]: created
+2023/05/14 19:35:11	[Pipe1]: created
+2023/05/14 19:35:11	[Cistern1]: Pipe1 has been attached
+2023/05/14 19:35:11	[Pump105]: Pipe1 has been attached
+2023/05/14 19:35:11	[Pipe2]: created
+2023/05/14 19:35:11	[Cistern1]: Pipe2 has been attached
+2023/05/14 19:35:11	[Pump104]: Pipe2 has been attached
+2023/05/14 19:35:11	[Pipe3]: created
+2023/05/14 19:35:11	[Cistern2]: Pipe3 has been attached
+2023/05/14 19:35:11	[Pump103]: Pipe3 has been attached
+2023/05/14 19:35:11	[Pipe4]: created
+2023/05/14 19:35:11	[Cistern2]: Pipe4 has been attached
+2023/05/14 19:35:11	[Pump101]: Pipe4 has been attached
+2023/05/14 19:35:11	[Pipe5]: created
+2023/05/14 19:35:11	[Spring2]: Pipe5 has been attached
+2023/05/14 19:35:11	[Pump101]: Pipe5 has been attached
+2023/05/14 19:35:11	[Pipe6]: created
+2023/05/14 19:35:11	[Spring2]: Pipe6 has been attached
+2023/05/14 19:35:11	[Pump102]: Pipe6 has been attached
+2023/05/14 19:35:11	[Pipe7]: created
+2023/05/14 19:35:11	[Spring1]: Pipe7 has been attached
+2023/05/14 19:35:11	[Pump102]: Pipe7 has been attached
+2023/05/14 19:35:11	[Pipe8]: created
+2023/05/14 19:35:11	[Spring1]: Pipe8 has been attached
+2023/05/14 19:35:11	[Pump106]: Pipe8 has been attached
+2023/05/14 19:35:11	[Pipe9]: created
+2023/05/14 19:35:11	[Pump103]: Pipe9 has been attached
+2023/05/14 19:35:11	[Pump102]: Pipe9 has been attached
+2023/05/14 19:35:11	[Pipe10]: created
+2023/05/14 19:35:11	[Pump104]: Pipe10 has been attached
+2023/05/14 19:35:11	[Pump102]: Pipe10 has been attached
+2023/05/14 19:35:11	[Pipe11]: created
+2023/05/14 19:35:11	[Pump104]: Pipe11 has been attached
+2023/05/14 19:35:11	[Pump106]: Pipe11 has been attached
+2023/05/14 19:35:11	[Pipe12]: created
+2023/05/14 19:35:11	[Pump105]: Pipe12 has been attached
+2023/05/14 19:35:11	[Pump106]: Pipe12 has been attached
+2023/05/14 19:35:11	[Map]: map loaded
+2023/05/14 20:01:00	[Cistern1]: created
+2023/05/14 20:01:00	[Cistern2]: created
+2023/05/14 20:01:00	[Spring1]: created
+2023/05/14 20:01:00	[Spring2]: created
+2023/05/14 20:01:00	[Pump101]: created
+2023/05/14 20:01:00	[Pump102]: created
+2023/05/14 20:01:00	[Pump103]: created
+2023/05/14 20:01:00	[Pump104]: created
+2023/05/14 20:01:00	[Pump105]: created
+2023/05/14 20:01:00	[Pump106]: created
+2023/05/14 20:01:00	[Pipe1]: created
+2023/05/14 20:01:00	[Cistern1]: Pipe1 has been attached
+2023/05/14 20:01:00	[Pump105]: Pipe1 has been attached
+2023/05/14 20:01:00	[Pipe2]: created
+2023/05/14 20:01:00	[Cistern1]: Pipe2 has been attached
+2023/05/14 20:01:00	[Pump104]: Pipe2 has been attached
+2023/05/14 20:01:00	[Pipe3]: created
+2023/05/14 20:01:00	[Cistern2]: Pipe3 has been attached
+2023/05/14 20:01:00	[Pump103]: Pipe3 has been attached
+2023/05/14 20:01:00	[Pipe4]: created
+2023/05/14 20:01:00	[Cistern2]: Pipe4 has been attached
+2023/05/14 20:01:00	[Pump101]: Pipe4 has been attached
+2023/05/14 20:01:00	[Pipe5]: created
+2023/05/14 20:01:00	[Spring2]: Pipe5 has been attached
+2023/05/14 20:01:00	[Pump101]: Pipe5 has been attached
+2023/05/14 20:01:00	[Pipe6]: created
+2023/05/14 20:01:00	[Spring2]: Pipe6 has been attached
+2023/05/14 20:01:00	[Pump102]: Pipe6 has been attached
+2023/05/14 20:01:00	[Pipe7]: created
+2023/05/14 20:01:00	[Spring1]: Pipe7 has been attached
+2023/05/14 20:01:00	[Pump102]: Pipe7 has been attached
+2023/05/14 20:01:00	[Pipe8]: created
+2023/05/14 20:01:00	[Spring1]: Pipe8 has been attached
+2023/05/14 20:01:00	[Pump106]: Pipe8 has been attached
+2023/05/14 20:01:00	[Pipe9]: created
+2023/05/14 20:01:00	[Pump103]: Pipe9 has been attached
+2023/05/14 20:01:00	[Pump102]: Pipe9 has been attached
+2023/05/14 20:01:00	[Pipe10]: created
+2023/05/14 20:01:00	[Pump104]: Pipe10 has been attached
+2023/05/14 20:01:00	[Pump102]: Pipe10 has been attached
+2023/05/14 20:01:00	[Pipe11]: created
+2023/05/14 20:01:00	[Pump104]: Pipe11 has been attached
+2023/05/14 20:01:00	[Pump106]: Pipe11 has been attached
+2023/05/14 20:01:00	[Pipe12]: created
+2023/05/14 20:01:00	[Pump105]: Pipe12 has been attached
+2023/05/14 20:01:00	[Pump106]: Pipe12 has been attached
+2023/05/14 20:01:00	[Map]: map loaded
+2023/05/14 20:01:09	[Mechanic1]: created
+2023/05/14 20:01:15	[Mechanic2]: created
+2023/05/14 20:01:21	[Saboteur1]: created
+2023/05/14 20:01:27	[Saboteur2]: created
+2023/05/14 20:01:54	[Mechanic1]: position set to Cistern1
+2023/05/14 20:02:26	[Mechanic2]: position set to Pipe3
+2023/05/14 20:03:03	[System]: Element doesn't exist
+2023/05/14 20:03:03	[System]: Element doesn't exist
+2023/05/14 20:03:33	[Cistern1]: created
+2023/05/14 20:03:33	[Cistern2]: created
+2023/05/14 20:03:33	[Spring1]: created
+2023/05/14 20:03:33	[Spring2]: created
+2023/05/14 20:03:33	[Pump101]: created
+2023/05/14 20:03:33	[Pump102]: created
+2023/05/14 20:03:33	[Pump103]: created
+2023/05/14 20:03:33	[Pump104]: created
+2023/05/14 20:03:33	[Pump105]: created
+2023/05/14 20:03:33	[Pump106]: created
+2023/05/14 20:03:33	[Pipe1]: created
+2023/05/14 20:03:33	[Cistern1]: Pipe1 has been attached
+2023/05/14 20:03:33	[Pump105]: Pipe1 has been attached
+2023/05/14 20:03:33	[Pipe2]: created
+2023/05/14 20:03:33	[Cistern1]: Pipe2 has been attached
+2023/05/14 20:03:33	[Pump104]: Pipe2 has been attached
+2023/05/14 20:03:33	[Pipe3]: created
+2023/05/14 20:03:33	[Cistern2]: Pipe3 has been attached
+2023/05/14 20:03:33	[Pump103]: Pipe3 has been attached
+2023/05/14 20:03:33	[Pipe4]: created
+2023/05/14 20:03:33	[Cistern2]: Pipe4 has been attached
+2023/05/14 20:03:33	[Pump101]: Pipe4 has been attached
+2023/05/14 20:03:33	[Pipe5]: created
+2023/05/14 20:03:33	[Spring2]: Pipe5 has been attached
+2023/05/14 20:03:33	[Pump101]: Pipe5 has been attached
+2023/05/14 20:03:33	[Pipe6]: created
+2023/05/14 20:03:33	[Spring2]: Pipe6 has been attached
+2023/05/14 20:03:33	[Pump102]: Pipe6 has been attached
+2023/05/14 20:03:33	[Pipe7]: created
+2023/05/14 20:03:33	[Spring1]: Pipe7 has been attached
+2023/05/14 20:03:33	[Pump102]: Pipe7 has been attached
+2023/05/14 20:03:33	[Pipe8]: created
+2023/05/14 20:03:33	[Spring1]: Pipe8 has been attached
+2023/05/14 20:03:33	[Pump106]: Pipe8 has been attached
+2023/05/14 20:03:33	[Pipe9]: created
+2023/05/14 20:03:33	[Pump103]: Pipe9 has been attached
+2023/05/14 20:03:33	[Pump102]: Pipe9 has been attached
+2023/05/14 20:03:33	[Pipe10]: created
+2023/05/14 20:03:33	[Pump104]: Pipe10 has been attached
+2023/05/14 20:03:33	[Pump102]: Pipe10 has been attached
+2023/05/14 20:03:33	[Pipe11]: created
+2023/05/14 20:03:33	[Pump104]: Pipe11 has been attached
+2023/05/14 20:03:33	[Pump106]: Pipe11 has been attached
+2023/05/14 20:03:33	[Pipe12]: created
+2023/05/14 20:03:33	[Pump105]: Pipe12 has been attached
+2023/05/14 20:03:33	[Pump106]: Pipe12 has been attached
+2023/05/14 20:03:33	[Map]: map loaded
+2023/05/14 20:03:50	[Mechanic1]: created
+2023/05/14 20:03:54	[Mechanic2]: created
+2023/05/14 20:03:57	[Saboteur1]: created
+2023/05/14 20:04:01	[Saboteur2]: created
+2023/05/14 20:04:23	[Mechanic1]: position set to Spring1
+2023/05/14 20:04:37	[Mechanic2]: position set to Spring2
+2023/05/14 20:04:52	[Saboteur1]: position set to Cistern1
+2023/05/14 20:04:57	[Saboteur2]: position set to Cistern2
+2023/05/14 20:05:01	[Game]: starting...
+2023/05/14 20:15:54	[Cistern1]: created
+2023/05/14 20:15:54	[Cistern2]: created
+2023/05/14 20:15:54	[Spring1]: created
+2023/05/14 20:15:54	[Spring2]: created
+2023/05/14 20:15:54	[Pump101]: created
+2023/05/14 20:15:54	[Pump102]: created
+2023/05/14 20:15:54	[Pump103]: created
+2023/05/14 20:15:54	[Pump104]: created
+2023/05/14 20:15:54	[Pump105]: created
+2023/05/14 20:15:54	[Pump106]: created
+2023/05/14 20:15:54	[Pipe1]: created
+2023/05/14 20:15:54	[Cistern1]: Pipe1 has been attached
+2023/05/14 20:15:54	[Pump105]: Pipe1 has been attached
+2023/05/14 20:15:54	[Pipe2]: created
+2023/05/14 20:15:54	[Cistern1]: Pipe2 has been attached
+2023/05/14 20:15:54	[Pump104]: Pipe2 has been attached
+2023/05/14 20:15:54	[Pipe3]: created
+2023/05/14 20:15:54	[Cistern2]: Pipe3 has been attached
+2023/05/14 20:15:54	[Pump103]: Pipe3 has been attached
+2023/05/14 20:15:54	[Pipe4]: created
+2023/05/14 20:15:54	[Cistern2]: Pipe4 has been attached
+2023/05/14 20:15:54	[Pump101]: Pipe4 has been attached
+2023/05/14 20:15:54	[Pipe5]: created
+2023/05/14 20:15:54	[Spring2]: Pipe5 has been attached
+2023/05/14 20:15:54	[Pump101]: Pipe5 has been attached
+2023/05/14 20:15:54	[Pipe6]: created
+2023/05/14 20:15:54	[Spring2]: Pipe6 has been attached
+2023/05/14 20:15:54	[Pump102]: Pipe6 has been attached
+2023/05/14 20:15:54	[Pipe7]: created
+2023/05/14 20:15:54	[Spring1]: Pipe7 has been attached
+2023/05/14 20:15:54	[Pump102]: Pipe7 has been attached
+2023/05/14 20:15:54	[Pipe8]: created
+2023/05/14 20:15:54	[Spring1]: Pipe8 has been attached
+2023/05/14 20:15:54	[Pump106]: Pipe8 has been attached
+2023/05/14 20:15:54	[Pipe9]: created
+2023/05/14 20:15:54	[Pump103]: Pipe9 has been attached
+2023/05/14 20:15:54	[Pump102]: Pipe9 has been attached
+2023/05/14 20:15:54	[Pipe10]: created
+2023/05/14 20:15:54	[Pump104]: Pipe10 has been attached
+2023/05/14 20:15:54	[Pump102]: Pipe10 has been attached
+2023/05/14 20:15:54	[Pipe11]: created
+2023/05/14 20:15:54	[Pump104]: Pipe11 has been attached
+2023/05/14 20:15:54	[Pump106]: Pipe11 has been attached
+2023/05/14 20:15:54	[Pipe12]: created
+2023/05/14 20:15:54	[Pump105]: Pipe12 has been attached
+2023/05/14 20:15:54	[Pump106]: Pipe12 has been attached
+2023/05/14 20:15:54	[Map]: map loaded
+2023/05/14 20:17:54	[Mechanic1]: created
+2023/05/14 20:17:58	[Mechanic2]: created
+2023/05/14 20:18:02	[Saboteur1]: created
+2023/05/14 20:18:14	[Saboteur2]: created
+2023/05/14 20:18:32	[Mechanic1]: position set to Cistern1
+2023/05/14 20:18:43	[Mechanic2]: position set to Cistern2
+2023/05/14 20:19:07	[Saboteur1]: position set to Spring1
+2023/05/14 20:19:48	[Saboteur2]: position set to Spring2
+2023/05/14 20:19:51	[Game]: starting...
+2023/05/14 20:20:01	[Pipe7]: Saboteur1 moved

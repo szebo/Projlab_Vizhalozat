@@ -18,7 +18,7 @@ public class Main {
             String cmd = scanner.nextLine();
             CommandInterpreter.runCommand(cmd, null, null);
         }
-        scanner.close();
+        //scanner.close();
 
         //Tester.runTest();
         //TestController.runTests();
