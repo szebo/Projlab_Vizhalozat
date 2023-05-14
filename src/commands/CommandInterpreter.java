@@ -129,7 +129,6 @@ public class CommandInterpreter {
 
             case "force_start":
                 Logger.log("console.txt", "[Game]: forcefully started", true);
-                Controller.debug_run();
                 break;
 
             case "debug_slippery":

@@ -8,9 +8,9 @@ attach Pipe1 Pump2
 setplayerposition Mechanic1 Pipe1
 setplayerposition Saboteur1 Pump2
 force_start
-make_sticky
-move Pump1
-end_turn
-move Pipe1
-end_turn
-move Pipe1
+Mechanic1 make_sticky
+Mechanic1 move Pump1
+Mechanic1 end_turn
+Saboteur1 move Pipe1
+Saboteur1 end_turn
+Mechanic1 move Pipe1
