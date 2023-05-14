@@ -38,6 +38,9 @@ public class Pump extends ActiveElement {
     public Pump(int capacity){
         this.capacity = capacity;
         pipes = new ArrayList<>();
+        players = new ArrayList<>();
+        this.ID = nextID++;
+        Logger.log("console.txt", "["+getLogID()+"]: created", true);
     }
 
     /**

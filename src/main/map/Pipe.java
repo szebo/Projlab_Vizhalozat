@@ -52,6 +52,10 @@ public class Pipe extends MapElement implements Updatable {
      * **/
     public Pipe(int capacity){
         this.capacity = capacity;
+        elements = new ArrayList<>();
+        players = new ArrayList<>();
+        this.ID = nextID++;
+        Logger.log("console.txt", "["+getLogID()+"]: created", true);
     }
 
     /** Eltöri a csövet, aminek következményében a víz elfolyik majd.

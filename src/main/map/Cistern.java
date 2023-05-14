@@ -27,6 +27,7 @@ public class Cistern extends ActiveElement {
             pumpsInReserve.add(new Pump());
         }
         this.ID = nextID++;
+        Logger.log("console.txt", "["+getLogID()+"]: created", true);
     }
 
     /**

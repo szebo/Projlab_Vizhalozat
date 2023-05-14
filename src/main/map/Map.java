@@ -113,34 +113,35 @@ public class Map implements Updatable{
             BufferedReader reader = new BufferedReader(new FileReader(Main.rootfolder+"/files/maps/"+id+".txt"));
             List<String> lines = reader.lines().toList();
             boolean readingElements = true;
-            for(String line : lines){
-                if(line.equals("Pipes")) readingElements = false;
-                String[] splits = line.split(",");
-                if(readingElements) {
-                    ActiveElement element = null;
-                    switch (splits[0]) {
-                        case "Cistern":
-                            element = new Cistern();
-                            break;
+            for(String line : lines) {
+                if (line.contains("Pipes")) readingElements = false;
+                if (!line.contains("ActiveElements") && !line.contains("Pipes")) {
+                    String[] splits = line.split(",");
+                    if (readingElements) {
+                        ActiveElement element = null;
+                        switch (splits[0]) {
+                            case "Cistern":
+                                element = new Cistern();
+                                break;
 
-                        case "Spring":
-                            element = new Spring();
-                            break;
+                            case "Spring":
+                                element = new Spring();
+                                break;
 
-                        case "Pump":
-                            element = new Pump(Integer.parseInt(splits[1]));
-                            break;
+                            case "Pump":
+                                element = new Pump(Integer.parseInt(splits[1]));
+                                break;
+                        }
+                        mapElements.add(element);
+                        controllableMapElements.add(element);
+                    } else {
+                        Pipe pipe = new Pipe(Integer.parseInt(splits[2]));
+                        mapElements.add(pipe);
+                        getElement(Integer.parseInt(splits[0])).attachPipe(pipe);
+                        getElement(Integer.parseInt(splits[1])).attachPipe(pipe);
+                        updatableMapElements.add(pipe);
+                        pipeList.add(pipe);
                     }
-                    mapElements.add(element);
-                    controllableMapElements.add(element);
-                }
-                else{
-                    Pipe pipe = new Pipe(Integer.parseInt(splits[2]));
-                    mapElements.add(pipe);
-                    getElement(Integer.parseInt(splits[0])).attachPipe(pipe);
-                    getElement(Integer.parseInt(splits[1])).attachPipe(pipe);
-                    updatableMapElements.add(pipe);
-                    pipeList.add(pipe);
                 }
             }
             reader.close();
