@@ -68,7 +68,7 @@ public class Saboteur extends Player {
         }
     }
 
-    public void resetAfterTest(){
+    public static void resetAfterTest(){
         nextID = 1;
     }
 }

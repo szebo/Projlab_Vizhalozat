@@ -93,7 +93,7 @@ public class CommandInterpreter {
                 break;
 
             case "start":
-                if(MechanicTeam.getInstance().players.size()>1 && SaboteurTeam.getInstance().players.size()>1) {
+                if(MechanicTeam.getInstance().getPlayers().size()>1 && SaboteurTeam.getInstance().players.size()>1) {
                     Logger.log("console.txt", "[Game]: starting...", true);
                     Controller.run();
                 }
