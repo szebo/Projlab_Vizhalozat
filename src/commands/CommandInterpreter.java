@@ -24,7 +24,7 @@ public class CommandInterpreter {
                 break;
 
             case "place":
-                if(debug_args != null) {
+                if(debug_args == null) {
                     if (splits[1].equals("pipe")) {
                         player.placePipe();
                     } else if (splits[1].equals("pump")) {
