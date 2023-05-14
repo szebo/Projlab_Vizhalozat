@@ -10,12 +10,11 @@ import main.players.SaboteurTeam;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
 public class Tester {
-    public static CommandInterpreter commandInterpreter = new CommandInterpreter();
-
     public static ArrayList<String> currentTestLog = null;
     /**
      * A tesztek során automatikusan kiadott parancsokat fájlból olvasó függvény.
@@ -102,20 +101,25 @@ public class Tester {
                     playerCommands.add(s);
                 }
             }
+
             for(String s : initCommands){
                 CommandInterpreter.runCommand(s, null);
             }
+
             for(String s : playerCommands){
-                String[] splits = s.split(" ");
+                List<String> splits = Arrays.stream(s.split(" ")).toList();
                 List<Player> players = new ArrayList<>();
                 players.addAll(MechanicTeam.getInstance().getPlayers());
                 players.addAll(SaboteurTeam.getInstance().getPlayers());
                 Player player = null;
                 for(Player p : players){
-                    if(p.getLogID().equals(splits[0])) player = p;
+                    if(p.getLogID().equals(splits.get(0))) player = p;
                 }
+
                 if(player != null){
-                    CommandInterpreter.runCommand(splits[1], player);
+                    if(splits.size()>2)
+                        CommandInterpreter.setCommandInput(splits.subList(2, splits.size()));
+                    CommandInterpreter.runCommand(splits.get(1), player);
                 }
             }
             outputComparator(Main.rootfolder+"/files/tests/expected_outputs/"+test+"_output");

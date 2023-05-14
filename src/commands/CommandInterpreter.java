@@ -14,6 +14,8 @@ import java.util.Scanner;
 
 public class CommandInterpreter {
 
+    private static List<String> debug_args = null;
+
     public static void runCommand(String cmd, Player player){
         String[] splits = cmd.split(" ");
         switch (splits[0]) {
@@ -159,10 +161,15 @@ public class CommandInterpreter {
         }
 
         boolean validInput = false;
-        Scanner scanner = new Scanner(System.in);
-        scanner.useDelimiter(System.lineSeparator());
-        String target = scanner.nextLine();
-        //scanner.close();
+        String target;
+        if(debug_args == null) {
+            Scanner scanner = new Scanner(System.in);
+            target = scanner.nextLine();
+        }
+        else{
+            target = debug_args.get(0);
+            debug_args = null;
+        }
 
         for(MapElement neighbour : element.getNeighbours()){
             if(target.equals(neighbour.getLogID())) validInput = true;
@@ -182,10 +189,17 @@ public class CommandInterpreter {
 
         boolean validInput = false;
         boolean validOutput = false;
-        Scanner scanner = new Scanner(System.in);
-        String input = scanner.nextLine();
-        String output = scanner.nextLine();
-        //scanner.close();
+        String input, output;
+        if(debug_args == null) {
+            Scanner scanner = new Scanner(System.in);
+            input = scanner.nextLine();
+            output = scanner.nextLine();
+        }
+        else{
+            input = debug_args.get(0);
+            output = debug_args.get(1);
+            debug_args = null;
+        }
 
         for(MapElement neighbour : playerMapElement.getNeighbours()){
             if(!input.equals(output)){
@@ -208,9 +222,15 @@ public class CommandInterpreter {
             for(MapElement neighbour : playerMapElement.getNeighbours()){
                 Logger.log("console.txt",neighbour.getLogID(), true);
             }
-            Scanner scanner = new Scanner(System.in);
-            String target = scanner.nextLine();
-            //scanner.close();
+            String target;
+            if(debug_args == null) {
+                Scanner scanner = new Scanner(System.in);
+                target = scanner.nextLine();
+            }
+            else{
+                target = debug_args.get(0);
+                debug_args = null;
+            }
             boolean valid = false;
             for(MapElement neighbour : playerMapElement.getNeighbours()){
                 if(neighbour.getLogID().equals(target)) valid = true;
@@ -243,5 +263,9 @@ public class CommandInterpreter {
             }
             else Logger.log("console.txt", "[System]: not valid element", true);
         }
+    }
+
+    public static void setCommandInput(List<String> args){
+        debug_args = args;
     }
 }
