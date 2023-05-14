@@ -236,8 +236,12 @@ public class CommandInterpreter {
         if(player == null) Logger.log("console.txt", "[System]: Player doesn't exist", false);
         else {
             player.setMapElement(Map.getInstance().getElement(cmd[2]));
-            Map.getInstance().getElement(cmd[2]).addPlayer(player);
-            Logger.log("console.txt", "[" + player.getLogID() + "]: position set to " + Map.getInstance().getElement(cmd[2]).getLogID(), true);
+            MapElement element = Map.getInstance().getElement(cmd[2]);
+            if(element != null) {
+                element.addPlayer(player);
+                Logger.log("console.txt", "[" + player.getLogID() + "]: position set to " + Map.getInstance().getElement(cmd[2]).getLogID(), true);
+            }
+            else Logger.log("console.txt", "[System]: not valid element", true);
         }
     }
 }

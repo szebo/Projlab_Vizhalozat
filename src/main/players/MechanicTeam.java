@@ -26,7 +26,8 @@ public class MechanicTeam {
             players.add((Mechanic) player);
             Logger.log("log.txt","Player added to MechanicTeam", false);
         }
-        Logger.log("log.txt","Player could not be added to MechanicTeam, due to overpopulation", false);
+        else
+            Logger.log("log.txt","Player could not be added to MechanicTeam, due to overpopulation", false);
     }
 
     public void addPoints(int point)

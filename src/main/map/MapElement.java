@@ -61,8 +61,7 @@ public abstract class MapElement {
      * @param player a játékos, aki rálép a pályaelemre.
      */
     public boolean acceptPlayer(Player player){
-        addPlayer(player);
-        Logger.log("console.txt", "["+getLogID()+"]: "+player.getLogID()+" moved", true);
+        Logger.log("console.txt", "["+getLogID()+"]: "+player.getLogID()+" accepted", true);
         return true;
     }
 
@@ -72,6 +71,7 @@ public abstract class MapElement {
      */
     public void addPlayer(Player player){
         players.add(player);
+        Logger.log("log.txt", "["+getLogID()+"]: "+player.getLogID()+" added", false);
     }
 
     /**
@@ -80,7 +80,7 @@ public abstract class MapElement {
      */
     public void removePlayer(Player player){
         players.remove(player);
-        System.out.println("Játékos eltávolítva az elemről!");
+        Logger.log("log.txt","["+getLogID()+"]: "+player.getLogID()+" removed", false);
     }
 
     /**
