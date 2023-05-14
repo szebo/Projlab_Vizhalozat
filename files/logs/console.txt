@@ -1469,3 +1469,77 @@
 2023/05/15 00:13:02	[SaboteurTeam] points: 45
 2023/05/15 00:13:02	[MechanicTeam] points: 120
 2023/05/15 00:13:02	[Map]: map saved as 42
+2023/05/15 00:38:56	[Map]: Cistern1 has been created
+2023/05/15 00:38:56	[Map]: Cistern2 has been created
+2023/05/15 00:38:56	[Map]: Spring1 has been created
+2023/05/15 00:38:56	[Map]: Spring2 has been created
+2023/05/15 00:38:56	[Map]: Pump101 has been created
+2023/05/15 00:38:56	[Map]: Pump102 has been created
+2023/05/15 00:38:56	[Map]: Pump103 has been created
+2023/05/15 00:38:56	[Map]: Pump104 has been created
+2023/05/15 00:38:56	[Map]: Pump105 has been created
+2023/05/15 00:38:56	[Map]: Pump106 has been created
+2023/05/15 00:38:56	[Cistern1]: Pipe1 has been attached
+2023/05/15 00:38:56	[Pump105]: Pipe1 has been attached
+2023/05/15 00:38:56	[Cistern1]: Pipe2 has been attached
+2023/05/15 00:38:56	[Pump104]: Pipe2 has been attached
+2023/05/15 00:38:56	[Cistern2]: Pipe3 has been attached
+2023/05/15 00:38:56	[Pump103]: Pipe3 has been attached
+2023/05/15 00:38:56	[Cistern2]: Pipe4 has been attached
+2023/05/15 00:38:56	[Pump101]: Pipe4 has been attached
+2023/05/15 00:38:56	[Spring2]: Pipe5 has been attached
+2023/05/15 00:38:56	[Pump101]: Pipe5 has been attached
+2023/05/15 00:38:56	[Spring2]: Pipe6 has been attached
+2023/05/15 00:38:56	[Pump102]: Pipe6 has been attached
+2023/05/15 00:38:56	[Spring1]: Pipe7 has been attached
+2023/05/15 00:38:56	[Pump102]: Pipe7 has been attached
+2023/05/15 00:38:56	[Spring1]: Pipe8 has been attached
+2023/05/15 00:38:56	[Pump106]: Pipe8 has been attached
+2023/05/15 00:38:56	[Pump103]: Pipe9 has been attached
+2023/05/15 00:38:56	[Pump102]: Pipe9 has been attached
+2023/05/15 00:38:56	[Pump104]: Pipe10 has been attached
+2023/05/15 00:38:56	[Pump102]: Pipe10 has been attached
+2023/05/15 00:38:56	[Pump104]: Pipe11 has been attached
+2023/05/15 00:38:56	[Pump106]: Pipe11 has been attached
+2023/05/15 00:38:56	[Pump105]: Pipe12 has been attached
+2023/05/15 00:38:56	[Pump106]: Pipe12 has been attached
+2023/05/15 00:38:56	[Map]: map loaded
+2023/05/15 00:38:56	Saboteur1's turn
+2023/05/15 00:38:56	2 actions left
+2023/05/15 00:39:14	[Map]: Cistern1 has been created
+2023/05/15 00:39:14	[Map]: Cistern2 has been created
+2023/05/15 00:39:14	[Map]: Spring1 has been created
+2023/05/15 00:39:14	[Map]: Spring2 has been created
+2023/05/15 00:39:14	[Map]: Pump101 has been created
+2023/05/15 00:39:14	[Map]: Pump102 has been created
+2023/05/15 00:39:14	[Map]: Pump103 has been created
+2023/05/15 00:39:14	[Map]: Pump104 has been created
+2023/05/15 00:39:14	[Map]: Pump105 has been created
+2023/05/15 00:39:14	[Map]: Pump106 has been created
+2023/05/15 00:39:14	[Cistern1]: Pipe1 has been attached
+2023/05/15 00:39:14	[Pump105]: Pipe1 has been attached
+2023/05/15 00:39:14	[Cistern1]: Pipe2 has been attached
+2023/05/15 00:39:14	[Pump104]: Pipe2 has been attached
+2023/05/15 00:39:14	[Cistern2]: Pipe3 has been attached
+2023/05/15 00:39:14	[Pump103]: Pipe3 has been attached
+2023/05/15 00:39:14	[Cistern2]: Pipe4 has been attached
+2023/05/15 00:39:14	[Pump101]: Pipe4 has been attached
+2023/05/15 00:39:14	[Spring2]: Pipe5 has been attached
+2023/05/15 00:39:14	[Pump101]: Pipe5 has been attached
+2023/05/15 00:39:14	[Spring2]: Pipe6 has been attached
+2023/05/15 00:39:14	[Pump102]: Pipe6 has been attached
+2023/05/15 00:39:14	[Spring1]: Pipe7 has been attached
+2023/05/15 00:39:14	[Pump102]: Pipe7 has been attached
+2023/05/15 00:39:14	[Spring1]: Pipe8 has been attached
+2023/05/15 00:39:14	[Pump106]: Pipe8 has been attached
+2023/05/15 00:39:14	[Pump103]: Pipe9 has been attached
+2023/05/15 00:39:14	[Pump102]: Pipe9 has been attached
+2023/05/15 00:39:14	[Pump104]: Pipe10 has been attached
+2023/05/15 00:39:14	[Pump102]: Pipe10 has been attached
+2023/05/15 00:39:14	[Pump104]: Pipe11 has been attached
+2023/05/15 00:39:14	[Pump106]: Pipe11 has been attached
+2023/05/15 00:39:14	[Pump105]: Pipe12 has been attached
+2023/05/15 00:39:14	[Pump106]: Pipe12 has been attached
+2023/05/15 00:39:14	[Map]: map loaded
+2023/05/15 00:39:14	Saboteur1's turn
+2023/05/15 00:39:14	2 actions left
