@@ -33,7 +33,7 @@ public class MechanicTeam {
     public void addPoints(int point)
     {
         points+=point;
-        Logger.log("log.txt","Points added, currently the Mechanics have "+ points +" points", false);
+        Logger.log("log.txt","Points added, currently the Mechanics have "+ points +" points", true);
     }
 
     public Mechanic getMechanic()

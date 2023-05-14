@@ -15,6 +15,7 @@ public class Controller {
             }
             Map.getInstance().update();
             Map.getInstance().control();
+            Map.getInstance().waterFlow(2);
             win = SaboteurTeam.getInstance().hasWon() || MechanicTeam.getInstance().hasWon();
         }
     }

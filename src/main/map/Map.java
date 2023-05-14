@@ -71,7 +71,7 @@ public class Map implements Updatable{
     {
         for(IControllable cme : controllableMapElements)
         {
-            cme.control();
+            cme.pumpWater();
         }
     }
 

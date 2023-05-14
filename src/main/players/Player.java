@@ -20,7 +20,7 @@ public abstract class Player {
      * Az objektum azonosítója.
      */
     protected int ID;
-    protected int stepsLeft;
+    protected int stepsLeft = 2;
     protected int numberOfActions = 2;
 
     public void setStuck(int stuck) {
@@ -86,6 +86,7 @@ public abstract class Player {
             element.addPlayer(this);
             this.stepsLeft--;
         }
+        if(stepsLeft <= 0) stepsLeft = 2;
     }
 
     public void repair() {}
