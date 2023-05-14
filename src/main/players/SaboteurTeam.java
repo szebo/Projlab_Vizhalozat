@@ -46,4 +46,11 @@ public class SaboteurTeam {
     }
 
     public List<Saboteur> getPlayers(){ return players; }
+
+    public void reset(){
+        players.clear();
+        counter = 0;
+        points = 0;
+
+    }
 }

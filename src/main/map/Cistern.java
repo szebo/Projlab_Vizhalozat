@@ -103,7 +103,7 @@ public class Cistern extends ActiveElement {
         return stringBuilder.toString();
     }
 
-    public void resetAfterTest(){
+    public static void resetAfterTest(){
         nextID = 1;
     }
 
