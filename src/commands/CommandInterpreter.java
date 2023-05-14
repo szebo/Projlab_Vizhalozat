@@ -32,7 +32,21 @@ public class CommandInterpreter {
                 break;
 
             case "pickup":
-                pickUp(splits[1], player);
+                if(debug_args == null) {
+                    if (splits[1].equals("pipe")) {
+                        pickUp(player);
+                    }
+                    else{
+                        player.pickUpPump();
+                    }
+                }
+                else
+                    if(debug_args.get(0).equals("pipe")){
+                        pickUp(player);
+                    }
+                    else{
+                        player.pickUpPump();
+                    }
                 break;
 
             case "break":
@@ -230,33 +244,29 @@ public class CommandInterpreter {
         else Logger.log("console.txt", "["+playerMapElement.getLogID()+"]: Invalid input and output.", true);
     }
 
-    private static void pickUp(String cmd, Player player){
-        if (cmd.equals("pipe")) {
+    private static void pickUp(Player player) {
             MapElement playerMapElement = player.getMapElement();
-            for(MapElement neighbour : playerMapElement.getNeighbours()){
-                Logger.log("console.txt",neighbour.getLogID(), true);
+            for (MapElement neighbour : playerMapElement.getNeighbours()) {
+                if (neighbour != null)
+                    Logger.log("console.txt", neighbour.getLogID(), true);
             }
             String target;
-            if(debug_args == null) {
+            if (debug_args == null) {
                 Scanner scanner = new Scanner(System.in);
                 target = scanner.nextLine();
-            }
-            else{
-                target = debug_args.get(0);
+            } else {
+                target = debug_args.get(1);
                 debug_args = null;
             }
             boolean valid = false;
-            for(MapElement neighbour : playerMapElement.getNeighbours()){
-                if(neighbour != null && neighbour.getLogID().equals(target)) valid = true;
+            for (MapElement neighbour : playerMapElement.getNeighbours()) {
+                if (neighbour != null && neighbour.getLogID().equals(target)) valid = true;
             }
 
-            if(valid)
+            if (valid)
                 player.pickUpPipe(Map.getInstance().getPipe(target));
             else
-                Logger.log("console.txt", "["+playerMapElement.getLogID()+"]: Invalid target!", true);
-        } else if (cmd.equals("pump")) {
-            player.pickUpPump();
-        }
+                Logger.log("console.txt", "[" + playerMapElement.getLogID() + "]: Invalid target!", true);
     }
 
     private static void setPlayerPosition(String[] cmd){
