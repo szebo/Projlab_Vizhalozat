@@ -10,6 +10,6 @@ attach Pipe3 Pump1
 setplayerposition Mechanic1 Pump1
 setplayerposition Saboteur1 Pump1
 force_start
-configure Pipe1 Pipe2
-end_turn
-configure Pipe2 Pipe3
+Mechanic1 configure Pipe1 Pipe2
+Mechanic1 end_turn
+Saboteur1 configure Pipe2 Pipe3
