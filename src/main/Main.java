@@ -13,13 +13,13 @@ public class Main {
     public static void main(String[] args) {
         rootfolder = System.getProperty("user.dir");
         System.out.println(rootfolder);
-        Scanner scanner = new Scanner(System.in);
-        while(scanner.hasNextLine()) {
-            String cmd = scanner.nextLine();
-            CommandInterpreter.runCommand(cmd, null);
-        }
+        Controller.run();
+        //Scanner scanner = new Scanner(System.in);
+        //while(scanner.hasNextLine()) {
+        //   String cmd = scanner.nextLine();
+        //   CommandInterpreter.runCommand(cmd, null);
+        //}
         //scanner.close();
-
         //Tester.runTest();
         //TestController.runTests();
     }

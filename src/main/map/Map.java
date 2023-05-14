@@ -9,6 +9,7 @@ import main.players.SaboteurTeam;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class Map implements Updatable{
 
@@ -17,13 +18,16 @@ public class Map implements Updatable{
     private List<Updatable> updatableMapElements;
     private List<Pipe> pipeList;
     private List<ActiveElement> activeElements;
+    private List<Spring> springs;
     private static Map instance = null;
+    private int startPositionCounter = 0;
     private Map(){
         mapElements = new ArrayList<>();
         controllableMapElements = new ArrayList<>();
         updatableMapElements = new ArrayList<>();
         pipeList = new ArrayList<>();
         activeElements = new ArrayList<>();
+        springs = new ArrayList<>();
     }
 
     public static synchronized Map getInstance()
@@ -37,13 +41,32 @@ public class Map implements Updatable{
      * B Terv Vízmozgatásra
      * @param iterations Megadja, hogy hányszor iteráljon végig a metódus az ActiveElementeken.
      */
-    public void waterFlow(int iterations){
-        for(int i = 0; i < iterations; i++){
-            for(IControllable e : controllableMapElements){
-                e.pumpWater();
+    public void waterFlow(int iterations)
+    {
+        for(Spring s: springs)
+        {
+            pumpWater(s);
+            Logger.log("console.txt", "[Map]: water is pumped", true);
+        }
+    }
+
+
+    public void pumpWater(ActiveElement ae)
+    {
+        ae.pumpWater();
+        List<Pipe> outputPipes = ae.getOutputPipes();
+        Logger.log("console.txt", "[ActiveElement]: in water is pumped", true);
+        if(outputPipes != null) {
+            for (Pipe p : outputPipes) {
+                MapElement[] meArray = p.getNeighbours();
+                for (MapElement me : meArray) {
+                    if (me != null && me != ae) {
+                        Logger.log("console.txt", "[ActiveElement]: out water is pumped", true);
+                        pumpWater((ActiveElement) me);
+                    }
+                }
             }
         }
-        Logger.log("console.txt", "[Map]: water is pumped", true);
     }
 
     public void storeNewMapElement(MapElement element){ mapElements.add(element); }
@@ -96,6 +119,7 @@ public class Map implements Updatable{
                 mapElements.add(spring);
                 controllableMapElements.add(spring);
                 activeElements.add(spring);
+                springs.add(spring);
                 Logger.log("console.txt", "[Map]: "+spring.getLogID()+" has been created", true);
                 break;
             case "Pipe":
@@ -118,27 +142,60 @@ public class Map implements Updatable{
                 if (!line.contains("ActiveElements") && !line.contains("Pipes")) {
                     String[] splits = line.split(",");
                     if (readingElements) {
-                        ActiveElement element = null;
-                        switch (splits[0]) {
-                            case "Cistern":
-                                element = new Cistern();
-                                break;
-
-                            case "Spring":
-                                element = new Spring();
-                                break;
-
+                        switch(splits[0]) {
                             case "Pump":
-                                element = new Pump(Integer.parseInt(splits[1]));
+                                Pump pump = new Pump(Integer.parseInt(splits[1]));
+                                mapElements.add(pump);
+                                controllableMapElements.add(pump);
+                                activeElements.add(pump);
+                                Logger.log("console.txt", "[Map]: " + pump.getLogID() + " has been created", true);
+                                break;
+                            case "Cistern":
+                                Cistern cistern = new Cistern();
+                                mapElements.add(cistern);
+                                controllableMapElements.add(cistern);
+                                activeElements.add(cistern);
+                                Logger.log("console.txt", "[Map]: " + cistern.getLogID() + " has been created", true);
+                                break;
+                            case "Spring":
+                                Spring spring = new Spring();
+                                mapElements.add(spring);
+                                controllableMapElements.add(spring);
+                                activeElements.add(spring);
+                                springs.add(spring);
+                                Logger.log("console.txt", "[Map]: " + spring.getLogID() + " has been created", true);
                                 break;
                         }
-                        mapElements.add(element);
-                        controllableMapElements.add(element);
                     } else {
                         Pipe pipe = new Pipe(Integer.parseInt(splits[2]));
                         mapElements.add(pipe);
                         getElement(Integer.parseInt(splits[0])).attachPipe(pipe);
+                        //Logger.log("console.txt", splits[3], true);
+                        if(!Objects.equals(splits[3], "cors"))
+                        {
+                            //Logger.log("console.txt", splits[3], true);
+                            Pump pum = (Pump) getElement(Integer.parseInt(splits[0]));
+                            if(Objects.equals(splits[3], "in_pump"))
+                            {
+                                pum.setInput(pipe);
+                            }
+                            else if(Objects.equals(splits[3], "out_pump"))
+                            {
+                                pum.setOutput(pipe);
+                            }
+                        }
                         getElement(Integer.parseInt(splits[1])).attachPipe(pipe);
+                        if(!Objects.equals(splits[4], "cors")) {
+                            Pump pum = (Pump) getElement(Integer.parseInt(splits[1]));
+                            if(Objects.equals(splits[4], "in_pump"))
+                            {
+                                pum.setInput(pipe);
+                            }
+                            else if(Objects.equals(splits[4], "out_pump"))
+                            {
+                                pum.setOutput(pipe);
+                            }
+                        }
                         updatableMapElements.add(pipe);
                         pipeList.add(pipe);
                     }
@@ -201,5 +258,10 @@ public class Map implements Updatable{
         }
         Logger.log("console.txt", "[System]: Element doesn't exist", true);
         return null;
+    }
+
+    public MapElement getStartPosition()
+    {
+        return pipeList.get(startPositionCounter++);
     }
 }

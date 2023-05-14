@@ -3,6 +3,7 @@ package main.map;
 import main.logging.Logger;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Spring extends ActiveElement {
 
@@ -70,5 +71,10 @@ public class Spring extends ActiveElement {
         }
         stringBuilder.append("\n");
         return stringBuilder.toString();
+    }
+
+    public List<Pipe> getOutputPipes()
+    {
+        return pipes;
     }
 }

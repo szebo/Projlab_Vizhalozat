@@ -103,4 +103,8 @@ public class Cistern extends ActiveElement {
         return stringBuilder.toString();
     }
 
+    public List<Pipe> getOutputPipes()
+    {
+        return null;
+    }
 }
