@@ -112,7 +112,20 @@ public class CommandInterpreter {
                 break;
 
             case "debug_info":
-                Logger.log("console.txt", Map.getInstance().getElement(splits[1]).printInfo(), true);
+                MapElement element = Map.getInstance().getElement(splits[1]);
+                if(element != null)
+                    Logger.log("console.txt", element.printInfo(), true);
+                else {
+                    List<Player> players = new ArrayList<>();
+                    players.addAll(MechanicTeam.getInstance().getPlayers());
+                    players.addAll(SaboteurTeam.getInstance().getPlayers());
+                    Player target = null;
+                    for (Player p : players) {
+                        if (p.getLogID().equals(splits[1])) target = p;
+                    }
+                    if(target != null)
+                        Logger.log("console.txt", target.printInfo(), true);
+                }
                 break;
 
             case "create":

@@ -40,7 +40,7 @@ public class Pump extends ActiveElement {
         pipes = new ArrayList<>();
         players = new ArrayList<>();
         this.ID = nextID++;
-        Logger.log("console.txt", "["+getLogID()+"]: created", true);
+        //Logger.log("console.txt", "["+getLogID()+"]: created", true);
     }
 
     /**
