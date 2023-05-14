@@ -52,7 +52,7 @@ public class Tester {
             }
             Reader.close();
         } catch (FileNotFoundException e) {
-            Logger.log("log.txt","File not found: "+expectedOutputFile, true);
+            Logger.log("log.txt","File not found: "+expectedOutputFile, true);      //TODO ez kiíródik akkoris, ha nincs
         }
 
         /* Comparing part */
@@ -82,12 +82,12 @@ public class Tester {
         else
             tests.add(files);
 
-        for(String test : tests){
+        for(String test : tests) {
             currentTestLog = new ArrayList<>();
             testCommands.clear();
             testCommands = commandFileReader(test);
             for (String s: testCommands ){
-                commandInterpreter.runCommand(s, null);
+                CommandInterpreter.runCommand(s, null);
             }
             outputComparator(Main.rootfolder+"/files/tests/expected_outputs/"+test);
             currentTestLog.clear();
