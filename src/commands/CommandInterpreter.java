@@ -1,10 +1,7 @@
 package commands;
 
 import main.Controller;
-import main.Main;
 
-
-import main.interfaces.Updatable;
 import main.logging.Logger;
 import main.map.*;
 import main.players.*;
@@ -17,47 +14,47 @@ import java.util.Scanner;
 
 public class CommandInterpreter {
 
-    public static void runCommand(String cmd, Player exec){
+    public static void runCommand(String cmd, Mechanic mechanic, Saboteur saboteur){
         String[] splits = cmd.split(" ");
         switch (splits[0]) {
             case "move":
-                move(exec);
+                move(mechanic != null ? mechanic : saboteur);
                 break;
 
             case "place":
                 if (splits[1].equals("pipe")) {
-                    exec.placePipe();
+                    (mechanic != null ? mechanic : saboteur).placePipe();
                 } else if (splits[1].equals("pump")) {
-                    exec.placePump();
+                    (mechanic != null ? mechanic : saboteur).placePump();
                 }
                 break;
 
             case "pickup":
-                pickUp(splits[1], exec);
+                pickUp(splits[1], (mechanic != null ? mechanic : saboteur));
                 break;
 
             case "break":
-                exec.breakElement();
+                (mechanic != null ? mechanic : saboteur).breakElement();
                 break;
 
             case "repair":
-                exec.repair();
+                (mechanic != null ? mechanic : saboteur).repair();
                 break;
 
             case "configure":
-                configure(exec);
+                configure((mechanic != null ? mechanic : saboteur));
                 break;
 
             case "make_slippery":
-                exec.useSlipperyGoo();
+                (mechanic != null ? mechanic : saboteur).useSlipperyGoo();
                 break;
 
             case "make_sticky":
-                exec.useStickyGoo();
+                (mechanic != null ? mechanic : saboteur).useStickyGoo();
                 break;
 
             case "end_turn":
-                Logger.log("console.txt", "["+exec.getLogID()+"]: turn ended", true);
+                Logger.log("console.txt", "["+(mechanic != null ? mechanic : saboteur).getLogID()+"]: turn ended", true);
                 break;
 
             case "debug_break":

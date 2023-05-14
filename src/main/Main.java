@@ -14,10 +14,8 @@ public class Main {
         System.out.println(rootfolder);
         while(!exit) {
             Scanner scanner = new Scanner(System.in);
-            System.out.println("Reading cmd...");
             String cmd = scanner.nextLine();
-            System.out.println("Cmd read");
-            CommandInterpreter.runCommand(cmd, null);
+            CommandInterpreter.runCommand(cmd, null, null);
             scanner.close();
         }
 

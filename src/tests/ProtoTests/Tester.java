@@ -87,7 +87,7 @@ public class Tester {
             testCommands.clear();
             testCommands = commandFileReader(test);
             for (String s: testCommands ){
-                CommandInterpreter.runCommand(s, null);
+                CommandInterpreter.runCommand(s, null, null);
             }
             outputComparator(Main.rootfolder+"/files/tests/expected_outputs/"+test);
             currentTestLog.clear();

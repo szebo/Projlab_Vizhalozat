@@ -127,36 +127,20 @@ public class Mechanic extends Player {
             Scanner scanner = new Scanner(System.in);
             String playerInput = scanner.nextLine();
             scanner.close();
-            switch (playerInput) {
-                case "break":
-                    numberOfActions--;
-                    CommandInterpreter.runCommand("break", this);
-                    break;
-                case "move":
-                    numberOfActions--;
-                    CommandInterpreter.runCommand("move", this);
-                    break;
-                case "repair":
-                    numberOfActions--;
-                    CommandInterpreter.runCommand("repair", this);
-                    break;
-                case "make_sticky":
-                    numberOfActions--;
-                    CommandInterpreter.runCommand("make_sticky", this);
-                    break;
-                case "pickup pipe", "pickup pump", "place pipe", "place pump":
-                    numberOfActions--;
-                    CommandInterpreter.runCommand(playerInput, this);
-                    break;
-                case "configure":
-                    numberOfActions--;
-                    CommandInterpreter.runCommand("configure", this);
-                    break;
-                default:
-                    Logger.log("console.txt","[System]: Thats not a valid command", true);
-                    break;
-            }
+            doCommand(playerInput);
+            numberOfActions--;
         }
         numberOfActions = 2;
+    }
+
+    public void doCommand(String playerInput){
+        switch (playerInput) {
+            case "pickup pipe", "pickup pump", "place pipe", "place pump", "configure", "break", "move", "repair", "make_sticky":
+                CommandInterpreter.runCommand(playerInput, this, null);
+                break;
+            default:
+                Logger.log("console.txt","[System]: Thats not a valid command", true);
+                break;
+        }
     }
 }

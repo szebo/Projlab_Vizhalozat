@@ -49,28 +49,20 @@ public class Saboteur extends Player {
             Scanner scanner = new Scanner(System.in);
             String playerInput = scanner.nextLine();
             scanner.close();
-            switch (playerInput) {
-                case "break":
-                    numberOfActions--;
-                    CommandInterpreter.runCommand("break", this);
-                    break;
-                case "move":
-                    numberOfActions--;
-                    CommandInterpreter.runCommand("move", this);
-                    break;
-                case "make_slippery":
-                    numberOfActions--;
-                    CommandInterpreter.runCommand("make_slippery", this);
-                    break;
-                case "make_sticky":
-                    numberOfActions--;
-                    CommandInterpreter.runCommand("make_sticky", this);
-                    break;
-                default:
-                    Logger.log("console.txt","[System]: Thats not a valid command", true);
-                    break;
-            }
+            doCommand(playerInput);
+            numberOfActions--;
         }
         numberOfActions = 2;
+    }
+
+    public void doCommand(String playerInput){
+        switch (playerInput) {
+            case "break", "move", "make_slippery", "make_sticky":
+                CommandInterpreter.runCommand(playerInput,  null, this);
+                break;
+            default:
+                Logger.log("console.txt","[System]: Thats not a valid command", true);
+                break;
+        }
     }
 }
