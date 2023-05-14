@@ -117,19 +117,21 @@ public class Pipe extends MapElement implements Updatable {
     public boolean acceptPlayer(Player player){
         boolean accepted = false;
         if(!this.isOccupied()) {
-            Logger.log("console.txt", "["+getLogID()+"]: "+player.getLogID()+" moved", true);
             if(checkSlippery()){
                 player.step(getRandomEnd());
             }
             else if(checkSticky()){
                 player.setStuck(stickyFor);
-                addPlayer(player);
+                accepted = true;
+            }
+            else{
                 accepted = true;
             }
         }
-        else{
+        if(accepted)
+            Logger.log("console.txt", "["+getLogID()+"]: "+player.getLogID()+" moved", true);
+        else
             Logger.log("console.txt", "["+getLogID()+"]: "+player.getLogID()+" could not move", true);
-        }
         return accepted;
     }
 

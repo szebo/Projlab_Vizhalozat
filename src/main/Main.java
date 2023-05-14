@@ -16,7 +16,7 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         while(scanner.hasNextLine()) {
             String cmd = scanner.nextLine();
-            CommandInterpreter.runCommand(cmd, null, null);
+            CommandInterpreter.runCommand(cmd, null);
         }
         //scanner.close();
 

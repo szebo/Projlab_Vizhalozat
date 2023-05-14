@@ -75,29 +75,17 @@ public abstract class Player {
      * Megvizsgálja, hogy be van-e ragadva a játékos, ha igen, nem lép.
      * @param element A MapElement amelyre lép a játékos
      * **/
-    public boolean step(MapElement element){
+    public void step(MapElement element){
         Objects.requireNonNull(element, "Null értékű paramétert kapott a step!");
         if(stuck != 0){
-            return false;
+            return;
         }
         if(element.acceptPlayer(this) && this.stepsLeft > 0) {
-            getMapElement().removePlayer(this);
-            setMapElement(element);
+            mapElement.removePlayer(this);
+            mapElement = element;
+            element.addPlayer(this);
             this.stepsLeft--;
-            if (element.checkSticky()) {
-                setStuck(5);
-                element.makeSticky(0);
-                //TODO: Itt leesik a stickyFor a csőről, de kéne valami, hogy magáltól is leessen, pl amikor a köröket léptetjük.
-            }
-            if(element.checkSlippery()) {            //Itt nem lenne ertelemszerubb egy else if?
-                getMapElement().removePlayer(this);
-                setMapElement(element.getRandomEnd());
-                this.mapElement.addPlayer(this); //A mapElementre, amire átdobódik, is hozzá kell adni a playert
-                //TODO  Ugyan az mint a stickyFor esetében, itt is le kell essen majd kör léptetéskor a slippery effect.
-            }
-            return true;
         }
-        return false;
     }
 
     public void repair() {}

@@ -14,47 +14,47 @@ import java.util.Scanner;
 
 public class CommandInterpreter {
 
-    public static void runCommand(String cmd, Mechanic mechanic, Saboteur saboteur){
+    public static void runCommand(String cmd, Player player){
         String[] splits = cmd.split(" ");
         switch (splits[0]) {
             case "move":
-                move(mechanic, saboteur);
+                move(player);
                 break;
 
             case "place":
                 if (splits[1].equals("pipe")) {
-                    (mechanic != null ? mechanic : saboteur).placePipe();
+                    player.placePipe();
                 } else if (splits[1].equals("pump")) {
-                    (mechanic != null ? mechanic : saboteur).placePump();
+                    player.placePump();
                 }
                 break;
 
             case "pickup":
-                pickUp(splits[1], mechanic, saboteur);
+                pickUp(splits[1], player);
                 break;
 
             case "break":
-                (mechanic != null ? mechanic : saboteur).breakElement();
+                player.breakElement();
                 break;
 
             case "repair":
-                (mechanic != null ? mechanic : saboteur).repair();
+                player.repair();
                 break;
 
             case "configure":
-                configure(mechanic, saboteur);
+                configure(player);
                 break;
 
             case "make_slippery":
-                (mechanic != null ? mechanic : saboteur).useSlipperyGoo();
+                player.useSlipperyGoo();
                 break;
 
             case "make_sticky":
-                (mechanic != null ? mechanic : saboteur).useStickyGoo();
+                player.useStickyGoo();
                 break;
 
             case "end_turn":
-                Logger.log("console.txt", "["+(mechanic != null ? mechanic : saboteur).getLogID()+"]: turn ended", true);
+                Logger.log("console.txt", "["+player.getLogID()+"]: turn ended", true);
                 break;
 
             case "debug_break":
@@ -152,8 +152,8 @@ public class CommandInterpreter {
         }
     }
 
-    private static void move(Mechanic mechanic, Saboteur saboteur){
-        MapElement element = (mechanic != null ? mechanic : saboteur).getMapElement(); //holymoly...
+    private static void move(Player player){
+        MapElement element = player.getMapElement(); //holymoly...
         for(MapElement neighbour : element.getNeighbours()){
             System.out.println(neighbour.getLogID());
         }
@@ -169,13 +169,13 @@ public class CommandInterpreter {
         }
 
         if(validInput)
-            (mechanic != null ? mechanic : saboteur).step(Map.getInstance().getElement(target));
+            player.step(Map.getInstance().getElement(target));
         else
             Logger.log("console.txt", "["+element.getLogID()+"]: Nem létező szomszéd lett megadva.", true);
     }
 
-    private static void configure(Mechanic mechanic, Saboteur saboteur){
-        MapElement playerMapElement = (mechanic != null ? mechanic : saboteur).getMapElement();
+    private static void configure(Player player){
+        MapElement playerMapElement = player.getMapElement();
         for(MapElement neighbour : playerMapElement.getNeighbours()){
             System.out.println(neighbour.getLogID());
         }
@@ -196,15 +196,15 @@ public class CommandInterpreter {
             else Logger.log("console.txt", "["+playerMapElement.getLogID()+"]: Az input és az output ugyanaz lett!", true);
         }
 
-        if(validOutput && validInput) (mechanic != null ? mechanic : saboteur).configurePump(Map.getInstance().getPipe(input), Map.getInstance().getPipe(output));
+        if(validOutput && validInput) player.configurePump(Map.getInstance().getPipe(input), Map.getInstance().getPipe(output));
         else if(!validOutput) Logger.log("console.txt", "["+playerMapElement.getLogID()+"]: Az outputnak nem létező cső lett megadva.", true);
         else if(!validInput) Logger.log("console.txt", "["+playerMapElement.getLogID()+"]: Az inputnak nem létező cső lett megadva.", true);
         else Logger.log("console.txt", "["+playerMapElement.getLogID()+"]: Az inputnak és outputnak is nem létező cső lett megadva.", true);
     }
 
-    private static void pickUp(String cmd, Mechanic mechanic, Saboteur saboteur){
+    private static void pickUp(String cmd, Player player){
         if (cmd.equals("pipe")) {
-            MapElement playerMapElement = (mechanic != null ? mechanic : saboteur).getMapElement();
+            MapElement playerMapElement = player.getMapElement();
             for(MapElement neighbour : playerMapElement.getNeighbours()){
                 Logger.log("console.txt",neighbour.getLogID(), true);
             }
@@ -217,11 +217,11 @@ public class CommandInterpreter {
             }
 
             if(valid)
-                (mechanic != null ? mechanic : saboteur).pickUpPipe(Map.getInstance().getPipe(target));
+                player.pickUpPipe(Map.getInstance().getPipe(target));
             else
                 Logger.log("console.txt", "["+playerMapElement.getLogID()+"]: Invalid target!", true);
         } else if (cmd.equals("pump")) {
-            (mechanic != null ? mechanic : saboteur).pickUpPump();
+            player.pickUpPump();
         }
     }
 

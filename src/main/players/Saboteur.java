@@ -45,7 +45,9 @@ public class Saboteur extends Player {
 
     public void doAction()
     {
+        Logger.log("console.txt", getLogID()+"'s turn", true);
         while(numberOfActions > 0) {
+            Logger.log("console.txt", numberOfActions+" actions left", true);
             Scanner scanner = new Scanner(System.in);
             String playerInput = scanner.nextLine();
             //scanner.close();
@@ -58,7 +60,7 @@ public class Saboteur extends Player {
     public void doCommand(String playerInput){
         switch (playerInput) {
             case "break", "move", "make_slippery", "make_sticky":
-                CommandInterpreter.runCommand(playerInput,  null, this);
+                CommandInterpreter.runCommand(playerInput,  this);
                 break;
             default:
                 Logger.log("console.txt","[System]: Thats not a valid command", true);
