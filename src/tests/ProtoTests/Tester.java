@@ -21,7 +21,7 @@ public class Tester {
      * @return Soronként parsolt parancsok
      * **/
     public static ArrayList<String> commandFileReader(String file) {
-        ArrayList<String> cmds = new ArrayList<String>();
+        ArrayList<String> cmds = new ArrayList<>();
         try {
             File commandsFile = new File(Main.rootfolder+"/files/tests/commands/"+file);
             Scanner Reader = new Scanner(commandsFile);
@@ -43,7 +43,7 @@ public class Tester {
     public static void outputComparator(String expectedOutputFile) {
 
         /*Parsing part*/
-        ArrayList<String> expOutput = new ArrayList<String>();
+        ArrayList<String> expOutput = new ArrayList<>();
         try {
             File file = new File(expectedOutputFile);
             Scanner Reader = new Scanner(file);
