@@ -179,13 +179,17 @@ public class Map implements Updatable{
                 return mapElement;
             }
         }
+        Logger.logToConsole("console.txt", "[System]: Element doesn't exist");
         return null;
     }
 
     public MapElement getElement(int number){
         if(number < mapElements.size())
             return mapElements.get(number);
-        else return null;
+        else{
+            Logger.logToConsole("console.txt", "[System]: Element doesn't exist");
+            return null;
+        }
     }
 
     public Pipe getPipe(String id){
@@ -194,6 +198,7 @@ public class Map implements Updatable{
                 return pipe;
             }
         }
+        Logger.logToConsole("console.txt", "[System]: Element doesn't exist");
         return null;
     }
 }

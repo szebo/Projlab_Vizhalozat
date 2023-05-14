@@ -45,4 +45,8 @@ public class MechanicTeam {
     {
         return points > 100; //mitoménmennnyilgyen
     }
+
+    public List<Mechanic> getPlayers(){
+        return players;
+    }
 }

@@ -11,6 +11,7 @@ import main.players.*;
 import tests.ProtoTests.Tester;
 
 import java.io.*;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
@@ -105,9 +106,7 @@ public class CommandInterpreter {
                 break;
 
             case "setplayerposition":
-                exec.setMapElement(Map.getInstance().getElement(splits[2]));
-                Map.getInstance().getElement(splits[2]).addPlayer(exec);
-                Logger.logToConsole("console.txt", "["+exec.getLogID()+"]: position set to "+Map.getInstance().getElement(splits[2]).getLogID());
+                setPlayerPosition(splits);
                 break;
 
             case "create_pipe":
@@ -236,5 +235,21 @@ public class CommandInterpreter {
         }
         else
             Tester.runTest(Integer.parseInt(cmd));
+    }
+
+    private static void setPlayerPosition(String[] cmd){
+        List<Player> players = new ArrayList<>();
+        players.addAll(MechanicTeam.getInstance().getPlayers());
+        players.addAll(SaboteurTeam.getInstance().getPlayers());
+        Player player = null;
+        for(Player p : players){
+            if(p.getLogID().equals(cmd[1])) player = p;
+        }
+        if(player == null) Logger.log("console.txt", "[System]: Player doesn't exist");
+        else {
+            player.setMapElement(Map.getInstance().getElement(cmd[2]));
+            Map.getInstance().getElement(cmd[2]).addPlayer(player);
+            Logger.logToConsole("console.txt", "[" + player.getLogID() + "]: position set to " + Map.getInstance().getElement(cmd[2]).getLogID());
+        }
     }
 }

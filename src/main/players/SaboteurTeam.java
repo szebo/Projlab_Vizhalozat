@@ -44,4 +44,6 @@ public class SaboteurTeam {
     {
         return points > 50; //mitoménmennnyilgyen
     }
+
+    public List<Saboteur> getPlayers(){ return players; }
 }
