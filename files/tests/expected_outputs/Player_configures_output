@@ -13,9 +13,9 @@
 Pipe1
 Pipe2
 Pipe3
-[Pump1]: input is: Pipe1, output is: Pipe2
+[Pump1]: input is Pipe1, output is Pipe2
 [Mechanic1]: turn ended
 Pipe1
 Pipe2
 Pipe3
-[Pump1]: input is: Pipe2, output is: Pipe3
+[Pump1]: input is Pipe2, output is Pipe3
