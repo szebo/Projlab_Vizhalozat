@@ -1,6 +1,7 @@
 package main.players;
 
 import main.logging.Logger;
+import main.map.Map;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,7 +25,7 @@ public class MechanicTeam {
     {
         if(players.size() < 3) {
             players.add((Mechanic) player);
-            Logger.log("log.txt","Player added to MechanicTeam", false);
+            Logger.log("log.txt","Player added to MechanicTeam", true);
         }
         else
             Logger.log("log.txt","Player could not be added to MechanicTeam, due to overpopulation", false);
@@ -50,6 +51,19 @@ public class MechanicTeam {
         return players;
     }
 
+    public void init()
+    {
+        for(int i = 0; i<2; i++)
+        {
+            addPlayer(new Mechanic());
+            players.get(i).setMapElement(Map.getInstance().getStartPosition());
+        }
+    }
+    public int getPoints()
+    {
+        Logger.log("console.txt", "[MechanicTeam] points: "+ points, true);
+        return points;
+    }
     public void reset(){
         players.clear();
         counter = 0;

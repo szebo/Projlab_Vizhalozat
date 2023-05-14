@@ -4,6 +4,7 @@ import main.logging.Logger;
 import main.players.SaboteurTeam;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Pumpákat, és azok viselkedését leíró osztály
@@ -134,6 +135,13 @@ public class Pump extends ActiveElement {
         return stringBuilder.toString();
     }
 
+    public List<Pipe> getOutputPipes()
+    {
+        ArrayList<Pipe> ret = new ArrayList<Pipe>();
+        ret.add(output);
+        return ret;
+    }
+    
     public static void resetAfterTest(){
         nextID = 1;
     }

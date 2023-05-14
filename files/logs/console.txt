@@ -316,4 +316,1156 @@
 2023/05/14 20:19:48	[Saboteur2]: position set to Spring2
 2023/05/14 20:19:51	[Game]: starting...
 2023/05/14 20:20:01	[Pipe7]: Saboteur1 moved
-2023/05/15 00:09:02	[System]: Player doesn't exist
+2023/05/14 22:39:11	[Cistern1]: created
+2023/05/14 22:39:11	[Cistern2]: created
+2023/05/14 22:39:11	[Spring1]: created
+2023/05/14 22:39:11	[Spring2]: created
+2023/05/14 22:39:11	[Pump101]: created
+2023/05/14 22:39:11	[Pump102]: created
+2023/05/14 22:39:11	[Pump103]: created
+2023/05/14 22:39:11	[Pump104]: created
+2023/05/14 22:39:11	[Pump105]: created
+2023/05/14 22:39:11	[Pump106]: created
+2023/05/14 22:39:11	[Pipe1]: created
+2023/05/14 22:39:11	[Cistern1]: Pipe1 has been attached
+2023/05/14 22:39:11	[Pump105]: Pipe1 has been attached
+2023/05/14 22:39:11	[Pipe2]: created
+2023/05/14 22:39:11	[Cistern1]: Pipe2 has been attached
+2023/05/14 22:39:11	[Pump104]: Pipe2 has been attached
+2023/05/14 22:39:11	[Pipe3]: created
+2023/05/14 22:39:11	[Cistern2]: Pipe3 has been attached
+2023/05/14 22:39:11	[Pump103]: Pipe3 has been attached
+2023/05/14 22:39:11	[Pipe4]: created
+2023/05/14 22:39:11	[Cistern2]: Pipe4 has been attached
+2023/05/14 22:39:11	[Pump101]: Pipe4 has been attached
+2023/05/14 22:39:11	[Pipe5]: created
+2023/05/14 22:39:11	[Spring2]: Pipe5 has been attached
+2023/05/14 22:39:11	[Pump101]: Pipe5 has been attached
+2023/05/14 22:39:11	[Pipe6]: created
+2023/05/14 22:39:11	[Spring2]: Pipe6 has been attached
+2023/05/14 22:39:11	[Pump102]: Pipe6 has been attached
+2023/05/14 22:39:11	[Pipe7]: created
+2023/05/14 22:39:11	[Spring1]: Pipe7 has been attached
+2023/05/14 22:39:11	[Pump102]: Pipe7 has been attached
+2023/05/14 22:39:11	[Pipe8]: created
+2023/05/14 22:39:11	[Spring1]: Pipe8 has been attached
+2023/05/14 22:39:11	[Pump106]: Pipe8 has been attached
+2023/05/14 22:39:11	[Pipe9]: created
+2023/05/14 22:39:11	[Pump103]: Pipe9 has been attached
+2023/05/14 22:39:11	[Pump102]: Pipe9 has been attached
+2023/05/14 22:39:11	[Pipe10]: created
+2023/05/14 22:39:11	[Pump104]: Pipe10 has been attached
+2023/05/14 22:39:11	[Pump102]: Pipe10 has been attached
+2023/05/14 22:39:11	[Pipe11]: created
+2023/05/14 22:39:11	[Pump104]: Pipe11 has been attached
+2023/05/14 22:39:11	[Pump106]: Pipe11 has been attached
+2023/05/14 22:39:11	[Pipe12]: created
+2023/05/14 22:39:11	[Pump105]: Pipe12 has been attached
+2023/05/14 22:39:11	[Pump106]: Pipe12 has been attached
+2023/05/14 22:39:11	[Map]: map loaded
+2023/05/14 22:51:43	[Cistern1]: created
+2023/05/14 22:51:43	[Cistern2]: created
+2023/05/14 22:51:43	[Spring1]: created
+2023/05/14 22:51:43	[Spring2]: created
+2023/05/14 22:51:43	[Pump101]: created
+2023/05/14 22:51:43	[Pump102]: created
+2023/05/14 22:51:43	[Pump103]: created
+2023/05/14 22:51:43	[Pump104]: created
+2023/05/14 22:51:43	[Pump105]: created
+2023/05/14 22:51:43	[Pump106]: created
+2023/05/14 22:51:43	[Pipe1]: created
+2023/05/14 22:51:43	[Cistern1]: Pipe1 has been attached
+2023/05/14 22:51:43	[Pump105]: Pipe1 has been attached
+2023/05/14 22:51:43	[Pipe2]: created
+2023/05/14 22:51:43	[Cistern1]: Pipe2 has been attached
+2023/05/14 22:51:43	[Pump104]: Pipe2 has been attached
+2023/05/14 22:51:43	[Pipe3]: created
+2023/05/14 22:51:43	[Cistern2]: Pipe3 has been attached
+2023/05/14 22:51:43	[Pump103]: Pipe3 has been attached
+2023/05/14 22:51:43	[Pipe4]: created
+2023/05/14 22:51:43	[Cistern2]: Pipe4 has been attached
+2023/05/14 22:51:43	[Pump101]: Pipe4 has been attached
+2023/05/14 22:51:43	[Pipe5]: created
+2023/05/14 22:51:43	[Spring2]: Pipe5 has been attached
+2023/05/14 22:51:43	[Pump101]: Pipe5 has been attached
+2023/05/14 22:51:43	[Pipe6]: created
+2023/05/14 22:51:43	[Spring2]: Pipe6 has been attached
+2023/05/14 22:51:43	[Pump102]: Pipe6 has been attached
+2023/05/14 22:51:43	[Pipe7]: created
+2023/05/14 22:51:43	[Spring1]: Pipe7 has been attached
+2023/05/14 22:51:43	[Pump102]: Pipe7 has been attached
+2023/05/14 22:51:43	[Pipe8]: created
+2023/05/14 22:51:43	[Spring1]: Pipe8 has been attached
+2023/05/14 22:51:43	[Pump106]: Pipe8 has been attached
+2023/05/14 22:51:43	[Pipe9]: created
+2023/05/14 22:51:43	[Pump103]: Pipe9 has been attached
+2023/05/14 22:51:43	[Pump102]: Pipe9 has been attached
+2023/05/14 22:51:43	[Pipe10]: created
+2023/05/14 22:51:43	[Pump104]: Pipe10 has been attached
+2023/05/14 22:51:43	[Pump102]: Pipe10 has been attached
+2023/05/14 22:51:43	[Pipe11]: created
+2023/05/14 22:51:43	[Pump104]: Pipe11 has been attached
+2023/05/14 22:51:43	[Pump106]: Pipe11 has been attached
+2023/05/14 22:51:43	[Pipe12]: created
+2023/05/14 22:51:43	[Pump105]: Pipe12 has been attached
+2023/05/14 22:51:43	[Pump106]: Pipe12 has been attached
+2023/05/14 22:51:43	[Map]: map loaded
+2023/05/14 22:51:43	Saboteur1's turn
+2023/05/14 22:51:43	2 actions left
+2023/05/14 22:52:08	[Cistern1]: created
+2023/05/14 22:52:08	[Cistern2]: created
+2023/05/14 22:52:08	[Spring1]: created
+2023/05/14 22:52:08	[Spring2]: created
+2023/05/14 22:52:08	[Pump101]: created
+2023/05/14 22:52:08	[Pump102]: created
+2023/05/14 22:52:08	[Pump103]: created
+2023/05/14 22:52:08	[Pump104]: created
+2023/05/14 22:52:08	[Pump105]: created
+2023/05/14 22:52:08	[Pump106]: created
+2023/05/14 22:52:08	[Pipe1]: created
+2023/05/14 22:52:08	[Cistern1]: Pipe1 has been attached
+2023/05/14 22:52:08	[Pump105]: Pipe1 has been attached
+2023/05/14 22:52:08	[Pipe2]: created
+2023/05/14 22:52:08	[Cistern1]: Pipe2 has been attached
+2023/05/14 22:52:08	[Pump104]: Pipe2 has been attached
+2023/05/14 22:52:08	[Pipe3]: created
+2023/05/14 22:52:08	[Cistern2]: Pipe3 has been attached
+2023/05/14 22:52:08	[Pump103]: Pipe3 has been attached
+2023/05/14 22:52:08	[Pipe4]: created
+2023/05/14 22:52:08	[Cistern2]: Pipe4 has been attached
+2023/05/14 22:52:08	[Pump101]: Pipe4 has been attached
+2023/05/14 22:52:08	[Pipe5]: created
+2023/05/14 22:52:08	[Spring2]: Pipe5 has been attached
+2023/05/14 22:52:08	[Pump101]: Pipe5 has been attached
+2023/05/14 22:52:08	[Pipe6]: created
+2023/05/14 22:52:08	[Spring2]: Pipe6 has been attached
+2023/05/14 22:52:08	[Pump102]: Pipe6 has been attached
+2023/05/14 22:52:08	[Pipe7]: created
+2023/05/14 22:52:08	[Spring1]: Pipe7 has been attached
+2023/05/14 22:52:08	[Pump102]: Pipe7 has been attached
+2023/05/14 22:52:08	[Pipe8]: created
+2023/05/14 22:52:08	[Spring1]: Pipe8 has been attached
+2023/05/14 22:52:08	[Pump106]: Pipe8 has been attached
+2023/05/14 22:52:08	[Pipe9]: created
+2023/05/14 22:52:08	[Pump103]: Pipe9 has been attached
+2023/05/14 22:52:08	[Pump102]: Pipe9 has been attached
+2023/05/14 22:52:08	[Pipe10]: created
+2023/05/14 22:52:08	[Pump104]: Pipe10 has been attached
+2023/05/14 22:52:08	[Pump102]: Pipe10 has been attached
+2023/05/14 22:52:08	[Pipe11]: created
+2023/05/14 22:52:08	[Pump104]: Pipe11 has been attached
+2023/05/14 22:52:08	[Pump106]: Pipe11 has been attached
+2023/05/14 22:52:08	[Pipe12]: created
+2023/05/14 22:52:08	[Pump105]: Pipe12 has been attached
+2023/05/14 22:52:08	[Pump106]: Pipe12 has been attached
+2023/05/14 22:52:08	[Map]: map loaded
+2023/05/14 22:52:08	Saboteur1's turn
+2023/05/14 22:52:08	2 actions left
+2023/05/14 22:52:37	[System]: Thats not a valid command
+2023/05/14 22:52:37	1 actions left
+2023/05/14 22:59:21	[Cistern1]: created
+2023/05/14 22:59:21	[Cistern2]: created
+2023/05/14 22:59:21	[Spring1]: created
+2023/05/14 22:59:21	[Spring2]: created
+2023/05/14 22:59:21	[Pump101]: created
+2023/05/14 22:59:21	[Pump102]: created
+2023/05/14 22:59:21	[Pump103]: created
+2023/05/14 22:59:21	[Pump104]: created
+2023/05/14 22:59:21	[Pump105]: created
+2023/05/14 22:59:21	[Pump106]: created
+2023/05/14 22:59:21	[Pipe1]: created
+2023/05/14 22:59:21	[Cistern1]: Pipe1 has been attached
+2023/05/14 22:59:21	[Pump105]: Pipe1 has been attached
+2023/05/14 22:59:21	[Pipe2]: created
+2023/05/14 22:59:21	[Cistern1]: Pipe2 has been attached
+2023/05/14 22:59:21	[Pump104]: Pipe2 has been attached
+2023/05/14 22:59:21	[Pipe3]: created
+2023/05/14 22:59:21	[Cistern2]: Pipe3 has been attached
+2023/05/14 22:59:21	[Pump103]: Pipe3 has been attached
+2023/05/14 22:59:21	[Pipe4]: created
+2023/05/14 22:59:21	[Cistern2]: Pipe4 has been attached
+2023/05/14 22:59:21	[Pump101]: Pipe4 has been attached
+2023/05/14 22:59:21	[Pipe5]: created
+2023/05/14 22:59:21	[Spring2]: Pipe5 has been attached
+2023/05/14 22:59:21	[Pump101]: Pipe5 has been attached
+2023/05/14 22:59:21	[Pipe6]: created
+2023/05/14 22:59:21	[Spring2]: Pipe6 has been attached
+2023/05/14 22:59:21	[Pump102]: Pipe6 has been attached
+2023/05/14 22:59:21	[Pipe7]: created
+2023/05/14 22:59:21	[Spring1]: Pipe7 has been attached
+2023/05/14 22:59:21	[Pump102]: Pipe7 has been attached
+2023/05/14 22:59:21	[Pipe8]: created
+2023/05/14 22:59:21	[Spring1]: Pipe8 has been attached
+2023/05/14 22:59:21	[Pump106]: Pipe8 has been attached
+2023/05/14 22:59:21	[Pipe9]: created
+2023/05/14 22:59:21	[Pump103]: Pipe9 has been attached
+2023/05/14 22:59:21	[Pump102]: Pipe9 has been attached
+2023/05/14 22:59:21	[Pipe10]: created
+2023/05/14 22:59:21	[Pump104]: Pipe10 has been attached
+2023/05/14 22:59:21	[Pump102]: Pipe10 has been attached
+2023/05/14 22:59:21	[Pipe11]: created
+2023/05/14 22:59:21	[Pump104]: Pipe11 has been attached
+2023/05/14 22:59:21	[Pump106]: Pipe11 has been attached
+2023/05/14 22:59:21	[Pipe12]: created
+2023/05/14 22:59:21	[Pump105]: Pipe12 has been attached
+2023/05/14 22:59:21	[Pump106]: Pipe12 has been attached
+2023/05/14 22:59:21	[Map]: map loaded
+2023/05/14 22:59:21	Saboteur1's turn
+2023/05/14 22:59:21	2 actions left
+2023/05/14 22:59:27	[Pipe1]: broken
+2023/05/14 22:59:27	1 actions left
+2023/05/14 22:59:38	[Pump105]: Saboteur1 accepted
+2023/05/14 22:59:38	Mechanic1's turn
+2023/05/14 22:59:38	2 actions left
+2023/05/14 23:00:30	[Pump103]: Mechanic1 accepted
+2023/05/14 23:00:30	1 actions left
+2023/05/14 23:00:43	[Pipe9]: Mechanic1 accepted
+2023/05/14 23:00:43	Saboteur2's turn
+2023/05/14 23:00:43	2 actions left
+2023/05/14 23:01:08	[Pump104]: Saboteur2 accepted
+2023/05/14 23:01:08	1 actions left
+2023/05/14 23:01:45	[Pipe10]: Saboteur2 accepted
+2023/05/14 23:01:45	Mechanic2's turn
+2023/05/14 23:01:45	2 actions left
+2023/05/14 23:02:07	[Pump101]: Mechanic2 accepted
+2023/05/14 23:02:07	1 actions left
+2023/05/14 23:02:13	[Pipe5]: Mechanic2 accepted
+2023/05/14 23:02:13	[Map]: water is pumped
+2023/05/14 23:02:13	Saboteur1's turn
+2023/05/14 23:02:13	2 actions left
+2023/05/14 23:03:17	[Pump105]: Nem létező szomszéd lett megadva.
+2023/05/14 23:03:17	1 actions left
+2023/05/14 23:03:25	[Pipe12]: Saboteur1 accepted
+2023/05/14 23:03:25	Mechanic1's turn
+2023/05/14 23:03:25	2 actions left
+2023/05/14 23:04:07	[Pump102]: Mechanic1 accepted
+2023/05/14 23:04:07	1 actions left
+2023/05/14 23:04:12	[Pump102]: Nem létező szomszéd lett megadva.
+2023/05/14 23:04:12	Saboteur2's turn
+2023/05/14 23:04:12	2 actions left
+2023/05/14 23:04:16	[Pipe10]: broken
+2023/05/14 23:04:16	1 actions left
+2023/05/14 23:04:27	[Pump104]: Saboteur2 accepted
+2023/05/14 23:04:27	Mechanic2's turn
+2023/05/14 23:04:27	2 actions left
+2023/05/14 23:05:08	[Spring2]: Mechanic2 accepted
+2023/05/14 23:05:08	1 actions left
+2023/05/14 23:05:18	[Pipe6]: Mechanic2 accepted
+2023/05/14 23:05:18	[Map]: water is pumped
+2023/05/14 23:05:18	Saboteur1's turn
+2023/05/14 23:05:18	2 actions left
+2023/05/14 23:05:35	[Pump106]: Saboteur1 accepted
+2023/05/14 23:05:35	1 actions left
+2023/05/14 23:05:37	Mechanic1's turn
+2023/05/14 23:05:37	2 actions left
+2023/05/14 23:06:17	[Pipe10]: Mechanic1 accepted
+2023/05/14 23:06:17	1 actions left
+2023/05/14 23:06:20	[Pipe10]: repaired
+2023/05/14 23:06:20	Saboteur2's turn
+2023/05/14 23:06:20	2 actions left
+2023/05/14 23:12:09	[Cistern1]: created
+2023/05/14 23:12:09	[Cistern2]: created
+2023/05/14 23:12:09	[Spring1]: created
+2023/05/14 23:12:09	[Spring2]: created
+2023/05/14 23:12:09	[Pump101]: created
+2023/05/14 23:12:09	[Pump102]: created
+2023/05/14 23:12:09	[Pump103]: created
+2023/05/14 23:12:09	[Pump104]: created
+2023/05/14 23:12:09	[Pump105]: created
+2023/05/14 23:12:09	[Pump106]: created
+2023/05/14 23:12:09	[Pipe1]: created
+2023/05/14 23:12:09	[Cistern1]: Pipe1 has been attached
+2023/05/14 23:12:09	[Pump105]: Pipe1 has been attached
+2023/05/14 23:12:09	[Pipe2]: created
+2023/05/14 23:12:09	[Cistern1]: Pipe2 has been attached
+2023/05/14 23:12:09	[Pump104]: Pipe2 has been attached
+2023/05/14 23:12:09	[Pipe3]: created
+2023/05/14 23:12:09	[Cistern2]: Pipe3 has been attached
+2023/05/14 23:12:09	[Pump103]: Pipe3 has been attached
+2023/05/14 23:12:09	[Pipe4]: created
+2023/05/14 23:12:09	[Cistern2]: Pipe4 has been attached
+2023/05/14 23:12:09	[Pump101]: Pipe4 has been attached
+2023/05/14 23:12:09	[Pipe5]: created
+2023/05/14 23:12:09	[Spring2]: Pipe5 has been attached
+2023/05/14 23:12:09	[Pump101]: Pipe5 has been attached
+2023/05/14 23:12:09	[Pipe6]: created
+2023/05/14 23:12:09	[Spring2]: Pipe6 has been attached
+2023/05/14 23:12:09	[Pump102]: Pipe6 has been attached
+2023/05/14 23:12:09	[Pipe7]: created
+2023/05/14 23:12:09	[Spring1]: Pipe7 has been attached
+2023/05/14 23:12:09	[Pump102]: Pipe7 has been attached
+2023/05/14 23:12:09	[Pipe8]: created
+2023/05/14 23:12:09	[Spring1]: Pipe8 has been attached
+2023/05/14 23:12:09	[Pump106]: Pipe8 has been attached
+2023/05/14 23:12:09	[Pipe9]: created
+2023/05/14 23:12:09	[Pump103]: Pipe9 has been attached
+2023/05/14 23:12:09	[Pump102]: Pipe9 has been attached
+2023/05/14 23:12:09	[Pipe10]: created
+2023/05/14 23:12:09	[Pump104]: Pipe10 has been attached
+2023/05/14 23:12:09	[Pump102]: Pipe10 has been attached
+2023/05/14 23:12:09	[Pipe11]: created
+2023/05/14 23:12:09	[Pump104]: Pipe11 has been attached
+2023/05/14 23:12:09	[Pump106]: Pipe11 has been attached
+2023/05/14 23:12:09	[Pipe12]: created
+2023/05/14 23:12:09	[Pump105]: Pipe12 has been attached
+2023/05/14 23:12:09	[Pump106]: Pipe12 has been attached
+2023/05/14 23:12:09	[Map]: map loaded
+2023/05/14 23:12:09	Saboteur1's turn
+2023/05/14 23:12:09	2 actions left
+2023/05/14 23:12:12	[System]: Thats not a valid command
+2023/05/14 23:12:12	1 actions left
+2023/05/14 23:12:13	[System]: Thats not a valid command
+2023/05/14 23:12:13	Mechanic1's turn
+2023/05/14 23:12:13	2 actions left
+2023/05/14 23:12:13	[System]: Thats not a valid command
+2023/05/14 23:12:13	1 actions left
+2023/05/14 23:12:14	[System]: Thats not a valid command
+2023/05/14 23:12:14	Saboteur2's turn
+2023/05/14 23:12:14	2 actions left
+2023/05/14 23:12:15	[System]: Thats not a valid command
+2023/05/14 23:12:15	1 actions left
+2023/05/14 23:12:15	[System]: Thats not a valid command
+2023/05/14 23:12:15	Mechanic2's turn
+2023/05/14 23:12:15	2 actions left
+2023/05/14 23:12:16	[System]: Thats not a valid command
+2023/05/14 23:12:16	1 actions left
+2023/05/14 23:12:17	[System]: Thats not a valid command
+2023/05/14 23:12:17	[Map]: water is pumped
+2023/05/14 23:12:17	Saboteur1's turn
+2023/05/14 23:12:17	2 actions left
+2023/05/14 23:13:09	[Cistern1]: created
+2023/05/14 23:13:09	[Cistern2]: created
+2023/05/14 23:13:09	[Spring1]: created
+2023/05/14 23:13:09	[Spring2]: created
+2023/05/14 23:13:09	[Pump101]: created
+2023/05/14 23:13:09	[Pump102]: created
+2023/05/14 23:13:09	[Pump103]: created
+2023/05/14 23:13:09	[Pump104]: created
+2023/05/14 23:13:09	[Pump105]: created
+2023/05/14 23:13:09	[Pump106]: created
+2023/05/14 23:13:09	[Pipe1]: created
+2023/05/14 23:13:09	[Cistern1]: Pipe1 has been attached
+2023/05/14 23:13:09	[Pump105]: Pipe1 has been attached
+2023/05/14 23:13:09	[Pipe2]: created
+2023/05/14 23:13:09	[Cistern1]: Pipe2 has been attached
+2023/05/14 23:13:09	[Pump104]: Pipe2 has been attached
+2023/05/14 23:13:09	[Pipe3]: created
+2023/05/14 23:13:09	[Cistern2]: Pipe3 has been attached
+2023/05/14 23:13:09	[Pump103]: Pipe3 has been attached
+2023/05/14 23:13:09	[Pipe4]: created
+2023/05/14 23:13:09	[Cistern2]: Pipe4 has been attached
+2023/05/14 23:13:09	[Pump101]: Pipe4 has been attached
+2023/05/14 23:13:09	[Pipe5]: created
+2023/05/14 23:13:09	[Spring2]: Pipe5 has been attached
+2023/05/14 23:13:09	[Pump101]: Pipe5 has been attached
+2023/05/14 23:13:09	[Pipe6]: created
+2023/05/14 23:13:09	[Spring2]: Pipe6 has been attached
+2023/05/14 23:13:09	[Pump102]: Pipe6 has been attached
+2023/05/14 23:13:09	[Pipe7]: created
+2023/05/14 23:13:09	[Spring1]: Pipe7 has been attached
+2023/05/14 23:13:09	[Pump102]: Pipe7 has been attached
+2023/05/14 23:13:09	[Pipe8]: created
+2023/05/14 23:13:09	[Spring1]: Pipe8 has been attached
+2023/05/14 23:13:09	[Pump106]: Pipe8 has been attached
+2023/05/14 23:13:09	[Pipe9]: created
+2023/05/14 23:13:09	[Pump103]: Pipe9 has been attached
+2023/05/14 23:13:09	[Pump102]: Pipe9 has been attached
+2023/05/14 23:13:09	[Pipe10]: created
+2023/05/14 23:13:09	[Pump104]: Pipe10 has been attached
+2023/05/14 23:13:09	[Pump102]: Pipe10 has been attached
+2023/05/14 23:13:09	[Pipe11]: created
+2023/05/14 23:13:09	[Pump104]: Pipe11 has been attached
+2023/05/14 23:13:09	[Pump106]: Pipe11 has been attached
+2023/05/14 23:13:09	[Pipe12]: created
+2023/05/14 23:13:09	[Pump105]: Pipe12 has been attached
+2023/05/14 23:13:09	[Pump106]: Pipe12 has been attached
+2023/05/14 23:13:09	[Map]: map loaded
+2023/05/14 23:13:09	Saboteur1's turn
+2023/05/14 23:13:09	2 actions left
+2023/05/14 23:13:13	[System]: Thats not a valid command
+2023/05/14 23:13:13	1 actions left
+2023/05/14 23:13:14	[System]: Thats not a valid command
+2023/05/14 23:13:14	Mechanic1's turn
+2023/05/14 23:13:14	2 actions left
+2023/05/14 23:13:15	[System]: Thats not a valid command
+2023/05/14 23:13:15	1 actions left
+2023/05/14 23:13:15	[System]: Thats not a valid command
+2023/05/14 23:13:15	Saboteur2's turn
+2023/05/14 23:13:15	2 actions left
+2023/05/14 23:13:16	[System]: Thats not a valid command
+2023/05/14 23:13:16	1 actions left
+2023/05/14 23:13:16	[System]: Thats not a valid command
+2023/05/14 23:13:16	Mechanic2's turn
+2023/05/14 23:13:16	2 actions left
+2023/05/14 23:13:17	[System]: Thats not a valid command
+2023/05/14 23:13:17	1 actions left
+2023/05/14 23:13:18	[System]: Thats not a valid command
+2023/05/14 23:13:18	Saboteur1's turn
+2023/05/14 23:13:18	2 actions left
+2023/05/14 23:19:37	[Cistern1]: created
+2023/05/14 23:19:37	[Map]: Cistern1 has been created
+2023/05/14 23:19:37	[Cistern2]: created
+2023/05/14 23:19:37	[Map]: Cistern2 has been created
+2023/05/14 23:19:37	[Spring1]: created
+2023/05/14 23:19:37	[Map]: Spring1 has been created
+2023/05/14 23:19:37	[Spring2]: created
+2023/05/14 23:19:37	[Map]: Spring2 has been created
+2023/05/14 23:19:37	[Pump101]: created
+2023/05/14 23:19:37	[Map]: Pump101 has been created
+2023/05/14 23:19:37	[Pump102]: created
+2023/05/14 23:19:37	[Map]: Pump102 has been created
+2023/05/14 23:19:37	[Pump103]: created
+2023/05/14 23:19:37	[Map]: Pump103 has been created
+2023/05/14 23:19:37	[Pump104]: created
+2023/05/14 23:19:37	[Map]: Pump104 has been created
+2023/05/14 23:19:37	[Pump105]: created
+2023/05/14 23:19:37	[Map]: Pump105 has been created
+2023/05/14 23:19:37	[Pump106]: created
+2023/05/14 23:19:37	[Map]: Pump106 has been created
+2023/05/14 23:19:37	[Pipe1]: created
+2023/05/14 23:19:37	[Cistern1]: Pipe1 has been attached
+2023/05/14 23:19:37	[Pump105]: Pipe1 has been attached
+2023/05/14 23:19:37	[Pipe2]: created
+2023/05/14 23:19:37	[Cistern1]: Pipe2 has been attached
+2023/05/14 23:19:37	[Pump104]: Pipe2 has been attached
+2023/05/14 23:19:37	[Pipe3]: created
+2023/05/14 23:19:37	[Cistern2]: Pipe3 has been attached
+2023/05/14 23:19:37	[Pump103]: Pipe3 has been attached
+2023/05/14 23:19:37	[Pipe4]: created
+2023/05/14 23:19:37	[Cistern2]: Pipe4 has been attached
+2023/05/14 23:19:37	[Pump101]: Pipe4 has been attached
+2023/05/14 23:19:37	[Pipe5]: created
+2023/05/14 23:19:37	[Spring2]: Pipe5 has been attached
+2023/05/14 23:19:37	[Pump101]: Pipe5 has been attached
+2023/05/14 23:19:37	[Pipe6]: created
+2023/05/14 23:19:37	[Spring2]: Pipe6 has been attached
+2023/05/14 23:19:37	[Pump102]: Pipe6 has been attached
+2023/05/14 23:19:37	[Pipe7]: created
+2023/05/14 23:19:37	[Spring1]: Pipe7 has been attached
+2023/05/14 23:19:37	[Pump102]: Pipe7 has been attached
+2023/05/14 23:19:37	[Pipe8]: created
+2023/05/14 23:19:37	[Spring1]: Pipe8 has been attached
+2023/05/14 23:19:37	[Pump106]: Pipe8 has been attached
+2023/05/14 23:19:37	[Pipe9]: created
+2023/05/14 23:19:37	[Pump103]: Pipe9 has been attached
+2023/05/14 23:19:37	[Pump102]: Pipe9 has been attached
+2023/05/14 23:19:37	[Pipe10]: created
+2023/05/14 23:19:37	[Pump104]: Pipe10 has been attached
+2023/05/14 23:19:37	[Pump102]: Pipe10 has been attached
+2023/05/14 23:19:37	[Pipe11]: created
+2023/05/14 23:19:37	[Pump104]: Pipe11 has been attached
+2023/05/14 23:19:37	[Pump106]: Pipe11 has been attached
+2023/05/14 23:19:37	[Pipe12]: created
+2023/05/14 23:19:37	[Pump105]: Pipe12 has been attached
+2023/05/14 23:19:37	[Pump106]: Pipe12 has been attached
+2023/05/14 23:19:37	[Map]: map loaded
+2023/05/14 23:19:37	Saboteur1's turn
+2023/05/14 23:19:37	2 actions left
+2023/05/14 23:19:43	[System]: Thats not a valid command
+2023/05/14 23:19:43	1 actions left
+2023/05/14 23:19:43	[System]: Thats not a valid command
+2023/05/14 23:19:43	Mechanic1's turn
+2023/05/14 23:19:43	2 actions left
+2023/05/14 23:19:44	[System]: Thats not a valid command
+2023/05/14 23:19:44	1 actions left
+2023/05/14 23:19:44	[System]: Thats not a valid command
+2023/05/14 23:19:44	Saboteur2's turn
+2023/05/14 23:19:44	2 actions left
+2023/05/14 23:19:45	[System]: Thats not a valid command
+2023/05/14 23:19:45	1 actions left
+2023/05/14 23:19:45	[System]: Thats not a valid command
+2023/05/14 23:19:45	Mechanic2's turn
+2023/05/14 23:19:45	2 actions left
+2023/05/14 23:19:46	[System]: Thats not a valid command
+2023/05/14 23:19:46	1 actions left
+2023/05/14 23:19:47	[System]: Thats not a valid command
+2023/05/14 23:19:47	[ActiveElement]: in water is pumped
+2023/05/14 23:19:47	[ActiveElement]: out water is pumped
+2023/05/14 23:43:25	[Cistern1]: created
+2023/05/14 23:43:25	[Map]: Cistern1 has been created
+2023/05/14 23:43:25	[Cistern2]: created
+2023/05/14 23:43:25	[Map]: Cistern2 has been created
+2023/05/14 23:43:25	[Spring1]: created
+2023/05/14 23:43:25	[Map]: Spring1 has been created
+2023/05/14 23:43:25	[Spring2]: created
+2023/05/14 23:43:25	[Map]: Spring2 has been created
+2023/05/14 23:43:25	[Pump101]: created
+2023/05/14 23:43:25	[Map]: Pump101 has been created
+2023/05/14 23:43:25	[Pump102]: created
+2023/05/14 23:43:25	[Map]: Pump102 has been created
+2023/05/14 23:43:25	[Pump103]: created
+2023/05/14 23:43:25	[Map]: Pump103 has been created
+2023/05/14 23:43:25	[Pump104]: created
+2023/05/14 23:43:25	[Map]: Pump104 has been created
+2023/05/14 23:43:25	[Pump105]: created
+2023/05/14 23:43:25	[Map]: Pump105 has been created
+2023/05/14 23:43:25	[Pump106]: created
+2023/05/14 23:43:25	[Map]: Pump106 has been created
+2023/05/14 23:43:25	[Pipe1]: created
+2023/05/14 23:43:25	[Cistern1]: Pipe1 has been attached
+2023/05/14 23:44:45	[Cistern1]: created
+2023/05/14 23:44:45	[Map]: Cistern1 has been created
+2023/05/14 23:44:45	[Cistern2]: created
+2023/05/14 23:44:45	[Map]: Cistern2 has been created
+2023/05/14 23:44:45	[Spring1]: created
+2023/05/14 23:44:45	[Map]: Spring1 has been created
+2023/05/14 23:44:45	[Spring2]: created
+2023/05/14 23:44:45	[Map]: Spring2 has been created
+2023/05/14 23:44:45	[Pump101]: created
+2023/05/14 23:44:45	[Map]: Pump101 has been created
+2023/05/14 23:44:45	[Pump102]: created
+2023/05/14 23:44:45	[Map]: Pump102 has been created
+2023/05/14 23:44:45	[Pump103]: created
+2023/05/14 23:44:45	[Map]: Pump103 has been created
+2023/05/14 23:44:45	[Pump104]: created
+2023/05/14 23:44:45	[Map]: Pump104 has been created
+2023/05/14 23:44:45	[Pump105]: created
+2023/05/14 23:44:45	[Map]: Pump105 has been created
+2023/05/14 23:44:45	[Pump106]: created
+2023/05/14 23:44:45	[Map]: Pump106 has been created
+2023/05/14 23:44:45	[Pipe1]: created
+2023/05/14 23:44:45	[Cistern1]: Pipe1 has been attached
+2023/05/14 23:44:52	[Cistern1]: created
+2023/05/14 23:44:52	[Map]: Cistern1 has been created
+2023/05/14 23:44:52	[Cistern2]: created
+2023/05/14 23:44:52	[Map]: Cistern2 has been created
+2023/05/14 23:44:52	[Spring1]: created
+2023/05/14 23:44:52	[Map]: Spring1 has been created
+2023/05/14 23:44:52	[Spring2]: created
+2023/05/14 23:44:52	[Map]: Spring2 has been created
+2023/05/14 23:44:52	[Pump101]: created
+2023/05/14 23:44:52	[Map]: Pump101 has been created
+2023/05/14 23:44:52	[Pump102]: created
+2023/05/14 23:44:52	[Map]: Pump102 has been created
+2023/05/14 23:44:52	[Pump103]: created
+2023/05/14 23:44:52	[Map]: Pump103 has been created
+2023/05/14 23:44:52	[Pump104]: created
+2023/05/14 23:44:52	[Map]: Pump104 has been created
+2023/05/14 23:44:52	[Pump105]: created
+2023/05/14 23:44:52	[Map]: Pump105 has been created
+2023/05/14 23:44:52	[Pump106]: created
+2023/05/14 23:44:52	[Map]: Pump106 has been created
+2023/05/14 23:44:52	[Pipe1]: created
+2023/05/14 23:44:52	[Cistern1]: Pipe1 has been attached
+2023/05/14 23:46:24	[Cistern1]: created
+2023/05/14 23:46:24	[Map]: Cistern1 has been created
+2023/05/14 23:46:24	[Cistern2]: created
+2023/05/14 23:46:24	[Map]: Cistern2 has been created
+2023/05/14 23:46:24	[Spring1]: created
+2023/05/14 23:46:24	[Map]: Spring1 has been created
+2023/05/14 23:46:24	[Spring2]: created
+2023/05/14 23:46:24	[Map]: Spring2 has been created
+2023/05/14 23:46:24	[Pump101]: created
+2023/05/14 23:46:24	[Map]: Pump101 has been created
+2023/05/14 23:46:24	[Pump102]: created
+2023/05/14 23:46:24	[Map]: Pump102 has been created
+2023/05/14 23:46:24	[Pump103]: created
+2023/05/14 23:46:24	[Map]: Pump103 has been created
+2023/05/14 23:46:24	[Pump104]: created
+2023/05/14 23:46:24	[Map]: Pump104 has been created
+2023/05/14 23:46:24	[Pump105]: created
+2023/05/14 23:46:24	[Map]: Pump105 has been created
+2023/05/14 23:46:24	[Pump106]: created
+2023/05/14 23:46:24	[Map]: Pump106 has been created
+2023/05/14 23:46:24	[Pipe1]: created
+2023/05/14 23:46:24	[Cistern1]: Pipe1 has been attached
+2023/05/14 23:46:24	-
+2023/05/14 23:47:51	[Cistern1]: created
+2023/05/14 23:47:51	[Map]: Cistern1 has been created
+2023/05/14 23:47:51	[Cistern2]: created
+2023/05/14 23:47:51	[Map]: Cistern2 has been created
+2023/05/14 23:47:51	[Spring1]: created
+2023/05/14 23:47:51	[Map]: Spring1 has been created
+2023/05/14 23:47:51	[Spring2]: created
+2023/05/14 23:47:51	[Map]: Spring2 has been created
+2023/05/14 23:47:51	[Pump101]: created
+2023/05/14 23:47:51	[Map]: Pump101 has been created
+2023/05/14 23:47:51	[Pump102]: created
+2023/05/14 23:47:51	[Map]: Pump102 has been created
+2023/05/14 23:47:51	[Pump103]: created
+2023/05/14 23:47:51	[Map]: Pump103 has been created
+2023/05/14 23:47:51	[Pump104]: created
+2023/05/14 23:47:51	[Map]: Pump104 has been created
+2023/05/14 23:47:51	[Pump105]: created
+2023/05/14 23:47:51	[Map]: Pump105 has been created
+2023/05/14 23:47:51	[Pump106]: created
+2023/05/14 23:47:51	[Map]: Pump106 has been created
+2023/05/14 23:47:51	[Pipe1]: created
+2023/05/14 23:47:51	[Cistern1]: Pipe1 has been attached
+2023/05/14 23:47:51	cors
+2023/05/14 23:48:48	[Cistern1]: created
+2023/05/14 23:48:48	[Map]: Cistern1 has been created
+2023/05/14 23:48:48	[Cistern2]: created
+2023/05/14 23:48:48	[Map]: Cistern2 has been created
+2023/05/14 23:48:48	[Spring1]: created
+2023/05/14 23:48:48	[Map]: Spring1 has been created
+2023/05/14 23:48:48	[Spring2]: created
+2023/05/14 23:48:48	[Map]: Spring2 has been created
+2023/05/14 23:48:48	[Pump101]: created
+2023/05/14 23:48:48	[Map]: Pump101 has been created
+2023/05/14 23:48:48	[Pump102]: created
+2023/05/14 23:48:48	[Map]: Pump102 has been created
+2023/05/14 23:48:48	[Pump103]: created
+2023/05/14 23:48:48	[Map]: Pump103 has been created
+2023/05/14 23:48:48	[Pump104]: created
+2023/05/14 23:48:48	[Map]: Pump104 has been created
+2023/05/14 23:48:48	[Pump105]: created
+2023/05/14 23:48:48	[Map]: Pump105 has been created
+2023/05/14 23:48:48	[Pump106]: created
+2023/05/14 23:48:48	[Map]: Pump106 has been created
+2023/05/14 23:48:48	[Pipe1]: created
+2023/05/14 23:48:48	[Cistern1]: Pipe1 has been attached
+2023/05/14 23:48:48	cors
+2023/05/14 23:48:48	cors
+2023/05/14 23:49:33	[Cistern1]: created
+2023/05/14 23:49:33	[Map]: Cistern1 has been created
+2023/05/14 23:49:33	[Cistern2]: created
+2023/05/14 23:49:33	[Map]: Cistern2 has been created
+2023/05/14 23:49:33	[Spring1]: created
+2023/05/14 23:49:33	[Map]: Spring1 has been created
+2023/05/14 23:49:33	[Spring2]: created
+2023/05/14 23:49:33	[Map]: Spring2 has been created
+2023/05/14 23:49:33	[Pump101]: created
+2023/05/14 23:49:33	[Map]: Pump101 has been created
+2023/05/14 23:49:33	[Pump102]: created
+2023/05/14 23:49:33	[Map]: Pump102 has been created
+2023/05/14 23:49:33	[Pump103]: created
+2023/05/14 23:49:33	[Map]: Pump103 has been created
+2023/05/14 23:49:33	[Pump104]: created
+2023/05/14 23:49:33	[Map]: Pump104 has been created
+2023/05/14 23:49:33	[Pump105]: created
+2023/05/14 23:49:33	[Map]: Pump105 has been created
+2023/05/14 23:49:33	[Pump106]: created
+2023/05/14 23:49:33	[Map]: Pump106 has been created
+2023/05/14 23:49:33	[Pipe1]: created
+2023/05/14 23:49:33	[Cistern1]: Pipe1 has been attached
+2023/05/14 23:49:33	cors
+2023/05/14 23:49:33	[Pump105]: Pipe1 has been attached
+2023/05/14 23:50:30	[Cistern1]: created
+2023/05/14 23:50:30	[Map]: Cistern1 has been created
+2023/05/14 23:50:30	[Cistern2]: created
+2023/05/14 23:50:30	[Map]: Cistern2 has been created
+2023/05/14 23:50:30	[Spring1]: created
+2023/05/14 23:50:30	[Map]: Spring1 has been created
+2023/05/14 23:50:30	[Spring2]: created
+2023/05/14 23:50:30	[Map]: Spring2 has been created
+2023/05/14 23:50:30	[Pump101]: created
+2023/05/14 23:50:30	[Map]: Pump101 has been created
+2023/05/14 23:50:30	[Pump102]: created
+2023/05/14 23:50:30	[Map]: Pump102 has been created
+2023/05/14 23:50:30	[Pump103]: created
+2023/05/14 23:50:30	[Map]: Pump103 has been created
+2023/05/14 23:50:30	[Pump104]: created
+2023/05/14 23:50:30	[Map]: Pump104 has been created
+2023/05/14 23:50:30	[Pump105]: created
+2023/05/14 23:50:30	[Map]: Pump105 has been created
+2023/05/14 23:50:30	[Pump106]: created
+2023/05/14 23:50:30	[Map]: Pump106 has been created
+2023/05/14 23:50:30	[Pipe1]: created
+2023/05/14 23:50:30	[Cistern1]: Pipe1 has been attached
+2023/05/14 23:50:30	cors
+2023/05/14 23:50:30	[Pump105]: Pipe1 has been attached
+2023/05/14 23:50:30	[Pipe2]: created
+2023/05/14 23:50:30	[Cistern1]: Pipe2 has been attached
+2023/05/14 23:50:30	cors
+2023/05/14 23:50:30	[Pump104]: Pipe2 has been attached
+2023/05/14 23:50:30	[Pipe3]: created
+2023/05/14 23:50:30	[Cistern2]: Pipe3 has been attached
+2023/05/14 23:50:30	cors
+2023/05/14 23:50:30	[Pump103]: Pipe3 has been attached
+2023/05/14 23:50:30	[Pipe4]: created
+2023/05/14 23:50:30	[Cistern2]: Pipe4 has been attached
+2023/05/14 23:50:30	cors
+2023/05/14 23:50:30	[Pump101]: Pipe4 has been attached
+2023/05/14 23:50:30	[Pipe5]: created
+2023/05/14 23:50:30	[Spring2]: Pipe5 has been attached
+2023/05/14 23:50:30	cors
+2023/05/14 23:50:30	[Pump101]: Pipe5 has been attached
+2023/05/14 23:50:30	[Pipe6]: created
+2023/05/14 23:50:30	[Spring2]: Pipe6 has been attached
+2023/05/14 23:50:30	cors
+2023/05/14 23:50:30	[Pump102]: Pipe6 has been attached
+2023/05/14 23:50:30	[Pipe7]: created
+2023/05/14 23:50:30	[Spring1]: Pipe7 has been attached
+2023/05/14 23:50:30	cors
+2023/05/14 23:50:30	[Pump102]: Pipe7 has been attached
+2023/05/14 23:50:30	[Pipe8]: created
+2023/05/14 23:50:30	[Spring1]: Pipe8 has been attached
+2023/05/14 23:50:30	cors
+2023/05/14 23:50:30	[Pump106]: Pipe8 has been attached
+2023/05/14 23:50:30	[Pipe9]: created
+2023/05/14 23:50:30	[Pump103]: Pipe9 has been attached
+2023/05/14 23:50:30	in_pump
+2023/05/14 23:50:30	in_pump
+2023/05/14 23:50:30	[Pump102]: Pipe9 has been attached
+2023/05/14 23:50:30	[Pipe10]: created
+2023/05/14 23:50:30	[Pump104]: Pipe10 has been attached
+2023/05/14 23:50:30	in_pump
+2023/05/14 23:50:30	in_pump
+2023/05/14 23:50:30	[Pump102]: Pipe10 has been attached
+2023/05/14 23:50:30	[Pipe11]: created
+2023/05/14 23:50:30	[Pump104]: Pipe11 has been attached
+2023/05/14 23:50:30	cors
+2023/05/14 23:50:30	[Pump106]: Pipe11 has been attached
+2023/05/14 23:50:30	[Pipe12]: created
+2023/05/14 23:50:30	[Pump105]: Pipe12 has been attached
+2023/05/14 23:50:30	in_pump
+2023/05/14 23:50:30	in_pump
+2023/05/14 23:50:30	[Pump106]: Pipe12 has been attached
+2023/05/14 23:50:30	[Map]: map loaded
+2023/05/14 23:50:30	Saboteur1's turn
+2023/05/14 23:50:30	2 actions left
+2023/05/14 23:50:54	[System]: Thats not a valid command
+2023/05/14 23:50:54	1 actions left
+2023/05/14 23:50:54	[System]: Thats not a valid command
+2023/05/14 23:50:54	Mechanic1's turn
+2023/05/14 23:50:54	2 actions left
+2023/05/14 23:50:54	[System]: Thats not a valid command
+2023/05/14 23:50:54	1 actions left
+2023/05/14 23:50:55	[System]: Thats not a valid command
+2023/05/14 23:50:55	Saboteur2's turn
+2023/05/14 23:50:55	2 actions left
+2023/05/14 23:50:55	[System]: Thats not a valid command
+2023/05/14 23:50:55	1 actions left
+2023/05/14 23:50:56	[System]: Thats not a valid command
+2023/05/14 23:50:56	Mechanic2's turn
+2023/05/14 23:50:56	2 actions left
+2023/05/14 23:50:57	[System]: Thats not a valid command
+2023/05/14 23:50:57	1 actions left
+2023/05/14 23:50:57	[System]: Thats not a valid command
+2023/05/14 23:50:57	[ActiveElement]: in water is pumped
+2023/05/14 23:50:57	[ActiveElement]: out water is pumped
+2023/05/14 23:50:57	[ActiveElement]: in water is pumped
+2023/05/14 23:50:57	[ActiveElement]: out water is pumped
+2023/05/14 23:50:57	[ActiveElement]: in water is pumped
+2023/05/14 23:50:57	[ActiveElement]: out water is pumped
+2023/05/14 23:50:57	[ActiveElement]: in water is pumped
+2023/05/14 23:50:57	[ActiveElement]: out water is pumped
+2023/05/14 23:50:57	[ActiveElement]: in water is pumped
+2023/05/14 23:50:57	[ActiveElement]: out water is pumped
+2023/05/14 23:50:57	[ActiveElement]: in water is pumped
+2023/05/14 23:50:57	[ActiveElement]: out water is pumped
+2023/05/14 23:50:57	[ActiveElement]: in water is pumped
+2023/05/14 23:50:57	[Map]: water is pumped
+2023/05/14 23:50:57	[ActiveElement]: in water is pumped
+2023/05/14 23:50:57	[ActiveElement]: out water is pumped
+2023/05/14 23:50:57	[ActiveElement]: in water is pumped
+2023/05/14 23:50:57	[ActiveElement]: out water is pumped
+2023/05/14 23:50:57	[ActiveElement]: in water is pumped
+2023/05/14 23:50:57	[ActiveElement]: out water is pumped
+2023/05/14 23:50:57	[ActiveElement]: in water is pumped
+2023/05/14 23:50:57	[ActiveElement]: out water is pumped
+2023/05/14 23:50:57	[ActiveElement]: in water is pumped
+2023/05/14 23:50:57	[ActiveElement]: out water is pumped
+2023/05/14 23:50:57	[ActiveElement]: in water is pumped
+2023/05/14 23:50:57	[Map]: water is pumped
+2023/05/14 23:50:57	Saboteur1's turn
+2023/05/14 23:50:57	2 actions left
+2023/05/14 23:53:30	[Cistern1]: created
+2023/05/14 23:53:30	[Map]: Cistern1 has been created
+2023/05/14 23:53:30	[Cistern2]: created
+2023/05/14 23:53:30	[Map]: Cistern2 has been created
+2023/05/14 23:53:30	[Spring1]: created
+2023/05/14 23:53:30	[Map]: Spring1 has been created
+2023/05/14 23:53:30	[Spring2]: created
+2023/05/14 23:53:30	[Map]: Spring2 has been created
+2023/05/14 23:53:30	[Pump101]: created
+2023/05/14 23:53:30	[Map]: Pump101 has been created
+2023/05/14 23:53:30	[Pump102]: created
+2023/05/14 23:53:30	[Map]: Pump102 has been created
+2023/05/14 23:53:30	[Pump103]: created
+2023/05/14 23:53:30	[Map]: Pump103 has been created
+2023/05/14 23:53:30	[Pump104]: created
+2023/05/14 23:53:30	[Map]: Pump104 has been created
+2023/05/14 23:53:30	[Pump105]: created
+2023/05/14 23:53:30	[Map]: Pump105 has been created
+2023/05/14 23:53:30	[Pump106]: created
+2023/05/14 23:53:30	[Map]: Pump106 has been created
+2023/05/14 23:53:30	[Pipe1]: created
+2023/05/14 23:53:30	[Cistern1]: Pipe1 has been attached
+2023/05/14 23:53:30	[Pump105]: Pipe1 has been attached
+2023/05/14 23:53:30	[Pipe2]: created
+2023/05/14 23:53:30	[Cistern1]: Pipe2 has been attached
+2023/05/14 23:53:30	[Pump104]: Pipe2 has been attached
+2023/05/14 23:53:30	[Pipe3]: created
+2023/05/14 23:53:30	[Cistern2]: Pipe3 has been attached
+2023/05/14 23:53:30	[Pump103]: Pipe3 has been attached
+2023/05/14 23:53:30	[Pipe4]: created
+2023/05/14 23:53:30	[Cistern2]: Pipe4 has been attached
+2023/05/14 23:53:30	[Pump101]: Pipe4 has been attached
+2023/05/14 23:53:30	[Pipe5]: created
+2023/05/14 23:53:30	[Spring2]: Pipe5 has been attached
+2023/05/14 23:53:30	[Pump101]: Pipe5 has been attached
+2023/05/14 23:53:30	[Pipe6]: created
+2023/05/14 23:53:30	[Spring2]: Pipe6 has been attached
+2023/05/14 23:53:30	[Pump102]: Pipe6 has been attached
+2023/05/14 23:53:30	[Pipe7]: created
+2023/05/14 23:53:30	[Spring1]: Pipe7 has been attached
+2023/05/14 23:53:30	[Pump102]: Pipe7 has been attached
+2023/05/14 23:53:30	[Pipe8]: created
+2023/05/14 23:53:30	[Spring1]: Pipe8 has been attached
+2023/05/14 23:53:30	[Pump106]: Pipe8 has been attached
+2023/05/14 23:53:30	[Pipe9]: created
+2023/05/14 23:53:30	[Pump103]: Pipe9 has been attached
+2023/05/14 23:53:30	[Pump102]: Pipe9 has been attached
+2023/05/14 23:53:30	[Pipe10]: created
+2023/05/14 23:53:30	[Pump104]: Pipe10 has been attached
+2023/05/14 23:53:30	[Pump102]: Pipe10 has been attached
+2023/05/14 23:53:30	[Pipe11]: created
+2023/05/14 23:53:30	[Pump104]: Pipe11 has been attached
+2023/05/14 23:53:30	[Pump106]: Pipe11 has been attached
+2023/05/14 23:53:30	[Pipe12]: created
+2023/05/14 23:53:30	[Pump105]: Pipe12 has been attached
+2023/05/14 23:53:30	[Pump106]: Pipe12 has been attached
+2023/05/14 23:53:30	[Map]: map loaded
+2023/05/14 23:53:30	Saboteur1's turn
+2023/05/14 23:53:30	2 actions left
+2023/05/14 23:53:33	[System]: Thats not a valid command
+2023/05/14 23:53:33	1 actions left
+2023/05/14 23:53:33	[System]: Thats not a valid command
+2023/05/14 23:53:33	Mechanic1's turn
+2023/05/14 23:53:33	2 actions left
+2023/05/14 23:53:34	[System]: Thats not a valid command
+2023/05/14 23:53:34	1 actions left
+2023/05/14 23:53:34	[System]: Thats not a valid command
+2023/05/14 23:53:34	Saboteur2's turn
+2023/05/14 23:53:34	2 actions left
+2023/05/14 23:53:35	[System]: Thats not a valid command
+2023/05/14 23:53:35	1 actions left
+2023/05/14 23:53:35	[System]: Thats not a valid command
+2023/05/14 23:53:35	Mechanic2's turn
+2023/05/14 23:53:35	2 actions left
+2023/05/14 23:53:35	[System]: Thats not a valid command
+2023/05/14 23:53:35	1 actions left
+2023/05/14 23:53:36	[System]: Thats not a valid command
+2023/05/14 23:53:36	[ActiveElement]: in water is pumped
+2023/05/14 23:53:36	[ActiveElement]: out water is pumped
+2023/05/14 23:53:36	[ActiveElement]: in water is pumped
+2023/05/14 23:53:36	[ActiveElement]: out water is pumped
+2023/05/14 23:53:36	[ActiveElement]: in water is pumped
+2023/05/14 23:53:36	[ActiveElement]: out water is pumped
+2023/05/14 23:53:36	[ActiveElement]: in water is pumped
+2023/05/14 23:53:36	[ActiveElement]: out water is pumped
+2023/05/14 23:53:36	[ActiveElement]: in water is pumped
+2023/05/14 23:53:36	[ActiveElement]: out water is pumped
+2023/05/14 23:53:36	[ActiveElement]: in water is pumped
+2023/05/14 23:53:36	[ActiveElement]: out water is pumped
+2023/05/14 23:53:36	[ActiveElement]: in water is pumped
+2023/05/14 23:53:36	[Map]: water is pumped
+2023/05/14 23:53:36	[ActiveElement]: in water is pumped
+2023/05/14 23:53:36	[ActiveElement]: out water is pumped
+2023/05/14 23:53:36	[ActiveElement]: in water is pumped
+2023/05/14 23:53:36	[ActiveElement]: out water is pumped
+2023/05/14 23:53:36	[ActiveElement]: in water is pumped
+2023/05/14 23:53:36	[ActiveElement]: out water is pumped
+2023/05/14 23:53:36	[ActiveElement]: in water is pumped
+2023/05/14 23:53:36	[ActiveElement]: out water is pumped
+2023/05/14 23:53:36	[ActiveElement]: in water is pumped
+2023/05/14 23:53:36	[ActiveElement]: out water is pumped
+2023/05/14 23:53:36	[ActiveElement]: in water is pumped
+2023/05/14 23:53:36	[Map]: water is pumped
+2023/05/14 23:53:36	[SaboteurTeam] points: 0
+2023/05/14 23:53:36	[MechanicTeam] points: 55
+2023/05/14 23:53:36	Saboteur1's turn
+2023/05/14 23:53:36	2 actions left
+2023/05/14 23:53:51	[Pipe1]: Nem létező szomszéd lett megadva.
+2023/05/14 23:53:51	1 actions left
+2023/05/14 23:53:54	[Pipe1]: broken
+2023/05/14 23:53:54	Mechanic1's turn
+2023/05/14 23:53:54	2 actions left
+2023/05/14 23:53:57	[System]: Thats not a valid command
+2023/05/14 23:53:57	1 actions left
+2023/05/14 23:53:58	[System]: Thats not a valid command
+2023/05/14 23:53:58	Saboteur2's turn
+2023/05/14 23:53:58	2 actions left
+2023/05/14 23:54:02	[Pipe2]: broken
+2023/05/14 23:54:02	1 actions left
+2023/05/14 23:54:17	[System]: Thats not a valid command
+2023/05/14 23:54:17	Mechanic2's turn
+2023/05/14 23:54:17	2 actions left
+2023/05/14 23:54:18	[System]: Thats not a valid command
+2023/05/14 23:54:18	1 actions left
+2023/05/14 23:54:19	[System]: Thats not a valid command
+2023/05/14 23:54:19	[ActiveElement]: in water is pumped
+2023/05/14 23:54:19	[ActiveElement]: out water is pumped
+2023/05/14 23:54:19	[ActiveElement]: in water is pumped
+2023/05/14 23:54:19	[ActiveElement]: out water is pumped
+2023/05/14 23:54:19	[ActiveElement]: in water is pumped
+2023/05/14 23:54:19	[ActiveElement]: out water is pumped
+2023/05/14 23:54:19	[ActiveElement]: in water is pumped
+2023/05/14 23:54:19	[ActiveElement]: out water is pumped
+2023/05/14 23:54:19	[ActiveElement]: in water is pumped
+2023/05/14 23:54:19	[ActiveElement]: out water is pumped
+2023/05/14 23:54:19	[ActiveElement]: in water is pumped
+2023/05/14 23:54:19	[ActiveElement]: out water is pumped
+2023/05/14 23:54:19	[ActiveElement]: in water is pumped
+2023/05/14 23:54:19	[Map]: water is pumped
+2023/05/14 23:54:19	[ActiveElement]: in water is pumped
+2023/05/14 23:54:19	[ActiveElement]: out water is pumped
+2023/05/14 23:54:19	[ActiveElement]: in water is pumped
+2023/05/14 23:54:19	[ActiveElement]: out water is pumped
+2023/05/14 23:54:19	[ActiveElement]: in water is pumped
+2023/05/14 23:54:19	[ActiveElement]: out water is pumped
+2023/05/14 23:54:19	[ActiveElement]: in water is pumped
+2023/05/14 23:54:19	[ActiveElement]: out water is pumped
+2023/05/14 23:54:19	[ActiveElement]: in water is pumped
+2023/05/14 23:54:19	[ActiveElement]: out water is pumped
+2023/05/14 23:54:19	[ActiveElement]: in water is pumped
+2023/05/14 23:54:19	[Map]: water is pumped
+2023/05/14 23:54:19	[SaboteurTeam] points: 35
+2023/05/14 23:54:19	[MechanicTeam] points: 75
+2023/05/14 23:54:19	Saboteur1's turn
+2023/05/14 23:54:19	2 actions left
+2023/05/14 23:55:52	[System]: Thats not a valid command
+2023/05/14 23:55:52	1 actions left
+2023/05/14 23:55:52	[System]: Thats not a valid command
+2023/05/14 23:55:52	Mechanic1's turn
+2023/05/14 23:55:52	2 actions left
+2023/05/14 23:55:53	[System]: Thats not a valid command
+2023/05/14 23:55:53	1 actions left
+2023/05/14 23:55:53	[System]: Thats not a valid command
+2023/05/14 23:55:53	Saboteur2's turn
+2023/05/14 23:55:53	2 actions left
+2023/05/14 23:55:53	[System]: Thats not a valid command
+2023/05/14 23:55:53	1 actions left
+2023/05/14 23:55:54	[System]: Thats not a valid command
+2023/05/14 23:55:54	Mechanic2's turn
+2023/05/14 23:55:54	2 actions left
+2023/05/14 23:55:55	[System]: Thats not a valid command
+2023/05/14 23:55:55	1 actions left
+2023/05/14 23:55:56	[System]: Thats not a valid command
+2023/05/14 23:55:56	[ActiveElement]: in water is pumped
+2023/05/14 23:55:56	[ActiveElement]: out water is pumped
+2023/05/14 23:55:56	[ActiveElement]: in water is pumped
+2023/05/14 23:55:56	[ActiveElement]: out water is pumped
+2023/05/14 23:55:56	[ActiveElement]: in water is pumped
+2023/05/14 23:55:56	[ActiveElement]: out water is pumped
+2023/05/14 23:55:56	[ActiveElement]: in water is pumped
+2023/05/14 23:55:56	[ActiveElement]: out water is pumped
+2023/05/14 23:55:56	[ActiveElement]: in water is pumped
+2023/05/14 23:55:56	[ActiveElement]: out water is pumped
+2023/05/14 23:55:56	[ActiveElement]: in water is pumped
+2023/05/14 23:55:56	[ActiveElement]: out water is pumped
+2023/05/14 23:55:56	[ActiveElement]: in water is pumped
+2023/05/14 23:55:56	[Map]: water is pumped
+2023/05/14 23:55:56	[ActiveElement]: in water is pumped
+2023/05/14 23:55:56	[ActiveElement]: out water is pumped
+2023/05/14 23:55:56	[ActiveElement]: in water is pumped
+2023/05/14 23:55:56	[ActiveElement]: out water is pumped
+2023/05/14 23:55:56	[ActiveElement]: in water is pumped
+2023/05/14 23:55:56	[ActiveElement]: out water is pumped
+2023/05/14 23:55:56	[ActiveElement]: in water is pumped
+2023/05/14 23:55:56	[ActiveElement]: out water is pumped
+2023/05/14 23:55:56	[ActiveElement]: in water is pumped
+2023/05/14 23:55:56	[ActiveElement]: out water is pumped
+2023/05/14 23:55:56	[ActiveElement]: in water is pumped
+2023/05/14 23:55:56	[Map]: water is pumped
+2023/05/14 23:55:56	[SaboteurTeam] points: 70
+2023/05/14 23:55:56	[MechanicTeam] points: 95
+2023/05/14 23:55:56	[Map]: map saved as 1
+2023/05/15 00:08:36	[Pipe1]: created
+2023/05/15 00:08:36	[System]: Element doesn't exist
+2023/05/15 00:09:31	[Pipe1]: created
+2023/05/15 00:09:31	[System]: Element doesn't exist
+2023/05/15 00:12:39	[Cistern1]: created
+2023/05/15 00:12:39	[Map]: Cistern1 has been created
+2023/05/15 00:12:39	[Cistern2]: created
+2023/05/15 00:12:39	[Map]: Cistern2 has been created
+2023/05/15 00:12:39	[Spring1]: created
+2023/05/15 00:12:39	[Map]: Spring1 has been created
+2023/05/15 00:12:39	[Spring2]: created
+2023/05/15 00:12:39	[Map]: Spring2 has been created
+2023/05/15 00:12:39	[Pump101]: created
+2023/05/15 00:12:39	[Map]: Pump101 has been created
+2023/05/15 00:12:39	[Pump102]: created
+2023/05/15 00:12:39	[Map]: Pump102 has been created
+2023/05/15 00:12:39	[Pump103]: created
+2023/05/15 00:12:39	[Map]: Pump103 has been created
+2023/05/15 00:12:39	[Pump104]: created
+2023/05/15 00:12:39	[Map]: Pump104 has been created
+2023/05/15 00:12:39	[Pump105]: created
+2023/05/15 00:12:39	[Map]: Pump105 has been created
+2023/05/15 00:12:39	[Pump106]: created
+2023/05/15 00:12:39	[Map]: Pump106 has been created
+2023/05/15 00:12:39	[Pipe1]: created
+2023/05/15 00:12:39	[Cistern1]: Pipe1 has been attached
+2023/05/15 00:12:39	[Pump105]: Pipe1 has been attached
+2023/05/15 00:12:39	[Pipe2]: created
+2023/05/15 00:12:39	[Cistern1]: Pipe2 has been attached
+2023/05/15 00:12:39	[Pump104]: Pipe2 has been attached
+2023/05/15 00:12:39	[Pipe3]: created
+2023/05/15 00:12:39	[Cistern2]: Pipe3 has been attached
+2023/05/15 00:12:39	[Pump103]: Pipe3 has been attached
+2023/05/15 00:12:39	[Pipe4]: created
+2023/05/15 00:12:39	[Cistern2]: Pipe4 has been attached
+2023/05/15 00:12:39	[Pump101]: Pipe4 has been attached
+2023/05/15 00:12:39	[Pipe5]: created
+2023/05/15 00:12:39	[Spring2]: Pipe5 has been attached
+2023/05/15 00:12:39	[Pump101]: Pipe5 has been attached
+2023/05/15 00:12:39	[Pipe6]: created
+2023/05/15 00:12:39	[Spring2]: Pipe6 has been attached
+2023/05/15 00:12:39	[Pump102]: Pipe6 has been attached
+2023/05/15 00:12:39	[Pipe7]: created
+2023/05/15 00:12:39	[Spring1]: Pipe7 has been attached
+2023/05/15 00:12:39	[Pump102]: Pipe7 has been attached
+2023/05/15 00:12:39	[Pipe8]: created
+2023/05/15 00:12:39	[Spring1]: Pipe8 has been attached
+2023/05/15 00:12:39	[Pump106]: Pipe8 has been attached
+2023/05/15 00:12:39	[Pipe9]: created
+2023/05/15 00:12:39	[Pump103]: Pipe9 has been attached
+2023/05/15 00:12:39	[Pump102]: Pipe9 has been attached
+2023/05/15 00:12:39	[Pipe10]: created
+2023/05/15 00:12:39	[Pump104]: Pipe10 has been attached
+2023/05/15 00:12:39	[Pump102]: Pipe10 has been attached
+2023/05/15 00:12:39	[Pipe11]: created
+2023/05/15 00:12:39	[Pump104]: Pipe11 has been attached
+2023/05/15 00:12:39	[Pump106]: Pipe11 has been attached
+2023/05/15 00:12:39	[Pipe12]: created
+2023/05/15 00:12:39	[Pump105]: Pipe12 has been attached
+2023/05/15 00:12:39	[Pump106]: Pipe12 has been attached
+2023/05/15 00:12:39	[Map]: map loaded
+2023/05/15 00:12:39	Saboteur1's turn
+2023/05/15 00:12:39	2 actions left
+2023/05/15 00:12:44	[Pipe1]: broken
+2023/05/15 00:12:44	1 actions left
+2023/05/15 00:12:45	[System]: Thats not a valid command
+2023/05/15 00:12:45	Mechanic1's turn
+2023/05/15 00:12:45	2 actions left
+2023/05/15 00:12:45	[System]: Thats not a valid command
+2023/05/15 00:12:45	1 actions left
+2023/05/15 00:12:46	[System]: Thats not a valid command
+2023/05/15 00:12:46	Saboteur2's turn
+2023/05/15 00:12:46	2 actions left
+2023/05/15 00:12:46	[System]: Thats not a valid command
+2023/05/15 00:12:46	1 actions left
+2023/05/15 00:12:47	[System]: Thats not a valid command
+2023/05/15 00:12:47	Mechanic2's turn
+2023/05/15 00:12:47	2 actions left
+2023/05/15 00:12:48	[System]: Thats not a valid command
+2023/05/15 00:12:48	1 actions left
+2023/05/15 00:12:48	[System]: Thats not a valid command
+2023/05/15 00:12:48	[ActiveElement]: in water is pumped
+2023/05/15 00:12:48	[ActiveElement]: out water is pumped
+2023/05/15 00:12:48	[ActiveElement]: in water is pumped
+2023/05/15 00:12:48	[ActiveElement]: out water is pumped
+2023/05/15 00:12:48	[ActiveElement]: in water is pumped
+2023/05/15 00:12:48	[ActiveElement]: out water is pumped
+2023/05/15 00:12:48	[ActiveElement]: in water is pumped
+2023/05/15 00:12:48	[ActiveElement]: out water is pumped
+2023/05/15 00:12:48	[ActiveElement]: in water is pumped
+2023/05/15 00:12:48	[ActiveElement]: out water is pumped
+2023/05/15 00:12:48	[ActiveElement]: in water is pumped
+2023/05/15 00:12:48	[ActiveElement]: out water is pumped
+2023/05/15 00:12:48	[ActiveElement]: in water is pumped
+2023/05/15 00:12:48	[Map]: water is pumped
+2023/05/15 00:12:48	[ActiveElement]: in water is pumped
+2023/05/15 00:12:48	[ActiveElement]: out water is pumped
+2023/05/15 00:12:48	[ActiveElement]: in water is pumped
+2023/05/15 00:12:48	[ActiveElement]: out water is pumped
+2023/05/15 00:12:48	[ActiveElement]: in water is pumped
+2023/05/15 00:12:48	[ActiveElement]: out water is pumped
+2023/05/15 00:12:48	[ActiveElement]: in water is pumped
+2023/05/15 00:12:48	[ActiveElement]: out water is pumped
+2023/05/15 00:12:48	[ActiveElement]: in water is pumped
+2023/05/15 00:12:48	[ActiveElement]: out water is pumped
+2023/05/15 00:12:48	[ActiveElement]: in water is pumped
+2023/05/15 00:12:48	[Map]: water is pumped
+2023/05/15 00:12:48	[SaboteurTeam] points: 15
+2023/05/15 00:12:48	[MechanicTeam] points: 40
+2023/05/15 00:12:48	Saboteur1's turn
+2023/05/15 00:12:48	2 actions left
+2023/05/15 00:12:51	[System]: Thats not a valid command
+2023/05/15 00:12:51	1 actions left
+2023/05/15 00:12:52	[System]: Thats not a valid command
+2023/05/15 00:12:52	Mechanic1's turn
+2023/05/15 00:12:52	2 actions left
+2023/05/15 00:12:52	[System]: Thats not a valid command
+2023/05/15 00:12:52	1 actions left
+2023/05/15 00:12:52	[System]: Thats not a valid command
+2023/05/15 00:12:52	Saboteur2's turn
+2023/05/15 00:12:52	2 actions left
+2023/05/15 00:12:53	[System]: Thats not a valid command
+2023/05/15 00:12:53	1 actions left
+2023/05/15 00:12:54	[System]: Thats not a valid command
+2023/05/15 00:12:54	Mechanic2's turn
+2023/05/15 00:12:54	2 actions left
+2023/05/15 00:12:55	[System]: Thats not a valid command
+2023/05/15 00:12:55	1 actions left
+2023/05/15 00:12:55	[System]: Thats not a valid command
+2023/05/15 00:12:55	[ActiveElement]: in water is pumped
+2023/05/15 00:12:55	[ActiveElement]: out water is pumped
+2023/05/15 00:12:55	[ActiveElement]: in water is pumped
+2023/05/15 00:12:55	[ActiveElement]: out water is pumped
+2023/05/15 00:12:55	[ActiveElement]: in water is pumped
+2023/05/15 00:12:55	[ActiveElement]: out water is pumped
+2023/05/15 00:12:55	[ActiveElement]: in water is pumped
+2023/05/15 00:12:55	[ActiveElement]: out water is pumped
+2023/05/15 00:12:55	[ActiveElement]: in water is pumped
+2023/05/15 00:12:55	[ActiveElement]: out water is pumped
+2023/05/15 00:12:55	[ActiveElement]: in water is pumped
+2023/05/15 00:12:55	[ActiveElement]: out water is pumped
+2023/05/15 00:12:55	[ActiveElement]: in water is pumped
+2023/05/15 00:12:55	[Map]: water is pumped
+2023/05/15 00:12:55	[ActiveElement]: in water is pumped
+2023/05/15 00:12:55	[ActiveElement]: out water is pumped
+2023/05/15 00:12:55	[ActiveElement]: in water is pumped
+2023/05/15 00:12:55	[ActiveElement]: out water is pumped
+2023/05/15 00:12:55	[ActiveElement]: in water is pumped
+2023/05/15 00:12:55	[ActiveElement]: out water is pumped
+2023/05/15 00:12:55	[ActiveElement]: in water is pumped
+2023/05/15 00:12:55	[ActiveElement]: out water is pumped
+2023/05/15 00:12:55	[ActiveElement]: in water is pumped
+2023/05/15 00:12:55	[ActiveElement]: out water is pumped
+2023/05/15 00:12:55	[ActiveElement]: in water is pumped
+2023/05/15 00:12:55	[Map]: water is pumped
+2023/05/15 00:12:55	[SaboteurTeam] points: 30
+2023/05/15 00:12:55	[MechanicTeam] points: 80
+2023/05/15 00:12:55	Saboteur1's turn
+2023/05/15 00:12:55	2 actions left
+2023/05/15 00:12:57	[System]: Thats not a valid command
+2023/05/15 00:12:58	1 actions left
+2023/05/15 00:12:58	[System]: Thats not a valid command
+2023/05/15 00:12:58	Mechanic1's turn
+2023/05/15 00:12:58	2 actions left
+2023/05/15 00:12:59	[System]: Thats not a valid command
+2023/05/15 00:12:59	1 actions left
+2023/05/15 00:13:00	[System]: Thats not a valid command
+2023/05/15 00:13:00	Saboteur2's turn
+2023/05/15 00:13:00	2 actions left
+2023/05/15 00:13:01	[System]: Thats not a valid command
+2023/05/15 00:13:01	1 actions left
+2023/05/15 00:13:01	[System]: Thats not a valid command
+2023/05/15 00:13:01	Mechanic2's turn
+2023/05/15 00:13:01	2 actions left
+2023/05/15 00:13:02	[System]: Thats not a valid command
+2023/05/15 00:13:02	1 actions left
+2023/05/15 00:13:02	[System]: Thats not a valid command
+2023/05/15 00:13:02	[ActiveElement]: in water is pumped
+2023/05/15 00:13:02	[ActiveElement]: out water is pumped
+2023/05/15 00:13:02	[ActiveElement]: in water is pumped
+2023/05/15 00:13:02	[ActiveElement]: out water is pumped
+2023/05/15 00:13:02	[ActiveElement]: in water is pumped
+2023/05/15 00:13:02	[ActiveElement]: out water is pumped
+2023/05/15 00:13:02	[ActiveElement]: in water is pumped
+2023/05/15 00:13:02	[ActiveElement]: out water is pumped
+2023/05/15 00:13:02	[ActiveElement]: in water is pumped
+2023/05/15 00:13:02	[ActiveElement]: out water is pumped
+2023/05/15 00:13:02	[ActiveElement]: in water is pumped
+2023/05/15 00:13:02	[ActiveElement]: out water is pumped
+2023/05/15 00:13:02	[ActiveElement]: in water is pumped
+2023/05/15 00:13:02	[Map]: water is pumped
+2023/05/15 00:13:02	[ActiveElement]: in water is pumped
+2023/05/15 00:13:02	[ActiveElement]: out water is pumped
+2023/05/15 00:13:02	[ActiveElement]: in water is pumped
+2023/05/15 00:13:02	[ActiveElement]: out water is pumped
+2023/05/15 00:13:02	[ActiveElement]: in water is pumped
+2023/05/15 00:13:02	[ActiveElement]: out water is pumped
+2023/05/15 00:13:02	[ActiveElement]: in water is pumped
+2023/05/15 00:13:02	[ActiveElement]: out water is pumped
+2023/05/15 00:13:02	[ActiveElement]: in water is pumped
+2023/05/15 00:13:02	[ActiveElement]: out water is pumped
+2023/05/15 00:13:02	[ActiveElement]: in water is pumped
+2023/05/15 00:13:02	[Map]: water is pumped
+2023/05/15 00:13:02	[SaboteurTeam] points: 45
+2023/05/15 00:13:02	[MechanicTeam] points: 120
+2023/05/15 00:13:02	[Map]: map saved as 42

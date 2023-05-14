@@ -1,6 +1,7 @@
 package main.players;
 
 import main.logging.Logger;
+import main.map.Map;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,7 +24,7 @@ public class SaboteurTeam {
     {
         if(players.size() < 5){
             players.add((Saboteur)player);
-            Logger.log("log.txt","Player added to SaboteurTeam", false);
+            Logger.log("log.txt","Player added to SaboteurTeam", true);
         }
         else
             Logger.log("log.txt","Player could not be added to SaboteurTeam, due to overpopulation", false);
@@ -46,6 +47,20 @@ public class SaboteurTeam {
     }
 
     public List<Saboteur> getPlayers(){ return players; }
+    public void init()
+    {
+        for(int i = 0; i<2; i++)
+        {
+            addPlayer(new Saboteur());
+            players.get(i).setMapElement(Map.getInstance().getStartPosition());
+        }
+    }
+
+    public int getPoints()
+    {
+        Logger.log("console.txt", "[SaboteurTeam] points: "+ points, true);
+        return points;
+    }
 
     public void reset(){
         players.clear();

@@ -102,4 +102,7 @@ public abstract class ActiveElement extends MapElement implements IControllable 
     }
 
     //TODO Control függvény megvalósítása
+
+    abstract public List<Pipe> getOutputPipes();
+
 }
