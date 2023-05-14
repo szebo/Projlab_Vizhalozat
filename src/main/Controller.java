@@ -26,17 +26,13 @@ public class Controller {
         for (int i = 0; i < Tester.testCommands.size(); i++) {
             if(SaboteurTeam.getInstance().getPlayers().size()> 0){
                 Saboteur s = SaboteurTeam.getInstance().getSabotuer();
-                s.doCommand(Tester.testCommands.get(0));
-                Tester.testCommands.remove(0);
-                s.doCommand(Tester.testCommands.get(0));
-                Tester.testCommands.remove(0);
+                s.doCommand(Tester.testCommands.get(i));
+                s.doCommand(Tester.testCommands.get(i));
             }
             if(MechanicTeam.getInstance().getPlayers().size()> 0){
                 Mechanic m = MechanicTeam.getInstance().getMechanic();
-                m.doCommand(Tester.testCommands.get(0));
-                Tester.testCommands.remove(0);
-                m.doCommand(Tester.testCommands.get(0));
-                Tester.testCommands.remove(0);
+                m.doCommand(Tester.testCommands.get(i));
+                m.doCommand(Tester.testCommands.get(i));
             }
             Map.getInstance().update();
             Map.getInstance().control();

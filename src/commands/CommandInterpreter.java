@@ -18,7 +18,7 @@ public class CommandInterpreter {
         String[] splits = cmd.split(" ");
         switch (splits[0]) {
             case "move":
-                move(mechanic != null ? mechanic : saboteur);
+                move(mechanic, saboteur);
                 break;
 
             case "place":
@@ -30,7 +30,7 @@ public class CommandInterpreter {
                 break;
 
             case "pickup":
-                pickUp(splits[1], (mechanic != null ? mechanic : saboteur));
+                pickUp(splits[1], mechanic, saboteur);
                 break;
 
             case "break":
@@ -42,7 +42,7 @@ public class CommandInterpreter {
                 break;
 
             case "configure":
-                configure((mechanic != null ? mechanic : saboteur));
+                configure(mechanic, saboteur);
                 break;
 
             case "make_slippery":
@@ -152,8 +152,8 @@ public class CommandInterpreter {
         }
     }
 
-    private static void move(Player exec){
-        MapElement element = exec.getMapElement(); //holymoly...
+    private static void move(Mechanic mechanic, Saboteur saboteur){
+        MapElement element = (mechanic != null ? mechanic : saboteur).getMapElement(); //holymoly...
         for(MapElement neighbour : element.getNeighbours()){
             System.out.println(neighbour.getLogID());
         }
@@ -166,13 +166,13 @@ public class CommandInterpreter {
         }
 
         if(validInput)
-            exec.step(Map.getInstance().getElement(target));
+            (mechanic != null ? mechanic : saboteur).step(Map.getInstance().getElement(target));
         else
             Logger.log("console.txt", "["+element.getLogID()+"]: Nem létező szomszéd lett megadva.", true);
     }
 
-    private static void configure(Player exec){
-        MapElement playerMapElement = exec.getMapElement();
+    private static void configure(Mechanic mechanic, Saboteur saboteur){
+        MapElement playerMapElement = (mechanic != null ? mechanic : saboteur).getMapElement();
         for(MapElement neighbour : playerMapElement.getNeighbours()){
             System.out.println(neighbour.getLogID());
         }
@@ -193,15 +193,15 @@ public class CommandInterpreter {
             else Logger.log("console.txt", "["+playerMapElement.getLogID()+"]: Az input és az output ugyanaz lett!", true);
         }
 
-        if(validOutput && validInput) exec.configurePump(Map.getInstance().getPipe(input), Map.getInstance().getPipe(output));
+        if(validOutput && validInput) (mechanic != null ? mechanic : saboteur).configurePump(Map.getInstance().getPipe(input), Map.getInstance().getPipe(output));
         else if(!validOutput) Logger.log("console.txt", "["+playerMapElement.getLogID()+"]: Az outputnak nem létező cső lett megadva.", true);
         else if(!validInput) Logger.log("console.txt", "["+playerMapElement.getLogID()+"]: Az inputnak nem létező cső lett megadva.", true);
         else Logger.log("console.txt", "["+playerMapElement.getLogID()+"]: Az inputnak és outputnak is nem létező cső lett megadva.", true);
     }
 
-    private static void pickUp(String cmd, Player exec){
+    private static void pickUp(String cmd, Mechanic mechanic, Saboteur saboteur){
         if (cmd.equals("pipe")) {
-            MapElement playerMapElement = exec.getMapElement();
+            MapElement playerMapElement = (mechanic != null ? mechanic : saboteur).getMapElement();
             for(MapElement neighbour : playerMapElement.getNeighbours()){
                 Logger.log("console.txt",neighbour.getLogID(), true);
             }
@@ -214,11 +214,11 @@ public class CommandInterpreter {
             }
 
             if(valid)
-                exec.pickUpPipe(Map.getInstance().getPipe(target));
+                (mechanic != null ? mechanic : saboteur).pickUpPipe(Map.getInstance().getPipe(target));
             else
                 Logger.log("console.txt", "["+playerMapElement.getLogID()+"]: Invalid target!", true);
         } else if (cmd.equals("pump")) {
-            exec.pickUpPump();
+            (mechanic != null ? mechanic : saboteur).pickUpPump();
         }
     }
 
