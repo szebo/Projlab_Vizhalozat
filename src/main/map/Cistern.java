@@ -45,7 +45,6 @@ public class Cistern extends ActiveElement {
         Pump p = new Pump();
         mechanic.addPumpToInventory(p);
         Logger.log("log.txt", "Pump given to Mechanic", false);
-
     }
 
     /**
