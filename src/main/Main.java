@@ -1,6 +1,7 @@
 package main;
 
 import commands.CommandInterpreter;
+import main.map.Map;
 
 import java.io.Console;
 import java.util.Scanner;
@@ -12,12 +13,12 @@ public class Main {
     public static void main(String[] args) {
         rootfolder = System.getProperty("user.dir");
         System.out.println(rootfolder);
-        while(!exit) {
-            Scanner scanner = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
+        while(scanner.hasNextLine()) {
             String cmd = scanner.nextLine();
             CommandInterpreter.runCommand(cmd, null, null);
-            scanner.close();
         }
+        scanner.close();
 
         //Tester.runTest();
         //TestController.runTests();
