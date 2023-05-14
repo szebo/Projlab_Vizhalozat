@@ -159,7 +159,10 @@ public class CommandInterpreter {
         }
 
         boolean validInput = false;
-        String target = System.console().readLine();
+        Scanner scanner = new Scanner(System.in);
+        scanner.useDelimiter(System.lineSeparator());
+        String target = scanner.next();
+        scanner.close();
 
         for(MapElement neighbour : element.getNeighbours()){
             if(target.equals(neighbour.getLogID())) validInput = true;
