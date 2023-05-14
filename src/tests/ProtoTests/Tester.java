@@ -138,7 +138,7 @@ public class Tester {
         Mechanic.resetAfterTest();
         Saboteur.resetAfterTest();
 
-        Map.getInstance().clear();
+        Map.getInstance().resetAfterTest();
         MechanicTeam.getInstance().reset();
         SaboteurTeam.getInstance().reset();
     }
