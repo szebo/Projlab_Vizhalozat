@@ -1,0 +1,11 @@
+create Pump
+create Pipe
+create Cistern
+create_mechanic
+attach Pipe1 Cistern1
+attach Pipe1 Pump1
+setplayerposition Mechanic1 Cistern1
+force_start
+Mechanic1 pickup_pump
+Mechanic1 move Pipe1
+Mechanic1 place_pump
