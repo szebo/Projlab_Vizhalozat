@@ -129,9 +129,9 @@ public class Pipe extends MapElement implements Updatable {
             }
         }
         if(accepted)
-            Logger.log("console.txt", "["+getLogID()+"]: "+player.getLogID()+" accepted", true);
+            Logger.log("console.txt", "["+getLogID()+"]: "+player.getLogID()+" moved", true);
         else
-            Logger.log("console.txt", "["+getLogID()+"]: "+player.getLogID()+" was not accepted", true);
+            Logger.log("console.txt", "["+getLogID()+"]: "+player.getLogID()+" could not move", true);
         return accepted;
     }
 
