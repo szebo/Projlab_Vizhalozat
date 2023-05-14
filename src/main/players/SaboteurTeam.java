@@ -24,7 +24,7 @@ public class SaboteurTeam {
     {
         if(players.size() < 5){
             players.add((Saboteur)player);
-            Logger.log("log.txt","Player added to SaboteurTeam", true);
+            Logger.log("log.txt","Player added to SaboteurTeam", false);
         }
         else
             Logger.log("log.txt","Player could not be added to SaboteurTeam, due to overpopulation", false);

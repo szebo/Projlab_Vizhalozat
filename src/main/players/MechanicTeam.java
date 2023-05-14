@@ -25,7 +25,7 @@ public class MechanicTeam {
     {
         if(players.size() < 3) {
             players.add((Mechanic) player);
-            Logger.log("log.txt","Player added to MechanicTeam", true);
+            Logger.log("log.txt","Player added to MechanicTeam", false);
         }
         else
             Logger.log("log.txt","Player could not be added to MechanicTeam, due to overpopulation", false);
