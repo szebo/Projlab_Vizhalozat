@@ -9,8 +9,11 @@
 [Saboteur1]: position set to Pump2
 [Game]: forcefully started
 [Pipe1]: made sticky for 2 turns
+Pump1
+Pump2
 [Pump1]: Mechanic1 moved
 [Mechanic1]: turn ended
+Pipe1
 [Pipe1]: Saboteur1 moved
 [Saboteur1]: turn ended
 [Pipe1]: Mechanic1 could not move
