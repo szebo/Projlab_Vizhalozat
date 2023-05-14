@@ -14,6 +14,8 @@ import java.util.Scanner;
 
 public class CommandInterpreter {
 
+    private static List<String> debug_args = null;
+
     public static void runCommand(String cmd, Player player){
         String[] splits = cmd.split(" ");
         switch (splits[0]) {
@@ -155,17 +157,23 @@ public class CommandInterpreter {
     private static void move(Player player){
         MapElement element = player.getMapElement(); //holymoly...
         for(MapElement neighbour : element.getNeighbours()){
-            System.out.println(neighbour.getLogID());
+            if(neighbour!=null)
+                Logger.log("console.log",neighbour.getLogID(), true);
         }
 
         boolean validInput = false;
-        Scanner scanner = new Scanner(System.in);
-        scanner.useDelimiter(System.lineSeparator());
-        String target = scanner.nextLine();
-        //scanner.close();
+        String target;
+        if(debug_args == null) {
+            Scanner scanner = new Scanner(System.in);
+            target = scanner.nextLine();
+        }
+        else{
+            target = debug_args.get(0);
+            debug_args = null;
+        }
 
         for(MapElement neighbour : element.getNeighbours()){
-            if(target.equals(neighbour.getLogID())) validInput = true;
+            if(neighbour != null && target.equals(neighbour.getLogID())) validInput = true;
         }
 
         if(validInput)
@@ -177,15 +185,23 @@ public class CommandInterpreter {
     private static void configure(Player player){
         MapElement playerMapElement = player.getMapElement();
         for(MapElement neighbour : playerMapElement.getNeighbours()){
-            System.out.println(neighbour.getLogID());
+            if(neighbour != null)
+                Logger.log("console.log",neighbour.getLogID(), true);
         }
 
         boolean validInput = false;
         boolean validOutput = false;
-        Scanner scanner = new Scanner(System.in);
-        String input = scanner.nextLine();
-        String output = scanner.nextLine();
-        //scanner.close();
+        String input, output;
+        if(debug_args == null) {
+            Scanner scanner = new Scanner(System.in);
+            input = scanner.nextLine();
+            output = scanner.nextLine();
+        }
+        else{
+            input = debug_args.get(0);
+            output = debug_args.get(1);
+            debug_args = null;
+        }
 
         for(MapElement neighbour : playerMapElement.getNeighbours()){
             if(!input.equals(output)){
@@ -193,13 +209,13 @@ public class CommandInterpreter {
 
                 else if(output.equals(neighbour.getLogID())) validOutput = true;
             }
-            else Logger.log("console.txt", "["+playerMapElement.getLogID()+"]: Az input és az output ugyanaz lett!", true);
+            else Logger.log("console.txt", "["+playerMapElement.getLogID()+"]: Input and output are the same!", true);
         }
 
         if(validOutput && validInput) player.configurePump(Map.getInstance().getPipe(input), Map.getInstance().getPipe(output));
-        else if(!validOutput) Logger.log("console.txt", "["+playerMapElement.getLogID()+"]: Az outputnak nem létező cső lett megadva.", true);
-        else if(!validInput) Logger.log("console.txt", "["+playerMapElement.getLogID()+"]: Az inputnak nem létező cső lett megadva.", true);
-        else Logger.log("console.txt", "["+playerMapElement.getLogID()+"]: Az inputnak és outputnak is nem létező cső lett megadva.", true);
+        else if(!validOutput) Logger.log("console.txt", "["+playerMapElement.getLogID()+"]: Invalid output.", true);
+        else if(!validInput) Logger.log("console.txt", "["+playerMapElement.getLogID()+"]: Invalid input.", true);
+        else Logger.log("console.txt", "["+playerMapElement.getLogID()+"]: Invalid input and output.", true);
     }
 
     private static void pickUp(String cmd, Player player){
@@ -208,12 +224,18 @@ public class CommandInterpreter {
             for(MapElement neighbour : playerMapElement.getNeighbours()){
                 Logger.log("console.txt",neighbour.getLogID(), true);
             }
-            Scanner scanner = new Scanner(System.in);
-            String target = scanner.nextLine();
-            //scanner.close();
+            String target;
+            if(debug_args == null) {
+                Scanner scanner = new Scanner(System.in);
+                target = scanner.nextLine();
+            }
+            else{
+                target = debug_args.get(0);
+                debug_args = null;
+            }
             boolean valid = false;
             for(MapElement neighbour : playerMapElement.getNeighbours()){
-                if(neighbour.getLogID().equals(target)) valid = true;
+                if(neighbour != null && neighbour.getLogID().equals(target)) valid = true;
             }
 
             if(valid)
@@ -243,5 +265,9 @@ public class CommandInterpreter {
             }
             else Logger.log("console.txt", "[System]: not valid element", true);
         }
+    }
+
+    public static void setCommandInput(List<String> args){
+        debug_args = args;
     }
 }
