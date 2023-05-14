@@ -233,15 +233,16 @@ public class CommandInterpreter {
             if(!input.equals(output)){
                 if(input.equals(neighbour.getLogID())) validInput = true;
 
-                else if(output.equals(neighbour.getLogID())) validOutput = true;
+                if(output.equals(neighbour.getLogID())) validOutput = true;
             }
             else Logger.log("console.txt", "["+playerMapElement.getLogID()+"]: Input and output are the same!", true);
         }
 
-        if(validOutput && validInput) player.configurePump(Map.getInstance().getPipe(input), Map.getInstance().getPipe(output));
-        else if(!validOutput) Logger.log("console.txt", "["+playerMapElement.getLogID()+"]: Invalid output.", true);
-        else if(!validInput) Logger.log("console.txt", "["+playerMapElement.getLogID()+"]: Invalid input.", true);
-        else Logger.log("console.txt", "["+playerMapElement.getLogID()+"]: Invalid input and output.", true);
+        if(validOutput && validInput) {player.configurePump(Map.getInstance().getPipe(input), Map.getInstance().getPipe(output));}
+        else if(!validInput && !validOutput) {Logger.log("console.txt", "["+playerMapElement.getLogID()+"]: Invalid input and output.", true);}
+        else if(!validOutput) {Logger.log("console.txt", "["+playerMapElement.getLogID()+"]: Invalid output.", true);}
+        else if(!validInput) {Logger.log("console.txt", "["+playerMapElement.getLogID()+"]: Invalid input.", true);}
+
     }
 
     private static void pickUp(Player player) {

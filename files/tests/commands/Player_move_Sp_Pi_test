@@ -1,13 +1,13 @@
 create Spring
 create Pipe
 create Pipe
-create_saboteur
-create_saboteur
+create_mechanic
+create_mechanic
 attach Pipe1 Spring1
 attach Pipe2 Spring1
-setplayerposition Saboteur1 Spring1
-setplayerposition Saboteur2 Pipe2
+setplayerposition Mechanic1 Spring1
+setplayerposition Mechanic2 Pipe2
 force_start
-Saboteur1 move Pipe1
-Saboteur1 move Spring1
-Saboteur1 move Pipe2
+Mechanic1 move Pipe1
+Mechanic1 move Spring1
+Mechanic1 move Pipe2

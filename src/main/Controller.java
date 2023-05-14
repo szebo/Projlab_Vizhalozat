@@ -1,8 +1,8 @@
 package main;
 
 import main.map.Map;
-import main.players.*;
-import tests.ProtoTests.Tester;
+import main.players.MechanicTeam;
+import main.players.SaboteurTeam;
 
 public class Controller {
 
