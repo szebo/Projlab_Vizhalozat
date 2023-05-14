@@ -71,4 +71,8 @@ public class Spring extends ActiveElement {
         stringBuilder.append("\n");
         return stringBuilder.toString();
     }
+
+    public void resetAfterTest(){
+        nextID = 1;
+    }
 }

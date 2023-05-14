@@ -107,4 +107,6 @@ public abstract class Player {
      * @return string
      */
     public abstract String printInfo();
+
+    public abstract void resetAfterTest();
 }

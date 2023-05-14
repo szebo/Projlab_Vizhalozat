@@ -53,7 +53,7 @@ public class Tester {
             }
             Reader.close();
         } catch (FileNotFoundException e) {
-            Logger.log("log.txt","File not found: "+expectedOutputFile, true);      //TODO ez kiíródik akkoris, ha nincs
+            Logger.log("log.txt","File not found: "+expectedOutputFile, true);
         }
 
         /* Comparing part */

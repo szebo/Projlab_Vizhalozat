@@ -133,4 +133,8 @@ public class Pump extends ActiveElement {
         stringBuilder.append("Input: "+input.getLogID()+"\nOutput: "+output.getLogID()+"\n");
         return stringBuilder.toString();
     }
+
+    public void resetAfterTest(){
+        nextID = 1;
+    }
 }

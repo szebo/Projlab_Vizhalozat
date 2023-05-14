@@ -216,4 +216,6 @@ public abstract class MapElement {
     public boolean checkUnbreakable(){return unbreakableFor > 0;}
 
     public void newPipe(){}
+
+    public abstract void resetAfterTest();
 }

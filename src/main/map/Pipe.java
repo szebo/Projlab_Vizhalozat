@@ -271,4 +271,8 @@ public class Pipe extends MapElement implements Updatable {
         stringBuilder.append("Slippery for: "+slipperyFor+" turn\n");
         return stringBuilder.toString();
     }
+
+    public void resetAfterTest(){
+        nextID = 1;
+    }
 }

@@ -145,4 +145,8 @@ public class Mechanic extends Player {
                 break;
         }
     }
+
+    public void resetAfterTest(){
+        nextID = 1;
+    }
 }
