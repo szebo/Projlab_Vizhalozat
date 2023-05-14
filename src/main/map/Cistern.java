@@ -3,7 +3,6 @@ package main.map;
 import main.logging.Logger;
 import main.players.Mechanic;
 import main.players.MechanicTeam;
-import main.players.Player;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -103,7 +102,7 @@ public class Cistern extends ActiveElement {
         return stringBuilder.toString();
     }
 
-    public void resetAfterTest(){
+    public static void resetAfterTest(){
         nextID = 1;
     }
 

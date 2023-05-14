@@ -3,10 +3,14 @@ package tests.ProtoTests;
 import commands.CommandInterpreter;
 import main.Main;
 import main.logging.Logger;
-import main.players.MechanicTeam;
-import main.players.Player;
-import main.players.SaboteurTeam;
+import main.map.ActiveElement;
+import main.map.Cistern;
+import main.map.Pipe;
+import main.map.Pump;
+import main.map.Spring;
+import main.players.*;
 
+import javax.swing.*;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
@@ -126,5 +130,18 @@ public class Tester {
             currentTestLog.clear();
             currentTestLog = null;
         }
+        ResetAll();
+    }
+
+    public static void ResetAll(){
+        Pump.resetAfterTest();
+        Cistern.resetAfterTest();
+        Pipe.resetAfterTest();
+        Spring.resetAfterTest();
+        Mechanic.resetAfterTest();
+        Saboteur.resetAfterTest();
+
+        MechanicTeam.getInstance().reset();
+        SaboteurTeam.getInstance().reset();
     }
 }
