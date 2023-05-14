@@ -1,0 +1,13 @@
+[Map]: Spring1 has been created
+[Map]: Pipe1 has been created
+[Map]: Pipe2 has been created
+[Mechanic1]: created
+[Mechanic2]: created
+[Spring1]: Pipe1 has been attached
+[Spring1]: Pipe2 has been attached
+[Mechanic1]: position set to Spring1
+[Mechanic1]: position set to Pipe2
+[Game]: forcefully started
+[Pipe1]: Mechanic1 moved
+[Spring1]: Mechanic1 moved
+[Pipe2]: Mechanic1 could not move

@@ -6,12 +6,11 @@ create Pipe
 attach Pipe1 Pump2
 attach Pipe1 Pump1
 attach Pipe2 Pump1
-attach Pipe3 Pump3
+attach Pipe3 Pump2
 create_saboteur
 create_mechanic
 setplayerposition Saboteur1 Pump1
 setplayerposition Mechanic1 Pump2
-force_start
 force_start
 pickup Pipe1
 end_turn

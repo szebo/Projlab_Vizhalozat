@@ -5,6 +5,6 @@ create Pump
 create Pipe
 attach Pipe1 Spring1
 attach Pipe1 Pump1
-attach Pip2 Pump1
+attach Pipe2 Pump1
 attach Pipe2 Cistern1
 flow 3

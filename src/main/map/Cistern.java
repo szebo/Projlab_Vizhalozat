@@ -63,7 +63,7 @@ public class Cistern extends ActiveElement {
     public void pumpWater() {
         for(Pipe p : pipes){
             int taken = p.removeWater(p.water);
-            MechanicTeam.getInstance().addPoints(taken);
+            MechanicTeam.getInstance().addPoints(taken);        //TODO pont logolás
         }
     }
 

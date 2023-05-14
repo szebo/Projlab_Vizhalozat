@@ -93,7 +93,7 @@ public abstract class Player {
                 getMapElement().removePlayer(this);
                 setMapElement(element.getRandomEnd());
                 this.mapElement.addPlayer(this); //A mapElementre, amire átdobódik, is hozzá kell adni a playert
-                //TODO: Ugyan az mint a stickyFor esetében, itt is le kell essen majd kör léptetéskor a slippery effect.
+                //TODO  Ugyan az mint a stickyFor esetében, itt is le kell essen majd kör léptetéskor a slippery effect.
             }
             return true;
         }
