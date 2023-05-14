@@ -7,6 +7,7 @@ import main.players.SaboteurTeam;
 public class Controller {
 
     static boolean win = false;
+    public static boolean randomDebug = false;
     public static void run(){
         Map.getInstance().loadMap("1");
         SaboteurTeam.getInstance().init();

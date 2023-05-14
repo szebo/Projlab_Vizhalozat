@@ -1,12 +1,14 @@
 package tests.ProtoTests;
 
 import commands.CommandInterpreter;
+import main.Controller;
 import main.Main;
 import main.logging.Logger;
 import main.map.*;
 import main.map.Spring;
 import main.players.*;
 
+import javax.naming.ldap.Control;
 import javax.swing.*;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -74,6 +76,7 @@ public class Tester {
      * @param files file(ok) neve(i)
      * **/
     public static void runTest(String files){
+        Controller.randomDebug = true;
         ArrayList<String> tests = new ArrayList<>();
         if(files.contains(",")){
             String[] params = files.split(",");
@@ -128,6 +131,7 @@ public class Tester {
             currentTestLog = null;
         }
         ResetAll();
+        Controller.randomDebug = false;
     }
 
     public static void ResetAll(){

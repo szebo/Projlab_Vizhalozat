@@ -1,5 +1,6 @@
 package main.map;
 
+import main.Controller;
 import main.interfaces.Updatable;
 import main.logging.Logger;
 import main.players.Player;
@@ -118,7 +119,11 @@ public class Pipe extends MapElement implements Updatable {
         boolean accepted = false;
         if(!this.isOccupied()) {
             if(checkSlippery()){
-                player.step(getRandomEnd());
+                if(Controller.randomDebug){
+                    player.step(getLeftEnd());
+                }
+                else
+                    player.step(getRandomEnd());
             }
             else if(checkSticky()){
                 player.setStuck(stickyFor);
@@ -214,6 +219,10 @@ public class Pipe extends MapElement implements Updatable {
             return elements.get(0);
         else
             return elements.get(1);
+    }
+
+    public ActiveElement getLeftEnd(){
+        return elements.get(0);
     }
 
     public String getLogID(){

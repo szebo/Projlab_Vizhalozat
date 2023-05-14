@@ -78,6 +78,7 @@ public class CommandInterpreter {
                 break;
 
             case "end_turn":
+                Map.getInstance().update();
                 Logger.log("console.txt", "["+player.getLogID()+"]: turn ended", true);
                 break;
 
