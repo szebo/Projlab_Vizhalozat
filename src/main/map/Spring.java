@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Spring extends ActiveElement {
 
-    private static int nextID = 0;
+    private static int nextID = 1;
 
     /**
      * controller hív

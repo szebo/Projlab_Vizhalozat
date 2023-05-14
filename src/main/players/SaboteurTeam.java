@@ -36,8 +36,7 @@ public class SaboteurTeam {
 
     public Saboteur getSabotuer()
     {
-        counter++;
-        return players.get(counter%2);
+        return players.get(counter++ % players.size());
     }
 
     public boolean hasWon()

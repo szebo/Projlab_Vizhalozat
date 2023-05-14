@@ -17,7 +17,7 @@ import java.util.Random;
  **/
 public class Pipe extends MapElement implements Updatable {
 
-    private static int nextID = 0;
+    private static int nextID = 1;
 
     /**
      * Ennyi ?kör? ideig ragacsos a cső.

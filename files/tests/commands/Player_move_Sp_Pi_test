@@ -1,6 +1,6 @@
-create Spring1
-create Pipe1
-create Pipe2
+create Spring
+create Pipe
+create Pipe
 create_mechanic
 create_mechanic
 attach Pipe1 Spring1

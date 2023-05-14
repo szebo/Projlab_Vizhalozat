@@ -5,13 +5,15 @@ import main.Main;
 import main.logging.Logger;
 import main.map.MapElement;
 
+import java.util.Scanner;
+
 /**
  * Olyan játékos, amely feladata, hogy a csöveken és pumpákon haladva akadályozza a víz folyását.
  * Ezt a csövek kilyukasztásával teheti meg, illetve a pumpák forgatására is van lehetősége.
  * **/
 public class Saboteur extends Player {
 
-    private static int nextID = 0;
+    private static int nextID = 1;
 
     public Saboteur(){
         ID = nextID++;
@@ -44,7 +46,9 @@ public class Saboteur extends Player {
     public void doAction()
     {
         while(numberOfActions > 0) {
-            String playerInput = System.console().readLine();
+            Scanner scanner = new Scanner(System.in);
+            String playerInput = scanner.nextLine();
+            scanner.close();
             switch (playerInput) {
                 case "break":
                     numberOfActions--;

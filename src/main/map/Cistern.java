@@ -13,7 +13,7 @@ import java.util.List;
  */
 public class Cistern extends ActiveElement {
 
-    private static int nextID;
+    private static int nextID = 1;
     private final List<Pump> pumpsInReserve;
 
     /**

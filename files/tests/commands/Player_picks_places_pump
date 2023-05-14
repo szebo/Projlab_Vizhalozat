@@ -1,6 +1,6 @@
-create Pump1
-create Pipe1
-create Cistern1
+create Pump
+create Pipe
+create Cistern
 create_mechanic
 attach Pipe1 Cistern1
 attach Pipe1 Pump1

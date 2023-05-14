@@ -10,7 +10,7 @@ import java.util.ArrayList;
  */
 public class Pump extends ActiveElement {
 
-    private static int nextID = 0;
+    private static int nextID = 1;
 
     /**
      * A pumpa bemeneti csövét tárolja

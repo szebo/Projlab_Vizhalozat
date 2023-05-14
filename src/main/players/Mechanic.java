@@ -13,7 +13,7 @@ public class Mechanic extends Player {
     /**
      * Az osztályból a következő létrehozott objektum által kapható ID.
      */
-    private static int nextID = 0;
+    private static int nextID = 1;
     public Mechanic(){
         ID = nextID++;
     }
@@ -124,7 +124,9 @@ public class Mechanic extends Player {
     public void doAction()
     {
         while(numberOfActions > 0) {
-            String playerInput = System.console().readLine();
+            Scanner scanner = new Scanner(System.in);
+            String playerInput = scanner.nextLine();
+            scanner.close();
             switch (playerInput) {
                 case "break":
                     numberOfActions--;

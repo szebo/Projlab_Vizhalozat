@@ -1,8 +1,8 @@
-create Cistern1
-create Spring1
-create Pipe1
-create Pump1
-create Pipe2
+create Cistern
+create Spring
+create Pipe
+create Pump
+create Pipe
 attach Pipe1 Spring1
 attach Pipe1 Pump1
 attach Pipe2 Pump1

@@ -72,7 +72,6 @@ public abstract class MapElement {
      */
     public void addPlayer(Player player){
         players.add(player);
-        System.out.println("Játékos hozzáadva az elemhez!");
     }
 
     /**

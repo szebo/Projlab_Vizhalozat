@@ -1,6 +1,6 @@
-create Pump1
-create Pump2
-create Pipe1
+create Pump
+create Pump
+create Pipe
 create_saboteur
 attach Pipe1 Pump1
 attach Pipe1 Pump2

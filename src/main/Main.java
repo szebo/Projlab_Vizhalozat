@@ -1,23 +1,27 @@
 package main;
 
 import commands.CommandInterpreter;
-import main.map.Map;
-import main.players.Player;
-import tests.ProtoTests.Tester;
-import tests.SkeletonTests.TestController;
+
+import java.io.Console;
+import java.util.Scanner;
 
 public class Main {
-    public static Player currentPlayer = null;
+    public static boolean exit = false;
 
-    public static Map map = null;
+    public static String rootfolder;
     public static void main(String[] args) {
-        boolean exit = false;
+        rootfolder = System.getProperty("user.dir");
+        System.out.println(rootfolder);
         while(!exit) {
-            String cmd = System.console().readLine();
+            Scanner scanner = new Scanner(System.in);
+            System.out.println("Reading cmd...");
+            String cmd = scanner.nextLine();
+            System.out.println("Cmd read");
             CommandInterpreter.runCommand(cmd, null);
+            scanner.close();
         }
 
         //Tester.runTest();
-        TestController.runTests();
+        //TestController.runTests();
     }
 }

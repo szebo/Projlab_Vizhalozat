@@ -1,6 +1,8 @@
 package tests.ProtoTests;
 
 import commands.CommandInterpreter;
+import main.Main;
+import main.logging.Logger;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -16,17 +18,17 @@ public class Tester {
      * @param file A parancsokat soronként tartalmazó szöveges fájl
      * @return Soronként parsolt parancsok
      * **/
-    public static List<String> commandFileReader(int file) {
-        List<String> cmds = new ArrayList<String>();
+    public static ArrayList<String> commandFileReader(String file) {
+        ArrayList<String> cmds = new ArrayList<String>();
         try {
-            File commandsFile = new File("/files/tests/command/"+file);
+            File commandsFile = new File(Main.rootfolder+"/files/tests/commands/"+file);
             Scanner Reader = new Scanner(commandsFile);
             while (Reader.hasNextLine()) {
                 cmds.add(Reader.nextLine());
             }
             Reader.close();
         } catch (FileNotFoundException e) {
-            System.out.println("An error occurred");
+            Logger.log("log.txt","Test not found");
         }
         return cmds;
     }
@@ -49,19 +51,19 @@ public class Tester {
             }
             Reader.close();
         } catch (FileNotFoundException e) {
-            System.out.println("An error occurred");
+            Logger.log("log.txt","File not found: "+expectedOutputFile);
         }
 
         /* Comparing part */
         for (int i = 0; i < testOutput.size() && i < expOutput.size(); i++) {
             if(!expOutput.get(i).equals(testOutput.get(i))){
-                System.out.println("Nem egyezo teszt kimenet:" +
+                Logger.logToConsole("console.txt","Nem egyezo teszt kimenet:" +
                         "\nElvart: " + expOutput.get(i) +
                         "\nAktualis:" + testOutput.get(i));
                 return false;
             }
         }
-        System.out.println("Egyezo kimenet a " + expectedOutputFile + "fajllal!\n---- Sikeres teszt! ----");
+        Logger.logToConsole("console.txt","Egyezo kimenet a " + expectedOutputFile + "fajllal!\n---- Sikeres teszt! ----");
         return true;
     }
 
@@ -70,8 +72,8 @@ public class Tester {
      * @param file file neve (id)
      * @return hamis, ha valamely parancsnak nem volt sikeres a végrehajtása
      * **/
-    public static void runTest(int file){
-        ArrayList<String> cmds = (ArrayList<String>) commandFileReader(file);
+    public static void runTest(String file){
+        List<String> cmds = commandFileReader(file);
         for (String s: cmds ) commandInterpreter.runCommand(s, null);
     }
 }

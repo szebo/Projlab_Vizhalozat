@@ -110,7 +110,7 @@ public class Map implements Updatable{
 
     public void loadMap(String id){
         try {
-            BufferedReader reader = new BufferedReader(new FileReader("/files/maps/"+id+".txt"));
+            BufferedReader reader = new BufferedReader(new FileReader(Main.rootfolder+"/files/maps/"+id+".txt"));
             List<String> lines = reader.lines().toList();
             boolean readingElements = true;
             for(String line : lines){
@@ -155,7 +155,7 @@ public class Map implements Updatable{
 
     public void saveMap(int id){
         try {
-            BufferedWriter writer = new BufferedWriter(new FileWriter("/files/maps/"+id+".txt"));
+            BufferedWriter writer = new BufferedWriter(new FileWriter(Main.rootfolder+"/files/maps/"+id+".txt"));
             writer.append("ActiveElements\n");
             for(ActiveElement element : activeElements){
                 writer.append(element.getLogID()+","+element.getCapacity()+"\n");

@@ -38,7 +38,7 @@ public class MechanicTeam {
     public Mechanic getMechanic()
     {
         counter++;
-        return players.get(counter%2);
+        return players.get(counter++ % players.size());
     }
 
     public boolean hasWon()
