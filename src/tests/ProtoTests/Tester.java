@@ -3,10 +3,7 @@ package tests.ProtoTests;
 import commands.CommandInterpreter;
 import main.Main;
 import main.logging.Logger;
-import main.map.ActiveElement;
-import main.map.Cistern;
-import main.map.Pipe;
-import main.map.Pump;
+import main.map.*;
 import main.map.Spring;
 import main.players.*;
 
@@ -141,6 +138,7 @@ public class Tester {
         Mechanic.resetAfterTest();
         Saboteur.resetAfterTest();
 
+        Map.getInstance().clear();
         MechanicTeam.getInstance().reset();
         SaboteurTeam.getInstance().reset();
     }

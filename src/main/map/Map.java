@@ -10,7 +10,7 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Map implements Updatable{
+public class Map implements Updatable {
 
     private List<MapElement> mapElements;
     private List<IControllable> controllableMapElements;
@@ -201,5 +201,12 @@ public class Map implements Updatable{
         }
         Logger.log("console.txt", "[System]: Element doesn't exist", true);
         return null;
+    }
+    public void resetAfterTest(){
+        activeElements.clear();
+        mapElements.clear();
+        updatableMapElements.clear();
+        controllableMapElements.clear();
+        pipeList.clear();
     }
 }
