@@ -9,7 +9,7 @@ import java.util.List;
 public class MechanicTeam {
     private static MechanicTeam instance = null;
 
-    private List<Mechanic> players = new ArrayList<>() ;
+    private final List<Mechanic> players = new ArrayList<>() ;
     private int counter = 0;
     private int points = 0;
     private MechanicTeam(){

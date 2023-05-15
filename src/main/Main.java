@@ -1,13 +1,11 @@
 package main;
 
 import commands.CommandInterpreter;
-import main.map.Map;
 
-import java.io.Console;
 import java.util.Scanner;
 
 public class Main {
-    public static boolean exit = false;
+    //public static boolean exit = false;
 
     public static String rootfolder;
     public static void main(String[] args) {

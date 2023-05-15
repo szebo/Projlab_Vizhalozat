@@ -137,12 +137,9 @@ public class Mechanic extends Player {
 
     public void doCommand(String playerInput){
         switch (playerInput) {
-            case "pickup pipe", "pickup pump", "place pipe", "place pump", "configure", "break", "move", "repair", "make_sticky":
-                CommandInterpreter.runCommand(playerInput, this);
-                break;
-            default:
-                Logger.log("console.txt","[System]: Thats not a valid command", true);
-                break;
+            case "pickup pipe", "pickup pump", "place pipe", "place pump", "configure", "break", "move", "repair", "make_sticky" ->
+                    CommandInterpreter.runCommand(playerInput, this);
+            default -> Logger.log("console.txt", "[System]: Thats not a valid command", true);
         }
     }
 

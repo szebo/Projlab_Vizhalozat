@@ -188,7 +188,7 @@ public abstract class MapElement {
 
     /**
      * Visszaadja az objektum azonosító számát.
-     * @return
+     * @return A MapElement azonosítója.
      */
     public int getID(){
         return this.ID;
@@ -198,7 +198,7 @@ public abstract class MapElement {
 
     /**
      * A leszármazott osztálytól függően visszaad egy Stringet az objektum összes elérhető információjáról.
-     * @return
+     * @return Információ a leszármazottakból.
      */
     public abstract String printInfo();
 

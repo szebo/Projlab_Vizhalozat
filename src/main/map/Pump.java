@@ -52,13 +52,13 @@ public class Pump extends ActiveElement {
         setBroken(true);
     }
 
-    /**
-     * Getter
-     * @return input cső
+    /*
+      Getter
+      @return input cső
      */
-    public Pipe getInput() {
+    /*public Pipe getInput() {
         return input;
-    }
+    }*/
 
     /**
      * Beállítja a pumpa bemenetét a paraméterben kapott csőre.
@@ -70,9 +70,9 @@ public class Pump extends ActiveElement {
         Logger.log("log.txt", "Input set", false);
     }
 
-    public Pipe getOutput() {
+    /*public Pipe getOutput() {
         return output;
-    }
+    }*/
 
     /**
      * Beállítja a pumpa kimenetét a paraméterben kapott csőre.
@@ -137,7 +137,7 @@ public class Pump extends ActiveElement {
 
     public List<Pipe> getOutputPipes()
     {
-        ArrayList<Pipe> ret = new ArrayList<Pipe>();
+        ArrayList<Pipe> ret = new ArrayList<>();
         ret.add(output);
         return ret;
     }

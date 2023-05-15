@@ -5,17 +5,12 @@ import main.Controller;
 import main.Main;
 import main.logging.Logger;
 import main.map.*;
-import main.map.Spring;
+import main.map.Map;
 import main.players.*;
 
-import javax.naming.ldap.Control;
-import javax.swing.*;
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class Tester {
     public static ArrayList<String> currentTestLog = null;
@@ -80,16 +75,14 @@ public class Tester {
         ArrayList<String> tests = new ArrayList<>();
         if(files.contains(",")){
             String[] params = files.split(",");
-            for(String p : params){
-                tests.add(p);
-            }
+            Collections.addAll(tests, params);
         }
         else
             tests.add(files);
 
         for(String test : tests) {
             currentTestLog = new ArrayList<>();
-            ArrayList<String> testCommands = new ArrayList<>();
+            ArrayList<String> testCommands;
             testCommands = commandFileReader(test);
 
             ArrayList<String> initCommands = new ArrayList<>();
