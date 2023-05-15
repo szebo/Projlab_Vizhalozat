@@ -55,13 +55,13 @@ public class Map implements Updatable {
     {
         ae.pumpWater();
         List<Pipe> outputPipes = ae.getOutputPipes();
-        Logger.log("console.txt", "[ActiveElement]: in water is pumped", false);
+        Logger.log("log.txt", "[ActiveElement]: in water is pumped", false);
         if(outputPipes != null) {
             for (Pipe p : outputPipes) {
                 MapElement[] meArray = p.getNeighbours();
                 for (MapElement me : meArray) {
                     if (me != null && me != ae) {
-                        Logger.log("console.txt", "[ActiveElement]: out water is pumped", false);
+                        Logger.log("log.txt", "[ActiveElement]: out water is pumped", false);
                         pumpWater((ActiveElement) me);
                     }
                 }
