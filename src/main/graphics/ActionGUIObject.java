@@ -12,12 +12,12 @@ public class ActionGUIObject extends GUIObject{
     }
 
     @Override
-    public void draw() {
-
+    public Point getPosition() {
+        return null;
     }
 
     @Override
-    public Point getPosition() {
-        return null;
+    public void paintComponent(Graphics g){
+
     }
 }

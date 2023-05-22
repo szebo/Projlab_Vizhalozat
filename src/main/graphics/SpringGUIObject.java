@@ -19,7 +19,7 @@ public class SpringGUIObject extends GUIObject{
     }
 
     @Override
-    public void draw() {
+    public void paintComponent(Graphics g){
 
     }
 
