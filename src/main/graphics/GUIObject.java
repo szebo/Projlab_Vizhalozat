@@ -11,7 +11,7 @@ public abstract class GUIObject extends AbstractButton implements ActionListener
         onClick();
     }
     public abstract void onClick();
-    public void draw(){ this.invalidate(); }
+    public void draw(){ this.repaint(); }
     public abstract Point getPosition();
 
 }
