@@ -1,23 +1,28 @@
 package main.graphics;
 
 import java.awt.*;
+import java.awt.event.MouseEvent;
 
 public class ActionGUIObject extends GUIObject{
 
     public String guiMessage;
 
+    private Point position;
+
+    public ActionGUIObject(){
+    }
+
     @Override
-    public void onClick() {
+    public void onClick(MouseEvent e) {
 
     }
 
     @Override
     public Point getPosition() {
-        return getLocation();
+        return position;
     }
 
     @Override
-    public void paintComponent(Graphics g){
-
+    public void draw(Graphics g){
     }
 }

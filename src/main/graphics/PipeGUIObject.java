@@ -3,24 +3,29 @@ package main.graphics;
 import main.map.Pipe;
 
 import java.awt.*;
+import java.awt.event.MouseEvent;
 
 public class PipeGUIObject extends GUIObject{
 
     private Pipe pipe;
     private Point position;
 
+    private Rectangle rectangle;
+
     public PipeGUIObject(Pipe pipe){
         this.pipe = pipe;
+        rectangle = new Rectangle();
+    }
+
+    public void onClick(MouseEvent e) {
+        if(rectangle.contains(e.getPoint())){
+
+        }
     }
 
     @Override
-    public void onClick() {
-
-    }
-
-    @Override
-    public void paintComponent(Graphics g){
-
+    public void draw(Graphics g){
+        g.setColor(Color.BLACK);
     }
 
     private void drawWorking(Point point){
@@ -33,6 +38,6 @@ public class PipeGUIObject extends GUIObject{
 
     @Override
     public Point getPosition() {
-        return getLocation();
+        return position;
     }
 }

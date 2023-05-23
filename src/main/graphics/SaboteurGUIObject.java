@@ -3,6 +3,7 @@ package main.graphics;
 import main.players.Saboteur;
 
 import java.awt.*;
+import java.awt.event.MouseEvent;
 
 public class SaboteurGUIObject extends GUIObject{
 
@@ -13,13 +14,16 @@ public class SaboteurGUIObject extends GUIObject{
         this.saboteur = saboteur;
     }
     @Override
-    public void onClick() {
+    public void onClick(MouseEvent e) {
 
     }
 
     @Override
-    public void paintComponent(Graphics g){
-
+    public void draw(Graphics g){
+        g.setColor(Color.CYAN);
+        g.fillOval(position.x, position.y, 10, 10);
+        g.setColor(Color.BLACK);
+        g.drawOval(position.x, position.y, 10, 10);
     }
 
     public void drawAtPosition(Point point){
