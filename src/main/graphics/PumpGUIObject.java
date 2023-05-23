@@ -33,6 +33,6 @@ public class PumpGUIObject extends GUIObject{
 
     @Override
     public Point getPosition() {
-        return position;
+        return getLocation();
     }
 }

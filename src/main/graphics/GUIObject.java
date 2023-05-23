@@ -9,7 +9,9 @@ public abstract class GUIObject extends JComponent implements MouseListener {
 
     @Override
     public void mouseClicked(MouseEvent e){
-        onClick();
+        if(this.contains(e.getPoint())) {
+            onClick();
+        }
     }
 
     public abstract void onClick();

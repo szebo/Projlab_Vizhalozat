@@ -12,7 +12,7 @@ import java.util.List;
 
 public class GUIManager {
 
-    private GUIManager instance = null;
+    private static GUIManager instance = null;
     private String guiMessage;
     private List<GUIObject> guiObjects;
 
@@ -20,7 +20,7 @@ public class GUIManager {
         guiObjects = new ArrayList<>();
     }
 
-    public GUIManager getInstance(){
+    public static GUIManager getInstance(){
         if (instance == null)
                 instance = new GUIManager();
 
@@ -33,6 +33,7 @@ public class GUIManager {
 
     public void addGUIMessage(String guiMessage){
         this.guiMessage = guiMessage;
+        notifyAll();
     }
 
     public void createPipeGUIObject(Pipe pipe){

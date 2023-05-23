@@ -29,6 +29,6 @@ public class SpringGUIObject extends GUIObject{
 
     @Override
     public Point getPosition() {
-        return position;
+        return getLocation();
     }
 }

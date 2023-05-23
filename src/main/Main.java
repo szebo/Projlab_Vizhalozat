@@ -1,8 +1,10 @@
 package main;
 
 import commands.CommandInterpreter;
+import main.graphics.GUIManager;
 import main.windowing.Window;
 
+import javax.swing.*;
 import java.util.Scanner;
 
 public class Main {
@@ -13,12 +15,20 @@ public class Main {
         rootfolder = System.getProperty("user.dir");
         System.out.println(rootfolder);
         Window window = new Window();
-        Scanner scanner = new Scanner(System.in);
+        while(window.isActive()){
+            try {
+                GUIManager.getInstance().wait();
+                CommandInterpreter.runCommand(GUIManager.getInstance().getGUIMessage(), null);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+        }
+        /*Scanner scanner = new Scanner(System.in);
         while(scanner.hasNextLine()) {
            String cmd = scanner.nextLine();
            CommandInterpreter.runCommand(cmd, null);
         }
-        scanner.close();
+        scanner.close();*/
         //Tester.runTest();
         //TestController.runTests();
     }

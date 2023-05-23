@@ -29,6 +29,6 @@ public class CisternGUIObject extends GUIObject{
 
     @Override
     public Point getPosition() {
-        return position;
+        return getLocation();
     }
 }

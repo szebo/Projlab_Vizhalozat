@@ -13,7 +13,7 @@ public class ActionGUIObject extends GUIObject{
 
     @Override
     public Point getPosition() {
-        return null;
+        return getLocation();
     }
 
     @Override

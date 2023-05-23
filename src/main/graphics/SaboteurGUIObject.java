@@ -28,6 +28,6 @@ public class SaboteurGUIObject extends GUIObject{
 
     @Override
     public Point getPosition() {
-        return position;
+        return null;
     }
 }
