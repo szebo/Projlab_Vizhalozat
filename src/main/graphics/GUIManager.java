@@ -7,6 +7,8 @@ import main.map.Spring;
 import main.players.Mechanic;
 import main.players.Saboteur;
 
+import javax.swing.*;
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,7 +22,7 @@ public class GUIManager {
         guiObjects = new ArrayList<>();
     }
 
-    public static GUIManager getInstance(){
+    public static synchronized GUIManager getInstance(){
         if (instance == null)
                 instance = new GUIManager();
 
@@ -48,8 +50,8 @@ public class GUIManager {
         guiObjects.add(new SpringGUIObject(spring));
     }
 
-    public void createCisternGUIObject(Cistern cistern){
-        guiObjects.add(new CisternGUIObject(cistern));
+    public void createCisternGUIObject(Cistern cistern, Point position){
+        guiObjects.add(new CisternGUIObject(cistern, position));
     }
 
     public void createSaboteurGUIObject(Saboteur saboteur){
@@ -60,8 +62,11 @@ public class GUIManager {
         guiObjects.add(new MechanicGUIObject(mechanic));
     }
 
-    public void draw(){
-
+    public void draw(JPanel view){
+        for (GUIObject object: guiObjects) {
+            object.draw(view.getGraphics());
+        }
+        view.repaint();
     }
 
 }
