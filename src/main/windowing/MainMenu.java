@@ -3,14 +3,18 @@ package main.windowing;
 import javax.swing.*;
 import java.awt.*;
 
-public class MainMenu extends JPanel {
-    private JButton bContinue, bNewgame, bOptions, bExit;
+public class MainMenu extends JPanel{
+    JButton bContinue, bNewgame, bOptions, bExit;
     private JPanel pCon, pNew, pOpt, pExit;
-    public MainMenu(){
+    public MainMenu(Window window){
         bContinue = new JButton("Continue");
+        bContinue.addActionListener(window);
         bNewgame = new JButton("New Game");
+        bNewgame.addActionListener(window);
         bOptions = new JButton("Options");
+        bOptions.addActionListener(window);
         bExit = new JButton("Exit");
+        bExit.addActionListener(window);
         setLayout(new GridBagLayout());
         GridBagConstraints gbc = new GridBagConstraints();
         gbc.gridx = 0;

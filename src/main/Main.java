@@ -15,14 +15,7 @@ public class Main {
         rootfolder = System.getProperty("user.dir");
         System.out.println(rootfolder);
         Window window = new Window();
-        while(window.isActive()){
-            try {
-                GUIManager.getInstance().wait();
-                CommandInterpreter.runCommand(GUIManager.getInstance().getGUIMessage(), null);
-            } catch (InterruptedException e) {
-                throw new RuntimeException(e);
-            }
-        }
+        window.setVisible(true);
         /*Scanner scanner = new Scanner(System.in);
         while(scanner.hasNextLine()) {
            String cmd = scanner.nextLine();

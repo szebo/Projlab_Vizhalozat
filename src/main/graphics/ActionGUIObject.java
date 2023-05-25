@@ -10,6 +10,7 @@ public class ActionGUIObject extends GUIObject{
     private Point position;
 
     public ActionGUIObject(){
+
     }
 
     @Override
