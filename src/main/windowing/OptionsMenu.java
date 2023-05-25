@@ -1,5 +1,8 @@
 package main.windowing;
 
+import main.Controller;
+
+import javax.naming.ldap.Control;
 import javax.swing.*;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
@@ -17,11 +20,11 @@ public class OptionsMenu extends JPanel implements ChangeListener {
         playerNumber.addChangeListener(this);
         label1 = new JLabel(String.valueOf(playerNumber.getValue()));
 
-        stickyTurns = new JSlider(1, 5);
+        stickyTurns = new JSlider(1, 4);
         stickyTurns.addChangeListener(this);
         label2 = new JLabel(String.valueOf(stickyTurns.getValue()));
 
-        slipperyTurns = new JSlider(1, 5);
+        slipperyTurns = new JSlider(1, 4);
         slipperyTurns.addChangeListener(this);
         label3 = new JLabel(String.valueOf(slipperyTurns.getValue()));
 
@@ -53,7 +56,11 @@ public class OptionsMenu extends JPanel implements ChangeListener {
         add(buttons);
     }
 
-    public void saveOptions(){}
+    public void saveOptions(){
+        Controller.stickyForOption = stickyTurns.getValue();
+        Controller.slipperyForOption = slipperyTurns.getValue();
+        Controller.playerCount = playerNumber.getValue();
+    }
 
     @Override
     public void stateChanged(ChangeEvent e) {

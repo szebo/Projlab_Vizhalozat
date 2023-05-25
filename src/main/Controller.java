@@ -6,6 +6,11 @@ import main.players.SaboteurTeam;
 
 public class Controller {
 
+    //Publikus beállítások a játékhoz
+    public static int stickyForOption = 2;
+    public static int slipperyForOption = 2;
+    public static int playerCount = 4;
+
     static boolean win = false;
     public static boolean randomDebug = false;
     public static void run(){
@@ -13,7 +18,7 @@ public class Controller {
         SaboteurTeam.getInstance().init();
         MechanicTeam.getInstance().init();
         while(!win) {
-            for (int i = 0; i < 2; i++) {
+            for (int i = 0; i < playerCount/2; i++) {
                 SaboteurTeam.getInstance().getSaboteur().doAction();
                 MechanicTeam.getInstance().getMechanic().doAction();
             }
