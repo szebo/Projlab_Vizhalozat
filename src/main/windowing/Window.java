@@ -2,12 +2,9 @@ package main.windowing;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
+import java.awt.event.*;
 
-public class Window extends JFrame implements ActionListener, KeyListener {
+public class Window extends JFrame implements ActionListener, KeyListener, ComponentListener {
     private JPanel mainPanel;
     private MainMenu mainMenu;
     private OptionsMenu optionsMenu;
@@ -39,6 +36,8 @@ public class Window extends JFrame implements ActionListener, KeyListener {
         setTitle("Sivatagi vizhalozat");
         setContentPane(mainPanel);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setFocusable(true);
+        addKeyListener(this);
     }
 
     private void switchPanel(String panel){
@@ -55,8 +54,14 @@ public class Window extends JFrame implements ActionListener, KeyListener {
         else if(e.getSource().equals(mainMenu.bOptions)){
             switchPanel("Options");
         }
-        else if(e.getSource().equals(mainMenu.bExit)){
+        else if(e.getSource().equals(mainMenu.bExit) || e.getSource().equals(pauseMenu.bExit)){
             System.exit(1);
+        }
+        else if(e.getSource().equals(pauseMenu.bContinue)){
+            switchPanel("GameView");
+        }
+        else if(e.getSource().equals(pauseMenu.bExitToMain)){
+            switchPanel("MainMenu");
         }
     }
 
@@ -67,13 +72,39 @@ public class Window extends JFrame implements ActionListener, KeyListener {
 
     @Override
     public void keyPressed(KeyEvent e) {
-
+        if(e.getKeyCode() == KeyEvent.VK_ESCAPE){
+            switchPanel("Pause");
+        }
     }
 
     @Override
     public void keyReleased(KeyEvent e) {
-        if(e.getKeyCode() == 27 && gameView.isShowing()){
-            switchPanel("Pause");
-        }
+
+    }
+
+    @Override
+    public void componentResized(ComponentEvent e) {
+
+    }
+
+    @Override
+    public void componentMoved(ComponentEvent e) {
+
+    }
+
+    @Override
+    public void componentShown(ComponentEvent e) {
+        mainMenu.setVisible(false);
+        pauseMenu.setVisible(false);
+        optionsMenu.setVisible(false);
+        newGameMenu.setVisible(false);
+        endScreen.setVisible(false);
+        gameView.setVisible(false);
+        e.getComponent().setVisible(true);
+    }
+
+    @Override
+    public void componentHidden(ComponentEvent e) {
+
     }
 }
