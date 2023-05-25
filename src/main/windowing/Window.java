@@ -19,10 +19,10 @@ public class Window extends JFrame implements ActionListener, KeyListener, Compo
         layout = new CardLayout();
         mainPanel.setLayout(layout);
         mainMenu = new MainMenu(this);
-        optionsMenu = new OptionsMenu();
+        optionsMenu = new OptionsMenu(this);
         newGameMenu = new NewGameMenu();
         pauseMenu = new PauseMenu(this);
-        gameView = new GameView();
+        gameView = new GameView(this);
         endScreen = new EndScreen();
         add(mainPanel);
         mainPanel.add(mainMenu, "MainMenu");
@@ -61,6 +61,16 @@ public class Window extends JFrame implements ActionListener, KeyListener, Compo
             switchPanel("GameView");
         }
         else if(e.getSource().equals(pauseMenu.bExitToMain)){
+            switchPanel("MainMenu");
+        }
+        else if(e.getSource().equals(optionsMenu.bBack)){
+            switchPanel("MainMenu");
+        }
+        else if(e.getSource().equals(optionsMenu.bSave)){
+            optionsMenu.saveOptions();
+            switchPanel("MainMenu");
+        }
+        else if(e.getSource().equals(gameView.menu)){
             switchPanel("MainMenu");
         }
     }

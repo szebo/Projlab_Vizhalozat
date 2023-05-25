@@ -7,7 +7,14 @@ import java.awt.*;
 
 public class GameView extends JPanel {
 
-    public GameView(){}
+    JButton menu;
+    public GameView(Window window){
+        setLayout(new FlowLayout(FlowLayout.LEFT));
+        menu = new JButton("Menu");
+        menu.addActionListener(window);
+        add(menu);
+        setBackground(Color.CYAN);
+    }
 
     /*public void paintComponent(Graphics g){
         GUIManager.getInstance().draw(this);
