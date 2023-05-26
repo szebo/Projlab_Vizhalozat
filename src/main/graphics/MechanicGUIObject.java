@@ -57,11 +57,12 @@ public class MechanicGUIObject extends GUIObject{
     // }
 
     public void drawAtPosition(Point point){
-
+        position = point;
+        //Invalidate vagy draw
     }
 
     @Override
     public Point getPosition() {
-        return null;
+        return position;
     }
 }

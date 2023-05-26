@@ -20,8 +20,10 @@ public class CisternGUIObject extends GUIObject{
 
     @Override
     public void onClick(MouseEvent e) {
-        if(rectangle.contains(e.getPoint())){
-
+        if(rectangle.contains(e.getPoint())) {
+            if (cistern.getPlayers().contains(/*hívó játékos*/)) {
+                cistern.givePump(/*hívó játékos*/);     //Honnan tudjuk, melyik játékos kattintotta/van soron? Global lehetne a körön lévő játékos
+            }
         }
     }
 

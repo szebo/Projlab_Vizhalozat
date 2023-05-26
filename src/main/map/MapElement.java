@@ -220,4 +220,10 @@ public abstract class MapElement {
     public void setOutput(Pipe output) {}
 
     public void setInput(Pipe input) {}
+
+    /**
+     * Visszaadja a rajta álló játékosok listáját
+     * @return Rajta álló játékosok listája
+     * **/
+    public List<Player> getPlayers(){return players;}
 }

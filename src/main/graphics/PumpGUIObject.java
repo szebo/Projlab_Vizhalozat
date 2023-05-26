@@ -2,6 +2,7 @@ package main.graphics;
 
 import main.map.Pump;
 
+import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseEvent;
 
@@ -21,6 +22,16 @@ public class PumpGUIObject extends GUIObject{
     @Override
     public void onClick(MouseEvent e) {
         if(rectangle.contains(e.getPoint())){
+            if(pump.getPlayers().contains(/*hívó játékos*/)){
+                ButtonGroup buttonGroup = new ButtonGroup();
+                buttonGroup.add(new JButton("Configure"));
+                buttonGroup.
+            }
+            else {
+                if (pump.acceptPlayer(/*hívó játékos*/)){
+                    player.drawPosition();
+                }
+            }
 
         }
     }

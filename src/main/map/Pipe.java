@@ -284,4 +284,9 @@ public class Pipe extends MapElement implements Updatable {
     public static void resetAfterTest(){
         nextID = 1;
     }
+
+    public int getStickyFor(){return stickyFor;}
+    public int getSlipperyFor(){return stickyFor;}
+    public int getUnbreakableFor(){return unbreakableFor;}
+
 }

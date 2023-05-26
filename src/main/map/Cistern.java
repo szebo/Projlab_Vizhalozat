@@ -22,11 +22,7 @@ public class Cistern extends ActiveElement {
         pipes = new ArrayList<>();
         players = new ArrayList<>();
         pumpsInReserve = new ArrayList<>();
-        /*for(int i = 0; i < 50; i++){
-            pumpsInReserve.add(new Pump());     // <3
-        }*/
         this.ID = nextID++;
-        //Logger.log("console.txt", "["+getLogID()+"]: created", true);
     }
 
     /**

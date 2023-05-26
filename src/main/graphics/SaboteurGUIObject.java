@@ -55,7 +55,8 @@ public class SaboteurGUIObject extends GUIObject{
     //
     // }
     public void drawAtPosition(Point point){
-
+        position = point;
+        //invalidate vagy draw
     }
 
     @Override
