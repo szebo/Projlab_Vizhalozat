@@ -45,8 +45,24 @@ public class PumpGUIObject extends GUIObject{
     }
 
     private void drawWorking(Point point, Graphics g){
+        //Ide raktam egy ilyen kis zöld kört jelezvén hogy aktív a pumpa, de lehet faszság, és elég az input output
         g.setColor(Color.green);
         g.fillOval(position.x, position.y, 5, 5);
+
+        if(pump.getInput() != null) {
+            g.setColor(Color.yellow);
+
+            //TODO Itt valahogy meg kéne kapni a koordinátáját a csőnek, hogy abba az irányba el tudjunk helyezni egy
+            // Színes kört a köríven, mint input jelzés
+        }
+
+        if(pump.getOutput() != null){
+            Color purple = new Color(102, 0, 153);
+            g.setColor(purple);
+
+            //TODO Ugyanaz mint fenn
+
+        }
     }
 
     private void drawBroken(Point point, Graphics g){

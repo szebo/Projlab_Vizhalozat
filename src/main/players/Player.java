@@ -27,6 +27,8 @@ public abstract class Player {
         this.stuck = stuck;
     }
 
+    public int getStuck(){return stuck;}
+
     protected int stuck;
 
     /**
@@ -78,6 +80,7 @@ public abstract class Player {
     public void step(MapElement element){
         Objects.requireNonNull(element, "Null értékű paramétert kapott a step!");
         if(stuck != 0){
+            stuck--;
             return;
         }
         if(element.acceptPlayer(this) && this.stepsLeft > 0) {

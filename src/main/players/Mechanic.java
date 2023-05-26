@@ -146,4 +146,6 @@ public class Mechanic extends Player {
     public static void resetAfterTest(){
         nextID = 1;
     }
+
+    public Pipe getPipeInHand(){return pipeInHand;}
 }

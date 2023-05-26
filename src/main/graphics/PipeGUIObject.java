@@ -54,6 +54,7 @@ public class PipeGUIObject extends GUIObject{
 
     private void drawBroken(Point point, Graphics g){
         g.setColor(Color.RED);
+        g.fillRect(rectangle.x, rectangle.y, rectangle.width, rectangle.height);
     }
 
     @Override

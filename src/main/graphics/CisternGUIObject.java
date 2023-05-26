@@ -29,11 +29,14 @@ public class CisternGUIObject extends GUIObject{
 
     @Override
     public void draw(Graphics g){
-        g.setColor(Color.GREEN);
+        g.setColor(new Color(0, 102, 0));
         g.fillRect(rectangle.x, rectangle.y, 20, 20);
+
     }
 
-    public void drawAtPosition(Point point){
+    public void drawAtPosition(Point point, Graphics g){
+        g.setColor(new Color(0, 102, 0));
+        g.fillRect(point.x, point.y, 20, 20);
 
     }
 
