@@ -2,6 +2,7 @@ package main.graphics;
 
 import main.map.MapElement;
 import main.players.Mechanic;
+import main.players.Player;
 
 import java.awt.*;
 import java.awt.event.MouseEvent;
@@ -30,7 +31,6 @@ public class MechanicGUIObject extends GUIObject{
         //TODO Nemtudom hogy így tervezzük e ezeknek a függvényeknek a meghívását?
         if(mechanic.getStuck() > 0) drawStuck(position, g);
         if(mechanic.getPipeInHand() != null) drawPipeInHand(position, g);
-
     }
 
    public void drawStuck(Point point, Graphics g){
@@ -91,5 +91,13 @@ public class MechanicGUIObject extends GUIObject{
     @Override
     public MapElement getElement() {
         return null;
+    }
+
+    /**
+     * @return
+     */
+    @Override
+    public Player getPlayer() {
+        return mechanic;
     }
 }

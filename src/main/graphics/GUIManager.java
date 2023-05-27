@@ -77,4 +77,14 @@ public class GUIManager {
         return null;
     }
 
+    public GUIObject getGUIPlayerByID(String id){
+        for(GUIObject object : guiObjects){
+            if(object.getPlayer().getLogID().equals(id))
+                return object;
+        }
+        return null;
+    }
+
+
+
 }

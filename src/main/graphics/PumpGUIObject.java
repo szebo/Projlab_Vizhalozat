@@ -4,6 +4,7 @@ import main.Controller;
 import main.logging.Logger;
 import main.map.MapElement;
 import main.map.Pump;
+import main.players.Player;
 
 import javax.swing.*;
 import java.awt.*;
@@ -108,5 +109,9 @@ public class PumpGUIObject extends GUIObject{
     @Override
     public MapElement getElement() {
         return pump;
+    }
+    @Override
+    public Player getPlayer() {
+        return null;
     }
 }

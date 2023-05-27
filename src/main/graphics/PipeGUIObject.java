@@ -3,6 +3,7 @@ package main.graphics;
 import main.Controller;
 import main.map.MapElement;
 import main.map.Pipe;
+import main.players.Player;
 
 import javax.swing.*;
 import java.awt.*;
@@ -23,7 +24,7 @@ public class PipeGUIObject extends GUIObject{
     public void onClick(MouseEvent e) {
         if(rectangle.contains(e.getPoint())){
              if(pipe.acceptPlayer(Controller.currentPlayer)){
-
+                GUIManager.getInstance().addGUIMessage("");
              }
         }
     }
@@ -66,5 +67,9 @@ public class PipeGUIObject extends GUIObject{
     @Override
     public MapElement getElement() {
         return pipe;
+    }
+    @Override
+    public Player getPlayer() {
+        return null;
     }
 }

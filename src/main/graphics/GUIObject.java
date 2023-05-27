@@ -1,6 +1,7 @@
 package main.graphics;
 
 import main.map.MapElement;
+import main.players.Player;
 
 import javax.swing.*;
 import java.awt.*;
@@ -18,6 +19,7 @@ public abstract class GUIObject implements MouseListener {
     public abstract void draw(Graphics g);
     public abstract Point getPosition();
     public abstract MapElement getElement();
+    public abstract Player getPlayer();
 
     @Override
     public void mousePressed(MouseEvent e){}
