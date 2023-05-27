@@ -1469,3 +1469,183 @@
 2023/05/15 00:13:02	[SaboteurTeam] points: 45
 2023/05/15 00:13:02	[MechanicTeam] points: 120
 2023/05/15 00:13:02	[Map]: map saved as 42
+2023/05/15 00:33:38	[Map]: Cistern1 has been created
+2023/05/15 00:33:38	[Map]: Cistern2 has been created
+2023/05/15 00:33:38	[Map]: Spring1 has been created
+2023/05/15 00:33:38	[Map]: Spring2 has been created
+2023/05/15 00:33:38	[Map]: Pump101 has been created
+2023/05/15 00:33:38	[Map]: Pump102 has been created
+2023/05/15 00:33:38	[Map]: Pump103 has been created
+2023/05/15 00:33:38	[Map]: Pump104 has been created
+2023/05/15 00:33:38	[Map]: Pump105 has been created
+2023/05/15 00:33:38	[Map]: Pump106 has been created
+2023/05/15 00:33:38	[Cistern1]: Pipe1 has been attached
+2023/05/15 00:33:38	[Pump105]: Pipe1 has been attached
+2023/05/15 00:33:38	[Cistern1]: Pipe2 has been attached
+2023/05/15 00:33:38	[Pump104]: Pipe2 has been attached
+2023/05/15 00:33:38	[Cistern2]: Pipe3 has been attached
+2023/05/15 00:33:38	[Pump103]: Pipe3 has been attached
+2023/05/15 00:33:38	[Cistern2]: Pipe4 has been attached
+2023/05/15 00:33:38	[Pump101]: Pipe4 has been attached
+2023/05/15 00:33:38	[Spring2]: Pipe5 has been attached
+2023/05/15 00:33:38	[Pump101]: Pipe5 has been attached
+2023/05/15 00:33:38	[Spring2]: Pipe6 has been attached
+2023/05/15 00:33:38	[Pump102]: Pipe6 has been attached
+2023/05/15 00:33:38	[Spring1]: Pipe7 has been attached
+2023/05/15 00:33:38	[Pump102]: Pipe7 has been attached
+2023/05/15 00:33:38	[Spring1]: Pipe8 has been attached
+2023/05/15 00:33:38	[Pump106]: Pipe8 has been attached
+2023/05/15 00:33:38	[Pump103]: Pipe9 has been attached
+2023/05/15 00:33:38	[Pump102]: Pipe9 has been attached
+2023/05/15 00:33:38	[Pump104]: Pipe10 has been attached
+2023/05/15 00:33:38	[Pump102]: Pipe10 has been attached
+2023/05/15 00:33:38	[Pump104]: Pipe11 has been attached
+2023/05/15 00:33:38	[Pump106]: Pipe11 has been attached
+2023/05/15 00:33:38	[Pump105]: Pipe12 has been attached
+2023/05/15 00:33:38	[Pump106]: Pipe12 has been attached
+2023/05/15 00:33:38	[Map]: map loaded
+2023/05/15 00:33:38	Saboteur1's turn
+2023/05/15 00:33:38	2 actions left
+2023/05/15 00:33:52	[System]: Thats not a valid command
+2023/05/15 00:33:52	1 actions left
+2023/05/15 00:33:53	[System]: Thats not a valid command
+2023/05/15 00:33:53	Mechanic1's turn
+2023/05/15 00:33:53	2 actions left
+2023/05/15 00:33:53	[System]: Thats not a valid command
+2023/05/15 00:33:53	1 actions left
+2023/05/15 00:33:53	[System]: Thats not a valid command
+2023/05/15 00:33:53	Saboteur2's turn
+2023/05/15 00:33:53	2 actions left
+2023/05/15 00:33:54	[System]: Thats not a valid command
+2023/05/15 00:33:54	1 actions left
+2023/05/15 00:33:54	[System]: Thats not a valid command
+2023/05/15 00:33:54	Mechanic2's turn
+2023/05/15 00:33:54	2 actions left
+2023/05/15 00:33:55	[System]: Thats not a valid command
+2023/05/15 00:33:55	1 actions left
+2023/05/15 00:33:56	[System]: Thats not a valid command
+2023/05/15 00:33:56	[ActiveElement]: in water is pumped
+2023/05/15 00:33:56	[ActiveElement]: out water is pumped
+2023/05/15 00:33:56	[ActiveElement]: in water is pumped
+2023/05/15 00:33:56	[ActiveElement]: out water is pumped
+2023/05/15 00:33:56	[ActiveElement]: in water is pumped
+2023/05/15 00:33:56	[ActiveElement]: out water is pumped
+2023/05/15 00:33:56	[ActiveElement]: in water is pumped
+2023/05/15 00:33:56	[ActiveElement]: out water is pumped
+2023/05/15 00:33:56	[ActiveElement]: in water is pumped
+2023/05/15 00:33:56	[ActiveElement]: out water is pumped
+2023/05/15 00:33:56	[ActiveElement]: in water is pumped
+2023/05/15 00:33:56	[ActiveElement]: out water is pumped
+2023/05/15 00:33:56	[ActiveElement]: in water is pumped
+2023/05/15 00:33:56	[Map]: water is pumped
+2023/05/15 00:33:56	[ActiveElement]: in water is pumped
+2023/05/15 00:33:56	[ActiveElement]: out water is pumped
+2023/05/15 00:33:56	[ActiveElement]: in water is pumped
+2023/05/15 00:33:56	[ActiveElement]: out water is pumped
+2023/05/15 00:33:56	[ActiveElement]: in water is pumped
+2023/05/15 00:33:56	[ActiveElement]: out water is pumped
+2023/05/15 00:33:56	[ActiveElement]: in water is pumped
+2023/05/15 00:33:56	[ActiveElement]: out water is pumped
+2023/05/15 00:33:56	[ActiveElement]: in water is pumped
+2023/05/15 00:33:56	[ActiveElement]: out water is pumped
+2023/05/15 00:33:56	[ActiveElement]: in water is pumped
+2023/05/15 00:33:56	[Map]: water is pumped
+2023/05/15 00:33:56	[SaboteurTeam] points: 0
+2023/05/15 00:33:56	[MechanicTeam] points: 55
+2023/05/15 00:33:56	Saboteur1's turn
+2023/05/15 00:33:56	2 actions left
+2023/05/15 00:34:00	[Pipe1]: broken
+2023/05/15 00:34:00	1 actions left
+2023/05/15 00:34:01	[System]: Thats not a valid command
+2023/05/15 00:34:01	Mechanic1's turn
+2023/05/15 00:34:01	2 actions left
+2023/05/15 00:34:01	[System]: Thats not a valid command
+2023/05/15 00:34:01	1 actions left
+2023/05/15 00:34:02	[System]: Thats not a valid command
+2023/05/15 00:34:02	Saboteur2's turn
+2023/05/15 00:34:02	2 actions left
+2023/05/15 00:34:02	[System]: Thats not a valid command
+2023/05/15 00:34:02	1 actions left
+2023/05/15 00:34:02	[System]: Thats not a valid command
+2023/05/15 00:34:02	Mechanic2's turn
+2023/05/15 00:34:02	2 actions left
+2023/05/15 00:34:03	[System]: Thats not a valid command
+2023/05/15 00:34:03	1 actions left
+2023/05/15 00:34:04	[System]: Thats not a valid command
+2023/05/15 00:34:04	[ActiveElement]: in water is pumped
+2023/05/15 00:34:04	[ActiveElement]: out water is pumped
+2023/05/15 00:34:04	[ActiveElement]: in water is pumped
+2023/05/15 00:34:04	[ActiveElement]: out water is pumped
+2023/05/15 00:34:04	[ActiveElement]: in water is pumped
+2023/05/15 00:34:04	[ActiveElement]: out water is pumped
+2023/05/15 00:34:04	[ActiveElement]: in water is pumped
+2023/05/15 00:34:04	[ActiveElement]: out water is pumped
+2023/05/15 00:34:04	[ActiveElement]: in water is pumped
+2023/05/15 00:34:04	[ActiveElement]: out water is pumped
+2023/05/15 00:34:04	[ActiveElement]: in water is pumped
+2023/05/15 00:34:04	[ActiveElement]: out water is pumped
+2023/05/15 00:34:04	[ActiveElement]: in water is pumped
+2023/05/15 00:34:04	[Map]: water is pumped
+2023/05/15 00:34:04	[ActiveElement]: in water is pumped
+2023/05/15 00:34:04	[ActiveElement]: out water is pumped
+2023/05/15 00:34:04	[ActiveElement]: in water is pumped
+2023/05/15 00:34:04	[ActiveElement]: out water is pumped
+2023/05/15 00:34:04	[ActiveElement]: in water is pumped
+2023/05/15 00:34:04	[ActiveElement]: out water is pumped
+2023/05/15 00:34:04	[ActiveElement]: in water is pumped
+2023/05/15 00:34:04	[ActiveElement]: out water is pumped
+2023/05/15 00:34:04	[ActiveElement]: in water is pumped
+2023/05/15 00:34:04	[ActiveElement]: out water is pumped
+2023/05/15 00:34:04	[ActiveElement]: in water is pumped
+2023/05/15 00:34:04	[Map]: water is pumped
+2023/05/15 00:34:04	[SaboteurTeam] points: 15
+2023/05/15 00:34:04	[MechanicTeam] points: 95
+2023/05/15 00:34:04	Saboteur1's turn
+2023/05/15 00:34:04	2 actions left
+2023/05/15 00:34:07	[System]: Thats not a valid command
+2023/05/15 00:34:07	1 actions left
+2023/05/15 00:34:08	[System]: Thats not a valid command
+2023/05/15 00:34:08	Mechanic1's turn
+2023/05/15 00:34:08	2 actions left
+2023/05/15 00:34:08	[System]: Thats not a valid command
+2023/05/15 00:34:08	1 actions left
+2023/05/15 00:34:08	[System]: Thats not a valid command
+2023/05/15 00:34:08	Saboteur2's turn
+2023/05/15 00:34:08	2 actions left
+2023/05/15 00:34:08	[System]: Thats not a valid command
+2023/05/15 00:34:08	1 actions left
+2023/05/15 00:34:09	[System]: Thats not a valid command
+2023/05/15 00:34:09	Mechanic2's turn
+2023/05/15 00:34:09	2 actions left
+2023/05/15 00:34:14	[Pump101]: Mechanic2 moved
+2023/05/15 00:34:14	1 actions left
+2023/05/15 00:34:15	[System]: Thats not a valid command
+2023/05/15 00:34:15	[ActiveElement]: in water is pumped
+2023/05/15 00:34:15	[ActiveElement]: out water is pumped
+2023/05/15 00:34:15	[ActiveElement]: in water is pumped
+2023/05/15 00:34:15	[ActiveElement]: out water is pumped
+2023/05/15 00:34:15	[ActiveElement]: in water is pumped
+2023/05/15 00:34:15	[ActiveElement]: out water is pumped
+2023/05/15 00:34:15	[ActiveElement]: in water is pumped
+2023/05/15 00:34:15	[ActiveElement]: out water is pumped
+2023/05/15 00:34:15	[ActiveElement]: in water is pumped
+2023/05/15 00:34:15	[ActiveElement]: out water is pumped
+2023/05/15 00:34:15	[ActiveElement]: in water is pumped
+2023/05/15 00:34:15	[ActiveElement]: out water is pumped
+2023/05/15 00:34:15	[ActiveElement]: in water is pumped
+2023/05/15 00:34:15	[Map]: water is pumped
+2023/05/15 00:34:15	[ActiveElement]: in water is pumped
+2023/05/15 00:34:15	[ActiveElement]: out water is pumped
+2023/05/15 00:34:15	[ActiveElement]: in water is pumped
+2023/05/15 00:34:15	[ActiveElement]: out water is pumped
+2023/05/15 00:34:15	[ActiveElement]: in water is pumped
+2023/05/15 00:34:15	[ActiveElement]: out water is pumped
+2023/05/15 00:34:15	[ActiveElement]: in water is pumped
+2023/05/15 00:34:15	[ActiveElement]: out water is pumped
+2023/05/15 00:34:15	[ActiveElement]: in water is pumped
+2023/05/15 00:34:15	[ActiveElement]: out water is pumped
+2023/05/15 00:34:15	[ActiveElement]: in water is pumped
+2023/05/15 00:34:15	[Map]: water is pumped
+2023/05/15 00:34:15	[SaboteurTeam] points: 30
+2023/05/15 00:34:15	[MechanicTeam] points: 135
+2023/05/15 00:34:15	[Map]: map saved as 42
