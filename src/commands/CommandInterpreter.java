@@ -184,6 +184,11 @@ public class CommandInterpreter {
                 }
                 Tester.currentTestLog = null;
                 break;
+            case "set_in_out":
+                    MapElement m = Map.getInstance().getElement(splits[1]);
+                    m.setInput(Map.getInstance().getPipe(splits[2]));
+                    m.setOutput(Map.getInstance().getPipe(splits[3]));
+                    break;
             default:
                 break;
         }

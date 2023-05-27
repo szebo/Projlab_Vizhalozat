@@ -7,16 +7,22 @@
 [Pump1]: Pipe1 has been attached
 [Pump1]: Pipe2 has been attached
 [Pump2]: Pipe3 has been attached
-[Saboteur1]: created
 [Mechanic1]: created
-[Saboteur1]: position set to Pump1
-[Mechanic1]: position set to Pump2
+[Mechanic2]: created
+[Mechanic1]: position set to Pump1
+[Mechanic2]: position set to Pump2
 [Game]: forcefully started
-[Saboteur1]: Pipe1 picked up
-[Saboteur1]: turn ended
+Pipe1
+Pipe2
 [Mechanic1]: Pipe1 picked up
 [Mechanic1]: turn ended
-[Pipe2]: Saboteur1 moved
-[Saboteur1]: turn ended
-[Pipe3]: Mechanic1 moved
+Pipe1
+Pipe3
+[Mechanic2]: Pipe1 picked up
+[Mechanic2]: turn ended
+Pipe2
+[Pipe2]: Mechanic1 moved
 [Mechanic1]: turn ended
+Pipe3
+[Pipe3]: Mechanic2 moved
+[Mechanic2]: turn ended

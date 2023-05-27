@@ -3,7 +3,6 @@ package main.map;
 import main.interfaces.IControllable;
 import main.logging.Logger;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -98,7 +97,7 @@ public abstract class ActiveElement extends MapElement implements IControllable 
 
     @Override
     public MapElement[] getNeighbours() {
-        return pipes.toArray(new MapElement[pipes.size()]);
+        return pipes.toArray(new MapElement[0]);
     }
 
     //TODO Control függvény megvalósítása

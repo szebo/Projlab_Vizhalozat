@@ -13,12 +13,12 @@ import java.util.Objects;
 
 public class Map implements Updatable {
 
-    private List<MapElement> mapElements;
-    private List<IControllable> controllableMapElements;
-    private List<Updatable> updatableMapElements;
-    private List<Pipe> pipeList;
-    private List<ActiveElement> activeElements;
-    private List<Spring> springs;
+    private final List<MapElement> mapElements;
+    private final List<IControllable> controllableMapElements;
+    private final List<Updatable> updatableMapElements;
+    private final List<Pipe> pipeList;
+    private final List<ActiveElement> activeElements;
+    private final List<Spring> springs;
     private static Map instance = null;
     private int startPositionCounter = 0;
     private Map(){
@@ -55,13 +55,13 @@ public class Map implements Updatable {
     {
         ae.pumpWater();
         List<Pipe> outputPipes = ae.getOutputPipes();
-        Logger.log("console.txt", "[ActiveElement]: in water is pumped", true);
+        Logger.log("log.txt", "[ActiveElement]: in water is pumped", false);
         if(outputPipes != null) {
             for (Pipe p : outputPipes) {
                 MapElement[] meArray = p.getNeighbours();
                 for (MapElement me : meArray) {
                     if (me != null && me != ae) {
-                        Logger.log("console.txt", "[ActiveElement]: out water is pumped", true);
+                        Logger.log("log.txt", "[ActiveElement]: out water is pumped", false);
                         pumpWater((ActiveElement) me);
                     }
                 }
@@ -69,19 +69,10 @@ public class Map implements Updatable {
         }
     }
 
-    public void storeNewMapElement(MapElement element){ mapElements.add(element); }
-
-    public void removeElement(MapElement element) { mapElements.remove(element); }
-
     //--------------------------------------------------------------
     //B Terv
     public void addActive(ActiveElement element) { controllableMapElements.add(element); }
-
-    public void removeActive(ActiveElement element) { controllableMapElements.remove(element); }
-
     //--------------------------------------------------------------
-
-    public void addUpdatable(Updatable element) { updatableMapElements.add(element); }
 
     public void update(){
         for(Updatable ume : updatableMapElements)
@@ -90,45 +81,37 @@ public class Map implements Updatable {
         }
     }
 
-    public void control()
-    {
-        for(IControllable cme : controllableMapElements)
-        {
-            cme.pumpWater();
-        }
-    }
-
     public void create(String type){
-        switch (type){
-            case "Pump":
+        switch (type) {
+            case "Pump" -> {
                 Pump pump = new Pump();
                 mapElements.add(pump);
                 controllableMapElements.add(pump);
                 activeElements.add(pump);
-                Logger.log("console.txt", "[Map]: "+pump.getLogID()+" has been created", true);
-                break;
-            case "Cistern":
+                Logger.log("console.txt", "[Map]: " + pump.getLogID() + " has been created", true);
+            }
+            case "Cistern" -> {
                 Cistern cistern = new Cistern();
                 mapElements.add(cistern);
                 controllableMapElements.add(cistern);
                 activeElements.add(cistern);
-                Logger.log("console.txt", "[Map]: "+cistern.getLogID()+" has been created", true);
-                break;
-            case "Spring":
+                Logger.log("console.txt", "[Map]: " + cistern.getLogID() + " has been created", true);
+            }
+            case "Spring" -> {
                 Spring spring = new Spring();
                 mapElements.add(spring);
                 controllableMapElements.add(spring);
                 activeElements.add(spring);
                 springs.add(spring);
-                Logger.log("console.txt", "[Map]: "+spring.getLogID()+" has been created", true);
-                break;
-            case "Pipe":
+                Logger.log("console.txt", "[Map]: " + spring.getLogID() + " has been created", true);
+            }
+            case "Pipe" -> {
                 Pipe pipe = new Pipe();
                 mapElements.add(pipe);
                 updatableMapElements.add(pipe);
                 pipeList.add(pipe);
-                Logger.log("console.txt", "[Map]: "+pipe.getLogID()+" has been created", true);
-                break;
+                Logger.log("console.txt", "[Map]: " + pipe.getLogID() + " has been created", true);
+            }
         }
     }
 
@@ -142,29 +125,29 @@ public class Map implements Updatable {
                 if (!line.contains("ActiveElements") && !line.contains("Pipes")) {
                     String[] splits = line.split(",");
                     if (readingElements) {
-                        switch(splits[0]) {
-                            case "Pump":
+                        switch (splits[0]) {
+                            case "Pump" -> {
                                 Pump pump = new Pump(Integer.parseInt(splits[1]));
                                 mapElements.add(pump);
                                 controllableMapElements.add(pump);
                                 activeElements.add(pump);
                                 Logger.log("console.txt", "[Map]: " + pump.getLogID() + " has been created", true);
-                                break;
-                            case "Cistern":
+                            }
+                            case "Cistern" -> {
                                 Cistern cistern = new Cistern();
                                 mapElements.add(cistern);
                                 controllableMapElements.add(cistern);
                                 activeElements.add(cistern);
                                 Logger.log("console.txt", "[Map]: " + cistern.getLogID() + " has been created", true);
-                                break;
-                            case "Spring":
+                            }
+                            case "Spring" -> {
                                 Spring spring = new Spring();
                                 mapElements.add(spring);
                                 controllableMapElements.add(spring);
                                 activeElements.add(spring);
                                 springs.add(spring);
                                 Logger.log("console.txt", "[Map]: " + spring.getLogID() + " has been created", true);
-                                break;
+                            }
                         }
                     } else {
                         Pipe pipe = new Pipe(Integer.parseInt(splits[2]));
@@ -273,3 +256,24 @@ public class Map implements Updatable {
         pipeList.clear();
     }
 }
+
+/*
+DUMP
+
+public void storeNewMapElement(MapElement element){ mapElements.add(element); }
+
+public void removeElement(MapElement element) { mapElements.remove(element); }
+
+B-TERV
+public void removeActive(ActiveElement element) { controllableMapElements.remove(element); }
+
+public void addUpdatable(Updatable element) { updatableMapElements.add(element); }
+
+public void control()
+    {
+        for(IControllable cme : controllableMapElements)
+        {
+            cme.pumpWater();
+        }
+    }
+ */

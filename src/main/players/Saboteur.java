@@ -1,9 +1,7 @@
 package main.players;
 
 import commands.CommandInterpreter;
-import main.Main;
 import main.logging.Logger;
-import main.map.MapElement;
 
 import java.util.Scanner;
 
@@ -59,12 +57,8 @@ public class Saboteur extends Player {
 
     public void doCommand(String playerInput){
         switch (playerInput) {
-            case "break", "move", "make_slippery", "make_sticky":
-                CommandInterpreter.runCommand(playerInput,  this);
-                break;
-            default:
-                Logger.log("console.txt","[System]: Thats not a valid command", true);
-                break;
+            case "break", "move", "make_slippery", "make_sticky" -> CommandInterpreter.runCommand(playerInput, this);
+            default -> Logger.log("console.txt", "[System]: Thats not a valid command", true);
         }
     }
 

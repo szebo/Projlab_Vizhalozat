@@ -1,7 +1,5 @@
 package main.map;
 
-import main.logging.Logger;
-
 import java.util.ArrayList;
 import java.util.List;
 

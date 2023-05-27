@@ -52,9 +52,9 @@ public class Pump extends ActiveElement {
         setBroken(true);
     }
 
-    /**
-     * Getter
-     * @return input cső
+    /*
+      Getter
+      @return input cső
      */
     public Pipe getInput() {
         return input;
@@ -137,7 +137,7 @@ public class Pump extends ActiveElement {
 
     public List<Pipe> getOutputPipes()
     {
-        ArrayList<Pipe> ret = new ArrayList<Pipe>();
+        ArrayList<Pipe> ret = new ArrayList<>();
         ret.add(output);
         return ret;
     }

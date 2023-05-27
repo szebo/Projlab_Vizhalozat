@@ -7,5 +7,6 @@ attach Pipe1 Spring1
 attach Pipe1 Pump1
 attach Pipe2 Pump1
 attach Pipe2 Cistern1
+set_in_out Pump1 Pipe1 Pipe2
 debug_break Pump1
 flow 3

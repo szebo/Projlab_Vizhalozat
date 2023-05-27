@@ -188,7 +188,7 @@ public abstract class MapElement {
 
     /**
      * Visszaadja az objektum azonosító számát.
-     * @return
+     * @return A MapElement azonosítója.
      */
     public int getID(){
         return this.ID;
@@ -198,7 +198,7 @@ public abstract class MapElement {
 
     /**
      * A leszármazott osztálytól függően visszaad egy Stringet az objektum összes elérhető információjáról.
-     * @return
+     * @return Információ a leszármazottakból.
      */
     public abstract String printInfo();
 
@@ -216,4 +216,14 @@ public abstract class MapElement {
     public boolean checkUnbreakable(){return unbreakableFor > 0;}
 
     public void newPipe(){}
+
+    public void setOutput(Pipe output) {}
+
+    public void setInput(Pipe input) {}
+
+    /**
+     * Visszaadja a rajta álló játékosok listáját
+     * @return Rajta álló játékosok listája
+     * **/
+    public List<Player> getPlayers(){return players;}
 }

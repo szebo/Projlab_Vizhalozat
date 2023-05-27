@@ -27,6 +27,8 @@ public abstract class Player {
         this.stuck = stuck;
     }
 
+    public int getStuck(){return stuck;}
+
     protected int stuck;
 
     /**
@@ -78,6 +80,7 @@ public abstract class Player {
     public void step(MapElement element){
         Objects.requireNonNull(element, "Null értékű paramétert kapott a step!");
         if(stuck != 0){
+            stuck--;
             return;
         }
         if(element.acceptPlayer(this) && this.stepsLeft > 0) {
@@ -95,6 +98,7 @@ public abstract class Player {
     public void placePump(){}
     public void pickUpPipe(Pipe pipe){}
     public void pickUpPump(){}
+    public void doAction(){}
 
     /**
      * Leszármazott osztálytól függően visszaad egy stringet az osztály nevével és az osbejtum azonosítójával

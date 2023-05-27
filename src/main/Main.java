@@ -1,24 +1,27 @@
 package main;
 
 import commands.CommandInterpreter;
-import main.map.Map;
+import main.graphics.GUIManager;
+import main.windowing.Window;
 
-import java.io.Console;
+import javax.swing.*;
 import java.util.Scanner;
 
 public class Main {
-    public static boolean exit = false;
+    //public static boolean exit = false;
 
     public static String rootfolder;
     public static void main(String[] args) {
         rootfolder = System.getProperty("user.dir");
         System.out.println(rootfolder);
-        Scanner scanner = new Scanner(System.in);
+        Window window = new Window();
+        window.setVisible(true);
+        /*Scanner scanner = new Scanner(System.in);
         while(scanner.hasNextLine()) {
            String cmd = scanner.nextLine();
            CommandInterpreter.runCommand(cmd, null);
         }
-        scanner.close();
+        scanner.close();*/
         //Tester.runTest();
         //TestController.runTests();
     }

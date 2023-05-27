@@ -12,9 +12,9 @@ create_mechanic
 setplayerposition Mechanic1 Pump1
 setplayerposition Mechanic2 Pump2
 force_start
-Mechanic1 pickup Pipe1
+Mechanic1 pickup pipe Pipe1
 Mechanic1 end_turn
-Mechanic2 pickup Pipe1
+Mechanic2 pickup pipe Pipe1
 Mechanic2 end_turn
 Mechanic1 move Pipe2
 Mechanic1 end_turn

@@ -33,7 +33,7 @@ public class SaboteurTeam {
     public void addPoints(int point)
     {
         points+=point;
-        Logger.log("log.txt","Points added the Saboteurs currently have "+ points+" points", true);
+        Logger.log("log.txt","Points added the Saboteurs currently have "+ points+" points", false);
     }
 
     public Saboteur getSaboteur()

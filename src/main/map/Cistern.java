@@ -22,11 +22,7 @@ public class Cistern extends ActiveElement {
         pipes = new ArrayList<>();
         players = new ArrayList<>();
         pumpsInReserve = new ArrayList<>();
-        for(int i = 0; i < 50; i++){
-            pumpsInReserve.add(new Pump());
-        }
         this.ID = nextID++;
-        //Logger.log("console.txt", "["+getLogID()+"]: created", true);
     }
 
     /**
@@ -42,8 +38,8 @@ public class Cistern extends ActiveElement {
      * @param mechanic a mechanic akinek átadjuk a pumpát
      */
     public void givePump(Mechanic mechanic){
-        mechanic.addPumpToInventory(pumpsInReserve.get(0));
-        pumpsInReserve.remove(0);
+        Pump p = new Pump();
+        mechanic.addPumpToInventory(p);
         Logger.log("log.txt", "Pump given to Mechanic", false);
     }
 
