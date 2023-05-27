@@ -15,12 +15,13 @@ public class Window extends JFrame implements ActionListener, KeyListener, Compo
     private CardLayout layout;
 
     public Window(){
+        setResizable(false); //Optimized to 1080p
         mainPanel = new JPanel();
         layout = new CardLayout();
         mainPanel.setLayout(layout);
         mainMenu = new MainMenu(this);
         optionsMenu = new OptionsMenu(this);
-        newGameMenu = new NewGameMenu();
+        newGameMenu = new NewGameMenu(this);
         pauseMenu = new PauseMenu(this);
         gameView = new GameView(this);
         endScreen = new EndScreen();
@@ -71,6 +72,9 @@ public class Window extends JFrame implements ActionListener, KeyListener, Compo
             switchPanel("MainMenu");
         }
         else if(e.getSource().equals(gameView.menu)){
+            switchPanel("Pause");
+        }
+        else if(e.getSource().equals(newGameMenu.bBack)){
             switchPanel("MainMenu");
         }
     }

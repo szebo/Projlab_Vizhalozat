@@ -4,6 +4,7 @@ import main.Controller;
 import main.map.Cistern;
 import main.map.MapElement;
 import main.players.Mechanic;
+import main.players.Player;
 
 import java.awt.*;
 import java.awt.event.MouseEvent;
@@ -51,5 +52,10 @@ public class CisternGUIObject extends GUIObject{
     @Override
     public MapElement getElement() {
         return cistern;
+    }
+
+    @Override
+    public Player getPlayer() {
+        return null;
     }
 }

@@ -2,6 +2,7 @@ package main.graphics;
 
 import main.map.MapElement;
 import main.players.Mechanic;
+import main.players.Player;
 
 import java.awt.*;
 import java.awt.event.MouseEvent;
@@ -89,5 +90,13 @@ public class MechanicGUIObject extends GUIObject{
     @Override
     public MapElement getElement() {
         return null;
+    }
+
+    /**
+     * @return
+     */
+    @Override
+    public Player getPlayer() {
+        return mechanic;
     }
 }
