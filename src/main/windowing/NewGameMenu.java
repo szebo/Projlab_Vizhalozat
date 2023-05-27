@@ -24,7 +24,7 @@ public class NewGameMenu extends JPanel implements ListSelectionListener {
         if (files != null) {
             for (File file : files) {
                 if (file.isFile()) {
-                    fileNames.add(file.getName());
+                    fileNames.add(file.getName().substring(0, file.getName().lastIndexOf('.')));
                 }
             }
         }
@@ -32,13 +32,14 @@ public class NewGameMenu extends JPanel implements ListSelectionListener {
         return fileNames;
     }
 
-    JList lMapsList;
+    JList<Object> lMapsList;
     JButton bBack, bStart;
     JPanel pList, pButtons, pCentralize;
 
     public NewGameMenu(Window window){
         setLayout(new GridBagLayout());
         setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
+        setBackground(new Color(0,180, 255));
 
         bBack = new JButton("Back");
         bStart = new JButton("Start");
@@ -50,7 +51,7 @@ public class NewGameMenu extends JPanel implements ListSelectionListener {
         pButtons = new JPanel();
         pCentralize = new JPanel();
 
-        lMapsList = new JList(mapFiles.toArray());
+        lMapsList = new JList<>(mapFiles.toArray());
         lMapsList.addListSelectionListener(this);
         lMapsList.setSelectionMode(ListSelectionModel.SINGLE_INTERVAL_SELECTION);
         lMapsList.setLayoutOrientation(JList.VERTICAL);

@@ -1,5 +1,7 @@
 package main.windowing;
 
+import main.map.Map;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -15,7 +17,7 @@ public class Window extends JFrame implements ActionListener, KeyListener, Compo
     private CardLayout layout;
 
     public Window(){
-        setResizable(false); //Optimized to 1080p
+        setResizable(false); //Optimized to 720p
         mainPanel = new JPanel();
         layout = new CardLayout();
         mainPanel.setLayout(layout);
@@ -76,6 +78,10 @@ public class Window extends JFrame implements ActionListener, KeyListener, Compo
         }
         else if(e.getSource().equals(newGameMenu.bBack)){
             switchPanel("MainMenu");
+        }
+        else if(e.getSource().equals(newGameMenu.bStart)){
+            //Map.getInstance().loadMap(newGameMenu.lMapsList.getSelectedValue().toString()); Todo: Működne, csak nem jó a file.
+            switchPanel("GameView");
         }
     }
 
