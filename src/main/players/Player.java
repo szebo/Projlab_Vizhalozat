@@ -23,6 +23,11 @@ public abstract class Player {
     protected int stepsLeft = 2;
     protected int numberOfActions = 2;
 
+    //Type of actions, nothing by default
+    protected enum Action {step, configure, breakelement, heal, sticky, slippery, place, pickup, nothing}
+
+    protected Action currentAction;
+
     public void setStuck(int stuck) {
         this.stuck = stuck;
     }

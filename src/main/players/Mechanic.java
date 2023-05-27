@@ -4,6 +4,9 @@ import commands.CommandInterpreter;
 import main.logging.Logger;
 import main.map.Pipe;
 import main.map.Pump;
+
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.util.*;
 
 public class Mechanic extends Player {
@@ -121,6 +124,7 @@ public class Mechanic extends Player {
         return stringBuilder.toString();
     }
 
+    /*
     public void doAction()
     {
         Logger.log("console.txt", getLogID()+"'s turn", true);
@@ -130,6 +134,51 @@ public class Mechanic extends Player {
             String playerInput = scanner.nextLine();
             //scanner.close();
             doCommand(playerInput);
+            numberOfActions--;
+        }
+        numberOfActions = 2;
+    }
+    */
+
+    KeyListener key = new KeyListener() {
+        @Override
+        public void keyTyped(KeyEvent e) {
+
+        }
+
+        @Override
+        public void keyPressed(KeyEvent e) {
+
+
+        }
+
+        @Override
+        public void keyReleased(KeyEvent e) {
+            int key = e.getKeyCode();
+            switch (key) {
+                case KeyEvent.VK_SPACE -> currentAction = Action.step;
+                case KeyEvent.VK_A -> currentAction = Action.heal;
+                case KeyEvent.VK_D -> currentAction = Action.breakelement;
+                case KeyEvent.VK_S -> currentAction = Action.configure;
+                case KeyEvent.VK_Q -> currentAction = Action.pickup;
+                case KeyEvent.VK_W -> currentAction = Action.place;
+                case KeyEvent.VK_E -> currentAction = Action.sticky;
+
+            }
+        }
+    };
+    public void doAction()
+    {
+        Logger.log("log.txt", getLogID()+"'s turn", false);
+        while(numberOfActions > 0) {
+            Logger.log("log.txt", numberOfActions+" actions left", false);
+
+            while(currentAction == Action.nothing) continue;
+
+
+            //TODO Switch case bevezetése hogy melyik action itt mit hív meg.
+            //DoCommand()
+            //doCommand(playerInput);
             numberOfActions--;
         }
         numberOfActions = 2;

@@ -13,7 +13,7 @@ public class SpringGUIObject extends GUIObject{
 
     private Polygon triangle;
 
-    public SpringGUIObject(Spring spring){
+    public SpringGUIObject(Spring spring, Point point){
         this.spring = spring;
         triangle = new Polygon();
         triangle.addPoint(7, 0);

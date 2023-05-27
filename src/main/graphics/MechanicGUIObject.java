@@ -27,10 +27,8 @@ public class MechanicGUIObject extends GUIObject{
         g.setColor(Color.BLACK);
         g.drawOval(position.x, position.y, 10, 10);
 
-        //TODO Nemtudom hogy így tervezzük e ezeknek a függvényeknek a meghívását?
         if(mechanic.getStuck() > 0) drawStuck(position, g);
         if(mechanic.getPipeInHand() != null) drawPipeInHand(position, g);
-
     }
 
    public void drawStuck(Point point, Graphics g){

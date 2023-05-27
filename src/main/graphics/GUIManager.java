@@ -29,14 +29,6 @@ public class GUIManager {
         return instance;
     }
 
-    public String getGUIMessage(){
-        return guiMessage;
-    }
-
-    public void addGUIMessage(String guiMessage){
-        this.guiMessage = guiMessage;
-        notifyAll();
-    }
 
     public void createPipeGUIObject(Pipe pipe){
         guiObjects.add(new PipeGUIObject(pipe));
@@ -47,7 +39,7 @@ public class GUIManager {
     }
 
     public void createSpringGUIObject(Spring spring){
-        guiObjects.add(new SpringGUIObject(spring));
+        guiObjects.add(new SpringGUIObject(spring, new Point(10, 10))); //TODO IDE HELYES SZÁM KELL
     }
 
     public void createCisternGUIObject(Cistern cistern, Point position){
