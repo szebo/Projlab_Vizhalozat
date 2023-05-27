@@ -1,6 +1,9 @@
 package main.graphics;
 
+import main.Controller;
 import main.map.Cistern;
+import main.map.MapElement;
+import main.players.Mechanic;
 
 import java.awt.*;
 import java.awt.event.MouseEvent;
@@ -21,8 +24,8 @@ public class CisternGUIObject extends GUIObject{
     @Override
     public void onClick(MouseEvent e) {
         if(rectangle.contains(e.getPoint())) {
-            if (cistern.getPlayers().contains(/*hívó játékos*/)) {
-                cistern.givePump(/*hívó játékos*/);     //Honnan tudjuk, melyik játékos kattintotta/van soron? Global lehetne a körön lévő játékos
+            if (cistern.getPlayers().contains(Controller.currentPlayer)) {
+                cistern.givePump((Mechanic) Controller.currentPlayer);    //TODO Kurva castolásra ki kell találni valamit, csak már baszta a szemem a piros aláhúzás
             }
         }
     }
@@ -43,5 +46,10 @@ public class CisternGUIObject extends GUIObject{
     @Override
     public Point getPosition() {
         return position;
+    }
+
+    @Override
+    public MapElement getElement() {
+        return cistern;
     }
 }

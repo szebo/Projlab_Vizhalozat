@@ -1,5 +1,7 @@
 package main.graphics;
 
+import main.map.MapElement;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseEvent;
@@ -15,6 +17,7 @@ public abstract class GUIObject implements MouseListener {
     public abstract void onClick(MouseEvent e);
     public abstract void draw(Graphics g);
     public abstract Point getPosition();
+    public abstract MapElement getElement();
 
     @Override
     public void mousePressed(MouseEvent e){}

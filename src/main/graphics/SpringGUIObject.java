@@ -1,5 +1,6 @@
 package main.graphics;
 
+import main.map.MapElement;
 import main.map.Spring;
 
 import java.awt.*;
@@ -57,5 +58,10 @@ public class SpringGUIObject extends GUIObject{
     @Override
     public Point getPosition() {
         return position;
+    }
+
+    @Override
+    public MapElement getElement() {
+        return spring;
     }
 }

@@ -1,5 +1,7 @@
 package main.graphics;
 
+import main.Controller;
+import main.map.MapElement;
 import main.map.Pipe;
 
 import javax.swing.*;
@@ -12,17 +14,20 @@ public class PipeGUIObject extends GUIObject{
     private Point position;
 
     private Rectangle rectangle;
-    private JLabel numbers[] = new JLabel[3];       //TODO biztos lehet elegánsabban is
+    private JLabel[] numbers = new JLabel[3];       //TODO biztos lehet elegánsabban is
 
     public PipeGUIObject(Pipe pipe){
         this.pipe = pipe;
         rectangle = new Rectangle();
+        for(int i = 0; i < 3; i++){
+            numbers[i] = new JLabel();
+        }
     }
 
     public void onClick(MouseEvent e) {
         if(rectangle.contains(e.getPoint())){
-             if(pipe.acceptPlayer(/*hívó játékos*/)){
-                 pipe.getPlayers().get(0).
+             if(pipe.acceptPlayer(Controller.currentPlayer)){
+
              }
         }
     }
@@ -33,16 +38,16 @@ public class PipeGUIObject extends GUIObject{
             drawBroken(this.position, g);
         }
         if (pipe.checkSlippery()){
-            numbers[1].setText(Integer.toString(pipe.getSlipperyFor()));
-            numbers[1].setForeground(Color.ORANGE);
+            numbers[0].setText(Integer.toString(pipe.getSlipperyFor()));
+            numbers[0].setForeground(Color.ORANGE);
         }
         if (pipe.checkSticky()){
-            numbers[0].setText(Integer.toString(pipe.getStickyFor()));
-            numbers[0].setForeground(Color.GREEN);
+            numbers[1].setText(Integer.toString(pipe.getStickyFor()));
+            numbers[1].setForeground(Color.GREEN);
         }
         if (pipe.checkUnbreakable()){
-            numbers[3].setText(Integer.toString(pipe.getUnbreakableFor()));
-            numbers[3].setForeground(Color.ORANGE);
+            numbers[2].setText(Integer.toString(pipe.getUnbreakableFor()));
+            numbers[2].setForeground(Color.ORANGE);
         }
         g.setColor(Color.BLACK);
         g.fillRect(rectangle.x, rectangle.y, rectangle.width, rectangle.height);
@@ -60,5 +65,10 @@ public class PipeGUIObject extends GUIObject{
     @Override
     public Point getPosition() {
         return position;
+    }
+
+    @Override
+    public MapElement getElement() {
+        return pipe;
     }
 }

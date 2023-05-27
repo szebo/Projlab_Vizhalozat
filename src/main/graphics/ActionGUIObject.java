@@ -1,5 +1,7 @@
 package main.graphics;
 
+import main.map.MapElement;
+
 import java.awt.*;
 import java.awt.event.MouseEvent;
 
@@ -25,5 +27,10 @@ public class ActionGUIObject extends GUIObject{
 
     @Override
     public void draw(Graphics g){
+    }
+
+    @Override
+    public MapElement getElement() {
+        return null;
     }
 }

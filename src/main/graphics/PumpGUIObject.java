@@ -1,5 +1,8 @@
 package main.graphics;
 
+import main.Controller;
+import main.logging.Logger;
+import main.map.MapElement;
 import main.map.Pump;
 
 import javax.swing.*;
@@ -22,14 +25,18 @@ public class PumpGUIObject extends GUIObject{
     @Override
     public void onClick(MouseEvent e) {
         if(rectangle.contains(e.getPoint())){
-            if(pump.getPlayers().contains(/*hívó játékos*/)){
+            if(pump.getPlayers().contains(Controller.currentPlayer)){
                 ButtonGroup buttonGroup = new ButtonGroup();
                 buttonGroup.add(new JButton("Configure"));
-                buttonGroup.
+                //buttonGroup.
             }
             else {
-                if (pump.acceptPlayer(/*hívó játékos*/)){
-                    player.drawPosition();
+                if (pump.acceptPlayer(Controller.currentPlayer)){
+                    GUIObject guiObject = GUIManager.getInstance().getGUIObjectByID(pump.getLogID());
+                    if(guiObject != null)
+                        position = GUIManager.getInstance().getGUIObjectByID(pump.getLogID()).getPosition();
+                    else
+                        Logger.log("log.txt", "Non-existing element given!", false);
                 }
             }
 
@@ -96,5 +103,10 @@ public class PumpGUIObject extends GUIObject{
     @Override
     public Point getPosition() {
         return position;
+    }
+
+    @Override
+    public MapElement getElement() {
+        return pump;
     }
 }

@@ -1,5 +1,6 @@
 package main.graphics;
 
+import main.map.MapElement;
 import main.players.Saboteur;
 
 import java.awt.*;
@@ -63,6 +64,11 @@ public class SaboteurGUIObject extends GUIObject{
 
     @Override
     public Point getPosition() {
+        return null;
+    }
+
+    @Override
+    public MapElement getElement() {
         return null;
     }
 }

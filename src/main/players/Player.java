@@ -98,6 +98,7 @@ public abstract class Player {
     public void placePump(){}
     public void pickUpPipe(Pipe pipe){}
     public void pickUpPump(){}
+    public void doAction(){}
 
     /**
      * Leszármazott osztálytól függően visszaad egy stringet az osztály nevével és az osbejtum azonosítójával

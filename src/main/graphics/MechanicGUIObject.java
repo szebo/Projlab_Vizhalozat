@@ -1,5 +1,6 @@
 package main.graphics;
 
+import main.map.MapElement;
 import main.players.Mechanic;
 
 import java.awt.*;
@@ -85,5 +86,10 @@ public class MechanicGUIObject extends GUIObject{
     @Override
     public Point getPosition() {
         return position;
+    }
+
+    @Override
+    public MapElement getElement() {
+        return null;
     }
 }

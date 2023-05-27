@@ -69,4 +69,12 @@ public class GUIManager {
         view.repaint();
     }
 
+    public GUIObject getGUIObjectByID(String id){
+        for(GUIObject object : guiObjects){
+            if(object.getElement().getLogID().equals(id))
+                return object;
+        }
+        return null;
+    }
+
 }
