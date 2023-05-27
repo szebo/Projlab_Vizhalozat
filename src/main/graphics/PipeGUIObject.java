@@ -17,16 +17,17 @@ public class PipeGUIObject extends GUIObject{
 
     private Rectangle rectangle;
 
-    public PipeGUIObject(Pipe pipe){
+    public PipeGUIObject(Pipe pipe, Point point){
+        position = point;
         this.pipe = pipe;
-        rectangle = new Rectangle();
+        /* Itt kellene beállítani, hogy milyen messze vannak a szélei a becsatolandó pumpáktól*/
+        rectangle = new Rectangle(position.x, position.y, 100, 1);      //TODO megfelelő szélesség beállítása
     }
 
     @Override
     public void onClick(MouseEvent e) {
         if(rectangle.contains(e.getPoint())){
              if(pipe.acceptPlayer(Controller.currentPlayer)){
-                GUIManager.getInstance().addGUIMessage("");
              }
         }
     }

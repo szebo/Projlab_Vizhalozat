@@ -29,13 +29,12 @@ public class GUIManager {
         return instance;
     }
 
-
-    public void createPipeGUIObject(Pipe pipe){
-        guiObjects.add(new PipeGUIObject(pipe));
+    public void createPipeGUIObject(Pipe pipe, Point point){
+        guiObjects.add(new PipeGUIObject(pipe, point));
     }
 
-    public void createPumpGUIObject(Pump pump){
-        guiObjects.add(new PumpGUIObject(pump));
+    public void createPumpGUIObject(Pump pump, Point point){
+        guiObjects.add(new PumpGUIObject(pump, point));
     }
 
     public void createSpringGUIObject(Spring spring){
@@ -76,7 +75,4 @@ public class GUIManager {
         }
         return null;
     }
-
-
-
 }

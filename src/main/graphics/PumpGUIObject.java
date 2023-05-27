@@ -3,6 +3,7 @@ package main.graphics;
 import main.Controller;
 import main.logging.Logger;
 import main.map.MapElement;
+import main.map.Pipe;
 import main.map.Pump;
 import main.players.Player;
 
@@ -15,10 +16,11 @@ public class PumpGUIObject extends GUIObject{
     private Pump pump;
     private Point position;
 
-    //Ez a négyzet kell a kattintás helyének ellenőrzésére.
+    /*Ez a négyzet kell a kattintás helyének ellenőrzésére */
     private Rectangle rectangle;
 
-    public PumpGUIObject(Pump pump){
+    public PumpGUIObject(Pump pump, Point point){
+        position = point;
         this.pump = pump;
         rectangle = new Rectangle();
     }
@@ -40,7 +42,6 @@ public class PumpGUIObject extends GUIObject{
                         Logger.log("log.txt", "Non-existing element given!", false);
                 }
             }
-
         }
     }
 
@@ -52,6 +53,28 @@ public class PumpGUIObject extends GUIObject{
         else drawWorking(position, g);
     }
 
+    /**
+     * A cső végét hozzácsatolja a GUIn a pumpához
+     * @return a becsatlakozás pontja
+     * */
+    Point getAttachPoint(PipeGUIObject pipe){
+        Point attachPoint = new Point();
+       if( pipe.getPosition().x -this.position.x < 0){
+           attachPoint.x = this.position.x - 1;
+       } else {
+           attachPoint.x = this.position.x + 1;
+
+       }
+
+        if( pipe.getPosition().y -this.position.y < 0){
+            attachPoint.y = this.position.y - 1;
+        } else {
+            attachPoint.y = this.position.y + 1;
+        }
+
+        return attachPoint;
+    }
+
     private void drawWorking(Point point, Graphics g){
         //Ide raktam egy ilyen kis zöld kört jelezvén hogy aktív a pumpa, de lehet faszság, és elég az input output
         g.setColor(Color.green);
@@ -59,17 +82,20 @@ public class PumpGUIObject extends GUIObject{
 
         if(pump.getInput() != null) {
             g.setColor(Color.yellow);
+            GUIObject GUIInputPipe = GUIManager.getInstance().getGUIObjectByID(pump.getInput().getLogID());
 
-            //TODO Itt valahogy meg kéne kapni a koordinátáját a csőnek, hogy abba az irányba el tudjunk helyezni egy
-            // Színes kört a köríven, mint input jelzés
+            /* TODO Kiszámolja a 2 pont közti különbséget, majd annak irányába megy a különbséggel arányosan. Csak sugárnyit kéne mozognia */
+            g.drawOval((GUIInputPipe.getPosition().x-this.position.x) + this.position.x ,(GUIInputPipe.getPosition().y-this.position.y) + this.position.x ,  5, 5 );
+
         }
 
-        if(pump.getOutput() != null){
+        if(pump.getOutput() != null) {
             Color purple = new Color(102, 0, 153);
             g.setColor(purple);
+            GUIObject GUIInputPipe = GUIManager.getInstance().getGUIObjectByID(pump.getInput().getLogID());
 
-            //TODO Ugyanaz mint fenn
-
+            /* TODO Kiszámolja a 2 pont közti különbséget, majd annak irányába megy a különbséggel arányosan. Csak sugárnyit kéne mozognia */
+            g.drawOval((GUIInputPipe.getPosition().x-this.position.x) + this.position.x ,(GUIInputPipe.getPosition().y-this.position.y) + this.position.x ,  5, 5 );
         }
     }
 
