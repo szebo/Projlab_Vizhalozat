@@ -1649,3 +1649,51 @@
 2023/05/15 00:34:15	[SaboteurTeam] points: 30
 2023/05/15 00:34:15	[MechanicTeam] points: 135
 2023/05/15 00:34:15	[Map]: map saved as 42
+2023/05/27 21:02:24	[Pump1]: Pipe1 has been attached
+2023/05/27 21:11:39	[Pump1]: Pipe1 has been attached
+2023/05/27 21:13:11	[Map]: map not found
+2023/05/27 21:13:13	[Map]: map not found
+2023/05/27 21:13:13	[Map]: map not found
+2023/05/27 21:14:59	[Pump1]: Pipe1 has been attached
+2023/05/27 21:17:48	[Pump1]: Pipe1 has been attached
+2023/05/27 21:17:51	[Map]: map not found
+2023/05/27 21:21:23	[Pump1]: Pipe1 has been attached
+2023/05/27 21:21:28	[Map]: Cistern2 has been created
+2023/05/27 21:21:28	[Map]: Cistern3 has been created
+2023/05/27 21:21:28	[Map]: Cistern4 has been created
+2023/05/27 21:21:28	[Map]: Cistern5 has been created
+2023/05/27 21:21:28	[Map]: Pump2 has been created
+2023/05/27 21:21:28	[Map]: Pump3 has been created
+2023/05/27 21:21:28	[Map]: Pump4 has been created
+2023/05/27 21:21:28	[Map]: Pump5 has been created
+2023/05/27 21:21:28	[Map]: Pump6 has been created
+2023/05/27 21:21:28	[Map]: Pump7 has been created
+2023/05/27 21:21:28	[Map]: Pump8 has been created
+2023/05/27 21:21:28	[Map]: Pump9 has been created
+2023/05/27 21:21:29	[Map]: Pump10 has been created
+2023/05/27 21:21:29	[Map]: Pump11 has been created
+2023/05/27 21:21:29	[Map]: Pump12 has been created
+2023/05/27 21:21:29	[Map]: Pump13 has been created
+2023/05/27 21:21:29	[Map]: Pump14 has been created
+2023/05/27 21:21:29	[Map]: Pump15 has been created
+2023/05/27 21:21:29	[Map]: Spring1 has been created
+2023/05/27 21:21:29	[Map]: Spring2 has been created
+2023/05/27 21:21:29	[Map]: Spring3 has been created
+2023/05/27 21:21:29	[Map]: Spring4 has been created
+2023/05/27 21:21:29	[Cistern2]: Pipe2 has been attached
+2023/05/27 21:22:25	[Cistern2]: Pipe3 has been attached
+2023/05/27 21:22:37	[Pump1]: Pipe1 has been attached
+2023/05/27 21:24:15	[Pump1]: Pipe1 has been attached
+2023/05/27 21:38:05	[Pump1]: Pipe1 has been attached
+2023/05/27 21:46:46	[Pump1]: Pipe1 has been attached
+2023/05/27 21:49:16	[Pump1]: Pipe1 has been attached
+2023/05/27 21:49:27	[Pump1]: Pipe1 has been attached
+2023/05/27 21:52:46	[Pump1]: Pipe1 has been attached
+2023/05/27 21:54:35	[Pump1]: Pipe1 has been attached
+2023/05/27 21:55:42	[Pump1]: Pipe1 has been attached
+2023/05/27 21:59:51	[Pump1]: Pipe1 has been attached
+2023/05/27 22:00:22	[Pump1]: Pipe1 has been attached
+2023/05/27 22:09:16	[Pump1]: Pipe1 has been attached
+2023/05/27 22:11:06	[Pump1]: Pipe1 has been attached
+2023/05/27 22:12:02	[Pump1]: Pipe1 has been attached
+2023/05/27 22:25:24	[Pump1]: Pipe1 has been attached

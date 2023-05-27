@@ -2,7 +2,6 @@ package main.windowing;
 
 import main.Controller;
 
-import javax.naming.ldap.Control;
 import javax.swing.*;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
@@ -66,9 +65,9 @@ public class OptionsMenu extends JPanel implements ChangeListener {
     }
 
     public void saveOptions(){
-        Controller.stickyForOption = stickyTurns.getValue();
-        Controller.slipperyForOption = slipperyTurns.getValue();
-        Controller.playerCount = playerNumber.getValue();
+        Controller.STICKY_FOR_OPTION = stickyTurns.getValue();
+        Controller.SLIPPERY_FOR_OPTION = slipperyTurns.getValue();
+        Controller.PLAYER_COUNT = playerNumber.getValue();
     }
 
     @Override

@@ -8,10 +8,10 @@ import main.players.SaboteurTeam;
 public class Controller {
 
     //Publikus beállítások a játékhoz
-    public static int stickyForOption = 2;
-    public static int slipperyForOption = 2;
-    public static int playerCount = 4;
-    public static Player currentPlayer = null;
+    public static int STICKY_FOR_OPTION = 2;
+    public static int SLIPPERY_FOR_OPTION = 2;
+    public static int PLAYER_COUNT = 4;
+    public static Player CURRENT_PLAYER = null;
 
     static boolean win = false;
     public static boolean randomDebug = false;
@@ -20,11 +20,11 @@ public class Controller {
         SaboteurTeam.getInstance().init();
         MechanicTeam.getInstance().init();
         while(!win) {
-            for (int i = 0; i < playerCount/2; i++) {
-                currentPlayer = SaboteurTeam.getInstance().getSaboteur();
-                currentPlayer.doAction();
-                currentPlayer = MechanicTeam.getInstance().getMechanic();
-                currentPlayer.doAction();
+            for (int i = 0; i < PLAYER_COUNT /2; i++) {
+                CURRENT_PLAYER = SaboteurTeam.getInstance().getSaboteur();
+                CURRENT_PLAYER.doAction();
+                CURRENT_PLAYER = MechanicTeam.getInstance().getMechanic();
+                CURRENT_PLAYER.doAction();
             }
             Map.getInstance().update();
             //Map.getInstance().control();

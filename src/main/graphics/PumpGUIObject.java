@@ -3,7 +3,6 @@ package main.graphics;
 import main.Controller;
 import main.logging.Logger;
 import main.map.MapElement;
-import main.map.Pipe;
 import main.map.Pump;
 import main.players.Player;
 
@@ -28,13 +27,13 @@ public class PumpGUIObject extends GUIObject{
     @Override
     public void onClick(MouseEvent e) {
         if(rectangle.contains(e.getPoint())){
-            if(pump.getPlayers().contains(Controller.currentPlayer)){
+            if(pump.getPlayers().contains(Controller.CURRENT_PLAYER)){
                 ButtonGroup buttonGroup = new ButtonGroup();
                 buttonGroup.add(new JButton("Configure"));
                 //buttonGroup.
             }
             else {
-                if (pump.acceptPlayer(Controller.currentPlayer)){
+                if (pump.acceptPlayer(Controller.CURRENT_PLAYER)){
                     GUIObject guiObject = GUIManager.getInstance().getGUIObjectByID(pump.getLogID());
                     if(guiObject != null)
                         position = GUIManager.getInstance().getGUIObjectByID(pump.getLogID()).getPosition();

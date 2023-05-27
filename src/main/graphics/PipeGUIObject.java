@@ -5,8 +5,6 @@ import main.map.MapElement;
 import main.map.Pipe;
 import main.players.Player;
 
-import javax.naming.ldap.Control;
-import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseEvent;
 
@@ -27,7 +25,7 @@ public class PipeGUIObject extends GUIObject{
     @Override
     public void onClick(MouseEvent e) {
         if(rectangle.contains(e.getPoint())){
-             if(pipe.acceptPlayer(Controller.currentPlayer)){
+             if(pipe.acceptPlayer(Controller.CURRENT_PLAYER)){
              }
         }
     }
