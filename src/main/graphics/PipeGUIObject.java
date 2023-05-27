@@ -14,14 +14,10 @@ public class PipeGUIObject extends GUIObject{
     private Point position;
 
     private Rectangle rectangle;
-    private JLabel[] numbers = new JLabel[3];       //TODO biztos lehet elegánsabban is
 
     public PipeGUIObject(Pipe pipe){
         this.pipe = pipe;
         rectangle = new Rectangle();
-        for(int i = 0; i < 3; i++){
-            numbers[i] = new JLabel();
-        }
     }
 
     public void onClick(MouseEvent e) {
@@ -38,16 +34,16 @@ public class PipeGUIObject extends GUIObject{
             drawBroken(this.position, g);
         }
         if (pipe.checkSlippery()){
-            numbers[0].setText(Integer.toString(pipe.getSlipperyFor()));
-            numbers[0].setForeground(Color.ORANGE);
+            g.setColor(Color.ORANGE);
+            g.drawString(Integer.toString(pipe.getSlipperyFor()), this.position.x, position.y);
         }
         if (pipe.checkSticky()){
-            numbers[1].setText(Integer.toString(pipe.getStickyFor()));
-            numbers[1].setForeground(Color.GREEN);
+            g.setColor(Color.GREEN);
+            g.drawString(Integer.toString(pipe.getStickyFor()), this.position.x, position.y);
         }
         if (pipe.checkUnbreakable()){
-            numbers[2].setText(Integer.toString(pipe.getUnbreakableFor()));
-            numbers[2].setForeground(Color.ORANGE);
+            g.setColor(new Color(102,51, 0));
+            g.drawString(Integer.toString(pipe.getUnbreakableFor()), this.position.x, position.y);
         }
         g.setColor(Color.BLACK);
         g.fillRect(rectangle.x, rectangle.y, rectangle.width, rectangle.height);
