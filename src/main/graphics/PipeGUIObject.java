@@ -32,24 +32,36 @@ public class PipeGUIObject extends GUIObject{
 
     @Override
     public void draw(Graphics g){
+        Graphics2D g2 = (Graphics2D) g.create();
         if(pipe.isBroken()){
-            drawBroken(this.position, g);
+            drawBroken(this.position, g2);
         }
         if (pipe.checkSlippery()){
-            g.setColor(Color.ORANGE);
-            g.drawString(Integer.toString(pipe.getSlipperyFor()), this.position.x, position.y);
+            g2.setColor(Color.ORANGE);
+            g2.drawString(Integer.toString(pipe.getSlipperyFor()), this.position.x, position.y);
         }
         if (pipe.checkSticky()){
-            g.setColor(Color.GREEN);
-            g.drawString(Integer.toString(pipe.getStickyFor()), this.position.x, position.y);
+            g2.setColor(Color.GREEN);
+            g2.drawString(Integer.toString(pipe.getStickyFor()), this.position.x, position.y);
         }
         if (pipe.checkUnbreakable()){
-            g.setColor(new Color(102,51, 0));
-            g.drawString(Integer.toString(pipe.getUnbreakableFor()), this.position.x, position.y);
+            g2.setColor(new Color(102,51, 0));
+            g2.drawString(Integer.toString(pipe.getUnbreakableFor()), this.position.x, position.y);
         }
-        g.setColor(Color.BLACK);
-        g.fillRect(rectangle.x, rectangle.y, rectangle.width, rectangle.height);
+        g2.setColor(Color.BLACK);
+        g2.fillRect(rectangle.x, rectangle.y, rectangle.width, rectangle.height);
 
+        //TODO Ez elméletileg elforgatja a téglalapot, de nem vagyok benne biztos, hogy jó
+        MapElement[] neighbours = pipe.getNeighbours();
+        Point end1 = GUIManager.getInstance().getGUIObjectByID(neighbours[0].getLogID()).getPosition();
+        Point end2 = GUIManager.getInstance().getGUIObjectByID(neighbours[1].getLogID()).getPosition();
+        double theta = Math.acos(differenceFromHorizontal(end1, end2));
+        g2.rotate(theta);
+    }
+
+    private double differenceFromHorizontal(Point p1, Point p2){
+        Point vector = new Point(p1.x-p2.x, p1.y-p2.y);
+        return vector.x;
     }
 
     private void drawWorking(Point point){

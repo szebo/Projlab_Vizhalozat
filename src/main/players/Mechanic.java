@@ -19,6 +19,7 @@ public class Mechanic extends Player {
     private static int nextID = 1;
     public Mechanic(){
         ID = nextID++;
+        currentAction = Action.nothing;
     }
 
     /**
