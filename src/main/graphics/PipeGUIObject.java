@@ -19,7 +19,7 @@ public class PipeGUIObject extends GUIObject{
         position = point;
         this.pipe = pipe;
         /* Itt kellene beállítani, hogy milyen messze vannak a szélei a becsatolandó pumpáktól*/
-        rectangle = new Rectangle(position.x, position.y, 100, 1);      //TODO megfelelő szélesség beállítása
+        rectangle = new Rectangle(position.x, position.y, 100, 3);      //TODO megfelelő szélesség beállítása
     }
 
     @Override
@@ -33,9 +33,35 @@ public class PipeGUIObject extends GUIObject{
     @Override
     public void draw(Graphics g){
         Graphics2D g2 = (Graphics2D) g.create();
-        if(pipe.isBroken()){
+
+        //Ha van benne víz, de nincs tele, akkor fekete teglalap, kis körvvonallal
+        if(pipe.getWater() != 0 && pipe.getWater() != pipe.getCapacity()){
+            g2.setColor(Color.black);
+            g2.fillRect(rectangle.x, rectangle.y, rectangle.width, rectangle.height);
+
+            g2.setColor(Color.blue);
+            g2.drawRect(rectangle.x, rectangle.y, rectangle.width, rectangle.height);
+
+        }
+
+        //Ha tele van vízzel
+        else if(pipe.getWater() == pipe.getCapacity()) {
+            g2.setColor(Color.blue);
+            g2.fillRect(rectangle.x, rectangle.y, rectangle.width, rectangle.height);
+        }
+
+        //Ha törött
+        else if(pipe.isBroken()){
             drawBroken(this.position, g2);
         }
+
+        //Minden más esetben üres, és fekete
+        else{
+            g2.setColor(Color.BLACK);
+            g2.fillRect(rectangle.x, rectangle.y, rectangle.width, rectangle.height);
+        }
+
+        //Státusz értékek a cső felett.
         if (pipe.checkSlippery()){
             g2.setColor(Color.ORANGE);
             g2.drawString(Integer.toString(pipe.getSlipperyFor()), this.position.x, position.y);
@@ -48,8 +74,7 @@ public class PipeGUIObject extends GUIObject{
             g2.setColor(new Color(102,51, 0));
             g2.drawString(Integer.toString(pipe.getUnbreakableFor()), this.position.x, position.y);
         }
-        g2.setColor(Color.BLACK);
-        g2.fillRect(rectangle.x, rectangle.y, rectangle.width, rectangle.height);
+
 
         //TODO Ez elméletileg elforgatja a téglalapot, de nem vagyok benne biztos, hogy jó
         MapElement[] neighbours = pipe.getNeighbours();

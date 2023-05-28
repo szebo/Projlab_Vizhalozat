@@ -36,6 +36,7 @@ public abstract class MapElement {
      * @param pipe a cső amit leválasztunk a MapElementről.
      */
     public abstract void detachPipe(Pipe pipe);
+    public int getWater() {return this.water;}
 
     /**
      * Abstract metódus, a cső felcsatolására szolgál a leszármazottaknál.

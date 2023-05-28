@@ -21,6 +21,7 @@ public class Mechanic extends Player {
         ID = nextID++;
         currentAction = Action.nothing;
     }
+    public Pipe getPipeInHand(){return pipeInHand;}
 
     /**
      * Ezzel a függvénnyel veszi fel a mechanic a kezébe a csövet.
@@ -161,9 +162,11 @@ public class Mechanic extends Player {
                 case KeyEvent.VK_A -> currentAction = Action.heal;
                 case KeyEvent.VK_D -> currentAction = Action.breakelement;
                 case KeyEvent.VK_S -> currentAction = Action.configure;
-                case KeyEvent.VK_Q -> currentAction = Action.pickup;
-                case KeyEvent.VK_W -> currentAction = Action.place;
+                case KeyEvent.VK_Q -> currentAction = Action.pipepickup;
+                case KeyEvent.VK_W -> currentAction = Action.pipeplace;
                 case KeyEvent.VK_E -> currentAction = Action.sticky;
+                case KeyEvent.VK_R -> currentAction = Action.pumppickup;
+                case KeyEvent.VK_F -> currentAction = Action.pumpplace;
 
             }
         }
@@ -176,15 +179,33 @@ public class Mechanic extends Player {
 
             while(currentAction == Action.nothing) continue;
 
+            switch(currentAction){
+                //case step : step(param);
+                // TODO onClick paraméternek
 
-            //TODO Switch case bevezetése hogy melyik action itt mit hív meg.
-            //DoCommand()
-            //doCommand(playerInput);
+                case heal           : mapElement.heal();
+                case breakelement   : mapElement.breakElement();
+
+                //case configure      : configurePump(param);
+                    // TODO onClick 2x paraméternek. Itt amúgy nem kéne inkább a függvénybe bekérni?
+
+                //case pipepickup     : pickUpPipe(param);
+                    // TODO onClick ből paraméter. Szintén nem egyszerűbb?
+                    // TODO Vagy ez már összemossa a grafikus részt a működéssel?
+                case pipeplace      : placePipe();
+
+                case pumppickup     : pickUpPump();
+                case pumpplace      : placePump();
+
+                case sticky         : useStickyGoo();
+            }
             numberOfActions--;
         }
         numberOfActions = 2;
     }
 
+    //TODO Ez már nem kell, ugye?
+    /*
     public void doCommand(String playerInput){
         switch (playerInput) {
             case "pickup pipe", "pickup pump", "place pipe", "place pump", "configure", "break", "move", "repair", "make_sticky" ->
@@ -192,10 +213,11 @@ public class Mechanic extends Player {
             default -> Logger.log("console.txt", "[System]: Thats not a valid command", true);
         }
     }
+     */
 
     public static void resetAfterTest(){
         nextID = 1;
     }
 
-    public Pipe getPipeInHand(){return pipeInHand;}
+
 }
