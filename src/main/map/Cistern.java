@@ -1,9 +1,11 @@
 package main.map;
 
+import main.graphics.GUIManager;
 import main.logging.Logger;
 import main.players.Mechanic;
 import main.players.MechanicTeam;
 
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,6 +25,14 @@ public class Cistern extends ActiveElement {
         players = new ArrayList<>();
         pumpsInReserve = new ArrayList<>();
         this.ID = nextID++;
+    }
+
+    public Cistern(int x, int y){
+        pipes = new ArrayList<>();
+        players = new ArrayList<>();
+        pumpsInReserve = new ArrayList<>();
+        this.ID = nextID++;
+        GUIManager.getInstance().createCisternGUIObject(this, new Point(x, y));
     }
 
     /**

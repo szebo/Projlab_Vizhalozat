@@ -1,5 +1,8 @@
 package main.map;
 
+import main.graphics.GUIManager;
+
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,6 +18,14 @@ public class Spring extends ActiveElement {
         pipes = new ArrayList<>();
         players = new ArrayList<>();
         this.ID = nextID++;
+        //Logger.log("console.txt", "["+getLogID()+"]: created", true);
+    }
+
+    public Spring(int x, int y){
+        pipes = new ArrayList<>();
+        players = new ArrayList<>();
+        this.ID = nextID++;
+        GUIManager.getInstance().createSpringGUIObject(this, new Point(x, y));
         //Logger.log("console.txt", "["+getLogID()+"]: created", true);
     }
 

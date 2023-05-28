@@ -126,21 +126,21 @@ public class Map implements Updatable {
                     if (readingElements) {
                         switch (splits[0]) {
                             case "Pump" -> {
-                                Pump pump = new Pump(Integer.parseInt(splits[1]));
+                                Pump pump = new Pump(Integer.parseInt(splits[1]), Integer.parseInt(splits[2]), Integer.parseInt(splits[3]));
                                 mapElements.add(pump);
                                 controllableMapElements.add(pump);
                                 activeElements.add(pump);
                                 Logger.log("console.txt", "[Map]: " + pump.getLogID() + " has been created", true);
                             }
                             case "Cistern" -> {
-                                Cistern cistern = new Cistern();
+                                Cistern cistern = new Cistern(Integer.parseInt(splits[2]), Integer.parseInt(splits[3]));
                                 mapElements.add(cistern);
                                 controllableMapElements.add(cistern);
                                 activeElements.add(cistern);
                                 Logger.log("console.txt", "[Map]: " + cistern.getLogID() + " has been created", true);
                             }
                             case "Spring" -> {
-                                Spring spring = new Spring();
+                                Spring spring = new Spring(Integer.parseInt(splits[2]), Integer.parseInt(splits[3]));
                                 mapElements.add(spring);
                                 controllableMapElements.add(spring);
                                 activeElements.add(spring);

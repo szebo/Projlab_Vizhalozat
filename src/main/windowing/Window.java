@@ -80,7 +80,8 @@ public class Window extends JFrame implements ActionListener, KeyListener, Compo
             switchPanel("MainMenu");
         }
         else if(e.getSource().equals(newGameMenu.bStart)){
-            //Map.getInstance().loadMap(newGameMenu.lMapsList.getSelectedValue().toString()); Todo: Működne, csak nem jó a file.
+            System.out.println(newGameMenu.lMapsList.getSelectedValue().toString());
+            Map.getInstance().loadMap(newGameMenu.lMapsList.getSelectedValue().toString()); //Todo: Működne, csak nem jó a file.
             switchPanel("GameView");
         }
     }

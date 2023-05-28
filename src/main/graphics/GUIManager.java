@@ -37,8 +37,8 @@ public class GUIManager {
         guiObjects.add(new PumpGUIObject(pump, point));
     }
 
-    public void createSpringGUIObject(Spring spring){
-        guiObjects.add(new SpringGUIObject(spring, new Point(10, 10))); //TODO IDE HELYES SZÁM KELL
+    public void createSpringGUIObject(Spring spring, Point point){
+        guiObjects.add(new SpringGUIObject(spring, point)); //TODO IDE HELYES SZÁM KELL
     }
 
     public void createCisternGUIObject(Cistern cistern, Point position){

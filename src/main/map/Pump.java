@@ -1,8 +1,10 @@
 package main.map;
 
+import main.graphics.GUIManager;
 import main.logging.Logger;
 import main.players.SaboteurTeam;
 
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -41,6 +43,15 @@ public class Pump extends ActiveElement {
         pipes = new ArrayList<>();
         players = new ArrayList<>();
         this.ID = nextID++;
+        //Logger.log("console.txt", "["+getLogID()+"]: created", true);
+    }
+
+    public Pump(int capacity, int x, int y){
+        this.capacity = capacity;
+        pipes = new ArrayList<>();
+        players = new ArrayList<>();
+        this.ID = nextID++;
+        GUIManager.getInstance().createPumpGUIObject(this, new Point(x, y));
         //Logger.log("console.txt", "["+getLogID()+"]: created", true);
     }
 
