@@ -43,24 +43,48 @@ public class Saboteur extends Player {
 
     public void doAction()
     {
-        Logger.log("console.txt", getLogID()+"'s turn", true);
+        Logger.log("log.txt", getLogID()+"'s turn", false);
         while(numberOfActions > 0) {
-            Logger.log("console.txt", numberOfActions+" actions left", true);
-            Scanner scanner = new Scanner(System.in);
-            String playerInput = scanner.nextLine();
-            //scanner.close();
-            doCommand(playerInput);
+            Logger.log("log.txt", numberOfActions+" actions left", false);
+
+            //Waiting for input
+            while(currentAction == Action.nothing) continue;
+
+            switch(currentAction){
+                //case step : step(param);
+                // TODO onClick paraméternek
+
+                case breakelement   : mapElement.breakElement();
+
+                //case configure      : configurePump(param);
+                // TODO onClick 2x paraméternek. Itt amúgy nem kéne inkább a függvénybe bekérni?
+
+                //case pipepickup     : pickUpPipe(param);
+                // TODO onClick ből paraméter. Szintén nem egyszerűbb?
+                // TODO Vagy ez már összemossa a grafikus részt a működéssel?
+
+                case pipeplace      : placePipe();
+
+                case pumppickup     : pickUpPump();
+                case pumpplace      : placePump();
+
+                case sticky         : useStickyGoo();
+                case slippery       : useSlipperyGoo();
+
+
+            }
             numberOfActions--;
         }
         numberOfActions = 2;
     }
-
+/*
     public void doCommand(String playerInput){
         switch (playerInput) {
             case "break", "move", "make_slippery", "make_sticky" -> CommandInterpreter.runCommand(playerInput, this);
             default -> Logger.log("console.txt", "[System]: Thats not a valid command", true);
         }
     }
+*/
 
     public static void resetAfterTest(){
         nextID = 1;
