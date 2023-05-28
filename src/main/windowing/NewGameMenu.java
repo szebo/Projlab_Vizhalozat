@@ -39,7 +39,7 @@ public class NewGameMenu extends JPanel implements ListSelectionListener {
     public NewGameMenu(Window window){
         setLayout(new GridBagLayout());
         setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
-        setBackground(new Color(0,180, 255));
+        setBackground(new Color(239, 228, 176));
 
         bBack = new JButton("Back");
         bStart = new JButton("Start");

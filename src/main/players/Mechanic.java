@@ -161,10 +161,13 @@ public class Mechanic extends Player {
                 case KeyEvent.VK_SPACE -> currentAction = Action.step;
                 case KeyEvent.VK_A -> currentAction = Action.heal;
                 case KeyEvent.VK_D -> currentAction = Action.breakelement;
+
                 case KeyEvent.VK_S -> currentAction = Action.configure;
+
                 case KeyEvent.VK_Q -> currentAction = Action.pipepickup;
                 case KeyEvent.VK_W -> currentAction = Action.pipeplace;
                 case KeyEvent.VK_E -> currentAction = Action.sticky;
+
                 case KeyEvent.VK_R -> currentAction = Action.pumppickup;
                 case KeyEvent.VK_F -> currentAction = Action.pumpplace;
 

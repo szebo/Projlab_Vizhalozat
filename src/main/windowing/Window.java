@@ -20,7 +20,9 @@ public class Window extends JFrame implements ActionListener, KeyListener, Compo
         setResizable(false); //Optimized to 720p
         mainPanel = new JPanel();
         layout = new CardLayout();
+
         mainPanel.setLayout(layout);
+
         mainMenu = new MainMenu(this);
         optionsMenu = new OptionsMenu(this);
         newGameMenu = new NewGameMenu(this);
@@ -28,12 +30,14 @@ public class Window extends JFrame implements ActionListener, KeyListener, Compo
         gameView = new GameView(this);
         endScreen = new EndScreen();
         add(mainPanel);
+
         mainPanel.add(mainMenu, "MainMenu");
         mainPanel.add(optionsMenu, "Options");
         mainPanel.add(newGameMenu, "NewGame");
         mainPanel.add(pauseMenu, "Pause");
         mainPanel.add(gameView, "GameView");
         mainPanel.add(endScreen, "EndScreen");
+
         layout.show(mainPanel, "MainMenu");
         setSize(1280, 720);
         setTitle("Sivatagi vizhalozat");
@@ -50,6 +54,7 @@ public class Window extends JFrame implements ActionListener, KeyListener, Compo
     public void actionPerformed(ActionEvent e){
         if(e.getSource().equals(mainMenu.bContinue)){
             switchPanel("GameView");
+            gameView.draw();
         }
         else if(e.getSource().equals(mainMenu.bNewgame)){
             switchPanel("NewGame");
@@ -62,6 +67,7 @@ public class Window extends JFrame implements ActionListener, KeyListener, Compo
         }
         else if(e.getSource().equals(pauseMenu.bContinue)){
             switchPanel("GameView");
+            gameView.draw();
         }
         else if(e.getSource().equals(pauseMenu.bExitToMain)){
             switchPanel("MainMenu");
@@ -75,6 +81,7 @@ public class Window extends JFrame implements ActionListener, KeyListener, Compo
         }
         else if(e.getSource().equals(gameView.menu)){
             switchPanel("Pause");
+
         }
         else if(e.getSource().equals(newGameMenu.bBack)){
             switchPanel("MainMenu");
@@ -83,6 +90,7 @@ public class Window extends JFrame implements ActionListener, KeyListener, Compo
             System.out.println(newGameMenu.lMapsList.getSelectedValue().toString());
             Map.getInstance().loadMap(newGameMenu.lMapsList.getSelectedValue().toString());
             switchPanel("GameView");
+            gameView.draw();
         }
     }
 

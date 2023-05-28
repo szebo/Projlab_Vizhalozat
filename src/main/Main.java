@@ -16,13 +16,5 @@ public class Main {
         System.out.println(rootfolder);
         Window window = new Window();
         window.setVisible(true);
-        /*Scanner scanner = new Scanner(System.in);
-        while(scanner.hasNextLine()) {
-           String cmd = scanner.nextLine();
-           CommandInterpreter.runCommand(cmd, null);
-        }
-        scanner.close();*/
-        //Tester.runTest();
-        //TestController.runTests();
     }
 }

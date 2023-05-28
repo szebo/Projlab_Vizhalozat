@@ -35,19 +35,16 @@ public class PipeGUIObject extends GUIObject{
         Graphics2D g2 = (Graphics2D) g.create();
 
         //Ha van benne víz, de nincs tele, akkor fekete teglalap, kis körvvonallal
-        if(pipe.getWater() != 0 && pipe.getWater() != pipe.getCapacity()){
-            g2.setColor(Color.black);
-            g2.fillRect(rectangle.x, rectangle.y, rectangle.width, rectangle.height);
+        if(pipe.getWater() != 0){
+            g.setColor(Color.blue);
+            g.drawLine
+                (
+                    GUIManager.getInstance().getGUIObjectByID(pipe.getNeighbours()[0].getLogID()).getPosition().x,
+                    GUIManager.getInstance().getGUIObjectByID(pipe.getNeighbours()[0].getLogID()).getPosition().y,
+                    GUIManager.getInstance().getGUIObjectByID(pipe.getNeighbours()[1].getLogID()).getPosition().x,
+                    GUIManager.getInstance().getGUIObjectByID(pipe.getNeighbours()[1].getLogID()).getPosition().y
+                );
 
-            g2.setColor(Color.blue);
-            g2.drawRect(rectangle.x, rectangle.y, rectangle.width, rectangle.height);
-
-        }
-
-        //Ha tele van vízzel
-        else if(pipe.getWater() == pipe.getCapacity()) {
-            g2.setColor(Color.blue);
-            g2.fillRect(rectangle.x, rectangle.y, rectangle.width, rectangle.height);
         }
 
         //Ha törött
@@ -57,22 +54,28 @@ public class PipeGUIObject extends GUIObject{
 
         //Minden más esetben üres, és fekete
         else{
-            g2.setColor(Color.BLACK);
-            g2.fillRect(rectangle.x, rectangle.y, rectangle.width, rectangle.height);
+            g.setColor(Color.BLACK);
+            g.drawLine
+                    (
+                            GUIManager.getInstance().getGUIObjectByID(pipe.getNeighbours()[0].getLogID()).getPosition().x,
+                            GUIManager.getInstance().getGUIObjectByID(pipe.getNeighbours()[0].getLogID()).getPosition().y,
+                            GUIManager.getInstance().getGUIObjectByID(pipe.getNeighbours()[1].getLogID()).getPosition().x,
+                            GUIManager.getInstance().getGUIObjectByID(pipe.getNeighbours()[1].getLogID()).getPosition().y
+                    );
         }
 
         //Státusz értékek a cső felett.
         if (pipe.checkSlippery()){
-            g2.setColor(Color.ORANGE);
-            g2.drawString(Integer.toString(pipe.getSlipperyFor()), this.position.x, position.y);
+            g.setColor(Color.ORANGE);
+            g.drawString(Integer.toString(pipe.getSlipperyFor()), this.position.x, position.y);
         }
         if (pipe.checkSticky()){
-            g2.setColor(Color.GREEN);
-            g2.drawString(Integer.toString(pipe.getStickyFor()), this.position.x, position.y);
+            g.setColor(Color.GREEN);
+            g.drawString(Integer.toString(pipe.getStickyFor()), this.position.x, position.y);
         }
         if (pipe.checkUnbreakable()){
-            g2.setColor(new Color(102,51, 0));
-            g2.drawString(Integer.toString(pipe.getUnbreakableFor()), this.position.x, position.y);
+            g.setColor(new Color(102,51, 0));
+            g.drawString(Integer.toString(pipe.getUnbreakableFor()), this.position.x, position.y);
         }
 
 

@@ -19,18 +19,22 @@ public class MainMenu extends JPanel{
         GridBagConstraints gbc = new GridBagConstraints();
         gbc.gridx = 0;
         gbc.gridy = 0;
+
         pCon = new JPanel();
         pCon.add(bContinue);
         add(pCon, gbc);
         gbc.gridy = 1;
+
         pNew = new JPanel();
         pNew.add(bNewgame);
         add(pNew, gbc);
         gbc.gridy = 2;
+
         pOpt = new JPanel();
         pOpt.add(bOptions);
         add(pOpt, gbc);
         gbc.gridy = 3;
+
         pExit = new JPanel();
         pExit.add(bExit);
         add(pExit, gbc);

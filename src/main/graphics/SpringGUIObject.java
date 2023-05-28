@@ -20,7 +20,7 @@ public class SpringGUIObject extends GUIObject{
         position = point;
 
         // Felső csúcs koordinátái
-        int sideLength = 20;
+        int sideLength = 30;
         int bottomX = point.x;
         int bottomY = point.y - sideLength;
         Point topVertex = new Point(bottomX, bottomY);

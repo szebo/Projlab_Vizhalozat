@@ -47,7 +47,7 @@ public class PumpGUIObject extends GUIObject{
     @Override
     public void draw(Graphics g){
         g.setColor(Color.BLACK);
-        g.fillOval(position.x, position.y, 20, 20);
+        g.fillOval(position.x, position.y, 30, 30);
         if(this.pump.isBroken()) drawBroken(position, g);
         else drawWorking(position, g);
     }
@@ -75,9 +75,6 @@ public class PumpGUIObject extends GUIObject{
     }
 
     private void drawWorking(Point point, Graphics g){
-        //Ide raktam egy ilyen kis zöld kört jelezvén hogy aktív a pumpa, de lehet faszság, és elég az input output
-        g.setColor(Color.green);
-        g.fillOval(position.x, position.y, 5, 5);
 
         /*if(pump.getInput() != null) {
             g.setColor(Color.yellow);

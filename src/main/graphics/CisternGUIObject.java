@@ -34,7 +34,7 @@ public class CisternGUIObject extends GUIObject{
     @Override
     public void draw(Graphics g){
         g.setColor(new Color(0, 102, 0));
-        g.fillRect(rectangle.x, rectangle.y, 20, 20);
+        g.fillRect(rectangle.x, rectangle.y, 30, 30);
 
     }
 

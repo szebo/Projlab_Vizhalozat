@@ -15,6 +15,7 @@ public class GameView extends JPanel {
         setLayout(new FlowLayout(FlowLayout.LEFT));
         menu = new JButton("Menu");
         menu.addActionListener(window);
+        setBackground(new Color(238, 228, 176));
         add(menu);
         /*
          Demó, hogy itt is legyen valami
@@ -31,7 +32,10 @@ public class GameView extends JPanel {
         */
     }
 
-    public void paintComponent(Graphics g){
-        GUIManager.getInstance().draw(this);
+    public void draw(){
+         GUIManager.getInstance().draw(this);
     }
+   // public void paintComponent(Graphics g){
+     //   GUIManager.getInstance().draw(this);
+    //}
 }
