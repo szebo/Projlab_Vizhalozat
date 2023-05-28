@@ -53,11 +53,10 @@ public class GUIManager {
         guiObjects.add(new MechanicGUIObject(mechanic));
     }
 
-    public void draw(JPanel view){
+    public void draw(Graphics g){
         for (GUIObject object: guiObjects) {
-            object.draw(view.getGraphics());
+            object.draw(g);
         }
-        view.repaint();
     }
 
     public GUIObject getGUIObjectByID(String id){
