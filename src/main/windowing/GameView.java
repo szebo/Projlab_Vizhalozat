@@ -16,7 +16,6 @@ public class GameView extends JPanel {
         menu = new JButton("Menu");
         menu.addActionListener(window);
         add(menu);
-        setBackground(Color.CYAN);
         /*
          Demó, hogy itt is legyen valami
         GUIManager.getInstance().createCisternGUIObject(new Cistern(), new Point(100,100));

@@ -81,7 +81,7 @@ public class Window extends JFrame implements ActionListener, KeyListener, Compo
         }
         else if(e.getSource().equals(newGameMenu.bStart)){
             System.out.println(newGameMenu.lMapsList.getSelectedValue().toString());
-            Map.getInstance().loadMap(newGameMenu.lMapsList.getSelectedValue().toString()); //Todo: Működne, csak nem jó a file.
+            Map.getInstance().loadMap(newGameMenu.lMapsList.getSelectedValue().toString());
             switchPanel("GameView");
         }
     }
@@ -93,7 +93,7 @@ public class Window extends JFrame implements ActionListener, KeyListener, Compo
 
     @Override
     public void keyPressed(KeyEvent e) {
-        if(e.getKeyCode() == KeyEvent.VK_ESCAPE){
+        if(e.getKeyCode() == KeyEvent.VK_ESCAPE && gameView.isVisible()){
             switchPanel("Pause");
         }
     }

@@ -79,11 +79,11 @@ public class PumpGUIObject extends GUIObject{
         g.setColor(Color.green);
         g.fillOval(position.x, position.y, 5, 5);
 
-        if(pump.getInput() != null) {
+        /*if(pump.getInput() != null) {
             g.setColor(Color.yellow);
             GUIObject GUIInputPipe = GUIManager.getInstance().getGUIObjectByID(pump.getInput().getLogID());
 
-            /* TODO Kiszámolja a 2 pont közti különbséget, majd annak irányába megy a különbséggel arányosan. Csak sugárnyit kéne mozognia */
+            //TODO Kiszámolja a 2 pont közti különbséget, majd annak irányába megy a különbséggel arányosan. Csak sugárnyit kéne mozognia
             g.drawOval((GUIInputPipe.getPosition().x-this.position.x) + this.position.x ,(GUIInputPipe.getPosition().y-this.position.y) + this.position.x ,  5, 5 );
 
         }
@@ -93,9 +93,9 @@ public class PumpGUIObject extends GUIObject{
             g.setColor(purple);
             GUIObject GUIInputPipe = GUIManager.getInstance().getGUIObjectByID(pump.getInput().getLogID());
 
-            /* TODO Kiszámolja a 2 pont közti különbséget, majd annak irányába megy a különbséggel arányosan. Csak sugárnyit kéne mozognia */
+            //TODO Kiszámolja a 2 pont közti különbséget, majd annak irányába megy a különbséggel arányosan. Csak sugárnyit kéne mozognia
             g.drawOval((GUIInputPipe.getPosition().x-this.position.x) + this.position.x ,(GUIInputPipe.getPosition().y-this.position.y) + this.position.x ,  5, 5 );
-        }
+        }*/
     }
 
     private void drawBroken(Point point, Graphics g){

@@ -153,7 +153,7 @@ public class Map implements Updatable {
                         mapElements.add(pipe);
                         getElement(Integer.parseInt(splits[0])).attachPipe(pipe);
                         //Logger.log("console.txt", splits[3], true);
-                        if(!Objects.equals(splits[3], "cors"))
+                        if(!Objects.equals(splits[3], "cors") && !Objects.equals(splits[3], "-"))
                         {
                             //Logger.log("console.txt", splits[3], true);
                             Pump pum = (Pump) getElement(Integer.parseInt(splits[0]));
@@ -167,7 +167,7 @@ public class Map implements Updatable {
                             }
                         }
                         getElement(Integer.parseInt(splits[1])).attachPipe(pipe);
-                        if(!Objects.equals(splits[4], "cors")) {
+                        if(!Objects.equals(splits[4], "cors") && !Objects.equals(splits[4], "-")) {
                             Pump pum = (Pump) getElement(Integer.parseInt(splits[1]));
                             if(Objects.equals(splits[4], "in_pump"))
                             {
@@ -223,9 +223,9 @@ public class Map implements Updatable {
         return null;
     }
 
-    public MapElement getElement(int number){
-        if(number < mapElements.size())
-            return mapElements.get(number);
+    public ActiveElement getElement(int number){
+        if(number < activeElements.size())
+            return activeElements.get(number);
         else{
             Logger.log("console.txt", "[System]: Element doesn't exist", true);
             return null;
