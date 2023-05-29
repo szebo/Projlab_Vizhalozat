@@ -30,11 +30,12 @@ public class PipeGUIObject extends GUIObject{
     }
 
     @Override
-    public void draw(Graphics g){
+    public void draw(Graphics2D g){
 
         //Ha van benne víz, de nincs tele, akkor fekete teglalap, kis körvvonallal
         if(pipe.getWater() != 0){
             g.setColor(Color.blue);
+            g.setStroke(new BasicStroke(5.0f));
             g.drawLine
                 (
                     GUIManager.getInstance().getGUIObjectByID(pipe.getNeighbours()[0].getLogID()).getPosition().x,

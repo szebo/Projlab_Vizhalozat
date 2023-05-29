@@ -32,11 +32,9 @@ public class GameView extends JPanel {
         */
     }
 
-    public void draw(Graphics g){
-        GUIManager.getInstance().draw(g);
-    }
     public void paintComponent(Graphics g){
-        super.paintComponent(g);
-        draw(g);
+        Graphics2D g2 = (Graphics2D) g;
+        super.paintComponent(g2);
+        GUIManager.getInstance().draw(g2);
     }
 }

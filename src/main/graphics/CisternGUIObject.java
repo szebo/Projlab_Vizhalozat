@@ -19,7 +19,7 @@ public class CisternGUIObject extends GUIObject{
     public CisternGUIObject(Cistern cistern, Point position){
         this.cistern = cistern;
         this.position = position;
-        rectangle = new Rectangle(position.x, position.y, 20, 20);
+        rectangle = new Rectangle(position.x-RECTANGLE_MID_OFFSET, position.y-RECTANGLE_MID_OFFSET, RECTANGLE_SIZE, RECTANGLE_SIZE);
     }
 
     @Override
@@ -32,9 +32,9 @@ public class CisternGUIObject extends GUIObject{
     }
 
     @Override
-    public void draw(Graphics g){
+    public void draw(Graphics2D g){
         g.setColor(new Color(0, 102, 0));
-        g.fillRect(rectangle.x, rectangle.y, 30, 30);
+        g.fillRect(rectangle.x, rectangle.y, RECTANGLE_SIZE, RECTANGLE_SIZE);
 
     }
 

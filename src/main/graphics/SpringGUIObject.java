@@ -22,7 +22,7 @@ public class SpringGUIObject extends GUIObject{
         // Felső csúcs koordinátái
         int sideLength = 30;
         int bottomX = point.x;
-        int bottomY = point.y - sideLength;
+        int bottomY = point.y - sideLength/2;
         Point topVertex = new Point(bottomX, bottomY);
 
         // Bal alsó csúcs koordinátái
@@ -48,7 +48,7 @@ public class SpringGUIObject extends GUIObject{
     }
 
     @Override
-    public void draw(Graphics g){
+    public void draw(Graphics2D g){
         g.setColor(Color.BLUE);
         g.fillPolygon(triangle);
     }

@@ -21,7 +21,7 @@ public class PumpGUIObject extends GUIObject{
     public PumpGUIObject(Pump pump, Point point){
         position = point;
         this.pump = pump;
-        rectangle = new Rectangle();
+        rectangle = new Rectangle(position.x-RECTANGLE_MID_OFFSET, position.y-RECTANGLE_MID_OFFSET, RECTANGLE_SIZE, RECTANGLE_SIZE);
     }
 
     @Override
@@ -45,9 +45,9 @@ public class PumpGUIObject extends GUIObject{
     }
 
     @Override
-    public void draw(Graphics g){
+    public void draw(Graphics2D g){
         g.setColor(Color.BLACK);
-        g.fillOval(position.x, position.y, 30, 30);
+        g.fillOval(rectangle.x, rectangle.y, RECTANGLE_SIZE, RECTANGLE_SIZE);
         if(this.pump.isBroken()) drawBroken(position, g);
         else drawWorking(position, g);
     }

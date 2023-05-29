@@ -53,9 +53,9 @@ public class GUIManager {
         guiObjects.add(new MechanicGUIObject(mechanic));
     }
 
-    public void draw(Graphics g){
-        for (GUIObject object: guiObjects) {
-            object.draw(g);
+    public void draw(Graphics2D g2){
+        for (int i = guiObjects.size()-1; i >= 0; i--) {
+            guiObjects.get(i).draw(g2);
         }
     }
 

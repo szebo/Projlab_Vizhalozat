@@ -27,7 +27,7 @@ public class ActionGUIObject extends GUIObject{
     }
 
     @Override
-    public void draw(Graphics g){
+    public void draw(Graphics2D g){
     }
 
     @Override

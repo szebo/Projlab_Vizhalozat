@@ -20,5 +20,6 @@ Pipes
 6,9,15,in_pump,out_pump
 8,9,15,-,-
 7,2,20,in_pump,cors
-8,2,20,in_pump,cors
-9,2,25,in_pump,cors
+8,2,25,-,cors
+8,3,20,in_pump,cors
+9,3,25,in_pump,cors
