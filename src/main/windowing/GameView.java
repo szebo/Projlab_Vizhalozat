@@ -1,14 +1,13 @@
 package main.windowing;
 
 import main.graphics.GUIManager;
-import main.map.Cistern;
-import main.map.Pipe;
-import main.map.Pump;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 
-public class GameView extends JPanel {
+public class GameView extends JPanel implements MouseListener {
 
     JButton menu;
     public static JLabel actions;
@@ -20,6 +19,8 @@ public class GameView extends JPanel {
         setBackground(new Color(230, 230, 150));
         actions = new JLabel("test_action_label", JLabel.CENTER);   //TODO A actions labelt jobb helyre tenni
         add(menu);
+        GUIManager.getInstance().setGraphics(this);
+        addMouseListener(this);
         add(actions);
         /*
          Demó, hogy itt is legyen valami
@@ -40,5 +41,30 @@ public class GameView extends JPanel {
         Graphics2D g2 = (Graphics2D) g;
         super.paintComponent(g2);
         GUIManager.getInstance().draw(g2);
+    }
+
+    @Override
+    public void mouseClicked(MouseEvent e) {
+        GUIManager.getInstance().clickObjects(e);
+    }
+
+    @Override
+    public void mousePressed(MouseEvent e) {
+
+    }
+
+    @Override
+    public void mouseReleased(MouseEvent e) {
+
+    }
+
+    @Override
+    public void mouseEntered(MouseEvent e) {
+
+    }
+
+    @Override
+    public void mouseExited(MouseEvent e) {
+
     }
 }
