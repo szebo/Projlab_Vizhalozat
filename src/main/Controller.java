@@ -15,10 +15,13 @@ public class Controller {
 
     static boolean win = false;
     public static boolean randomDebug = false;
-    public static void run(){
-        Map.getInstance().loadMap("1");
+
+    public static void init(){
         SaboteurTeam.getInstance().init();
         MechanicTeam.getInstance().init();
+    }
+
+    public static void run(){
         while(!win) {
             for (int i = 0; i < PLAYER_COUNT /2; i++) {
                 CURRENT_PLAYER = SaboteurTeam.getInstance().getSaboteur();
@@ -33,6 +36,5 @@ public class Controller {
             MechanicTeam.getInstance().getPoints();
             win = SaboteurTeam.getInstance().hasWon() || MechanicTeam.getInstance().hasWon();
         }
-        Map.getInstance().saveMap(42);
     }
 }

@@ -49,11 +49,11 @@ public class GUIManager {
     }
 
     public void createSaboteurGUIObject(Saboteur saboteur){
-        guiObjects.add(new SaboteurGUIObject(saboteur));
+        guiObjects.add(0, new SaboteurGUIObject(saboteur));
     }
 
     public void createMechanicGUIObject(Mechanic mechanic){
-        guiObjects.add(new MechanicGUIObject(mechanic));
+        guiObjects.add(0, new MechanicGUIObject(mechanic));
     }
 
     public void draw(Graphics2D g2){

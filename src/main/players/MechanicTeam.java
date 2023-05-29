@@ -1,5 +1,6 @@
 package main.players;
 
+import main.graphics.GUIManager;
 import main.logging.Logger;
 import main.map.Map;
 
@@ -55,8 +56,10 @@ public class MechanicTeam {
     {
         for(int i = 0; i<2; i++)
         {
-            addPlayer(new Mechanic());
-            players.get(i).setMapElement(Map.getInstance().getStartPosition());
+            Mechanic mechanic = new Mechanic();
+            addPlayer(mechanic);
+            mechanic.setMapElement(Map.getInstance().getStartPosition());
+            GUIManager.getInstance().createMechanicGUIObject(mechanic);
         }
     }
     public int getPoints()

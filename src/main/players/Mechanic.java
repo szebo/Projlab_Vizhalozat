@@ -1,6 +1,7 @@
 package main.players;
 
 import commands.CommandInterpreter;
+import main.Main;
 import main.logging.Logger;
 import main.map.Pipe;
 import main.map.Pump;
@@ -20,6 +21,7 @@ public class Mechanic extends Player {
     public Mechanic(){
         ID = nextID++;
         currentAction = Action.nothing;
+        Main.window.addKeyListener(key);
     }
     public Pipe getPipeInHand(){return pipeInHand;}
 
@@ -174,6 +176,9 @@ public class Mechanic extends Player {
             }
         }
     };
+
+
+
     public void doAction()
     {
         Logger.log("log.txt", getLogID()+"'s turn", false);
@@ -183,7 +188,7 @@ public class Mechanic extends Player {
             while(currentAction == Action.nothing) continue;
 
             switch(currentAction){
-                //case step : step(param);
+                // case step : step(param);
                 // TODO onClick paraméternek
 
                 case heal           : mapElement.heal();

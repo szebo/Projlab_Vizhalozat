@@ -1,8 +1,11 @@
 package main.players;
 
 import commands.CommandInterpreter;
+import main.Main;
 import main.logging.Logger;
 
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.util.Scanner;
 
 /**
@@ -15,6 +18,7 @@ public class Saboteur extends Player {
 
     public Saboteur(){
         ID = nextID++;
+        Main.window.addKeyListener(key);
     }
 
     public String getLogID(){
@@ -40,6 +44,39 @@ public class Saboteur extends Player {
         stringBuilder.append("\nSteps left: "+stepsLeft+"\n");
         return stringBuilder.toString();
     }
+
+    KeyListener key = new KeyListener() {
+        @Override
+        public void keyTyped(KeyEvent e) {
+
+        }
+
+        @Override
+        public void keyPressed(KeyEvent e) {
+
+
+        }
+
+        @Override
+        public void keyReleased(KeyEvent e) {
+            int key = e.getKeyCode();
+            switch (key) {
+                case KeyEvent.VK_SPACE -> currentAction = Action.step;
+                case KeyEvent.VK_A -> currentAction = Action.heal;
+                case KeyEvent.VK_D -> currentAction = Action.breakelement;
+
+                case KeyEvent.VK_S -> currentAction = Action.configure;
+
+                case KeyEvent.VK_Q -> currentAction = Action.pipepickup;
+                case KeyEvent.VK_W -> currentAction = Action.pipeplace;
+                case KeyEvent.VK_E -> currentAction = Action.sticky;
+
+                case KeyEvent.VK_R -> currentAction = Action.pumppickup;
+                case KeyEvent.VK_F -> currentAction = Action.pumpplace;
+
+            }
+        }
+    };
 
     public void doAction()
     {

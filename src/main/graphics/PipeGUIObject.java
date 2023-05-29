@@ -110,7 +110,10 @@ public class PipeGUIObject extends GUIObject{
      * */
     @Override
     public Point getPosition() {
-        return position;
+        MapElement[] neighbours = pipe.getNeighbours();
+        Point end1 = GUIManager.getInstance().getGUIObjectByID(neighbours[0].getLogID()).getPosition();
+        Point end2 = GUIManager.getInstance().getGUIObjectByID(neighbours[1].getLogID()).getPosition();
+        return new Point((end1.x+end2.x)/2, (end1.y+end2.y)/2);
     }
 
     /**

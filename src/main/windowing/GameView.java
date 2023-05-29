@@ -1,5 +1,6 @@
 package main.windowing;
 
+import main.Controller;
 import main.graphics.GUIManager;
 
 import javax.swing.*;

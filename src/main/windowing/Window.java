@@ -1,5 +1,6 @@
 package main.windowing;
 
+import main.Controller;
 import main.map.Map;
 
 import javax.swing.*;
@@ -91,6 +92,7 @@ public class Window extends JFrame implements ActionListener, KeyListener, Compo
             Map.getInstance().loadMap(newGameMenu.lMapsList.getSelectedValue().toString());
             switchPanel("GameView");
             gameView.repaint();
+            Controller.init();
         }
     }
 

@@ -1,5 +1,6 @@
 package main.players;
 
+import main.graphics.GUIManager;
 import main.logging.Logger;
 import main.map.Map;
 
@@ -51,8 +52,10 @@ public class SaboteurTeam {
     {
         for(int i = 0; i<2; i++)
         {
-            addPlayer(new Saboteur());
-            players.get(i).setMapElement(Map.getInstance().getStartPosition());
+            Saboteur saboteur = new Saboteur();
+            addPlayer(saboteur);
+            saboteur.setMapElement(Map.getInstance().getStartPosition());
+            GUIManager.getInstance().createSaboteurGUIObject(saboteur);
         }
     }
 
