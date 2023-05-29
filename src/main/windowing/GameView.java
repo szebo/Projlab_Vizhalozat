@@ -8,9 +8,19 @@ import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
+/**
+ * A játék közbeni nézetet valósítja meg
+ * */
 public class GameView extends JPanel implements MouseListener {
 
+    /**
+     * A Pause menü-be való lépés gombja
+     * */
     JButton menu;
+
+    /**
+     * A pumpán végezhető akciókat kijelző felület
+     * */
     public static JLabel actions;
 
     public GameView(Window window){
@@ -18,24 +28,11 @@ public class GameView extends JPanel implements MouseListener {
         menu = new JButton("Menu");
         menu.addActionListener(window);
         setBackground(new Color(230, 230, 150));
-        actions = new JLabel("test_action_label", JLabel.CENTER);   //TODO A actions labelt jobb helyre tenni
+        actions = new JLabel("test_action_label", JLabel.RIGHT);   //TODO A actions labelt jobb helyre tenni, mondjuk a jobb felső sarokba
         add(menu);
         GUIManager.getInstance().setGraphics(this);
         addMouseListener(this);
         add(actions);
-        /*
-         Demó, hogy itt is legyen valami
-        GUIManager.getInstance().createCisternGUIObject(new Cistern(), new Point(100,100));
-        Pump pu = new Pump();
-        GUIManager.getInstance().createPumpGUIObject(pu, new Point(200, 200));
-        Pipe p = new Pipe();
-        pu.attachPipe(p);
-        pu.setInput(p);
-        * komplexebb matek kellene, hogy a cső közepét számoljuk a pontba,
-        * Jelenleg a baloldalát adjuk át, de így a input cső számítás nem lesz jó
-        * *
-        GUIManager.getInstance().createPipeGUIObject(p, new Point(210, 210));
-        */
     }
 
     public void paintComponent(Graphics g){

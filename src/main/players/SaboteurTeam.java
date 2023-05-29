@@ -50,7 +50,7 @@ public class SaboteurTeam {
     public List<Saboteur> getPlayers(){ return players; }
     public void init()
     {
-        for(int i = 0; i<2; i++)
+        for(int i = 0; i < 2; i++)
         {
             Saboteur saboteur = new Saboteur();
             addPlayer(saboteur);

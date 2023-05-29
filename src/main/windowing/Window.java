@@ -93,6 +93,7 @@ public class Window extends JFrame implements ActionListener, KeyListener, Compo
             switchPanel("GameView");
             gameView.repaint();
             Controller.init();
+            Controller.run();
         }
     }
 

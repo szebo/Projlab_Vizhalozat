@@ -7,6 +7,9 @@ import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
+/**
+ * A GUI elemek őse
+ * */
 public abstract class GUIObject{
 
     public static final int RECTANGLE_SIZE = 30;
