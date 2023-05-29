@@ -5,6 +5,7 @@ import main.logging.Logger;
 import main.map.MapElement;
 import main.map.Pump;
 import main.players.Player;
+import main.windowing.GameView;
 
 import javax.swing.*;
 import java.awt.*;
@@ -28,15 +29,16 @@ public class PumpGUIObject extends GUIObject{
     public void onClick(MouseEvent e) {
         if(rectangle.contains(e.getPoint())){
             if(pump.getPlayers().contains(Controller.CURRENT_PLAYER)){
-                ButtonGroup buttonGroup = new ButtonGroup();
-                buttonGroup.add(new JButton("Configure"));
-                //buttonGroup.
+                String actionsString = "configure\n";
+                if(pump.isBroken()){actionsString = actionsString.concat("heal\n");}
+                if(pump.getNeighbours().length > 0){actionsString = actionsString.concat("Pick up Pipe\n");}
+                GameView.actions.setText(actionsString);
             }
             else {
                 if (pump.acceptPlayer(Controller.CURRENT_PLAYER)){
-                    GUIObject guiObject = GUIManager.getInstance().getGUIObjectByID(pump.getLogID());
+                    GUIObject guiObject = GUIManager.getInstance().getGUIPlayerByID(Controller.CURRENT_PLAYER.getLogID());
                     if(guiObject != null)
-                        position = GUIManager.getInstance().getGUIObjectByID(pump.getLogID()).getPosition();
+                        guiObject.setPosition(position);
                     else
                         Logger.log("log.txt", "Non-existing element given!", false);
                 }
@@ -44,6 +46,10 @@ public class PumpGUIObject extends GUIObject{
         }
     }
 
+    /**
+     * A pumpa kirajzolását végző függvény
+     * @param g kirajzoló grafika
+     * */
     @Override
     public void draw(Graphics2D g){
         g.setColor(Color.BLACK);
@@ -122,11 +128,20 @@ public class PumpGUIObject extends GUIObject{
     }
 
 
-
+    /**
+     * Visszaadja a GUI elem pozícióját
+     * @return poisiton attribútum
+     * */
     @Override
     public Point getPosition() {
         return position;
     }
+
+    /**
+     * @param p
+     */
+    @Override
+    public void setPosition(Point p) {}
 
     @Override
     public MapElement getElement() {

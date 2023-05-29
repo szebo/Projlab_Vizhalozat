@@ -19,7 +19,14 @@ public abstract class GUIObject implements MouseListener {
 
     public abstract void onClick(MouseEvent e);
     public abstract void draw(Graphics2D g);
+
+    /**
+     * Visszaadja a GUI elem pozícióját
+     * @return poisiton attribútum
+     * */
     public abstract Point getPosition();
+    public abstract void setPosition(Point p);
+
     public abstract MapElement getElement();
     public abstract Player getPlayer();
 

@@ -9,7 +9,7 @@ public class PauseMenu extends JPanel {
     public PauseMenu(Window window){
         bContinue = new JButton("Continue");
         bContinue.addActionListener(window);
-        bExitToMain = new JButton("Exit to Menu");
+        bExitToMain = new JButton("Exit to Main Menu");
         bExitToMain.addActionListener(window);
         bOptions = new JButton("Options");
         bOptions.addActionListener(window);

@@ -79,21 +79,26 @@ public class MechanicGUIObject extends GUIObject{
 
     public void drawAtPosition(Point point){
         position = point;
-        //TODO Invalidate vagy draw
+        //Invalidate vagy draw
     }
 
+    /**
+     * Visszaadja a GUI elem pozícióját
+     * @return poisiton attribútum
+     * */
     @Override
     public Point getPosition() {
         return position;
     }
 
+    public void setPosition(Point p){position = p;}
     @Override
     public MapElement getElement() {
         return null;
     }
 
     /**
-     * @return
+     * @return A GUI szerelő modellbeli megfelelője
      */
     @Override
     public Player getPlayer() {

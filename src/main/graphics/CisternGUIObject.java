@@ -44,10 +44,20 @@ public class CisternGUIObject extends GUIObject{
 
     }
 
+    /**
+     * Visszaadja a GUI elem pozícióját
+     * @return poisiton attribútum
+     * */
     @Override
     public Point getPosition() {
         return position;
     }
+
+    /**
+     * @param p
+     */
+    @Override
+    public void setPosition(Point p) {}
 
     @Override
     public MapElement getElement() {

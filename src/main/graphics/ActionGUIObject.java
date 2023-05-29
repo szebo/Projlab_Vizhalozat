@@ -26,6 +26,14 @@ public class ActionGUIObject extends GUIObject{
         return position;
     }
 
+    /**
+     * @param p
+     */
+    @Override
+    public void setPosition(Point p) {
+
+    }
+
     @Override
     public void draw(Graphics2D g){
     }

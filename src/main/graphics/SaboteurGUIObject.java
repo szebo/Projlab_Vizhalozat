@@ -63,10 +63,16 @@ public class SaboteurGUIObject extends GUIObject{
         //invalidate vagy draw
     }
 
+    /**
+     * Visszaadja a GUI elem pozícióját
+     * @return poisiton attribútum
+     * */
     @Override
     public Point getPosition() {
         return null;
     }
+
+    public void setPosition(Point p){position = p;}
 
     @Override
     public MapElement getElement() {

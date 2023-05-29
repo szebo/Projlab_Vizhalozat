@@ -11,12 +11,16 @@ import java.awt.*;
 public class GameView extends JPanel {
 
     JButton menu;
+    public static JLabel actions;
+
     public GameView(Window window){
         setLayout(new FlowLayout(FlowLayout.LEFT));
         menu = new JButton("Menu");
         menu.addActionListener(window);
         setBackground(new Color(230, 230, 150));
+        actions = new JLabel("test_action_label", JLabel.CENTER);   //TODO A actions labelt jobb helyre tenni
         add(menu);
+        add(actions);
         /*
          Demó, hogy itt is legyen valami
         GUIManager.getInstance().createCisternGUIObject(new Cistern(), new Point(100,100));
