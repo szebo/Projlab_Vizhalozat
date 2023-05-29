@@ -54,6 +54,7 @@ public class Window extends JFrame implements ActionListener, KeyListener, Compo
     public void actionPerformed(ActionEvent e){
         if(e.getSource().equals(mainMenu.bContinue)){
             switchPanel("GameView");
+            gameView.repaint();
         }
         else if(e.getSource().equals(mainMenu.bNewgame)){
             switchPanel("NewGame");
@@ -66,6 +67,7 @@ public class Window extends JFrame implements ActionListener, KeyListener, Compo
         }
         else if(e.getSource().equals(pauseMenu.bContinue)){
             switchPanel("GameView");
+            gameView.repaint();
         }
         else if(e.getSource().equals(pauseMenu.bExitToMain)){
             switchPanel("MainMenu");
@@ -88,6 +90,7 @@ public class Window extends JFrame implements ActionListener, KeyListener, Compo
             System.out.println(newGameMenu.lMapsList.getSelectedValue().toString());
             Map.getInstance().loadMap(newGameMenu.lMapsList.getSelectedValue().toString());
             switchPanel("GameView");
+            gameView.repaint();
         }
     }
 

@@ -1,6 +1,7 @@
 package main.map;
 
 import main.Controller;
+import main.graphics.GUIManager;
 import main.interfaces.Updatable;
 import main.logging.Logger;
 import main.players.Player;
@@ -44,6 +45,7 @@ public class Pipe extends MapElement implements Updatable {
         elements = new ArrayList<>();
         players = new ArrayList<>();
         this.ID = nextID++;
+        GUIManager.getInstance().createPipeGUIObject(this);
     }
 
     /**
@@ -56,6 +58,7 @@ public class Pipe extends MapElement implements Updatable {
         elements = new ArrayList<>();
         players = new ArrayList<>();
         this.ID = nextID++;
+        GUIManager.getInstance().createPipeGUIObject(this);
         //Logger.log("console.txt", "["+getLogID()+"]: created", true);
     }
 

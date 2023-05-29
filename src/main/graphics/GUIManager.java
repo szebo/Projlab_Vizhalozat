@@ -29,8 +29,8 @@ public class GUIManager {
         return instance;
     }
 
-    public void createPipeGUIObject(Pipe pipe, Point point){
-        guiObjects.add(new PipeGUIObject(pipe, point));
+    public void createPipeGUIObject(Pipe pipe){
+        guiObjects.add(new PipeGUIObject(pipe));
     }
 
     public void createPumpGUIObject(Pump pump, Point point){

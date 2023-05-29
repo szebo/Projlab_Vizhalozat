@@ -115,6 +115,7 @@ public class Map implements Updatable {
     }
 
     public void loadMap(String id){
+        resetAfterTest();
         try {
             BufferedReader reader = new BufferedReader(new FileReader(Main.rootfolder+"/files/maps/"+id+".txt"));
             List<String> lines = reader.lines().toList();

@@ -15,11 +15,10 @@ public class PipeGUIObject extends GUIObject{
 
     private Rectangle rectangle;
 
-    public PipeGUIObject(Pipe pipe, Point point){
-        position = point;
+    public PipeGUIObject(Pipe pipe){
         this.pipe = pipe;
         /* Itt kellene beállítani, hogy milyen messze vannak a szélei a becsatolandó pumpáktól*/
-        rectangle = new Rectangle(position.x, position.y, 100, 3);      //TODO megfelelő szélesség beállítása
+        rectangle = new Rectangle(0, 0, 100, 3);      //TODO megfelelő szélesség beállítása
     }
 
     @Override
@@ -32,7 +31,6 @@ public class PipeGUIObject extends GUIObject{
 
     @Override
     public void draw(Graphics g){
-        Graphics2D g2 = (Graphics2D) g.create();
 
         //Ha van benne víz, de nincs tele, akkor fekete teglalap, kis körvvonallal
         if(pipe.getWater() != 0){
@@ -49,7 +47,7 @@ public class PipeGUIObject extends GUIObject{
 
         //Ha törött
         else if(pipe.isBroken()){
-            drawBroken(this.position, g2);
+            drawBroken(this.position, g);
         }
 
         //Minden más esetben üres, és fekete
@@ -77,14 +75,6 @@ public class PipeGUIObject extends GUIObject{
             g.setColor(new Color(102,51, 0));
             g.drawString(Integer.toString(pipe.getUnbreakableFor()), this.position.x, position.y);
         }
-
-
-        //TODO Ez elméletileg elforgatja a téglalapot, de nem vagyok benne biztos, hogy jó
-        MapElement[] neighbours = pipe.getNeighbours();
-        Point end1 = GUIManager.getInstance().getGUIObjectByID(neighbours[0].getLogID()).getPosition();
-        Point end2 = GUIManager.getInstance().getGUIObjectByID(neighbours[1].getLogID()).getPosition();
-        double theta = Math.acos(differenceFromHorizontal(end1, end2));
-        g2.rotate(theta);
     }
 
     private double differenceFromHorizontal(Point p1, Point p2){
