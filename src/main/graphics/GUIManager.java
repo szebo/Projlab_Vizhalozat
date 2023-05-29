@@ -9,6 +9,7 @@ import main.players.Saboteur;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,6 +18,8 @@ public class GUIManager {
     private static GUIManager instance = null;
     private String guiMessage;
     private List<GUIObject> guiObjects;
+
+    private JPanel graphics = null;
 
     private GUIManager(){
         guiObjects = new ArrayList<>();
@@ -59,6 +62,12 @@ public class GUIManager {
         }
     }
 
+    public void clickObjects(MouseEvent e){
+        for(GUIObject object : guiObjects){
+            object.onClick(e);
+        }
+    }
+
     public GUIObject getGUIObjectByID(String id){
         for(GUIObject object : guiObjects){
             if(object.getElement().getLogID().equals(id))
@@ -73,5 +82,13 @@ public class GUIManager {
                 return object;
         }
         return null;
+    }
+
+    public void setGraphics(JPanel panel){
+        graphics = panel;
+    }
+
+    public void repaintGame(){
+        graphics.repaint();
     }
 }
