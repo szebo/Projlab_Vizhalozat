@@ -32,6 +32,7 @@ public class PipeGUIObject extends GUIObject{
     public PipeGUIObject(Pipe pipe){
         this.pipe = pipe;
         /* Itt kellene beállítani, hogy milyen messze vannak a szélei a becsatolandó pumpáktól*/
+        //TODO: Megcsinálom zh után ma 16:30-
         rectangle = new Rectangle(0, 0, 100, 3);
     }
 
