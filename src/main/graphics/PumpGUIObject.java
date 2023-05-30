@@ -35,10 +35,10 @@ public class PumpGUIObject extends GUIObject{
             Controller.SELECTED_ELEMENT = pump;
             System.out.println("Pump selected as selected item" + Controller.SELECTED_ELEMENT.getLogID());
             if(pump.getPlayers().contains(Controller.CURRENT_PLAYER)){
-                String actionsString = "<html>configure";
-                if(pump.isBroken()){actionsString = actionsString.concat("<br>heal");}
-                if(pump.getNeighbours().length > 0){actionsString = actionsString.concat("<br>Pick up Pipe");}
-                actionsString.concat("<br>Place pipe");
+                String actionsString = "<html>Executable actions<br>configure - S";
+                if(pump.isBroken()){actionsString = actionsString.concat("<br>heal - A");}
+                if(pump.getNeighbours().length > 0){actionsString = actionsString.concat("<br>Pick up Pipe - Q");}
+                actionsString.concat("<br>Place pipe - W");
                 actionsString.concat("</html>");
                 GameView.actions.setText(actionsString);
             }

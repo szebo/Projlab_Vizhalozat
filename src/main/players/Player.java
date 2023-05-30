@@ -129,7 +129,7 @@ public abstract class Player {
     public void doAction(){}
 
     /**
-     * Leszármazott osztálytól függően visszaad egy stringet az osztály nevével és az osbejtum azonosítójával
+     * Leszármazott osztálytól függően visszaad egy stringet az osztály nevével és az objektum azonosítójával
      * @return StringID
      */
     public abstract String getLogID();

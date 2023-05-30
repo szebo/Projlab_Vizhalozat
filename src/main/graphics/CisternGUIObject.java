@@ -46,8 +46,8 @@ public class CisternGUIObject extends GUIObject{
         if(rectangle.contains(e.getPoint())) {
             Controller.SELECTED_ELEMENT = cistern;
             if(cistern.getPlayers().contains(Controller.CURRENT_PLAYER)){
-                String actionsString = "<html>Pickup Pipe or Pump";
-                actionsString = actionsString.concat("<br>Place pipe");
+                String actionsString = "<html>Executable actions:<br> Pickup Pipe or Pump - Q | R";
+                actionsString = actionsString.concat("<br>Place pipe - W");
                 actionsString.concat("</html>");
                 GameView.actions.setText(actionsString);
             }

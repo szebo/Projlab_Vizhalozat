@@ -45,9 +45,9 @@ public class PipeGUIObject extends GUIObject{
 
             System.out.println("Pipe selected: " + Controller.SELECTED_ELEMENT.getLogID());
             if(pipe.getPlayers().contains(Controller.CURRENT_PLAYER)){
-                String actionsString = "<html><br>make slippery";
-                if(pipe.isBroken()){actionsString = actionsString.concat("<br>heal");}
-                else{actionsString = actionsString.concat("<br>break");}
+                String actionsString = "<html>Executable actions:<br> make slippery - R";
+                if(pipe.isBroken()){actionsString = actionsString.concat("<br>heal - A");}
+                else{actionsString = actionsString.concat("<br>break - D");}
                 actionsString.concat("</html>");
                 System.out.println(actionsString);
                 GameView.actions.setText(actionsString);

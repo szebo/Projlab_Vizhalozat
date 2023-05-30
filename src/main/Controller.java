@@ -4,6 +4,7 @@ import main.graphics.GUIManager;
 import main.map.Map;
 import main.map.MapElement;
 import main.players.*;
+import main.windowing.GameView;
 import main.windowing.Window;
 
 import java.awt.event.ActionEvent;
@@ -97,22 +98,26 @@ public class Controller {
                 else if(state == GameState.mechanicTurn)
                     CURRENT_PLAYER = MechanicTeam.getInstance().getMechanic();
             }
-            else{
-                if(state == GameState.saboteurTurn && CURRENT_PLAYER.getCurrentAction() != Player.Action.nothing) {
+            else {
+                if (state == GameState.saboteurTurn && CURRENT_PLAYER.getCurrentAction() != Player.Action.nothing) {
                     System.out.println("Saboteur Action");
-                    if (CURRENT_PLAYER.getActions() > 0)
+                    if (CURRENT_PLAYER.getActions() > 0) {
                         CURRENT_PLAYER.doAction();
+                        GameView.actions.setText("");
+                    }
+
                     if (CURRENT_PLAYER.getActions() <= 0) {
                         CURRENT_PLAYER.resetActions();
                         state = GameState.mechanicTurn;
                         turnsEnded++;
                         CURRENT_PLAYER = null;
                     }
-                }
-                else if(state == GameState.mechanicTurn && CURRENT_PLAYER.getCurrentAction() !=  Player.Action.nothing) {
+                } else if (state == GameState.mechanicTurn && CURRENT_PLAYER.getCurrentAction() != Player.Action.nothing) {
                     System.out.println("Mechanic Action");
-                    if(CURRENT_PLAYER.getActions() > 0)
+                    if (CURRENT_PLAYER.getActions() > 0) {
                         CURRENT_PLAYER.doAction();
+                            GameView.actions.setText("");
+                    }
                     if (CURRENT_PLAYER.getActions() <= 0) {
                         CURRENT_PLAYER.resetActions();
                         state = GameState.saboteurTurn;

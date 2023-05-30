@@ -52,8 +52,8 @@ public class SpringGUIObject extends GUIObject{
         if(triangle.contains(e.getPoint())){
             Controller.SELECTED_ELEMENT = spring;
             if(spring.getPlayers().contains(Controller.CURRENT_PLAYER)){
-                String actionsString = "<html>Place pipe";
-                actionsString.concat("<br>Pickup pipe");
+                String actionsString = "<html>Executable actions:<br> Place pipe - W";
+                actionsString.concat("<br>Pickup pipe - Q");
                 actionsString.concat("</html>");
                 GameView.actions.setText(actionsString);
             }
