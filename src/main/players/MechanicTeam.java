@@ -3,6 +3,7 @@ package main.players;
 import main.graphics.GUIManager;
 import main.logging.Logger;
 import main.map.Map;
+import main.map.MapElement;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -58,7 +59,9 @@ public class MechanicTeam {
         {
             Mechanic mechanic = new Mechanic();
             addPlayer(mechanic);
-            mechanic.setMapElement(Map.getInstance().getStartPosition());
+            MapElement element = Map.getInstance().getStartPosition();
+            mechanic.setMapElement(element);
+            element.addPlayer(mechanic);
             GUIManager.getInstance().createMechanicGUIObject(mechanic);
         }
     }

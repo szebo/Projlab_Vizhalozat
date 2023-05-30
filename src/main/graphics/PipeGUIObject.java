@@ -41,14 +41,14 @@ public class PipeGUIObject extends GUIObject{
             Controller.SELECTED_ELEMENT = pipe;
             System.out.println("Pipe selected: " + Controller.SELECTED_ELEMENT.getLogID());
             if(pipe.getPlayers().contains(Controller.CURRENT_PLAYER)){
-                String actionsString = "<html><br>configure</html>";
-                if(pipe.isBroken()){actionsString = actionsString.concat("<html><br>heal</html>");}
-                else{actionsString = actionsString.concat("<html><br>break</html>");}
+                String actionsString = "<html><br>make slippery";
+                if(pipe.isBroken()){actionsString = actionsString.concat("<br>heal");}
+                else{actionsString = actionsString.concat("<br>break");}
+                actionsString.concat("</html>");
+                System.out.println(actionsString);
                 GameView.actions.setText(actionsString);
             }
         }
-
-
     }
 
     public boolean isBetweenEndPoints(MouseEvent e) {
