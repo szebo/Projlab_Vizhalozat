@@ -32,6 +32,7 @@ public class PumpGUIObject extends GUIObject{
     @Override
     public void onClick(MouseEvent e) {
         if(rectangle.contains(e.getPoint())){
+            Controller.SELECTED_ELEMENT = pump;
             if(pump.getPlayers().contains(Controller.CURRENT_PLAYER)){
                 String actionsString = "configure\n";
                 if(pump.isBroken()){actionsString = actionsString.concat("heal\n");}

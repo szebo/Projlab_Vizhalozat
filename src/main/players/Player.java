@@ -129,4 +129,12 @@ public abstract class Player {
      * @return string
      */
     public abstract String printInfo();
+
+    public int getActions(){
+        return numberOfActions;
+    }
+
+    public void resetActions(){
+        numberOfActions = 2;
+    }
 }

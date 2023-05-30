@@ -43,13 +43,7 @@ public class PipeGUIObject extends GUIObject{
     @Override
     public void onClick(MouseEvent e) {
         if(rectangle.contains(e.getPoint())){
-             if(Controller.CURRENT_PLAYER.getCurrentAction() == Player.Action.step && pipe.acceptPlayer(Controller.CURRENT_PLAYER)){
-                 GUIObject guiObject = GUIManager.getInstance().getGUIPlayerByID(Controller.CURRENT_PLAYER.getLogID());
-                 if(guiObject != null) {
-                     guiObject.setPosition(getPosition());
-                     GUIManager.getInstance().repaintGame();
-                 }
-             }
+             Controller.SELECTED_ELEMENT = pipe;
         }
     }
 
