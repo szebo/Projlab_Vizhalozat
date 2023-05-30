@@ -89,7 +89,7 @@ public class Saboteur extends Player {
             //Waiting for input
             while(currentAction == Action.nothing) break;
 
-            switch(currentAction){      // Cannot invoke "main.players.Player$Action.ordinal()" because "this.currentAction" is null
+            switch(currentAction){
                 //case step : step();
                 // TODO onClick paraméternek
 

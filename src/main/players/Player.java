@@ -26,8 +26,9 @@ public abstract class Player {
     //Type of actions, nothing by default
     public enum Action {step, configure, breakelement, heal, sticky, slippery, pipeplace, pipepickup, pumpplace, pumppickup, nothing}
 
-    protected Action currentAction;
+    protected Action currentAction = Action.nothing;
     public Action getCurrentAction(){return currentAction;}
+    public void setCurrentAction(Action action){currentAction = action;}
     public void setStuck(int stuck) {
         this.stuck = stuck;
     }

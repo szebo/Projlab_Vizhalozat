@@ -185,7 +185,7 @@ public class Mechanic extends Player {
         while(numberOfActions > 0) {
             Logger.log("log.txt", numberOfActions+" actions left", false);
 
-            while(currentAction == Action.nothing) continue;
+            while(currentAction == Action.nothing) break;
 
             switch(currentAction){
                 // case step : step(param);
