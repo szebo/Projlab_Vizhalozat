@@ -107,6 +107,7 @@ public abstract class Player {
             this.stepsLeft--;
         }
         if(stepsLeft <= 0) stepsLeft = 2;       //emiatt csak ő kerül sorra, mivel mindig lesz két lépése
+        //De a numberOfActions a DoAction-ben nem engedi, hogy többször jöjjön.
     }
 
     public void repair() {}

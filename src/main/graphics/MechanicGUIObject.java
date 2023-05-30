@@ -29,7 +29,7 @@ public class MechanicGUIObject extends GUIObject{
 
     @Override
     public void draw(Graphics2D g){
-        g.setColor(Color.ORANGE);
+        g.setColor(Color.CYAN);
         g.fillOval(position.x-10, position.y-10, 20, 20);
         g.setColor(Color.BLACK);
         g.drawOval(position.x-10, position.y-10, 20, 20);

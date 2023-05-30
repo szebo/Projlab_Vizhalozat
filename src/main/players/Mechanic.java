@@ -176,7 +176,9 @@ public class Mechanic extends Player {
 
             }
         }
+
     };
+
 
 
 
@@ -184,30 +186,37 @@ public class Mechanic extends Player {
     {
         Logger.log("log.txt", getLogID()+"'s turn", false);
         while(numberOfActions > 0) {
-            Logger.log("log.txt", numberOfActions+" actions left", false);
+            Logger.log("log.txt", numberOfActions + " actions left", false);
 
             while(currentAction == Action.nothing) break;
+            switch (currentAction) {
+                    // case step : step(param);
+                    // TODO onClick paraméternek
 
-            switch(currentAction){
-                // case step : step(param);
-                // TODO onClick paraméternek
+                    case heal:
+                        mapElement.heal();
+                    case breakelement:
+                        mapElement.breakElement();
 
-                case heal           : mapElement.heal();
-                case breakelement   : mapElement.breakElement();
+                        //case configure      : configurePump(param);
+                        // TODO onClick 2x paraméternek. Itt amúgy nem kéne inkább a függvénybe bekérni?
 
-                //case configure      : configurePump(param);
-                    // TODO onClick 2x paraméternek. Itt amúgy nem kéne inkább a függvénybe bekérni?
+                        //case pipepickup     : pickUpPipe(param);
+                        // TODO onClick ből paraméter. Szintén nem egyszerűbb?
+                        // TODO Vagy ez már összemossa a grafikus részt a működéssel?
+                    case pipeplace:
+                        placePipe();
 
-                //case pipepickup     : pickUpPipe(param);
-                    // TODO onClick ből paraméter. Szintén nem egyszerűbb?
-                    // TODO Vagy ez már összemossa a grafikus részt a működéssel?
-                case pipeplace      : placePipe();
+                    case pumppickup:
+                        pickUpPump();
+                    case pumpplace:
+                        placePump();
 
-                case pumppickup     : pickUpPump();
-                case pumpplace      : placePump();
+                    case sticky:
+                        useStickyGoo();
 
-                case sticky         : useStickyGoo();
-            }
+
+        }
             numberOfActions--;
         }
         numberOfActions = 2;

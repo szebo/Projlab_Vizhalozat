@@ -62,7 +62,7 @@ public abstract class MapElement {
      * @param player a játékos, aki rálép a pályaelemre.
      */
     public boolean acceptPlayer(Player player){
-        Logger.log("console.txt", "["+getLogID()+"]: "+player.getLogID()+" moved", true);
+        Logger.log("log.txt", "["+getLogID()+"]: "+player.getLogID()+" moved", false);
         return true;
     }
 
