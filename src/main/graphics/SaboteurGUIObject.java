@@ -1,5 +1,6 @@
 package main.graphics;
 
+import main.Controller;
 import main.map.MapElement;
 import main.players.Player;
 import main.players.Saboteur;
@@ -28,7 +29,10 @@ public class SaboteurGUIObject extends GUIObject{
     public void draw(Graphics2D g){
         g.setColor(Color.ORANGE);
         g.fillOval(position.x-10, position.y-10, 20, 20);
-        g.setColor(Color.BLACK);
+        if(Controller.CURRENT_PLAYER != null && Controller.CURRENT_PLAYER.equals(getPlayer())){
+            g.setColor(new Color(20, 125, 20));
+        }else
+            g.setColor(Color.BLACK);
         g.drawOval(position.x-10, position.y-10, 20, 20);
 
         if(saboteur.getStuck() > 0) drawStuck(position, g);
