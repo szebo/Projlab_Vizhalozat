@@ -9,11 +9,25 @@ import main.players.Player;
 import java.awt.*;
 import java.awt.event.MouseEvent;
 
+/**
+ * A GUI megvalósítása a Ciszternának
+ * */
 public class CisternGUIObject extends GUIObject{
 
+    /**
+     * A GUI objektum kapcsolata a modell-beli ciszternával
+     * */
     private Cistern cistern;
+
+
+    /**
+     * A GUI ciszterna pozícióját leíró attribútum, így tudunk köré helyezni más entitásokat
+     * */
     private Point position;
 
+    /**
+     * A ciszternát reprezentáló téglalap
+     * */
     private Rectangle rectangle;
 
     public CisternGUIObject(Cistern cistern, Point position){
@@ -58,8 +72,9 @@ public class CisternGUIObject extends GUIObject{
     }
 
     /**
-     * @param p
-     */
+     * Beállítja a GUI elem pozícióját
+     * @param p A Beállítandó pont
+     * */
     @Override
     public void setPosition(Point p) {}
 

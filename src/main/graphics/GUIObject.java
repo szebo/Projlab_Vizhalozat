@@ -27,6 +27,11 @@ public abstract class GUIObject{
      * @return poisiton attribútum
      * */
     public abstract Point getPosition();
+
+    /**
+     * Beállítja a GUI elem pozícióját
+     * @param p A Beállítandó pont
+     * */
     public abstract void setPosition(Point p);
 
     public abstract MapElement getElement();

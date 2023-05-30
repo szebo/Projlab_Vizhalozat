@@ -80,6 +80,10 @@ public class SaboteurGUIObject extends GUIObject{
         return null;
     }
 
+    /**
+     * Beállítja a GUI elem pozícióját
+     * @param p A Beállítandó pont
+     * */
     public void setPosition(Point p){position = p;}
 
     @Override
