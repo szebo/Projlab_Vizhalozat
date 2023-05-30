@@ -63,7 +63,8 @@ public class Saboteur extends Player {
                 break;
 
                 case configure      :
-                    configurePump((Pipe)Controller.SELECTED_ELEMENT, (Pipe)Controller.SECOND_SELECTED_ELEMENT);
+                    if(Controller.SECOND_SELECTED_ELEMENT != null)
+                        configurePump((Pipe)Controller.SELECTED_ELEMENT, (Pipe)Controller.SECOND_SELECTED_ELEMENT);
                     Controller.SECOND_SELECTED_ELEMENT = null;
                     break;
 

@@ -62,7 +62,7 @@ public abstract class Player {
     public void configurePump(Pipe pipe1, Pipe pipe2) {
         Pump p = (Pump)mapElement;
         p.setInput(pipe1); //itt castolva javitottam vagy csináljátok meg rendesen a származtatást meg a tárolást vagy ez van
-        p.setInput(pipe2);
+        p.setOutput(pipe2);
         numberOfActions--;
         Logger.log("console.txt", "["+mapElement.getLogID()+"]: input is "+pipe1.getLogID()+", output is "+pipe2.getLogID(), true);
     }
