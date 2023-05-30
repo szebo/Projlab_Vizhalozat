@@ -6,6 +6,7 @@ import main.map.MapElement;
 import main.players.*;
 import main.windowing.Window;
 
+import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
@@ -131,7 +132,7 @@ public class Controller {
             }
             win = SaboteurTeam.getInstance().hasWon() || MechanicTeam.getInstance().hasWon();
         }
-
-
+        if(win)
+            Main.window.actionPerformed(new ActionEvent("win", ActionEvent.ACTION_PERFORMED, null));
     }
 }

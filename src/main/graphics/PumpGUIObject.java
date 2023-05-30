@@ -38,6 +38,7 @@ public class PumpGUIObject extends GUIObject{
                 String actionsString = "<html>configure";
                 if(pump.isBroken()){actionsString = actionsString.concat("<br>heal");}
                 if(pump.getNeighbours().length > 0){actionsString = actionsString.concat("<br>Pick up Pipe");}
+                actionsString.concat("<br>Place pipe");
                 actionsString.concat("</html>");
                 GameView.actions.setText(actionsString);
             }

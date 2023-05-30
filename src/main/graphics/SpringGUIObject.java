@@ -4,6 +4,7 @@ import main.Controller;
 import main.map.MapElement;
 import main.map.Spring;
 import main.players.Player;
+import main.windowing.GameView;
 
 import java.awt.*;
 import java.awt.event.ComponentListener;
@@ -50,6 +51,12 @@ public class SpringGUIObject extends GUIObject{
     public void onClick(MouseEvent e) {
         if(triangle.contains(e.getPoint())){
             Controller.SELECTED_ELEMENT = spring;
+            if(spring.getPlayers().contains(Controller.CURRENT_PLAYER)){
+                String actionsString = "<html>Place pipe";
+                actionsString.concat("<br>Pickup pipe");
+                actionsString.concat("</html>");
+                GameView.actions.setText(actionsString);
+            }
         }
     }
 

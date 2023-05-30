@@ -5,6 +5,7 @@ import main.map.Cistern;
 import main.map.MapElement;
 import main.players.Mechanic;
 import main.players.Player;
+import main.windowing.GameView;
 
 import java.awt.*;
 import java.awt.event.MouseEvent;
@@ -44,8 +45,12 @@ public class CisternGUIObject extends GUIObject{
     public void onClick(MouseEvent e) {
         if(rectangle.contains(e.getPoint())) {
             Controller.SELECTED_ELEMENT = cistern;
-
-
+            if(cistern.getPlayers().contains(Controller.CURRENT_PLAYER)){
+                String actionsString = "<html>Pickup Pipe or Pump";
+                actionsString = actionsString.concat("<br>Place pipe");
+                actionsString.concat("</html>");
+                GameView.actions.setText(actionsString);
+            }
         }
     }
 
