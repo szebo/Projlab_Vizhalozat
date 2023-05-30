@@ -15,7 +15,7 @@ public class Main {
     public static Window window;
 
     public static void main(String[] args) {
-        rootfolder = System.getProperty("user.dir");
+        rootfolder = System.getProperty ("user.dir");
         System.out.println(rootfolder);
         window = new Window();
         window.setVisible(true);

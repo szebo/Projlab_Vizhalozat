@@ -86,19 +86,24 @@ public class PipeGUIObject extends GUIObject{
         //Kirajzolás a megfelelő színnel és pontra
         g.drawLine(p1.x, p1.y, p2.x, p2.y);
 
-        int width = Math.abs(p1.x-p2.x);        //a téglalap szélessége
+        System.out.println(p1.toString() + "\n" + p2.toString());
+        int x[] = {p1.x - 2, p1.x + 2, p2.x + 2, p2.x - 2};
+        int y [] = {p1.y, p2.y, p1.y, p2.y};
+        g.fillPolygon(x, y, 4);
+
+        /*int width = Math.abs(p1.x-p2.x);        //a téglalap szélessége
         int heigth = Math.abs(p1.y-p2.y);       //a téglalap magassága
 
-        /* Kiválasztjuk a baloldali pontot a kettő közül */
+        /* Kiválasztjuk a baloldali pontot a kettő közül
         if(p1.x <= p2.x){ //Ha a p1 van balra
-            /* Ha a bal felső pont nem a p1 pont, akkor p1 a bal alsó lesz, ki kell számolni a bal felsőt */
+            /* Ha a bal felső pont nem a p1 pont, akkor p1 a bal alsó lesz, ki kell számolni a bal felsőt
             if(p1.y > p2.y) {
                 rectangle = new Rectangle(p1.x, p1.y - heigth, width, heigth);   //a kattintás felületének beállítása negatív meredekségű csövekre
             } else {
                 rectangle = new Rectangle(p1.x, p1.y, width, heigth);           //a kattintás felületének beállítása pozitív meredekségű csövekre
             }
         } else { //Ha a p2 van balra
-            /* Ha a bal felső pont nem a p2 pont, akkor az a bal alsó lesz, ki kell számolni a bal felsőt */
+            /* Ha a bal felső pont nem a p2 pont, akkor az a bal alsó lesz, ki kell számolni a bal felsőt
             if(p2.y > p1.y) {
                 rectangle = new Rectangle(p2.x, p2.y - heigth, width, heigth);   //a kattintás felületének beállítása negatív meredekségű csövekre
             } else {
@@ -107,6 +112,7 @@ public class PipeGUIObject extends GUIObject{
         }
 
         g.fill(rectangle); //debug
+        */
 
         //Státusz értékek a cső felett:
         if (pipe.checkSlippery()){
