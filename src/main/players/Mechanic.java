@@ -154,7 +154,7 @@ public class Mechanic extends Player {
             Logger.log("log.txt", numberOfActions + " actions left", false);
 
             switch (currentAction) {
-                // case step : step(param);
+                case step : step(Controller.SELECTED_ELEMENT);
                 // TODO onClick paraméternek
 
                 case heal:

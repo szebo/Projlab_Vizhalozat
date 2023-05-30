@@ -33,10 +33,11 @@ public class PumpGUIObject extends GUIObject{
     public void onClick(MouseEvent e) {
         if(rectangle.contains(e.getPoint())){
             Controller.SELECTED_ELEMENT = pump;
+            System.out.println("Pump selected as selected item" + Controller.SELECTED_ELEMENT.getLogID());
             if(pump.getPlayers().contains(Controller.CURRENT_PLAYER)){
-                String actionsString = "configure\n";
-                if(pump.isBroken()){actionsString = actionsString.concat("heal\n");}
-                if(pump.getNeighbours().length > 0){actionsString = actionsString.concat("Pick up Pipe\n");}
+                String actionsString = "<html>configure</html>";
+                if(pump.isBroken()){actionsString = actionsString.concat("<html><br>heal</html>");}
+                if(pump.getNeighbours().length > 0){actionsString = actionsString.concat("<html><br>Pick up Pipe</html>");}
                 GameView.actions.setText(actionsString);
             }
         }
@@ -77,26 +78,6 @@ public class PumpGUIObject extends GUIObject{
     }
 
     private void drawWorking(Point point, Graphics g){
-
-        /*if(pump.getInput() != null) {
-            g.setColor(Color.yellow);
-            GUIObject GUIInputPipe = GUIManager.getInstance().getGUIObjectByID(pump.getInput().getLogID());
-
-            //TODO Kiszámolja a 2 pont közti különbséget, majd annak irányába megy a különbséggel arányosan. Csak sugárnyit kéne mozognia
-            g.drawOval((GUIInputPipe.getPosition().x-this.position.x) + this.position.x ,(GUIInputPipe.getPosition().y-this.position.y) + this.position.x ,  5, 5 );
-
-        }
-
-
-        if(pump.getOutput() != null) {
-            Color purple = new Color(102, 0, 153);
-            g.setColor(purple);
-            GUIObject GUIInputPipe = GUIManager.getInstance().getGUIObjectByID(pump.getInput().getLogID());
-
-            //TODO Kiszámolja a 2 pont közti különbséget, majd annak irányába megy a különbséggel arányosan. Csak sugárnyit kéne mozognia
-            g.drawOval((GUIInputPipe.getPosition().x-this.position.x) + this.position.x ,(GUIInputPipe.getPosition().y-this.position.y) + this.position.x ,  5, 5 );
-        }*/
-
         if (pump.getInput() != null) {
             g.setColor(Color.yellow);
             GUIObject GUIInputPipe = GUIManager.getInstance().getGUIObjectByID((pump.getInput().getLogID()));
@@ -129,7 +110,7 @@ public class PumpGUIObject extends GUIObject{
 
             // Draw the new circle
             g.fillOval(newX, newY, RECTANGLE_SIZE / 2, RECTANGLE_SIZE / 2);
-    }
+        }
     }
 
     private void drawBroken(Point point, Graphics g){

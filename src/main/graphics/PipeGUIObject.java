@@ -37,8 +37,9 @@ public class PipeGUIObject extends GUIObject{
      * */
     @Override
     public void onClick(MouseEvent e) {
-        if((getClickDistance(e) < 6) && isBetweenEndPoints(e)){
+        if((getClickDistance(e) < 10) && isBetweenEndPoints(e) ){
             Controller.SELECTED_ELEMENT = pipe;
+            System.out.println("Pipe selected: " + Controller.SELECTED_ELEMENT.getLogID());
             if(pipe.getPlayers().contains(Controller.CURRENT_PLAYER)){
                 String actionsString = "<html><br>configure</html>";
                 if(pipe.isBroken()){actionsString = actionsString.concat("<html><br>heal</html>");}
@@ -81,8 +82,22 @@ public class PipeGUIObject extends GUIObject{
         return true;
     }
 
-
     public double getClickDistance(MouseEvent e) {
+        Point clickPoint = e.getPoint();
+        Point p1 = GUIManager.getInstance().getGUIObjectByID(pipe.getNeighbours()[0].getLogID()).getPosition();
+        //Ez nem száll el, ha egy olyan csőre kattintunk, aminek egyik vége már kézben van, hogy felvegyük a másikat?
+        Point p2 = GUIManager.getInstance().getGUIObjectByID(pipe.getNeighbours()[1].getLogID()).getPosition();
+        double p1Distance = p1.distance(clickPoint);
+        double p2Distance = p2.distance(clickPoint);
+
+        if(p1Distance <= 19 || p2Distance <= 19) return 100;
+
+        double p1p2Distance = p2.distance(p1);
+        double m = (Math.pow(p1Distance, 2) - Math.pow(p2Distance, 2) + Math.pow(p1p2Distance, 2)) / (2 * p1p2Distance);
+        return Math.sqrt(Math.pow(p1Distance, 2) - Math.pow(m, 2));
+    }
+
+    public double getClickDistanceFromPump(MouseEvent e) {
         Point clickPoint = e.getPoint();
         Point p1 = GUIManager.getInstance().getGUIObjectByID(pipe.getNeighbours()[0].getLogID()).getPosition();
         Point p2 = GUIManager.getInstance().getGUIObjectByID(pipe.getNeighbours()[1].getLogID()).getPosition();

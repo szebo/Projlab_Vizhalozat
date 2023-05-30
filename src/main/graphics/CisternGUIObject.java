@@ -30,6 +30,8 @@ public class CisternGUIObject extends GUIObject{
     public void onClick(MouseEvent e) {
         if(rectangle.contains(e.getPoint())) {
             Controller.SELECTED_ELEMENT = cistern;
+
+
         }
     }
 
