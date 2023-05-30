@@ -254,6 +254,8 @@ public class Map implements Updatable {
         updatableMapElements.clear();
         controllableMapElements.clear();
         pipeList.clear();
+        springs.clear();
+
     }
 
     public void control(){

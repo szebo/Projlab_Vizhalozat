@@ -62,7 +62,11 @@ public class PipeGUIObject extends GUIObject{
      */
     public boolean isBetweenEndPoints(MouseEvent e) {
         Point p1 = GUIManager.getInstance().getGUIObjectByID(pipe.getNeighbours()[0].getLogID()).getPosition();
-        Point p2 = GUIManager.getInstance().getGUIObjectByID(pipe.getNeighbours()[1].getLogID()).getPosition();
+        MapElement[] neighbours = pipe.getNeighbours();
+        Point p2 = new Point(p1.x+20, p1.y+20);
+        if(neighbours.length>1 && neighbours[1] != null)
+            p2 = GUIManager.getInstance().getGUIObjectByID(neighbours[1].getLogID()).getPosition();
+
         double cpX = e.getX();
         double cpY = e.getY();
 
