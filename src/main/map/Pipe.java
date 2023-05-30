@@ -295,7 +295,7 @@ public class Pipe extends MapElement implements Updatable {
     }
 
     public int getStickyFor(){return stickyFor;}
-    public int getSlipperyFor(){return stickyFor;}
+    public int getSlipperyFor(){return slipperyFor;}
     public int getUnbreakableFor(){return unbreakableFor;}
 
 }

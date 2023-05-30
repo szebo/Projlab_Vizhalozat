@@ -34,6 +34,7 @@ public class Saboteur extends Player {
     @Override
     public void useSlipperyGoo(){
         mapElement.makeSlippery(Controller.SLIPPERY_FOR_OPTION);
+        numberOfActions--;
     }
 
     /**
