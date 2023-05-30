@@ -98,9 +98,12 @@ public class PipeGUIObject extends GUIObject{
      */
     public double getClickDistance(MouseEvent e) {
         Point clickPoint = e.getPoint();
-        Point p1 = GUIManager.getInstance().getGUIObjectByID(pipe.getNeighbours()[0].getLogID()).getPosition();
+        MapElement[] neighbours = pipe.getNeighbours();
+        Point p1 = GUIManager.getInstance().getGUIObjectByID(neighbours[0].getLogID()).getPosition();
         //Ez nem száll el, ha egy olyan csőre kattintunk, aminek egyik vége már kézben van, hogy felvegyük a másikat?
-        Point p2 = GUIManager.getInstance().getGUIObjectByID(pipe.getNeighbours()[1].getLogID()).getPosition();
+        Point p2 = new Point(p1.x+20, p1.y+20);
+        if(neighbours.length>1 && neighbours[1] != null)
+            p2 = GUIManager.getInstance().getGUIObjectByID(neighbours[1].getLogID()).getPosition();
         double p1Distance = p1.distance(clickPoint);
         double p2Distance = p2.distance(clickPoint);
 
@@ -136,8 +139,12 @@ public class PipeGUIObject extends GUIObject{
             g.setColor(Color.BLACK);
         }
 
+        Point p2;
         Point p1 = new Point(GUIManager.getInstance().getGUIObjectByID(pipe.getNeighbours()[0].getLogID()).getPosition());
-        Point p2 = new Point(GUIManager.getInstance().getGUIObjectByID(pipe.getNeighbours()[1].getLogID()).getPosition());
+        if(pipe.getNeighbours().length > 1 && pipe.getNeighbours()[1] != null)
+            p2 = new Point(GUIManager.getInstance().getGUIObjectByID(pipe.getNeighbours()[1].getLogID()).getPosition());
+        else
+            p2 = new Point(p1.x+20, p1.y+20);
 
         //Kirajzolás a megfelelő színnel és pontra
         g.setStroke(new BasicStroke(10));
@@ -178,7 +185,9 @@ public class PipeGUIObject extends GUIObject{
     public Point getPosition() {
         MapElement[] neighbours = pipe.getNeighbours();
         Point end1 = GUIManager.getInstance().getGUIObjectByID(neighbours[0].getLogID()).getPosition();
-        Point end2 = GUIManager.getInstance().getGUIObjectByID(neighbours[1].getLogID()).getPosition();
+        Point end2 = new Point(end1.x+20, end1.y+20);
+        if(neighbours.length > 1 && neighbours[1] != null)
+            end2 = GUIManager.getInstance().getGUIObjectByID(neighbours[1].getLogID()).getPosition();
         return new Point((end1.x+end2.x)/2, (end1.y+end2.y)/2);
     }
 

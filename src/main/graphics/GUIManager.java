@@ -101,6 +101,26 @@ public class GUIManager {
         return null;
     }
 
+    public GUIObject getGUIPlayerByID(String id){
+        for(GUIObject object : guiObjects){
+            if(object.getPlayer() != null)
+                if(object.getPlayer().getLogID().equals(id))
+                    return object;
+        }
+        return null;
+    }
+
+    public void removeGUIObject(String id){
+        GUIObject removable = null;
+        for(GUIObject object : guiObjects){
+            if(object.getElement() != null)
+                if(object.getElement().getLogID().equals(id))
+                    removable = object;
+        }
+        if(removable != null)
+            guiObjects.remove(removable);
+    }
+
     public void clearMap(){
         guiObjects.clear();
     }

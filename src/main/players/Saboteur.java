@@ -74,7 +74,6 @@ public class Saboteur extends Player {
                 break;
 
                 case endturn:
-                    Controller.turnsEnded++;
                     numberOfActions = 0;
                     break;
             }

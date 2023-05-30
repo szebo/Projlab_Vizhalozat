@@ -91,6 +91,7 @@ public class Pipe extends MapElement implements Updatable {
      * @param pumpPlaced A cső közepére elhelyezni kívánt pumpa
      */
     public void cut(Pump pumpPlaced){
+        GUIManager.getInstance().removeGUIObject(getLogID());
         Pipe uj_pipe_1 = new Pipe();
         Pipe uj_pipe_2 = new Pipe();
         Logger.log("log.txt","Pipe cut in two", false);
@@ -108,6 +109,9 @@ public class Pipe extends MapElement implements Updatable {
         }
         pumpPlaced.attachPipe(uj_pipe_1);
         pumpPlaced.attachPipe(uj_pipe_2);
+
+        GUIManager.getInstance().createPipeGUIObject(uj_pipe_1);
+        GUIManager.getInstance().createPipeGUIObject(uj_pipe_2);
         Logger.log("log.txt","New pipes attached to placed pump", false);
     }
 

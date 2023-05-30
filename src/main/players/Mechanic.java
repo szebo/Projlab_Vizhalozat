@@ -3,6 +3,7 @@ package main.players;
 import commands.CommandInterpreter;
 import main.Controller;
 import main.Main;
+import main.graphics.GUIManager;
 import main.logging.Logger;
 import main.map.Pipe;
 import main.map.Pump;
@@ -77,6 +78,7 @@ public class Mechanic extends Player {
         mapElement.cut(pumpsInInventory.get(0));
         this.setMapElement(pumpsInInventory.get(0));
         Logger.log("console.txt", "["+getLogID()+"]: "+pumpsInInventory.get(0).getLogID()+" placed", true);
+        GUIManager.getInstance().createPumpGUIObject(pumpsInInventory.get(0), GUIManager.getInstance().getGUIPlayerByID(getLogID()).getPosition());
         pumpsInInventory.remove(0);
         numberOfActions--;
     }
@@ -194,7 +196,6 @@ public class Mechanic extends Player {
                     break;
 
                 case endturn:
-                    Controller.turnsEnded++;
                     numberOfActions = 0;
                     break;
         }
