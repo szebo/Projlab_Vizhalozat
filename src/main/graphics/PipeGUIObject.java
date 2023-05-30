@@ -147,17 +147,17 @@ public class PipeGUIObject extends GUIObject{
         if (pipe.checkSlippery()){
             g.setColor(Color.ORANGE);
             g.setFont(new Font("Arial", Font.PLAIN,20));
-            g.drawString(String.valueOf(pipe.getSlipperyFor()), getPosition().x, getPosition().y - 10);
+            g.drawString(String.valueOf(pipe.getSlipperyFor()), getPosition().x, getPosition().y - 20);
         }
         if (pipe.checkSticky()){
             g.setColor(Color.GREEN);
             g.setFont(new Font("Arial", Font.PLAIN,20));
-            g.drawString(String.valueOf(pipe.getStickyFor()), getPosition().x - 5, getPosition().y - 10);
+            g.drawString(String.valueOf(pipe.getStickyFor()), getPosition().x - 5, getPosition().y - 20);
         }
         if (pipe.checkUnbreakable()){
             g.setColor(new Color(102,51, 0));
             g.setFont(new Font("Arial", Font.PLAIN,20));
-            g.drawString(String.valueOf(pipe.getUnbreakableFor()), getPosition().x + 5, getPosition().y - 10);
+            g.drawString(String.valueOf(pipe.getUnbreakableFor()), getPosition().x + 5, getPosition().y - 20);
         }
 
     }
