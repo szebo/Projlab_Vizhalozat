@@ -40,6 +40,10 @@ public class SpringGUIObject extends GUIObject{
         triangle.addPoint(rightVertex.x, rightVertex.y);
     }
 
+    /**
+     * A GUI objektum kattintásának működését megvalósító függvény
+     * @param e A kattintás jellemzői
+     * */
     @Override
     public void onClick(MouseEvent e) {
         if(triangle.contains(e.getPoint())){

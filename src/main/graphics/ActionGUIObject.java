@@ -16,6 +16,10 @@ public class ActionGUIObject extends GUIObject{
 
     }
 
+    /**
+     * A GUI objektum kattintásának működését megvalósító függvény
+     * @param e A kattintás jellemzői
+     * */
     @Override
     public void onClick(MouseEvent e) {
 

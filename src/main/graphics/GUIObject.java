@@ -15,6 +15,10 @@ public abstract class GUIObject{
     public static final int RECTANGLE_SIZE = 30;
     public static final int RECTANGLE_MID_OFFSET = 15;
 
+    /**
+     * A GUI objektum kattintásának működését megvalósító függvény
+     * @param e A kattintás jellemzői
+     * */
     public abstract void onClick(MouseEvent e);
     public abstract void draw(Graphics2D g);
 

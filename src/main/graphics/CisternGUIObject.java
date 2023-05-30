@@ -22,6 +22,10 @@ public class CisternGUIObject extends GUIObject{
         rectangle = new Rectangle(position.x-RECTANGLE_MID_OFFSET, position.y-RECTANGLE_MID_OFFSET, RECTANGLE_SIZE, RECTANGLE_SIZE);
     }
 
+    /**
+     * A GUI objektum kattintásának működését megvalósító függvény
+     * @param e A kattintás jellemzői
+     * */
     @Override
     public void onClick(MouseEvent e) {
         if(rectangle.contains(e.getPoint())) {

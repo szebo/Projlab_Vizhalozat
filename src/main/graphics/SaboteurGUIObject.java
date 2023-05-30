@@ -16,6 +16,10 @@ public class SaboteurGUIObject extends GUIObject{
         this.saboteur = saboteur;
         position = GUIManager.getInstance().getGUIObjectByID(saboteur.getMapElement().getLogID()).getPosition();
     }
+    /**
+     * A GUI objektum kattintásának működését megvalósító függvény
+     * @param e A kattintás jellemzői
+     * */
     @Override
     public void onClick(MouseEvent e) {
 

@@ -17,10 +17,15 @@ public class MechanicGUIObject extends GUIObject{
         position = GUIManager.getInstance().getGUIObjectByID(mechanic.getMapElement().getLogID()).getPosition();
     }
 
+    /**
+     * A GUI objektum kattintásának működését megvalósító függvény
+     * @param e A kattintás jellemzői
+     * */
     @Override
     public void onClick(MouseEvent e) {
 
     }
+
 
     @Override
     public void draw(Graphics2D g){
