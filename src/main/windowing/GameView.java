@@ -29,23 +29,38 @@ public class GameView extends JPanel implements MouseListener, ActionListener {
 
     public GameView(Window window){
         setLayout(new BorderLayout());
+        setBackground(new Color(230, 230, 150));
+
         menu = new JButton("Menu");
         menu.addActionListener(window);
+
         timer = new Timer(20, this);
-        setBackground(new Color(230, 230, 150));
-        actions = new JLabel();
+
+
         JPanel pMenu = new JPanel();
         pMenu.add(menu);
         pMenu.setBackground(new Color(230, 230, 150));
         pMenu.setOpaque(false);
+
         JPanel pActions = new JPanel();
+        actions = new JLabel();
         pActions.add(actions);
         pActions.setOpaque(false);
         pActions.setBackground(new Color(230, 230, 150));
+
+        JPanel pControl = new JPanel();
+        pControl.add(new JLabel("Cyan: Team Mechanic | Orange: Team Saboteur | Click + Space - Move " +
+                "| ENTER - End turn  |  A - Heal | S - Configure | D - break | Q - Pick up pipe | W - Place Pipe |" +
+                " E - Make Pipe Sticky | R - Make Pipe Slippery (Saboteur)"));
+
+        pControl.setBackground(new Color(230, 230, 150));
+
         GUIManager.getInstance().setGraphics(this);
+
         addMouseListener(this);
         add(pMenu, BorderLayout.WEST);
         add(pActions, BorderLayout.EAST);
+        add(pControl, BorderLayout.SOUTH);
     }
 
     public void paintComponent(Graphics g){
