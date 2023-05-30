@@ -33,6 +33,7 @@ public class PipeGUIObject extends GUIObject{
         this.pipe = pipe;
         /* Itt kellene beállítani, hogy milyen messze vannak a szélei a becsatolandó pumpáktól*/
         //TODO: Megcsinálom zh után ma 16:30-
+        //pont egyenes onclickbe BTerv
         rectangle = new Rectangle(0, 0, 100, 3);
     }
 
@@ -42,7 +43,7 @@ public class PipeGUIObject extends GUIObject{
      * */
     @Override
     public void onClick(MouseEvent e) {
-        if(rectangle.contains(e.getPoint())){
+        if((getClickDistance(e) < 10) && isBetweenEndPoints(e)){
              if(Controller.CURRENT_PLAYER.getCurrentAction() == Player.Action.step && pipe.acceptPlayer(Controller.CURRENT_PLAYER)){
                  GUIObject guiObject = GUIManager.getInstance().getGUIPlayerByID(Controller.CURRENT_PLAYER.getLogID());
                  if(guiObject != null) {
@@ -51,6 +52,56 @@ public class PipeGUIObject extends GUIObject{
                  }
              }
         }
+
+
+    }
+
+    public boolean isBetweenEndPoints(MouseEvent e){
+        Point p1 = new Point(
+                GUIManager.getInstance().getGUIObjectByID(pipe.getNeighbours()[0].getLogID()).getPosition().x,
+                GUIManager.getInstance().getGUIObjectByID(pipe.getNeighbours()[0].getLogID()).getPosition().y);
+        Point p2 = new Point(
+                GUIManager.getInstance().getGUIObjectByID(pipe.getNeighbours()[1].getLogID()).getPosition().x,
+                GUIManager.getInstance().getGUIObjectByID(pipe.getNeighbours()[1].getLogID()).getPosition().y);
+        // l1 = p1 - p2
+        // l2 = -l1
+        // r1 = p1 - cP
+        // r2 = p2 - cP    MARADNAK!!
+        // dot(l1,r1) > 0
+        // dot(l2,r2) > 0
+        double cpX = e.getX();
+        double cpY = e.getY();
+
+        double l1x = p1.x - p2.x;
+        double l1y = p1.y - p2.y;
+
+        double l2x = p2.x - p1.x;
+        double l2y = p2.y - p1.y;
+
+        double r1x = p1.x - cpX;
+        double r1y = p2.x - cpY;
+
+        double r2x = p2.x - p1.x;
+        double r2y = p2.x - p1.x;
+
+        if( (r1x + l1x) * (r1y + l1y) < 0) return false;
+        if( (r2x + l2x) * (r2y + l2y) < 0) return false;
+        return true;
+    }
+
+    public double getClickDistance(MouseEvent e){
+        Point clickPoint = e.getPoint();
+        Point p1 = new Point(
+                GUIManager.getInstance().getGUIObjectByID(pipe.getNeighbours()[0].getLogID()).getPosition().x,
+                GUIManager.getInstance().getGUIObjectByID(pipe.getNeighbours()[0].getLogID()).getPosition().y);
+        Point p2 = new Point(
+                GUIManager.getInstance().getGUIObjectByID(pipe.getNeighbours()[1].getLogID()).getPosition().x,
+                GUIManager.getInstance().getGUIObjectByID(pipe.getNeighbours()[1].getLogID()).getPosition().y);
+        double p1Distance = p1.distance(clickPoint);
+        double p2Distance = p2.distance(clickPoint);
+        double p1p2Distance = p2.distance(p1);
+        double m = (Math.pow(p1Distance, 2) + Math.pow(p1p2Distance, 2) - Math.pow(p2Distance, 2)) / p1p2Distance;
+        return Math.sqrt(Math.pow(p1Distance, 2) - Math.pow(m, 2));
     }
 
     /**
@@ -87,6 +138,7 @@ public class PipeGUIObject extends GUIObject{
         //Kirajzolás a megfelelő színnel és pontra
         g.setStroke(new BasicStroke(10));
         g.drawLine(p1.x, p1.y, p2.x, p2.y);
+        g.drawRect(rectangle.x, rectangle.y, rectangle.width, rectangle.height);
 
         /*int[] x = {p1.x - 5, p1.x + 5, p2.x + 5, p2.x - 5};
         int[] y = {p1.y - 2, p1.y + 2, p2.y + 2, p2.y - 2};

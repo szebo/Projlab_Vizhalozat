@@ -54,13 +54,13 @@ public class Saboteur extends Player {
             Logger.log("log.txt", numberOfActions+" actions left", false);
 
             //Waiting for input
-            /*while(currentAction == Action.nothing){
+            while(currentAction == Action.nothing){
                 try{
                     Thread.sleep(100);
                 }catch (InterruptedException e){
                     e.printStackTrace();
                 }
-            }*/
+            }
 
             switch(currentAction){
                 //case step : step();
