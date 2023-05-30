@@ -30,7 +30,7 @@ public class Window extends JFrame implements ActionListener, KeyListener, Compo
         newGameMenu = new NewGameMenu(this);
         pauseMenu = new PauseMenu(this);
         gameView = new GameView(this);
-        endScreen = new EndScreen();
+        endScreen = new EndScreen(this);
         add(mainPanel);
 
         mainPanel.add(mainMenu, "MainMenu");
@@ -55,11 +55,7 @@ public class Window extends JFrame implements ActionListener, KeyListener, Compo
     }
 
     public void actionPerformed(ActionEvent e){
-        if(e.getSource().equals(mainMenu.bContinue)){
-            switchPanel("GameView");
-            gameView.repaint();
-        }
-        else if(e.getSource().equals(mainMenu.bNewgame)){
+        if(e.getSource().equals(mainMenu.bNewgame)){
             switchPanel("NewGame");
         }
         else if(e.getSource().equals(mainMenu.bOptions)){
@@ -91,6 +87,13 @@ public class Window extends JFrame implements ActionListener, KeyListener, Compo
         }
         else if(e.getSource().equals(newGameMenu.bBack)){
             switchPanel("MainMenu");
+        }
+        else if(e.getSource().equals(endScreen.bBack)){
+            switchPanel("MainMenu");
+        }
+        else if(e.getSource().equals("win")){
+            gameView.stop();
+            switchPanel("EndScreen");
         }
         else if(e.getSource().equals(newGameMenu.bStart)){
             System.out.println(newGameMenu.lMapsList.getSelectedValue().toString());
