@@ -15,7 +15,6 @@ public class MechanicGUIObject extends GUIObject{
 
     public MechanicGUIObject(Mechanic mechanic){
         this.mechanic = mechanic;
-        position = GUIManager.getInstance().getGUIObjectByID(mechanic.getMapElement().getLogID()).getPosition();
     }
 
     /**
@@ -30,6 +29,7 @@ public class MechanicGUIObject extends GUIObject{
 
     @Override
     public void draw(Graphics2D g){
+        position = GUIManager.getInstance().getGUIObjectByID(mechanic.getMapElement().getLogID()).getPosition();
         g.setColor(Color.CYAN);
         g.fillOval(position.x-10, position.y-10, 20, 20);
         if(Controller.CURRENT_PLAYER != null && Controller.CURRENT_PLAYER.equals(getPlayer())){

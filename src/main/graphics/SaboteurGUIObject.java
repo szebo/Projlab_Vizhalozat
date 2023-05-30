@@ -15,7 +15,6 @@ public class SaboteurGUIObject extends GUIObject{
 
     public SaboteurGUIObject(Saboteur saboteur){
         this.saboteur = saboteur;
-        position = GUIManager.getInstance().getGUIObjectByID(saboteur.getMapElement().getLogID()).getPosition();
     }
     /**
      * A GUI objektum kattintásának működését megvalósító függvény
@@ -27,6 +26,7 @@ public class SaboteurGUIObject extends GUIObject{
     }
     @Override
     public void draw(Graphics2D g){
+        position = GUIManager.getInstance().getGUIObjectByID(saboteur.getMapElement().getLogID()).getPosition();
         g.setColor(Color.ORANGE);
         g.fillOval(position.x-10, position.y-10, 20, 20);
         if(Controller.CURRENT_PLAYER != null && Controller.CURRENT_PLAYER.equals(getPlayer())){
