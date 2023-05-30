@@ -42,6 +42,7 @@ public class Mechanic extends Player {
         Logger.log("console.txt", "["+getLogID()+"]: "+pipe.getLogID()+" picked up", true);
         mapElement.detachPipe(pipe);
         this.pipeInHand = pipe;
+        numberOfActions--;
     }
 
     /**
@@ -54,6 +55,7 @@ public class Mechanic extends Player {
         pipeInHand = (mapElement.attachPipe(pipeInHand)) ? null : pipeInHand;
         if(pipeInHand == null) Logger.log("console.txt", "["+getLogID()+"]: "+pipeString+" placed", true);
         else Logger.log("console.txt", "["+getLogID()+"]: "+pipeString+" could not be placed", true);
+        if(pipeInHand == null) numberOfActions--;
     }
 
     /**
@@ -63,6 +65,7 @@ public class Mechanic extends Player {
     public void pickUpPump(){
        mapElement.givePump(this);
        Logger.log("console.txt", "["+getLogID()+"]: "+pumpsInInventory.get(0).getLogID()+" picked up", true);
+       numberOfActions--;
     }
 
     /**
@@ -75,6 +78,7 @@ public class Mechanic extends Player {
         this.setMapElement(pumpsInInventory.get(0));
         Logger.log("console.txt", "["+getLogID()+"]: "+pumpsInInventory.get(0).getLogID()+" placed", true);
         pumpsInInventory.remove(0);
+        numberOfActions--;
     }
 
     /**
@@ -188,11 +192,11 @@ public class Mechanic extends Player {
 
                 case endturn:
                     Controller.turnsEnded++;
+                    numberOfActions = 0;
                     break;
         }
 
         currentAction = Action.nothing;
-        numberOfActions--;
         }
     }
 

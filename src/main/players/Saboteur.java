@@ -54,8 +54,9 @@ public class Saboteur extends Player {
             Logger.log("log.txt", numberOfActions+" actions left", false);
 
             switch(currentAction){
-                case step : Controller.SELECTED_ELEMENT.acceptPlayer(this);
-                break;
+                case step :
+                    Controller.SELECTED_ELEMENT.acceptPlayer(this);
+                    break;
                 // TODO onClick paraméternek
 
                 case breakelement   : mapElement.breakElement();
@@ -75,10 +76,10 @@ public class Saboteur extends Player {
 
                 case endturn:
                     Controller.turnsEnded++;
+                    numberOfActions = 0;
                     break;
             }
             currentAction = Action.nothing;
-            numberOfActions--;
         }
     }
 /*

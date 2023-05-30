@@ -61,6 +61,7 @@ public abstract class Player {
         Pump p = (Pump)mapElement;
         p.setInput(pipe1); //itt castolva javitottam vagy csináljátok meg rendesen a származtatást meg a tárolást vagy ez van
         p.setInput(pipe2);
+        numberOfActions--;
         Logger.log("console.txt", "["+mapElement.getLogID()+"]: input is "+pipe1.getLogID()+", output is "+pipe2.getLogID(), true);
     }
 
@@ -68,15 +69,20 @@ public abstract class Player {
      * Eltöri azt az elemet amelyen áll a játékos.
      */
     public void breakElement(){
-        if(!mapElement.checkUnbreakable())
+        if(!mapElement.checkUnbreakable()) {
             mapElement.breakElement();
+            numberOfActions--;
+        }
     }
 
     /**
      * Ragacsossá teszi a csövet, amin áll a játékos.
      */
     public void useStickyGoo() {
-        mapElement.makeSticky(Controller.STICKY_FOR_OPTION);
+        if(!mapElement.checkSticky()) {
+            mapElement.makeSticky(Controller.STICKY_FOR_OPTION);
+            numberOfActions--;
+        }
     }
 
     /**
