@@ -29,10 +29,7 @@ public class CisternGUIObject extends GUIObject{
     @Override
     public void onClick(MouseEvent e) {
         if(rectangle.contains(e.getPoint())) {
-            System.out.println("Cistern clicked");
-            if (cistern.getPlayers().contains(Controller.CURRENT_PLAYER)) {
-                cistern.givePump((Mechanic) Controller.CURRENT_PLAYER);    //TODO Kurva castolásra ki kell találni valamit, csak már baszta a szemem a piros aláhúzás
-            }
+            Controller.SELECTED_ELEMENT = cistern;
         }
     }
 

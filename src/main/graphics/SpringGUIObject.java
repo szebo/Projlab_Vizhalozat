@@ -1,10 +1,12 @@
 package main.graphics;
 
+import main.Controller;
 import main.map.MapElement;
 import main.map.Spring;
 import main.players.Player;
 
 import java.awt.*;
+import java.awt.event.ComponentListener;
 import java.awt.event.MouseEvent;
 
 public class SpringGUIObject extends GUIObject{
@@ -47,7 +49,7 @@ public class SpringGUIObject extends GUIObject{
     @Override
     public void onClick(MouseEvent e) {
         if(triangle.contains(e.getPoint())){
-
+            Controller.SELECTED_ELEMENT = spring;
         }
     }
 

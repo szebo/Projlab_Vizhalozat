@@ -150,7 +150,7 @@ public class Mechanic extends Player {
     public void doAction()
     {
         Logger.log("log.txt", getLogID()+"'s turn", false);
-        while(numberOfActions > 0) {
+        if(numberOfActions > 0) {
             Logger.log("log.txt", numberOfActions + " actions left", false);
 
             switch (currentAction) {
@@ -184,12 +184,15 @@ public class Mechanic extends Player {
                 case sticky:
                     useStickyGoo();
                     break;
+
+                case endturn:
+                    Controller.turnsEnded++;
+                    break;
         }
 
         currentAction = Action.nothing;
         numberOfActions--;
         }
-        numberOfActions = 2;
     }
 
     //TODO Ez már nem kell, ugye?

@@ -50,17 +50,8 @@ public class Saboteur extends Player {
     public void doAction()
     {
         Logger.log("log.txt", getLogID()+"'s turn", false);
-        while(numberOfActions > 0) {
+        if(numberOfActions > 0) {
             Logger.log("log.txt", numberOfActions+" actions left", false);
-
-            //Waiting for input
-            while(currentAction == Action.nothing){
-                try{
-                    Thread.sleep(100);
-                }catch (InterruptedException e){
-                    e.printStackTrace();
-                }
-            }
 
             switch(currentAction){
                 //case step : step();
@@ -88,11 +79,14 @@ public class Saboteur extends Player {
                 break;
                 case slippery       : useSlipperyGoo();
                 break;
+
+                case endturn:
+                    Controller.turnsEnded++;
+                    break;
             }
             currentAction = Action.nothing;
             numberOfActions--;
         }
-        numberOfActions = 2;
     }
 /*
     public void doCommand(String playerInput){

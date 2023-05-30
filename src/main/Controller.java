@@ -2,9 +2,8 @@ package main;
 
 import main.graphics.GUIManager;
 import main.map.Map;
-import main.players.MechanicTeam;
-import main.players.Player;
-import main.players.SaboteurTeam;
+import main.map.MapElement;
+import main.players.*;
 import main.windowing.Window;
 
 import java.awt.event.KeyEvent;
@@ -18,6 +17,8 @@ public class Controller {
     public static int PLAYER_COUNT = 4;
     public static Player CURRENT_PLAYER = null;
 
+    public static MapElement SELECTED_ELEMENT = null;
+
     static boolean win = false;
     public static boolean randomDebug = false;
 
@@ -25,8 +26,6 @@ public class Controller {
         SaboteurTeam.getInstance().init();
         MechanicTeam.getInstance().init();
     }
-
-    public static int team = 0;
 
     public static KeyListener key = new KeyListener() {
         @Override
@@ -43,7 +42,7 @@ public class Controller {
         @Override
         public void keyReleased(KeyEvent e) {
             int key = e.getKeyCode();
-            if(team%2 == 1) {
+            if(state == GameState.mechanicTurn) {
                 switch (key) {
                     case KeyEvent.VK_SPACE -> CURRENT_PLAYER.setCurrentAction(Player.Action.step);
                     case KeyEvent.VK_A -> CURRENT_PLAYER.setCurrentAction(Player.Action.heal);
@@ -58,9 +57,11 @@ public class Controller {
                     case KeyEvent.VK_R -> CURRENT_PLAYER.setCurrentAction(Player.Action.pumppickup);
                     case KeyEvent.VK_F -> CURRENT_PLAYER.setCurrentAction(Player.Action.pumpplace);
 
+                    case KeyEvent.VK_ENTER -> CURRENT_PLAYER.setCurrentAction(Player.Action.endturn);
+
                 }
             }
-            else{
+            else if (state == GameState.saboteurTurn){
                 switch (key) {
                     case KeyEvent.VK_SPACE -> CURRENT_PLAYER.setCurrentAction(Player.Action.step);
                     case KeyEvent.VK_D -> CURRENT_PLAYER.setCurrentAction(Player.Action.breakelement);
@@ -70,36 +71,63 @@ public class Controller {
                     case KeyEvent.VK_E -> CURRENT_PLAYER.setCurrentAction(Player.Action.sticky);
                     case KeyEvent.VK_R -> CURRENT_PLAYER.setCurrentAction(Player.Action.slippery);
 
+                    case KeyEvent.VK_ENTER -> CURRENT_PLAYER.setCurrentAction(Player.Action.endturn);
                 }
             }
         }
 
     };
 
+    private enum GameState { saboteurTurn, mechanicTurn}
+
+    public static int turnsEnded = 0;
+
+    private static GameState state = GameState.saboteurTurn;
+
     public static void run(){
         if(!win) {
             GUIManager.getInstance().repaintGame();
-            if(team%2 == 0) {
-                System.out.println("Saboteur");
-                CURRENT_PLAYER = SaboteurTeam.getInstance().getSaboteur();
-                CURRENT_PLAYER.doAction();
-                Main.window.playerActed();
-                team = 1;
+
+            if(CURRENT_PLAYER == null){
+                if(state == GameState.saboteurTurn)
+                    CURRENT_PLAYER = SaboteurTeam.getInstance().getSaboteur();
+                else if(state == GameState.mechanicTurn)
+                    CURRENT_PLAYER = MechanicTeam.getInstance().getMechanic();
             }
-            else {
-                System.out.println("Mechanic");
-                CURRENT_PLAYER = MechanicTeam.getInstance().getMechanic();
-                CURRENT_PLAYER.doAction();
-                Main.window.playerActed();
-                team = 0;
+            else{
+                if(state == GameState.saboteurTurn && CURRENT_PLAYER.getCurrentAction() != Player.Action.nothing) {
+                    System.out.println("Saboteur Action");
+                    if (CURRENT_PLAYER.getActions() > 0)
+                        CURRENT_PLAYER.doAction();
+                    if (CURRENT_PLAYER.getActions() <= 0) {
+                        CURRENT_PLAYER.resetActions();
+                        state = GameState.mechanicTurn;
+                        turnsEnded++;
+                        CURRENT_PLAYER = null;
+                    }
+                }
+                else if(state == GameState.mechanicTurn && CURRENT_PLAYER.getCurrentAction() !=  Player.Action.nothing) {
+                    System.out.println("Mechanic Action");
+                    if(CURRENT_PLAYER.getActions() > 0)
+                        CURRENT_PLAYER.doAction();
+                    if (CURRENT_PLAYER.getActions() <= 0) {
+                        CURRENT_PLAYER.resetActions();
+                        state = GameState.saboteurTurn;
+                        turnsEnded++;
+                        CURRENT_PLAYER = null;
+                    }
+                }
             }
-            if(CURRENT_PLAYER.getCurrentAction() == Player.Action.endturn) {
+
+            if(turnsEnded >= PLAYER_COUNT) {
                 Map.getInstance().update();
                 //Map.getInstance().control();
                 Map.getInstance().waterFlow(0);
                 SaboteurTeam.getInstance().getPoints();
                 MechanicTeam.getInstance().getPoints();
                 CURRENT_PLAYER.setCurrentAction(Player.Action.nothing);
+                state = GameState.saboteurTurn;
+                turnsEnded = 0;
             }
             win = SaboteurTeam.getInstance().hasWon() || MechanicTeam.getInstance().hasWon();
         }

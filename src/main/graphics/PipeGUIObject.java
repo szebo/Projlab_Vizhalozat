@@ -33,7 +33,6 @@ public class PipeGUIObject extends GUIObject{
         this.pipe = pipe;
         /* Itt kellene beállítani, hogy milyen messze vannak a szélei a becsatolandó pumpáktól*/
         //TODO: Megcsinálom zh után ma 16:30-
-        //pont egyenes onclickbe BTerv
         rectangle = new Rectangle(0, 0, 100, 3);
     }
 
@@ -138,7 +137,6 @@ public class PipeGUIObject extends GUIObject{
         //Kirajzolás a megfelelő színnel és pontra
         g.setStroke(new BasicStroke(10));
         g.drawLine(p1.x, p1.y, p2.x, p2.y);
-        g.drawRect(rectangle.x, rectangle.y, rectangle.width, rectangle.height);
 
         /*int[] x = {p1.x - 5, p1.x + 5, p2.x + 5, p2.x - 5};
         int[] y = {p1.y - 2, p1.y + 2, p2.y + 2, p2.y - 2};
