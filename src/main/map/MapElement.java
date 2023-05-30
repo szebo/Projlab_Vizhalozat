@@ -63,6 +63,7 @@ public abstract class MapElement {
      */
     public boolean acceptPlayer(Player player){
         Logger.log("log.txt", "["+getLogID()+"]: "+player.getLogID()+" moved", false);
+        player.step(this);
         return true;
     }
 

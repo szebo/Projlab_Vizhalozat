@@ -3,6 +3,7 @@ package main.players;
 import main.graphics.GUIManager;
 import main.logging.Logger;
 import main.map.Map;
+import main.map.MapElement;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -44,7 +45,7 @@ public class SaboteurTeam {
 
     public boolean hasWon()
     {
-        return points > 50; //mitoménmennnyilgyen
+        return points > 500; //mitoménmennnyilgyen
     }
 
     public List<Saboteur> getPlayers(){ return players; }
@@ -54,7 +55,9 @@ public class SaboteurTeam {
         {
             Saboteur saboteur = new Saboteur();
             addPlayer(saboteur);
-            saboteur.setMapElement(Map.getInstance().getStartPosition());
+            MapElement element = Map.getInstance().getStartPosition();
+            saboteur.setMapElement(element);
+            element.addPlayer(saboteur);
             GUIManager.getInstance().createSaboteurGUIObject(saboteur);
         }
     }
