@@ -28,16 +28,24 @@ public class GameView extends JPanel implements MouseListener, ActionListener {
     private Timer timer;
 
     public GameView(Window window){
-        setLayout(new FlowLayout(FlowLayout.LEFT));
+        setLayout(new BorderLayout());
         menu = new JButton("Menu");
         menu.addActionListener(window);
         timer = new Timer(20, this);
         setBackground(new Color(230, 230, 150));
         actions = new JLabel("test_action_label", JLabel.RIGHT);   //TODO A actions labelt jobb helyre tenni, mondjuk a jobb felső sarokba
-        add(menu);
+        JPanel pMenu = new JPanel();
+        pMenu.add(menu);
+        pMenu.setBackground(new Color(230, 230, 150));
+        pMenu.setOpaque(false);
+        JPanel pActions = new JPanel();
+        pActions.add(actions);
+        pActions.setOpaque(false);
+        pActions.setBackground(new Color(230, 230, 150));
         GUIManager.getInstance().setGraphics(this);
         addMouseListener(this);
-        add(actions);
+        add(pMenu, BorderLayout.WEST);
+        add(pActions, BorderLayout.EAST);
     }
 
     public void paintComponent(Graphics g){

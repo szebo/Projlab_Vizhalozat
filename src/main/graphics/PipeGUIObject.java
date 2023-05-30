@@ -4,6 +4,7 @@ import main.Controller;
 import main.map.MapElement;
 import main.map.Pipe;
 import main.players.Player;
+import main.windowing.GameView;
 
 import java.awt.*;
 import java.awt.event.MouseEvent;
@@ -43,13 +44,13 @@ public class PipeGUIObject extends GUIObject{
     @Override
     public void onClick(MouseEvent e) {
         if((getClickDistance(e) < 10) && isBetweenEndPoints(e)){
-             if(Controller.CURRENT_PLAYER.getCurrentAction() == Player.Action.step && pipe.acceptPlayer(Controller.CURRENT_PLAYER)){
-                 GUIObject guiObject = GUIManager.getInstance().getGUIPlayerByID(Controller.CURRENT_PLAYER.getLogID());
-                 if(guiObject != null) {
-                     guiObject.setPosition(getPosition());
-                     GUIManager.getInstance().repaintGame();
-                 }
-             }
+            Controller.SELECTED_ELEMENT = pipe;
+            if(pipe.getPlayers().contains(Controller.CURRENT_PLAYER)){
+                String actionsString = "<html><br>configure</html>";
+                if(pipe.isBroken()){actionsString = actionsString.concat("<html><br>heal</html>");}
+                else{actionsString = actionsString.concat("<html><br>break</html>");}
+                GameView.actions.setText(actionsString);
+            }
         }
 
 

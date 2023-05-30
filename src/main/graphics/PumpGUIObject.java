@@ -39,23 +39,6 @@ public class PumpGUIObject extends GUIObject{
                 if(pump.getNeighbours().length > 0){actionsString = actionsString.concat("Pick up Pipe\n");}
                 GameView.actions.setText(actionsString);
             }
-            else {
-                if ((Controller.CURRENT_PLAYER.getCurrentAction() == Player.Action.step) && pump.acceptPlayer(Controller.CURRENT_PLAYER)){
-                    GUIObject guiObject = GUIManager.getInstance().getGUIPlayerByID(Controller.CURRENT_PLAYER.getLogID());
-                    if(guiObject != null) {
-
-                        //Controller.CURRENT_PLAYER.setMapElement();
-
-                        guiObject.setPosition(position);
-                        GUIManager.getInstance().repaintGame();
-                        Logger.log("console.txt", Controller.CURRENT_PLAYER.getMapElementAsString(), true );
-
-                    }
-
-                    else
-                        Logger.log("log.txt", "Non-existing element given!", false);
-                }
-            }
         }
     }
 
