@@ -2869,3 +2869,44 @@
 2023/05/30 17:19:13	[Pump6]: Pipe13 has been attached
 2023/05/30 17:19:13	[Spring2]: Pipe13 has been attached
 2023/05/30 17:19:13	[Map]: map loaded
+2023/05/30 20:04:25	[Map]: Cistern1 has been created
+2023/05/30 20:04:25	[Map]: Cistern2 has been created
+2023/05/30 20:04:25	[Map]: Spring1 has been created
+2023/05/30 20:04:26	[Map]: Spring2 has been created
+2023/05/30 20:04:26	[Map]: Pump1 has been created
+2023/05/30 20:04:26	[Map]: Pump2 has been created
+2023/05/30 20:04:26	[Map]: Pump3 has been created
+2023/05/30 20:04:26	[Map]: Pump4 has been created
+2023/05/30 20:04:26	[Map]: Pump5 has been created
+2023/05/30 20:04:26	[Map]: Pump6 has been created
+2023/05/30 20:04:26	[Cistern1]: Pipe1 has been attached
+2023/05/30 20:04:26	[Pump1]: Pipe1 has been attached
+2023/05/30 20:04:26	[Cistern1]: Pipe2 has been attached
+2023/05/30 20:04:26	[Pump2]: Pipe2 has been attached
+2023/05/30 20:04:26	[Cistern2]: Pipe3 has been attached
+2023/05/30 20:04:26	[Pump2]: Pipe3 has been attached
+2023/05/30 20:04:26	[Cistern2]: Pipe4 has been attached
+2023/05/30 20:04:26	[Pump3]: Pipe4 has been attached
+2023/05/30 20:04:26	[Pump1]: Pipe5 has been attached
+2023/05/30 20:04:26	[Pump4]: Pipe5 has been attached
+2023/05/30 20:04:26	[Pump2]: Pipe6 has been attached
+2023/05/30 20:04:26	[Pump4]: Pipe6 has been attached
+2023/05/30 20:04:26	[Pump2]: Pipe7 has been attached
+2023/05/30 20:04:26	[Pump5]: Pipe7 has been attached
+2023/05/30 20:04:26	[Pump3]: Pipe8 has been attached
+2023/05/30 20:04:26	[Pump6]: Pipe8 has been attached
+2023/05/30 20:04:26	[Pump5]: Pipe9 has been attached
+2023/05/30 20:04:26	[Pump6]: Pipe9 has been attached
+2023/05/30 20:04:26	[Pump4]: Pipe10 has been attached
+2023/05/30 20:04:26	[Spring1]: Pipe10 has been attached
+2023/05/30 20:04:26	[Pump5]: Pipe11 has been attached
+2023/05/30 20:04:26	[Spring1]: Pipe11 has been attached
+2023/05/30 20:04:26	[Pump5]: Pipe12 has been attached
+2023/05/30 20:04:26	[Spring2]: Pipe12 has been attached
+2023/05/30 20:04:26	[Pump6]: Pipe13 has been attached
+2023/05/30 20:04:26	[Spring2]: Pipe13 has been attached
+2023/05/30 20:04:26	[Map]: map loaded
+2023/05/30 20:04:52	[Map]: water is pumped
+2023/05/30 20:04:52	[Map]: water is pumped
+2023/05/30 20:04:52	[SaboteurTeam] points: 0
+2023/05/30 20:04:52	[MechanicTeam] points: 35

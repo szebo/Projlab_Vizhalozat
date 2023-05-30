@@ -22,19 +22,13 @@ public class PipeGUIObject extends GUIObject{
     private Point position;
 
     /**
-     * A GUI csövön lévő téglalap, amely a kattintási felületet reprezentálja
-     * */
-    private Rectangle rectangle;
-
-    /**
      * A GUI cső konstruktora
      * @param pipe A modellbeli megfelelője az éppen létrejövő GUI csőnek
      * */
     public PipeGUIObject(Pipe pipe){
         this.pipe = pipe;
         /* Itt kellene beállítani, hogy milyen messze vannak a szélei a becsatolandó pumpáktól*/
-        //TODO: Megcsinálom zh után ma 16:30-
-        rectangle = new Rectangle(0, 0, 100, 3);
+
     }
 
     /**
@@ -43,7 +37,7 @@ public class PipeGUIObject extends GUIObject{
      * */
     @Override
     public void onClick(MouseEvent e) {
-        if((getClickDistance(e) < 10) && isBetweenEndPoints(e)){
+        if((getClickDistance(e) < 6) && isBetweenEndPoints(e)){
             Controller.SELECTED_ELEMENT = pipe;
             if(pipe.getPlayers().contains(Controller.CURRENT_PLAYER)){
                 String actionsString = "<html><br>configure</html>";

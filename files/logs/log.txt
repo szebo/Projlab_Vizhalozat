@@ -4339,3 +4339,141 @@ SaboteurTeam created
 2023/05/30 17:19:13	Player added to MechanicTeam
 2023/05/30 17:19:14	Saboteur1's turn
 2023/05/30 17:19:14	2 actions left
+2023/05/30 20:04:26	[Pipe1]: Element added
+2023/05/30 20:04:26	[Pipe1]: Element added
+2023/05/30 20:04:26	Output set
+2023/05/30 20:04:26	[Pipe2]: Element added
+2023/05/30 20:04:26	[Pipe2]: Element added
+2023/05/30 20:04:26	[Pipe3]: Element added
+2023/05/30 20:04:26	[Pipe3]: Element added
+2023/05/30 20:04:26	Output set
+2023/05/30 20:04:26	[Pipe4]: Element added
+2023/05/30 20:04:26	[Pipe4]: Element added
+2023/05/30 20:04:26	Output set
+2023/05/30 20:04:26	[Pipe5]: Element added
+2023/05/30 20:04:26	Input set
+2023/05/30 20:04:26	[Pipe5]: Element added
+2023/05/30 20:04:26	[Pipe6]: Element added
+2023/05/30 20:04:26	[Pipe6]: Element added
+2023/05/30 20:04:26	Output set
+2023/05/30 20:04:26	[Pipe7]: Element added
+2023/05/30 20:04:26	Input set
+2023/05/30 20:04:26	[Pipe7]: Element added
+2023/05/30 20:04:26	Output set
+2023/05/30 20:04:26	[Pipe8]: Element added
+2023/05/30 20:04:26	Input set
+2023/05/30 20:04:26	[Pipe8]: Element added
+2023/05/30 20:04:26	Output set
+2023/05/30 20:04:26	[Pipe9]: Element added
+2023/05/30 20:04:26	[Pipe9]: Element added
+2023/05/30 20:04:26	[Pipe10]: Element added
+2023/05/30 20:04:26	Input set
+2023/05/30 20:04:26	[Pipe10]: Element added
+2023/05/30 20:04:26	[Pipe11]: Element added
+2023/05/30 20:04:26	[Pipe11]: Element added
+2023/05/30 20:04:26	[Pipe12]: Element added
+2023/05/30 20:04:26	Input set
+2023/05/30 20:04:26	[Pipe12]: Element added
+2023/05/30 20:04:26	[Pipe13]: Element added
+2023/05/30 20:04:26	Input set
+2023/05/30 20:04:26	[Pipe13]: Element added
+2023/05/30 20:04:26	SaboteurTeam created
+2023/05/30 20:04:26	Player added to SaboteurTeam
+2023/05/30 20:04:26	Player added to SaboteurTeam
+2023/05/30 20:04:26	Mechanic team created
+2023/05/30 20:04:26	Player added to MechanicTeam
+2023/05/30 20:04:26	Player added to MechanicTeam
+2023/05/30 20:04:29	Saboteur1's turn
+2023/05/30 20:04:29	2 actions left
+2023/05/30 20:04:40	Saboteur1's turn
+2023/05/30 20:04:40	1 actions left
+2023/05/30 20:04:50	Mechanic1's turn
+2023/05/30 20:04:50	2 actions left
+2023/05/30 20:04:50	Mechanic1's turn
+2023/05/30 20:04:50	1 actions left
+2023/05/30 20:04:51	Saboteur2's turn
+2023/05/30 20:04:51	2 actions left
+2023/05/30 20:04:51	Saboteur2's turn
+2023/05/30 20:04:51	1 actions left
+2023/05/30 20:04:52	Mechanic2's turn
+2023/05/30 20:04:52	2 actions left
+2023/05/30 20:04:52	Mechanic2's turn
+2023/05/30 20:04:52	1 actions left
+2023/05/30 20:04:52	[Pipe10]: 20 water added
+2023/05/30 20:04:52	[Pipe11]: 25 water added
+2023/05/30 20:04:52	[ActiveElement]: in water is pumped
+2023/05/30 20:04:52	[ActiveElement]: out water is pumped
+2023/05/30 20:04:52	[Pipe10]: 20 water removed
+2023/05/30 20:04:52	[Pump4]: 20 water added
+2023/05/30 20:04:52	[Pipe6]: 20 water added
+2023/05/30 20:04:52	[Pump4]: 20 water removed
+2023/05/30 20:04:52	[ActiveElement]: in water is pumped
+2023/05/30 20:04:52	[ActiveElement]: out water is pumped
+2023/05/30 20:04:52	[Pipe7]: 0 water removed
+2023/05/30 20:04:52	[Pump2]: 0 water added
+2023/05/30 20:04:52	[Pipe3]: 0 water added
+2023/05/30 20:04:52	[Pump2]: 0 water removed
+2023/05/30 20:04:52	[ActiveElement]: in water is pumped
+2023/05/30 20:04:52	[ActiveElement]: out water is pumped
+2023/05/30 20:04:52	[Pipe3]: 0 water removed
+2023/05/30 20:04:52	Points added, currently the Mechanics have 0 points
+2023/05/30 20:04:52	[Pipe4]: 0 water removed
+2023/05/30 20:04:52	Points added, currently the Mechanics have 0 points
+2023/05/30 20:04:52	[ActiveElement]: in water is pumped
+2023/05/30 20:04:52	[ActiveElement]: out water is pumped
+2023/05/30 20:04:52	[Pipe12]: 0 water removed
+2023/05/30 20:04:52	[Pump5]: 0 water added
+2023/05/30 20:04:52	[Pipe7]: 0 water added
+2023/05/30 20:04:52	[Pump5]: 0 water removed
+2023/05/30 20:04:52	[ActiveElement]: in water is pumped
+2023/05/30 20:04:52	[ActiveElement]: out water is pumped
+2023/05/30 20:04:52	[Pipe7]: 0 water removed
+2023/05/30 20:04:52	[Pump2]: 0 water added
+2023/05/30 20:04:52	[Pipe3]: 0 water added
+2023/05/30 20:04:52	[Pump2]: 0 water removed
+2023/05/30 20:04:52	[ActiveElement]: in water is pumped
+2023/05/30 20:04:52	[ActiveElement]: out water is pumped
+2023/05/30 20:04:52	[Pipe3]: 0 water removed
+2023/05/30 20:04:52	Points added, currently the Mechanics have 0 points
+2023/05/30 20:04:52	[Pipe4]: 0 water removed
+2023/05/30 20:04:52	Points added, currently the Mechanics have 0 points
+2023/05/30 20:04:52	[ActiveElement]: in water is pumped
+2023/05/30 20:04:52	[Pipe12]: 20 water added
+2023/05/30 20:04:52	[Pipe13]: 25 water added
+2023/05/30 20:04:52	[ActiveElement]: in water is pumped
+2023/05/30 20:04:52	[ActiveElement]: out water is pumped
+2023/05/30 20:04:52	[Pipe12]: 20 water removed
+2023/05/30 20:04:52	[Pump5]: 20 water added
+2023/05/30 20:04:52	[Pipe7]: 20 water added
+2023/05/30 20:04:52	[Pump5]: 20 water removed
+2023/05/30 20:04:52	[ActiveElement]: in water is pumped
+2023/05/30 20:04:52	[ActiveElement]: out water is pumped
+2023/05/30 20:04:52	[Pipe7]: 20 water removed
+2023/05/30 20:04:52	[Pump2]: 20 water added
+2023/05/30 20:04:52	[Pipe3]: 20 water added
+2023/05/30 20:04:52	[Pump2]: 20 water removed
+2023/05/30 20:04:52	[ActiveElement]: in water is pumped
+2023/05/30 20:04:52	[ActiveElement]: out water is pumped
+2023/05/30 20:04:52	[Pipe3]: 20 water removed
+2023/05/30 20:04:52	Points added, currently the Mechanics have 20 points
+2023/05/30 20:04:52	[Pipe4]: 0 water removed
+2023/05/30 20:04:52	Points added, currently the Mechanics have 20 points
+2023/05/30 20:04:52	[ActiveElement]: in water is pumped
+2023/05/30 20:04:52	[ActiveElement]: out water is pumped
+2023/05/30 20:04:52	[Pipe13]: 25 water removed
+2023/05/30 20:04:52	[Pump6]: 15 water added
+2023/05/30 20:04:52	[Pipe8]: 15 water added
+2023/05/30 20:04:52	[Pump6]: 15 water removed
+2023/05/30 20:04:52	[ActiveElement]: in water is pumped
+2023/05/30 20:04:52	[ActiveElement]: out water is pumped
+2023/05/30 20:04:52	[Pipe8]: 15 water removed
+2023/05/30 20:04:52	[Pump3]: 15 water added
+2023/05/30 20:04:52	[Pipe4]: 15 water added
+2023/05/30 20:04:52	[Pump3]: 15 water removed
+2023/05/30 20:04:52	[ActiveElement]: in water is pumped
+2023/05/30 20:04:52	[ActiveElement]: out water is pumped
+2023/05/30 20:04:52	[Pipe3]: 0 water removed
+2023/05/30 20:04:52	Points added, currently the Mechanics have 20 points
+2023/05/30 20:04:52	[Pipe4]: 15 water removed
+2023/05/30 20:04:52	Points added, currently the Mechanics have 35 points
+2023/05/30 20:04:52	[ActiveElement]: in water is pumped
