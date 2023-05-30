@@ -97,17 +97,6 @@ public class PipeGUIObject extends GUIObject{
         return Math.sqrt(Math.pow(p1Distance, 2) - Math.pow(m, 2));
     }
 
-    public double getClickDistanceFromPump(MouseEvent e) {
-        Point clickPoint = e.getPoint();
-        Point p1 = GUIManager.getInstance().getGUIObjectByID(pipe.getNeighbours()[0].getLogID()).getPosition();
-        Point p2 = GUIManager.getInstance().getGUIObjectByID(pipe.getNeighbours()[1].getLogID()).getPosition();
-        double p1Distance = p1.distance(clickPoint);
-        double p2Distance = p2.distance(clickPoint);
-        double p1p2Distance = p2.distance(p1);
-        double m = (Math.pow(p1Distance, 2) - Math.pow(p2Distance, 2) + Math.pow(p1p2Distance, 2)) / (2 * p1p2Distance);
-        return Math.sqrt(Math.pow(p1Distance, 2) - Math.pow(m, 2));
-    }
-
     /**
      * A cső kirajzolásáért felelős függvény, amely minden lehetőséget megvizsgálva
      * rajzolja ki a csövet a megfelelő állapotúra
