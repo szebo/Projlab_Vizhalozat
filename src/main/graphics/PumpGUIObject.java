@@ -133,20 +133,19 @@ public class PumpGUIObject extends GUIObject{
         if (pump.getOutput() != null) {
             g.setColor(new Color(138, 43, 226));
             GUIObject GUIOutputPipe = GUIManager.getInstance().getGUIObjectByID((pump.getOutput().getLogID()));
-            if(GUIOutputPipe != null) {
-                int pipeX = GUIOutputPipe.getPosition().x;
-                int pipeY = GUIOutputPipe.getPosition().y;
+            if(GUIOutputPipe == null || GUIOutputPipe.getPosition() == null) return;
+            int pipeX = GUIOutputPipe.getPosition().x;
+            int pipeY = GUIOutputPipe.getPosition().y;
 
-                double angle = Math.atan2(pipeY - position.y, pipeX - position.x);
+            double angle = Math.atan2(pipeY - position.y, pipeX - position.x);
 
-                // Calculate the position of the new circle on the edge of the main circle
-                int newX = (int) (position.x + RECTANGLE_SIZE / 2 * Math.cos(angle) - RECTANGLE_SIZE / 4);
-                int newY = (int) (position.y + RECTANGLE_SIZE / 2 * Math.sin(angle) - RECTANGLE_SIZE / 4);
+            // Calculate the position of the new circle on the edge of the main circle
+            int newX = (int) (position.x + RECTANGLE_SIZE / 2 * Math.cos(angle) - RECTANGLE_SIZE / 4);
+            int newY = (int) (position.y + RECTANGLE_SIZE / 2 * Math.sin(angle) - RECTANGLE_SIZE / 4);
 
-                // Draw the new circle
-                g.fillOval(newX, newY, RECTANGLE_SIZE / 2, RECTANGLE_SIZE / 2);
-            }
-        }
+            // Draw the new circle
+            g.fillOval(newX, newY, RECTANGLE_SIZE / 2, RECTANGLE_SIZE / 2);
+    }
     }
 
     private void drawBroken(Point point, Graphics g){
