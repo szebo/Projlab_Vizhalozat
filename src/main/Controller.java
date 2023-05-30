@@ -124,7 +124,7 @@ public class Controller {
 
             if(turnsEnded >= PLAYER_COUNT) {
                 Map.getInstance().update();
-                //Map.getInstance().control();
+                Map.getInstance().control();
                 Map.getInstance().waterFlow(0);
                 SaboteurTeam.getInstance().getPoints();
                 MechanicTeam.getInstance().getPoints();
