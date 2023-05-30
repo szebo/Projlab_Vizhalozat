@@ -38,9 +38,12 @@ public class Cistern extends ActiveElement {
     /**
      *  létrehoz egy új pumpát és eltárolja a cisternen.
      */
+    private static int turn = 0;
     @Override
     public void control() {
-        newPipe();
+        turn++;
+        if(turn % 5 == 0)
+            newPipe();
     }
 
     /**
@@ -58,6 +61,7 @@ public class Cistern extends ActiveElement {
      */
     public void newPipe(){
         Pipe newpipe = new Pipe();
+        GUIManager.getInstance().createPipeGUIObject(newpipe);
         this.attachPipe(newpipe);
         Logger.log("console.txt", "["+newpipe.getLogID()+"]: created", true);
     }

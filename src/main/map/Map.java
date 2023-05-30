@@ -255,25 +255,10 @@ public class Map implements Updatable {
         controllableMapElements.clear();
         pipeList.clear();
     }
-}
 
-/*
-DUMP
-
-public void storeNewMapElement(MapElement element){ mapElements.add(element); }
-
-public void removeElement(MapElement element) { mapElements.remove(element); }
-
-B-TERV
-public void removeActive(ActiveElement element) { controllableMapElements.remove(element); }
-
-public void addUpdatable(Updatable element) { updatableMapElements.add(element); }
-
-public void control()
-    {
-        for(IControllable cme : controllableMapElements)
-        {
-            cme.pumpWater();
+    public void control(){
+        for(IControllable controllable : controllableMapElements){
+            controllable.control();
         }
     }
- */
+}

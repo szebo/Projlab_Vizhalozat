@@ -7,6 +7,7 @@ import main.players.SaboteurTeam;
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 /**
  * Pumpákat, és azok viselkedését leíró osztály
@@ -60,7 +61,9 @@ public class Pump extends ActiveElement {
      */
     @Override
     public void control() {
-        setBroken(true);
+        Random r = new Random();
+        if(r.nextInt()%10 == 0)
+            setBroken(true);
     }
 
     /*
