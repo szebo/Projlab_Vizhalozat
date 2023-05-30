@@ -34,7 +34,7 @@ public abstract class Player {
         this.stuck = stuck;
     }
     public int getNumberOfActions(){return numberOfActions;}
-    public void setNumberOfActions(){numberOfActions--;}
+    public void decreaseNumberOfActions(){numberOfActions--;}
 
     public int getStuck(){return stuck;}
 
@@ -113,10 +113,13 @@ public abstract class Player {
             mapElement = element;
             element.addPlayer(this);
             this.stepsLeft--;
-            setNumberOfActions();
+            decreaseNumberOfActions();
+            Logger.log("console.txt", "["+getLogID()+"]: "+ getLogID()+" moved", true);
         }
         if(stepsLeft <= 0) stepsLeft = 2;
     }
+
+    public void decreaseSteps(){stepsLeft--;}
 
     public void repair() {}
     public void useSlipperyGoo() {}

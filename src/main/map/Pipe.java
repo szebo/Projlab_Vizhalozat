@@ -122,8 +122,14 @@ public class Pipe extends MapElement implements Updatable {
         boolean accepted = false;
         if(!this.isOccupied()) {
             if(checkSlippery()){
-                getRandomEnd().acceptPlayer(player);
-                player.setNumberOfActions();
+                MapElement tmp = getRandomEnd();
+
+                player.getMapElement().removePlayer(player);
+                tmp.addPlayer(player);
+                player.setMapElement(tmp);
+
+                player.decreaseNumberOfActions();
+                player.decreaseSteps();
             }
             else if(checkSticky()){
                 player.setStuck(stickyFor);
@@ -135,9 +141,8 @@ public class Pipe extends MapElement implements Updatable {
             }
         }
         if(accepted){
-            Logger.log("console.txt", "["+getLogID()+"]: "+player.getLogID()+" moved", true);
             player.step(this);
-            player.setNumberOfActions();
+
         }
         else
             Logger.log("console.txt", "["+getLogID()+"]: "+player.getLogID()+" could not move", true);
