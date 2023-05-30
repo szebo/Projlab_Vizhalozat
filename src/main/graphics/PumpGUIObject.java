@@ -101,6 +101,30 @@ public class PumpGUIObject extends GUIObject{
             //TODO Kiszámolja a 2 pont közti különbséget, majd annak irányába megy a különbséggel arányosan. Csak sugárnyit kéne mozognia
             g.drawOval((GUIInputPipe.getPosition().x-this.position.x) + this.position.x ,(GUIInputPipe.getPosition().y-this.position.y) + this.position.x ,  5, 5 );
         }*/
+
+        if(pump.getInput() != null){
+            GUIObject GUIInputPipe = GUIManager.getInstance().getGUIObjectByID(pump.getInput().getLogID());
+
+            Point pipeCenter = GUIInputPipe.getPosition();
+            double slope = (double) (pipeCenter.y - position.y) / (pipeCenter.x - position.x);
+            double constant = position.y - slope * position.x;
+            Point intersection = new Point((int) ((position.y - constant)/slope), (int)(slope * position.x + constant));
+
+            g.setColor(Color.YELLOW);
+            g.fillOval(intersection.x-5, intersection.y-5, 10, 10);
+        }
+
+        if(pump.getOutput() != null){
+            GUIObject GUIOutputPipe = GUIManager.getInstance().getGUIObjectByID(pump.getOutput().getLogID());
+
+            Point pipeCenter = GUIOutputPipe.getPosition();
+            double slope = (double) (pipeCenter.y - position.y) / (pipeCenter.x - position.x);
+            double constant = position.y - slope * position.x;
+            Point intersection = new Point((int) ((position.y - constant)/slope), (int)(slope * position.x + constant));
+
+            g.setColor(new Color(138, 43, 226));
+            g.fillOval(intersection.x-5, intersection.y-5, 10, 10);
+        }
     }
 
     private void drawBroken(Point point, Graphics g){
