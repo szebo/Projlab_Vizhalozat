@@ -1,6 +1,7 @@
 package main.players;
 
 import commands.CommandInterpreter;
+import main.Controller;
 import main.Main;
 import main.logging.Logger;
 import main.map.Pipe;
@@ -107,7 +108,7 @@ public class Mechanic extends Player {
      */
     @Override
     public void useStickyGoo() {
-        mapElement.makeSticky(2);
+        mapElement.makeSticky(Controller.STICKY_FOR_OPTION);
     }
 
     public String getLogID(){

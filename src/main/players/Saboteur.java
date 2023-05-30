@@ -1,6 +1,7 @@
 package main.players;
 
 import commands.CommandInterpreter;
+import main.Controller;
 import main.Main;
 import main.graphics.GUIManager;
 import main.graphics.GUIObject;
@@ -32,7 +33,7 @@ public class Saboteur extends Player {
      */
     @Override
     public void useSlipperyGoo(){
-        mapElement.makeSlippery(2);
+        mapElement.makeSlippery(Controller.SLIPPERY_FOR_OPTION);
     }
 
     /**

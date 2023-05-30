@@ -1,5 +1,6 @@
 package main.players;
 
+import main.Controller;
 import main.logging.Logger;
 import main.map.MapElement;
 import main.map.Pipe;
@@ -75,7 +76,7 @@ public abstract class Player {
      * Ragacsossá teszi a csövet, amin áll a játékos.
      */
     public void useStickyGoo() {
-        mapElement.makeSticky(2);
+        mapElement.makeSticky(Controller.STICKY_FOR_OPTION);
     }
 
     /**
