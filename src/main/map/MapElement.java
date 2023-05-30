@@ -65,6 +65,8 @@ public abstract class MapElement {
     public void acceptPlayer(Player player){
         Logger.log("log.txt", "["+getLogID()+"]: "+player.getLogID()+" moved", false);
         player.step(this);
+        //Decreases the number of actions by one
+
 
     }
 

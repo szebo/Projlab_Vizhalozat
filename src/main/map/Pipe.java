@@ -123,6 +123,7 @@ public class Pipe extends MapElement implements Updatable {
         if(!this.isOccupied()) {
             if(checkSlippery()){
                 getRandomEnd().acceptPlayer(player);
+                player.setNumberOfActions();
             }
             else if(checkSticky()){
                 player.setStuck(stickyFor);
@@ -130,11 +131,13 @@ public class Pipe extends MapElement implements Updatable {
             }
             else{
                 accepted = true;
+
             }
         }
         if(accepted){
             Logger.log("console.txt", "["+getLogID()+"]: "+player.getLogID()+" moved", true);
             player.step(this);
+            player.setNumberOfActions();
         }
         else
             Logger.log("console.txt", "["+getLogID()+"]: "+player.getLogID()+" could not move", true);

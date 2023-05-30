@@ -33,6 +33,8 @@ public abstract class Player {
     public void setStuck(int stuck) {
         this.stuck = stuck;
     }
+    public int getNumberOfActions(){return numberOfActions;}
+    public void setNumberOfActions(){numberOfActions--;}
 
     public int getStuck(){return stuck;}
 
@@ -105,6 +107,7 @@ public abstract class Player {
             mapElement = element;
             element.addPlayer(this);
             this.stepsLeft--;
+            setNumberOfActions();
         }
         if(stepsLeft <= 0) stepsLeft = 2;
     }
