@@ -38,8 +38,8 @@ public class SaboteurGUIObject extends GUIObject{
         if(saboteur.getStuck() > 0) drawStuck(position, g);
     }
 
-    public void drawStuck(Point point, Graphics g){
-            g.setColor(Color.black);
+    public void drawStuck(Point point, Graphics2D g){
+            g.setColor(new Color(125, 125, 125));
 
             // Convert angle from degrees to radians
             double angleRadians = Math.toRadians(45);
@@ -59,7 +59,7 @@ public class SaboteurGUIObject extends GUIObject{
             int point4X = (int) (point.x-10 + 20 * Math.cos(angleRadians));
             int point4Y = (int) (point.y-10 - 20 * Math.sin(angleRadians));
 
-
+            g.setStroke(new BasicStroke(2));
             g.drawLine(point1X, point1Y, point2X, point2Y);
             g.drawLine(point3X, point3Y, point4X, point4Y);
 

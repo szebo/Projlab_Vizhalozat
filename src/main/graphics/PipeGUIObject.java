@@ -142,15 +142,15 @@ public class PipeGUIObject extends GUIObject{
         //Státusz értékek a cső felett:
         if (pipe.checkSlippery()){
             g.setColor(Color.ORANGE);
-            g.drawString(Integer.toString(pipe.getSlipperyFor()), getPosition().x, getPosition().y);
+            g.drawString(Integer.toString(pipe.getSlipperyFor()), getPosition().x, getPosition().y - 10);
         }
         if (pipe.checkSticky()){
             g.setColor(Color.GREEN);
-            g.drawString(Integer.toString(pipe.getStickyFor()), getPosition().x, getPosition().y);
+            g.drawString(Integer.toString(pipe.getStickyFor()), getPosition().x - 5, getPosition().y - 10);
         }
         if (pipe.checkUnbreakable()){
             g.setColor(new Color(102,51, 0));
-            g.drawString(Integer.toString(pipe.getUnbreakableFor()), getPosition().x, getPosition().y);
+            g.drawString(Integer.toString(pipe.getUnbreakableFor()), getPosition().x + 5, getPosition().y - 10);
         }
 
     }
