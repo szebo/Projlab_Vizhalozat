@@ -90,6 +90,7 @@ public class PipeGUIObject extends GUIObject{
         double p1Distance = p1.distance(clickPoint);
         double p2Distance = p2.distance(clickPoint);
 
+        //Pumpa click resolve
         if(p1Distance <= 19 || p2Distance <= 19) return 100;
 
         double p1p2Distance = p2.distance(p1);
