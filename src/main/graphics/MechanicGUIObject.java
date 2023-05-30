@@ -10,7 +10,14 @@ import java.awt.event.MouseEvent;
 
 public class MechanicGUIObject extends GUIObject{
 
+    /**
+     * A GUI objektum kapcsolata a modell-beli ciszternával
+     * */
     private Mechanic mechanic;
+
+    /**
+     * A GUI Mechanic pozícióját leíró attribútum, így tudunk köré helyezni más entitásokat
+     * */
     private Point position;
 
     public MechanicGUIObject(Mechanic mechanic){
@@ -42,6 +49,8 @@ public class MechanicGUIObject extends GUIObject{
         if(mechanic.getPipeInHand() != null) drawPipeInHand(position, g);
     }
 
+    /**
+     * A Szerelő beragadt állapotának kirajzolása */
    public void drawStuck(Point point, Graphics g){
            g.setColor(Color.black);
 
@@ -68,6 +77,12 @@ public class MechanicGUIObject extends GUIObject{
            g.drawLine(point3X, point3Y, point4X, point4Y);
 
     }
+
+    /**
+     * A szerelő kirajzolása egy csővel a kezében
+     * @param point Pont
+     * @param g Grafika
+     * */
     public void drawPipeInHand(Point point, Graphics g){
         //Ilyenkor csak egy ferde vonallal van áthúzva
         if(mechanic.getPipeInHand() == null){return;}
@@ -96,6 +111,11 @@ public class MechanicGUIObject extends GUIObject{
         return position;
     }
 
+
+    /**
+     * Beállítja a GUI elem pozícióját
+     * @param p A Beállítandó pont
+     * */
     public void setPosition(Point p){position = p;}
     @Override
     public MapElement getElement() {

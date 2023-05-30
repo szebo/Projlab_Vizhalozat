@@ -51,6 +51,11 @@ public class PipeGUIObject extends GUIObject{
         }
     }
 
+    /**
+     * Ellenőrzi, hogy a kattintott pont egy cső két végei között van-e
+     * @param e A kattintás tulajdonságai
+     * @return Igaz, ha a két pont között van, hamis ha nem
+     */
     public boolean isBetweenEndPoints(MouseEvent e) {
         Point p1 = GUIManager.getInstance().getGUIObjectByID(pipe.getNeighbours()[0].getLogID()).getPosition();
         Point p2 = GUIManager.getInstance().getGUIObjectByID(pipe.getNeighbours()[1].getLogID()).getPosition();
@@ -82,6 +87,11 @@ public class PipeGUIObject extends GUIObject{
         return true;
     }
 
+    /**
+     * Visszadja a kattintott pont és egy pumpa közti távolságot
+     * @param e A kattintás tulajdonságai
+     * @return A távolság a két pont között
+     */
     public double getClickDistance(MouseEvent e) {
         Point clickPoint = e.getPoint();
         Point p1 = GUIManager.getInstance().getGUIObjectByID(pipe.getNeighbours()[0].getLogID()).getPosition();
@@ -129,34 +139,6 @@ public class PipeGUIObject extends GUIObject{
         g.setStroke(new BasicStroke(10));
         g.drawLine(p1.x, p1.y, p2.x, p2.y);
 
-        /*int[] x = {p1.x - 5, p1.x + 5, p2.x + 5, p2.x - 5};
-        int[] y = {p1.y - 2, p1.y + 2, p2.y + 2, p2.y - 2};
-        g.fillPolygon(x, y, 4);*/
-
-
-        /*int width = Math.abs(p1.x-p2.x);        //a téglalap szélessége
-        int heigth = Math.abs(p1.y-p2.y);       //a téglalap magassága
-
-        /* Kiválasztjuk a baloldali pontot a kettő közül
-        if(p1.x <= p2.x){ //Ha a p1 van balra
-            /* Ha a bal felső pont nem a p1 pont, akkor p1 a bal alsó lesz, ki kell számolni a bal felsőt
-            if(p1.y > p2.y) {
-                rectangle = new Rectangle(p1.x, p1.y - heigth, width, heigth);   //a kattintás felületének beállítása negatív meredekségű csövekre
-            } else {
-                rectangle = new Rectangle(p1.x, p1.y, width, heigth);           //a kattintás felületének beállítása pozitív meredekségű csövekre
-            }
-        } else { //Ha a p2 van balra
-            /* Ha a bal felső pont nem a p2 pont, akkor az a bal alsó lesz, ki kell számolni a bal felsőt
-            if(p2.y > p1.y) {
-                rectangle = new Rectangle(p2.x, p2.y - heigth, width, heigth);   //a kattintás felületének beállítása negatív meredekségű csövekre
-            } else {
-                rectangle = new Rectangle(p2.x, p2.y, width, heigth);           //a kattintás felületének beállítása pozitív meredekségű csövekre
-            }
-        }
-
-        g.fill(rectangle); //debug
-        */
-
         //Státusz értékek a cső felett:
         if (pipe.checkSlippery()){
             g.setColor(Color.ORANGE);
@@ -194,8 +176,9 @@ public class PipeGUIObject extends GUIObject{
     }
 
     /**
-     * @param p
-     */
+     * Beállítja a GUI elem pozícióját
+     * @param p A Beállítandó pont
+     * */
     @Override
     public void setPosition(Point p) {}
 
