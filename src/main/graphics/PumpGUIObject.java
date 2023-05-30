@@ -39,12 +39,18 @@ public class PumpGUIObject extends GUIObject{
                 GameView.actions.setText(actionsString);
             }
             else {
-                if (Controller.CURRENT_PLAYER.getCurrentAction() == Player.Action.step && pump.acceptPlayer(Controller.CURRENT_PLAYER)){
+                if ((Controller.CURRENT_PLAYER.getCurrentAction() == Player.Action.step) && pump.acceptPlayer(Controller.CURRENT_PLAYER)){
                     GUIObject guiObject = GUIManager.getInstance().getGUIPlayerByID(Controller.CURRENT_PLAYER.getLogID());
                     if(guiObject != null) {
+
+                        //Controller.CURRENT_PLAYER.setMapElement();
+
                         guiObject.setPosition(position);
                         GUIManager.getInstance().repaintGame();
+                        Logger.log("console.txt", Controller.CURRENT_PLAYER.getMapElementAsString(), true );
+
                     }
+
                     else
                         Logger.log("log.txt", "Non-existing element given!", false);
                 }
@@ -97,6 +103,7 @@ public class PumpGUIObject extends GUIObject{
 
         }
 
+
         if(pump.getOutput() != null) {
             Color purple = new Color(102, 0, 153);
             g.setColor(purple);
@@ -106,29 +113,39 @@ public class PumpGUIObject extends GUIObject{
             g.drawOval((GUIInputPipe.getPosition().x-this.position.x) + this.position.x ,(GUIInputPipe.getPosition().y-this.position.y) + this.position.x ,  5, 5 );
         }*/
 
-        if(pump.getInput() != null){
-            GUIObject GUIInputPipe = GUIManager.getInstance().getGUIObjectByID(pump.getInput().getLogID());
+        if (pump.getInput() != null) {
+            g.setColor(Color.yellow);
+            GUIObject GUIInputPipe = GUIManager.getInstance().getGUIObjectByID((pump.getInput().getLogID()));
+            int pipeX = GUIInputPipe.getPosition().x;
+            int pipeY = GUIInputPipe.getPosition().y;
 
-            Point pipeCenter = GUIInputPipe.getPosition();
-            double slope = (double) (pipeCenter.y - position.y) / (pipeCenter.x - position.x);
-            double constant = position.y - slope * position.x;
-            Point intersection = new Point((int) ((position.y - constant)/slope), (int)(slope * position.x + constant));
+            double angle = Math.atan2(pipeY  - position.y, pipeX - position.x);
 
-            g.setColor(Color.YELLOW);
-            g.fillOval(intersection.x-5, intersection.y-5, 10, 10);
+            // Calculate the position of the new circle on the edge of the main circle
+            int newX = (int) (position.x + RECTANGLE_SIZE/2 * Math.cos(angle) - RECTANGLE_SIZE/4);
+            int newY = (int) (position.y + RECTANGLE_SIZE/2 * Math.sin(angle) - RECTANGLE_SIZE/4);
+
+            // Draw the new circle
+            g.setColor(Color.yellow);
+            g.fillOval(newX, newY, RECTANGLE_SIZE/2, RECTANGLE_SIZE/2);
         }
 
-        if(pump.getOutput() != null){
-            GUIObject GUIOutputPipe = GUIManager.getInstance().getGUIObjectByID(pump.getOutput().getLogID());
-            if(GUIOutputPipe == null) return;
-            Point pipeCenter = GUIOutputPipe.getPosition();
-            if(pipeCenter == null) return;
-            double slope = (double) (pipeCenter.y - position.y) / (pipeCenter.x - position.x);
-            double constant = position.y - slope * position.x;
-            Point intersection = new Point((int) ((position.y - constant)/slope), (int)(slope * position.x + constant));
-
+        if (pump.getOutput() != null) {
             g.setColor(new Color(138, 43, 226));
-            g.fillOval(intersection.x-5, intersection.y-5, 10, 10);
+            GUIObject GUIOutputPipe = GUIManager.getInstance().getGUIObjectByID((pump.getOutput().getLogID()));
+            if(GUIOutputPipe != null) {
+                int pipeX = GUIOutputPipe.getPosition().x;
+                int pipeY = GUIOutputPipe.getPosition().y;
+
+                double angle = Math.atan2(pipeY - position.y, pipeX - position.x);
+
+                // Calculate the position of the new circle on the edge of the main circle
+                int newX = (int) (position.x + RECTANGLE_SIZE / 2 * Math.cos(angle) - RECTANGLE_SIZE / 4);
+                int newY = (int) (position.y + RECTANGLE_SIZE / 2 * Math.sin(angle) - RECTANGLE_SIZE / 4);
+
+                // Draw the new circle
+                g.fillOval(newX, newY, RECTANGLE_SIZE / 2, RECTANGLE_SIZE / 2);
+            }
         }
     }
 
