@@ -68,6 +68,7 @@ public class Pipe extends MapElement implements Updatable {
         if(checkUnbreakable()) Logger.log("console.txt", "["+getLogID()+"]: can't break", true);
         else if(!this.isBroken()) {
             setBroken(true);
+            this.water = 0;
             Logger.log("console.txt", "["+getLogID()+"]: broken", true);
         }
     }
