@@ -86,7 +86,6 @@ public class PipeGUIObject extends GUIObject{
         //Kirajzolás a megfelelő színnel és pontra
         g.drawLine(p1.x, p1.y, p2.x, p2.y);
 
-        System.out.println(p1.toString() + "\n" + p2.toString());
         int x[] = {p1.x - 2, p1.x + 2, p2.x + 2, p2.x - 2};
         int y [] = {p1.y, p2.y, p1.y, p2.y};
         g.fillPolygon(x, y, 4);
