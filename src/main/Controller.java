@@ -126,11 +126,12 @@ public class Controller {
                 Map.getInstance().waterFlow(0);
                 SaboteurTeam.getInstance().getPoints();
                 MechanicTeam.getInstance().getPoints();
-                CURRENT_PLAYER.setCurrentAction(Player.Action.nothing);
                 state = GameState.saboteurTurn;
                 turnsEnded = 0;
             }
             win = SaboteurTeam.getInstance().hasWon() || MechanicTeam.getInstance().hasWon();
         }
+
+
     }
 }

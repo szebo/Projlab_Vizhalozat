@@ -154,7 +154,8 @@ public class Mechanic extends Player {
             Logger.log("log.txt", numberOfActions + " actions left", false);
 
             switch (currentAction) {
-                case step : step(Controller.SELECTED_ELEMENT);
+                case step : Controller.SELECTED_ELEMENT.acceptPlayer(this);
+                break;
                 // TODO onClick paraméternek
 
                 case heal:
@@ -167,7 +168,7 @@ public class Mechanic extends Player {
                     //case configure      : configurePump(param);
                     // TODO onClick 2x paraméternek. Itt amúgy nem kéne inkább a függvénybe bekérni?
 
-                    //case pipepickup     : pickUpPipe(param);
+                //case pipepickup     : pickUpPipe();
                     // TODO onClick ből paraméter. Szintén nem egyszerűbb?
                     // TODO Vagy ez már összemossa a grafikus részt a működéssel?
                 case pipeplace:

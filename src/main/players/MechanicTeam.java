@@ -45,7 +45,7 @@ public class MechanicTeam {
 
     public boolean hasWon()
     {
-        return points > 100; //mitoménmennnyilgyen
+        return points > 1000; //mitoménmennnyilgyen
     }
 
     public List<Mechanic> getPlayers(){

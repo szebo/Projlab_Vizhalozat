@@ -44,7 +44,7 @@ public class SaboteurTeam {
 
     public boolean hasWon()
     {
-        return points > 50; //mitoménmennnyilgyen
+        return points > 500; //mitoménmennnyilgyen
     }
 
     public List<Saboteur> getPlayers(){ return players; }
