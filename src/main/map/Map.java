@@ -127,7 +127,7 @@ public class Map implements Updatable {
                     if (readingElements) {
                         switch (splits[0]) {
                             case "Pump" -> {
-                                Pump pump = new Pump(Integer.parseInt(splits[1]), Integer.parseInt(splits[2]), Integer.parseInt(splits[3]));
+                                Pump pump = new Pump(Integer.parseInt(splits[1]), Integer.parseInt(splits[2])   , Integer.parseInt(splits[3]));
                                 mapElements.add(pump);
                                 controllableMapElements.add(pump);
                                 activeElements.add(pump);

@@ -35,10 +35,12 @@ public class PumpGUIObject extends GUIObject{
                 GameView.actions.setText(actionsString);
             }
             else {
-                if (pump.acceptPlayer(Controller.CURRENT_PLAYER)){
+                if (Controller.CURRENT_PLAYER.getCurrentAction() == Player.Action.step && pump.acceptPlayer(Controller.CURRENT_PLAYER)){
                     GUIObject guiObject = GUIManager.getInstance().getGUIPlayerByID(Controller.CURRENT_PLAYER.getLogID());
-                    if(guiObject != null)
+                    if(guiObject != null) {
                         guiObject.setPosition(position);
+                        GUIManager.getInstance().repaintGame();
+                    }
                     else
                         Logger.log("log.txt", "Non-existing element given!", false);
                 }

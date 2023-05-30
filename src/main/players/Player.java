@@ -24,10 +24,10 @@ public abstract class Player {
     protected int numberOfActions = 2;
 
     //Type of actions, nothing by default
-    protected enum Action {step, configure, breakelement, heal, sticky, slippery, pipeplace, pipepickup, pumpplace, pumppickup, nothing}
+    public enum Action {step, configure, breakelement, heal, sticky, slippery, pipeplace, pipepickup, pumpplace, pumppickup, nothing}
 
     protected Action currentAction;
-
+    public Action getCurrentAction(){return currentAction;}
     public void setStuck(int stuck) {
         this.stuck = stuck;
     }
@@ -88,13 +88,23 @@ public abstract class Player {
             stuck--;
             return;
         }
-        if(element.acceptPlayer(this) && this.stepsLeft > 0) {
+
+        /* Ellenőrzés, hogy szomszédos elemre akar-e lépni egyáltalán */
+        boolean flag = false;
+        for(MapElement m: this.getMapElement().getNeighbours()){
+            if(element.equals(m)){
+                flag = true;
+                break;
+            }
+        }
+
+        if(flag && element.acceptPlayer(this) && this.stepsLeft > 0) {
             mapElement.removePlayer(this);
             mapElement = element;
             element.addPlayer(this);
             this.stepsLeft--;
         }
-        if(stepsLeft <= 0) stepsLeft = 2;
+        if(stepsLeft <= 0) stepsLeft = 2;       //emiatt csak ő kerül sorra, mivel mindig lesz két lépése
     }
 
     public void repair() {}

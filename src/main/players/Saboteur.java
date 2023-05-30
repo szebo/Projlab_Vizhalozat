@@ -2,6 +2,8 @@ package main.players;
 
 import commands.CommandInterpreter;
 import main.Main;
+import main.graphics.GUIManager;
+import main.graphics.GUIObject;
 import main.logging.Logger;
 
 import java.awt.event.KeyEvent;
@@ -85,10 +87,10 @@ public class Saboteur extends Player {
             Logger.log("log.txt", numberOfActions+" actions left", false);
 
             //Waiting for input
-            while(currentAction == Action.nothing) continue;
+            while(currentAction == Action.nothing) break;
 
-            switch(currentAction){
-                //case step : step(param);
+            switch(currentAction){      // Cannot invoke "main.players.Player$Action.ordinal()" because "this.currentAction" is null
+                //case step : step();
                 // TODO onClick paraméternek
 
                 case breakelement   : mapElement.breakElement();
@@ -107,8 +109,6 @@ public class Saboteur extends Player {
 
                 case sticky         : useStickyGoo();
                 case slippery       : useSlipperyGoo();
-
-
             }
             numberOfActions--;
         }

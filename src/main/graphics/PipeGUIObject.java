@@ -32,7 +32,7 @@ public class PipeGUIObject extends GUIObject{
     public PipeGUIObject(Pipe pipe){
         this.pipe = pipe;
         /* Itt kellene beállítani, hogy milyen messze vannak a szélei a becsatolandó pumpáktól*/
-        rectangle = new Rectangle(0, 0, 100, 3);      //TODO megfelelő szélesség beállítása
+        rectangle = new Rectangle(0, 0, 100, 3);
     }
 
     /**
@@ -42,7 +42,12 @@ public class PipeGUIObject extends GUIObject{
     @Override
     public void onClick(MouseEvent e) {
         if(rectangle.contains(e.getPoint())){
-             if(pipe.acceptPlayer(Controller.CURRENT_PLAYER)){
+             if(Controller.CURRENT_PLAYER.getCurrentAction() == Player.Action.step && pipe.acceptPlayer(Controller.CURRENT_PLAYER)){
+                 GUIObject guiObject = GUIManager.getInstance().getGUIPlayerByID(Controller.CURRENT_PLAYER.getLogID());
+                 if(guiObject != null) {
+                     guiObject.setPosition(getPosition());
+                     GUIManager.getInstance().repaintGame();
+                 }
              }
         }
     }
@@ -59,7 +64,6 @@ public class PipeGUIObject extends GUIObject{
         if(pipe.getWater() != 0){
             g.setColor(Color.BLUE);
             g.setStroke(new BasicStroke(5.0f));
-
         }
 
         //Ha törött
@@ -72,14 +76,37 @@ public class PipeGUIObject extends GUIObject{
             g.setColor(Color.BLACK);
         }
 
-        //Kirajzolás a megfelelő színnel
-        g.drawLine
-                (
-                        GUIManager.getInstance().getGUIObjectByID(pipe.getNeighbours()[0].getLogID()).getPosition().x,
-                        GUIManager.getInstance().getGUIObjectByID(pipe.getNeighbours()[0].getLogID()).getPosition().y,
-                        GUIManager.getInstance().getGUIObjectByID(pipe.getNeighbours()[1].getLogID()).getPosition().x,
-                        GUIManager.getInstance().getGUIObjectByID(pipe.getNeighbours()[1].getLogID()).getPosition().y
-                );
+        Point p1 = new Point(
+                GUIManager.getInstance().getGUIObjectByID(pipe.getNeighbours()[0].getLogID()).getPosition().x,
+                GUIManager.getInstance().getGUIObjectByID(pipe.getNeighbours()[0].getLogID()).getPosition().y);
+        Point p2 = new Point(
+                GUIManager.getInstance().getGUIObjectByID(pipe.getNeighbours()[1].getLogID()).getPosition().x,
+                GUIManager.getInstance().getGUIObjectByID(pipe.getNeighbours()[1].getLogID()).getPosition().y);
+
+        //Kirajzolás a megfelelő színnel és pontra
+        g.drawLine(p1.x, p1.y, p2.x, p2.y);
+
+        int width = Math.abs(p1.x-p2.x);        //a téglalap szélessége
+        int heigth = Math.abs(p1.y-p2.y);       //a téglalap magassága
+
+        /* Kiválasztjuk a baloldali pontot a kettő közül */
+        if(p1.x <= p2.x){ //Ha a p1 van balra
+            /* Ha a bal felső pont nem a p1 pont, akkor p1 a bal alsó lesz, ki kell számolni a bal felsőt */
+            if(p1.y > p2.y) {
+                rectangle = new Rectangle(p1.x, p1.y - heigth, width, heigth);   //a kattintás felületének beállítása negatív meredekségű csövekre
+            } else {
+                rectangle = new Rectangle(p1.x, p1.y, width, heigth);           //a kattintás felületének beállítása pozitív meredekségű csövekre
+            }
+        } else { //Ha a p2 van balra
+            /* Ha a bal felső pont nem a p2 pont, akkor az a bal alsó lesz, ki kell számolni a bal felsőt */
+            if(p2.y > p1.y) {
+                rectangle = new Rectangle(p2.x, p2.y - heigth, width, heigth);   //a kattintás felületének beállítása negatív meredekségű csövekre
+            } else {
+                rectangle = new Rectangle(p2.x, p2.y, width, heigth);           //a kattintás felületének beállítása pozitív meredekségű csövekre
+            }
+        }
+
+        g.fill(rectangle); //debug
 
         //Státusz értékek a cső felett:
         if (pipe.checkSlippery()){
@@ -94,6 +121,7 @@ public class PipeGUIObject extends GUIObject{
             g.setColor(new Color(102,51, 0));
             g.drawString(Integer.toString(pipe.getUnbreakableFor()), this.position.x, position.y);
         }
+
     }
 
     private double differenceFromHorizontal(Point p1, Point p2){

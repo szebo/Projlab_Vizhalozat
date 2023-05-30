@@ -20,7 +20,6 @@ public class SaboteurGUIObject extends GUIObject{
     public void onClick(MouseEvent e) {
 
     }
-
     @Override
     public void draw(Graphics2D g){
         g.setColor(Color.CYAN);
