@@ -42,6 +42,7 @@ public class Controller {
         @Override
         public void keyReleased(KeyEvent e) {
             int key = e.getKeyCode();
+            if(CURRENT_PLAYER == null) return;
             if(state == GameState.mechanicTurn) {
                 switch (key) {
                     case KeyEvent.VK_SPACE -> CURRENT_PLAYER.setCurrentAction(Player.Action.step);
