@@ -121,7 +121,7 @@ public class Pipe extends MapElement implements Updatable {
     public void acceptPlayer(Player player){
         boolean accepted = false;
         if(!this.isOccupied()) {
-            if(checkSlippery()){
+            if(checkSlippery()) {
                 MapElement tmp = getRandomEnd();
 
                 player.getMapElement().removePlayer(player);
@@ -131,18 +131,15 @@ public class Pipe extends MapElement implements Updatable {
                 player.decreaseNumberOfActions();
                 player.decreaseSteps();
             }
-            else if(checkSticky()){
-                player.setStuck(stickyFor);
+            else {
                 accepted = true;
-            }
-            else{
-                accepted = true;
-
             }
         }
         if(accepted){
             player.step(this);
-
+            if(checkSticky()) {
+                player.setStuck(stickyFor);
+            }
         }
         else
             Logger.log("console.txt", "["+getLogID()+"]: "+player.getLogID()+" could not move", true);

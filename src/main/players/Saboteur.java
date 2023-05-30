@@ -77,6 +77,9 @@ public class Saboteur extends Player {
                     numberOfActions = 0;
                     break;
             }
+            if(stuck > 0 ) {
+                stuck--;
+            }
             Controller.SELECTED_ELEMENT = null;
             currentAction = Action.nothing;
         }

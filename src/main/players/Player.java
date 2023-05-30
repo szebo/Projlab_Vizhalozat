@@ -24,6 +24,8 @@ public abstract class Player {
     protected int stepsLeft = 2;
     protected int numberOfActions = 2;
 
+    protected int stuck;
+
     //Type of actions, nothing by default
     public enum Action {step, configure, breakelement, heal, sticky, slippery, pipeplace, pipepickup, pumpplace, pumppickup, nothing, endturn}
 
@@ -37,8 +39,6 @@ public abstract class Player {
     public void decreaseNumberOfActions(){numberOfActions--;}
 
     public int getStuck(){return stuck;}
-
-    protected int stuck;
 
     /**
      * A paraméterben kapott mapElementre lépteti a játékost
@@ -95,7 +95,6 @@ public abstract class Player {
     public void step(MapElement element){
         Objects.requireNonNull(element, "Null értékű paramétert kapott a step!");
         if(stuck != 0){
-            stuck--;
             return;
         }
 

@@ -148,9 +148,6 @@ public class Mechanic extends Player {
     }
     */
 
-
-
-
     public void doAction()
     {
         Logger.log("log.txt", getLogID()+"'s turn", false);
@@ -159,11 +156,12 @@ public class Mechanic extends Player {
 
             switch (currentAction) {
                 case step : Controller.SELECTED_ELEMENT.acceptPlayer(this);
-                break;
+                    break;
 
                 case heal:
                     mapElement.heal();
                     break;
+
                 case breakelement:
                     mapElement.breakElement();
                     break;
@@ -178,14 +176,14 @@ public class Mechanic extends Player {
                     break;
 
                 case pipeplace:
-                    placePipe();
+                    //placePipe();
                     break;
 
                 case pumppickup:
-                    pickUpPump();
+                    //pickUpPump();
                     break;
                 case pumpplace:
-                    placePump();
+                   //placePump();
                     break;
 
                 case sticky:
@@ -196,22 +194,14 @@ public class Mechanic extends Player {
                     Controller.turnsEnded++;
                     numberOfActions = 0;
                     break;
-        }
-        Controller.SELECTED_ELEMENT = null;
-        currentAction = Action.nothing;
-        }
-    }
-
-    //TODO Ez már nem kell, ugye?
-    /*
-    public void doCommand(String playerInput){
-        switch (playerInput) {
-            case "pickup pipe", "pickup pump", "place pipe", "place pump", "configure", "break", "move", "repair", "make_sticky" ->
-                    CommandInterpreter.runCommand(playerInput, this);
-            default -> Logger.log("console.txt", "[System]: Thats not a valid command", true);
+            }
+            if(stuck > 0 ) {
+                stuck--;
+            }
+            Controller.SELECTED_ELEMENT = null;
+            currentAction = Action.nothing;
         }
     }
-     */
 
     public static void resetAfterTest(){
         nextID = 1;
