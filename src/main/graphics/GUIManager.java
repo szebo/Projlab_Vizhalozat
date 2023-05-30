@@ -70,8 +70,9 @@ public class GUIManager {
 
     public GUIObject getGUIObjectByID(String id){
         for(GUIObject object : guiObjects){
-            if(object.getElement().getLogID().equals(id))
-                return object;
+            if(object.getElement() != null)
+                if(object.getElement().getLogID().equals(id))
+                    return object;
         }
         return null;
     }

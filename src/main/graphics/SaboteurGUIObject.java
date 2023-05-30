@@ -80,7 +80,7 @@ public class SaboteurGUIObject extends GUIObject{
 
     @Override
     public MapElement getElement() {
-        return saboteur.getMapElement();
+        return null;
     }
 
     /**

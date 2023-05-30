@@ -100,7 +100,7 @@ public class MechanicGUIObject extends GUIObject{
     public void setPosition(Point p){position = p;}
     @Override
     public MapElement getElement() {
-        return mechanic.getMapElement();
+        return null;
     }
 
     /**
