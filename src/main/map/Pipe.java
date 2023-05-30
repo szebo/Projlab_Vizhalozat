@@ -1,5 +1,6 @@
 package main.map;
 
+import main.Controller;
 import main.graphics.GUIManager;
 import main.interfaces.Updatable;
 import main.logging.Logger;
@@ -143,7 +144,7 @@ public class Pipe extends MapElement implements Updatable {
         if(accepted){
             player.step(this);
             if(checkSticky()) {
-                player.setStuck(stickyFor);
+                player.setStuck(Controller.STICKY_FOR_OPTION);
             }
         }
         else

@@ -8,6 +8,7 @@ import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import java.util.Objects;
 
 /**
  * Pumpákat, és azok viselkedését leíró osztály
@@ -158,5 +159,22 @@ public class Pump extends ActiveElement {
     
     public static void resetAfterTest(){
         nextID = 1;
+    }
+
+    @Override
+    public void detachPipe(Pipe pipe)  {
+        Objects.requireNonNull(pipe, "Null értékű paramétert kapott a detachPipe!");
+        if(!pipe.isOccupied()) {
+            this.pipes.remove(pipe);
+
+            if(output.equals(pipe)) {
+                if(!input.equals(pipes.get(0))) setOutput(pipes.get(0));
+            }
+            pipe.removeWater(pipe.water);
+            pipe.removeElement(this);
+            Logger.log("log.txt", "Element detached", false);
+        }
+        else
+            Logger.log("log.txt", "Element occupied", false);
     }
 }

@@ -179,7 +179,7 @@ public class Mechanic extends Player {
                     break;
 
                 case pipeplace:
-                    //placePipe();
+                    placePipe();
                     break;
 
                 case pumppickup:
