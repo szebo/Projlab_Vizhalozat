@@ -59,12 +59,13 @@ public abstract class MapElement {
 
     /**
      * Elfogadja a paraméterül kapott játékost.
+     *
      * @param player a játékos, aki rálép a pályaelemre.
      */
-    public boolean acceptPlayer(Player player){
+    public void acceptPlayer(Player player){
         Logger.log("log.txt", "["+getLogID()+"]: "+player.getLogID()+" moved", false);
         player.step(this);
-        return true;
+
     }
 
     /**

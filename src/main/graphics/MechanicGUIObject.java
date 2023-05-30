@@ -87,11 +87,6 @@ public class MechanicGUIObject extends GUIObject{
 
     }
 
-    public void drawAtPosition(Point point){
-        position = point;
-        //Invalidate vagy draw
-    }
-
     /**
      * Visszaadja a GUI elem pozícióját
      * @return poisiton attribútum

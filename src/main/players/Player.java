@@ -100,7 +100,7 @@ public abstract class Player {
             }
         }
 
-        if(flag && element.acceptPlayer(this) && this.stepsLeft > 0) {
+        if(flag && this.stepsLeft > 0) {
             mapElement.removePlayer(this);
             mapElement = element;
             element.addPlayer(this);
