@@ -160,7 +160,6 @@ public class Mechanic extends Player {
             switch (currentAction) {
                 case step : Controller.SELECTED_ELEMENT.acceptPlayer(this);
                 break;
-                // TODO onClick paraméternek
 
                 case heal:
                     mapElement.heal();

@@ -1,6 +1,5 @@
 package main.map;
 
-import main.Controller;
 import main.graphics.GUIManager;
 import main.interfaces.Updatable;
 import main.logging.Logger;
@@ -115,18 +114,16 @@ public class Pipe extends MapElement implements Updatable {
     /**
      * A csőre lépést engedélyező függvény, amely ellenőrzi, hogy szabad-e a játékosnak a csőre lépni.
      * Amennyiben igen, akkor fogadja a játékost.
+     *
      * @param player A csőre lépni kívánó játékos
-     * **/
+     **/
     @Override
-    public boolean acceptPlayer(Player player){
+    public void acceptPlayer(Player player){
         boolean accepted = false;
         if(!this.isOccupied()) {
             if(checkSlippery()){
-                if(Controller.randomDebug){
-                    player.step(getLeftEnd());
-                }
-                else
-                    player.step(getRandomEnd());
+                getRandomEnd().acceptPlayer(player);
+                player.setNumberOfActions();
             }
             else if(checkSticky()){
                 player.setStuck(stickyFor);
@@ -134,13 +131,17 @@ public class Pipe extends MapElement implements Updatable {
             }
             else{
                 accepted = true;
+
             }
         }
-        if(accepted)
+        if(accepted){
             Logger.log("console.txt", "["+getLogID()+"]: "+player.getLogID()+" moved", true);
+            player.step(this);
+            player.setNumberOfActions();
+        }
         else
             Logger.log("console.txt", "["+getLogID()+"]: "+player.getLogID()+" could not move", true);
-        return accepted;
+
     }
 
     /**

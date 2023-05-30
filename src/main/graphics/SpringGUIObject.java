@@ -83,8 +83,9 @@ public class SpringGUIObject extends GUIObject{
     }
 
     /**
-     * @param p
-     */
+     * Beállítja a GUI elem pozícióját
+     * @param p A Beállítandó pont
+     * */
     @Override
     public void setPosition(Point p) {}
 

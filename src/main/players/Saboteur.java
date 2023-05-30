@@ -54,20 +54,14 @@ public class Saboteur extends Player {
             Logger.log("log.txt", numberOfActions+" actions left", false);
 
             switch(currentAction){
-                case step :
-                    Controller.SELECTED_ELEMENT.acceptPlayer(this);
-                    break;
-                // TODO onClick paraméternek
+                case step : Controller.SELECTED_ELEMENT.acceptPlayer(this);
+                break;
 
                 case breakelement   : mapElement.breakElement();
                 break;
 
                 //case configure      : configurePump(param);
                 // TODO onClick 2x paraméternek. Itt amúgy nem kéne inkább a függvénybe bekérni?
-
-
-                case pipeplace      : placePipe();
-                break;
 
                 case sticky         : useStickyGoo();
                 break;
