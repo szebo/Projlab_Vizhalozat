@@ -19,6 +19,7 @@ public class Controller {
     public static Player CURRENT_PLAYER = null;
 
     public static MapElement SELECTED_ELEMENT = null;
+    public static MapElement SECOND_SELECTED_ELEMENT = null;
 
     static boolean win = false;
     public static boolean randomDebug = false;

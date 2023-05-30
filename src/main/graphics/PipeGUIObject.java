@@ -38,7 +38,10 @@ public class PipeGUIObject extends GUIObject{
     @Override
     public void onClick(MouseEvent e) {
         if((getClickDistance(e) < 10) && isBetweenEndPoints(e) ){
-            Controller.SELECTED_ELEMENT = pipe;
+            if(Controller.SELECTED_ELEMENT == null)
+                Controller.SELECTED_ELEMENT = pipe;
+            else
+                Controller.SECOND_SELECTED_ELEMENT = pipe;
             System.out.println("Pipe selected: " + Controller.SELECTED_ELEMENT.getLogID());
             if(pipe.getPlayers().contains(Controller.CURRENT_PLAYER)){
                 String actionsString = "<html><br>make slippery";

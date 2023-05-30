@@ -73,6 +73,7 @@ public class Saboteur extends Player {
                     numberOfActions = 0;
                     break;
             }
+            Controller.SELECTED_ELEMENT = null;
             currentAction = Action.nothing;
         }
     }

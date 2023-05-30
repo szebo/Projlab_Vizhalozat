@@ -168,12 +168,15 @@ public class Mechanic extends Player {
                     mapElement.breakElement();
                     break;
 
-                    //case configure      : configurePump(param);
-                    // TODO onClick 2x paraméternek. Itt amúgy nem kéne inkább a függvénybe bekérni?
+                case configure      :
+                    configurePump((Pipe)Controller.SELECTED_ELEMENT, (Pipe)Controller.SECOND_SELECTED_ELEMENT);
+                    Controller.SECOND_SELECTED_ELEMENT = null;
+                    break;
 
-                //case pipepickup     : pickUpPipe();
-                    // TODO onClick ből paraméter. Szintén nem egyszerűbb?
-                    // TODO Vagy ez már összemossa a grafikus részt a működéssel?
+                case pipepickup     :
+                    pickUpPipe((Pipe)Controller.SELECTED_ELEMENT);
+                    break;
+
                 case pipeplace:
                     placePipe();
                     break;
@@ -194,7 +197,7 @@ public class Mechanic extends Player {
                     numberOfActions = 0;
                     break;
         }
-
+        Controller.SELECTED_ELEMENT = null;
         currentAction = Action.nothing;
         }
     }
