@@ -116,8 +116,9 @@ public class PumpGUIObject extends GUIObject{
 
         if(pump.getOutput() != null){
             GUIObject GUIOutputPipe = GUIManager.getInstance().getGUIObjectByID(pump.getOutput().getLogID());
-
+            if(GUIOutputPipe == null) return;
             Point pipeCenter = GUIOutputPipe.getPosition();
+            if(pipeCenter == null) return;
             double slope = (double) (pipeCenter.y - position.y) / (pipeCenter.x - position.x);
             double constant = position.y - slope * position.x;
             Point intersection = new Point((int) ((position.y - constant)/slope), (int)(slope * position.x + constant));
