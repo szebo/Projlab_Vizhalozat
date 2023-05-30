@@ -84,11 +84,13 @@ public class PipeGUIObject extends GUIObject{
                 GUIManager.getInstance().getGUIObjectByID(pipe.getNeighbours()[1].getLogID()).getPosition().y);
 
         //Kirajzolás a megfelelő színnel és pontra
+        g.setStroke(new BasicStroke(10));
         g.drawLine(p1.x, p1.y, p2.x, p2.y);
 
-        int x[] = {p1.x - 5, p1.x + 5, p2.x + 5, p2.x - 5};
-        int y [] = {p1.y-2, p1.y+2, p2.y-2, p2.y+2};
-        g.fillPolygon(x, y, 4);
+        /*int[] x = {p1.x - 5, p1.x + 5, p2.x + 5, p2.x - 5};
+        int[] y = {p1.y - 2, p1.y + 2, p2.y + 2, p2.y - 2};
+        g.fillPolygon(x, y, 4);*/
+
 
         /*int width = Math.abs(p1.x-p2.x);        //a téglalap szélessége
         int heigth = Math.abs(p1.y-p2.y);       //a téglalap magassága
