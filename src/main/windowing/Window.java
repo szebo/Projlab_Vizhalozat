@@ -1,6 +1,7 @@
 package main.windowing;
 
 import main.Controller;
+import main.graphics.GUIManager;
 import main.map.Map;
 
 import javax.swing.*;
@@ -46,6 +47,7 @@ public class Window extends JFrame implements ActionListener, KeyListener, Compo
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setFocusable(true);
         addKeyListener(this);
+        addKeyListener(Controller.key);
     }
 
     private void switchPanel(String panel){
@@ -69,9 +71,12 @@ public class Window extends JFrame implements ActionListener, KeyListener, Compo
         else if(e.getSource().equals(pauseMenu.bContinue)){
             switchPanel("GameView");
             gameView.repaint();
+            gameView.start();
         }
         else if(e.getSource().equals(pauseMenu.bExitToMain)){
             switchPanel("MainMenu");
+            GUIManager.getInstance().clearMap();
+            Map.getInstance().resetAfterTest();
         }
         else if(e.getSource().equals(optionsMenu.bBack)){
             switchPanel("MainMenu");
@@ -82,7 +87,7 @@ public class Window extends JFrame implements ActionListener, KeyListener, Compo
         }
         else if(e.getSource().equals(gameView.menu)){
             switchPanel("Pause");
-
+            gameView.stop();
         }
         else if(e.getSource().equals(newGameMenu.bBack)){
             switchPanel("MainMenu");
@@ -93,8 +98,20 @@ public class Window extends JFrame implements ActionListener, KeyListener, Compo
             switchPanel("GameView");
             gameView.repaint();
             Controller.init();
-            Controller.run();
+            gameView.start();
         }
+    }
+
+    public void start(){
+        gameView.start();
+    }
+
+    public void stop(){
+        gameView.stop();
+    }
+
+    public void playerActed(){
+        gameView.playerActed();
     }
 
     @Override

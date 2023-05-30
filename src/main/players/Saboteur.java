@@ -21,7 +21,6 @@ public class Saboteur extends Player {
 
     public Saboteur(){
         ID = nextID++;
-        Main.window.addKeyListener(key);
     }
 
     public String getLogID(){
@@ -48,39 +47,6 @@ public class Saboteur extends Player {
         return stringBuilder.toString();
     }
 
-    KeyListener key = new KeyListener() {
-        @Override
-        public void keyTyped(KeyEvent e) {
-
-        }
-
-        @Override
-        public void keyPressed(KeyEvent e) {
-
-
-        }
-
-        @Override
-        public void keyReleased(KeyEvent e) {
-            int key = e.getKeyCode();
-            switch (key) {
-                case KeyEvent.VK_SPACE -> currentAction = Action.step;
-                case KeyEvent.VK_A -> currentAction = Action.heal;
-                case KeyEvent.VK_D -> currentAction = Action.breakelement;
-
-                case KeyEvent.VK_S -> currentAction = Action.configure;
-
-                case KeyEvent.VK_Q -> currentAction = Action.pipepickup;
-                case KeyEvent.VK_W -> currentAction = Action.pipeplace;
-                case KeyEvent.VK_E -> currentAction = Action.sticky;
-
-                case KeyEvent.VK_R -> currentAction = Action.pumppickup;
-                case KeyEvent.VK_F -> currentAction = Action.pumpplace;
-
-            }
-        }
-    };
-
     public void doAction()
     {
         Logger.log("log.txt", getLogID()+"'s turn", false);
@@ -88,13 +54,20 @@ public class Saboteur extends Player {
             Logger.log("log.txt", numberOfActions+" actions left", false);
 
             //Waiting for input
-            while(currentAction == Action.nothing) break;
+            /*while(currentAction == Action.nothing){
+                try{
+                    Thread.sleep(100);
+                }catch (InterruptedException e){
+                    e.printStackTrace();
+                }
+            }*/
 
             switch(currentAction){
                 //case step : step();
                 // TODO onClick paraméternek
 
                 case breakelement   : mapElement.breakElement();
+                break;
 
                 //case configure      : configurePump(param);
                 // TODO onClick 2x paraméternek. Itt amúgy nem kéne inkább a függvénybe bekérni?
@@ -104,13 +77,19 @@ public class Saboteur extends Player {
                 // TODO Vagy ez már összemossa a grafikus részt a működéssel?
 
                 case pipeplace      : placePipe();
+                break;
 
                 case pumppickup     : pickUpPump();
+                break;
                 case pumpplace      : placePump();
+                break;
 
                 case sticky         : useStickyGoo();
+                break;
                 case slippery       : useSlipperyGoo();
+                break;
             }
+            currentAction = Action.nothing;
             numberOfActions--;
         }
         numberOfActions = 2;

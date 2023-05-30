@@ -85,6 +85,10 @@ public class GUIManager {
         return null;
     }
 
+    public void clearMap(){
+        guiObjects.clear();
+    }
+
     public void setGraphics(JPanel panel){
         graphics = panel;
     }

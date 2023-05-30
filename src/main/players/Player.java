@@ -25,7 +25,7 @@ public abstract class Player {
     protected int numberOfActions = 2;
 
     //Type of actions, nothing by default
-    public enum Action {step, configure, breakelement, heal, sticky, slippery, pipeplace, pipepickup, pumpplace, pumppickup, nothing}
+    public enum Action {step, configure, breakelement, heal, sticky, slippery, pipeplace, pipepickup, pumpplace, pumppickup, nothing, endturn}
 
     protected Action currentAction = Action.nothing;
     public Action getCurrentAction(){return currentAction;}

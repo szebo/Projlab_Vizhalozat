@@ -22,7 +22,6 @@ public class Mechanic extends Player {
     public Mechanic(){
         ID = nextID++;
         currentAction = Action.nothing;
-        Main.window.addKeyListener(key);
     }
     public Pipe getPipeInHand(){return pipeInHand;}
 
@@ -145,40 +144,6 @@ public class Mechanic extends Player {
     }
     */
 
-    KeyListener key = new KeyListener() {
-        @Override
-        public void keyTyped(KeyEvent e) {
-
-        }
-
-        @Override
-        public void keyPressed(KeyEvent e) {
-
-
-        }
-
-        @Override
-        public void keyReleased(KeyEvent e) {
-            int key = e.getKeyCode();
-            switch (key) {
-                case KeyEvent.VK_SPACE -> currentAction = Action.step;
-                case KeyEvent.VK_A -> currentAction = Action.heal;
-                case KeyEvent.VK_D -> currentAction = Action.breakelement;
-
-                case KeyEvent.VK_S -> currentAction = Action.configure;
-
-                case KeyEvent.VK_Q -> currentAction = Action.pipepickup;
-                case KeyEvent.VK_W -> currentAction = Action.pipeplace;
-                case KeyEvent.VK_E -> currentAction = Action.sticky;
-
-                case KeyEvent.VK_R -> currentAction = Action.pumppickup;
-                case KeyEvent.VK_F -> currentAction = Action.pumpplace;
-
-            }
-        }
-
-    };
-
 
 
 
@@ -188,36 +153,41 @@ public class Mechanic extends Player {
         while(numberOfActions > 0) {
             Logger.log("log.txt", numberOfActions + " actions left", false);
 
-            while(currentAction == Action.nothing) break;
             switch (currentAction) {
-                    // case step : step(param);
-                    // TODO onClick paraméternek
+                // case step : step(param);
+                // TODO onClick paraméternek
 
-                    case heal:
-                        mapElement.heal();
-                    case breakelement:
-                        mapElement.breakElement();
+                case heal:
+                    mapElement.heal();
+                    break;
+                case breakelement:
+                    mapElement.breakElement();
+                    break;
 
-                        //case configure      : configurePump(param);
-                        // TODO onClick 2x paraméternek. Itt amúgy nem kéne inkább a függvénybe bekérni?
+                    //case configure      : configurePump(param);
+                    // TODO onClick 2x paraméternek. Itt amúgy nem kéne inkább a függvénybe bekérni?
 
-                        //case pipepickup     : pickUpPipe(param);
-                        // TODO onClick ből paraméter. Szintén nem egyszerűbb?
-                        // TODO Vagy ez már összemossa a grafikus részt a működéssel?
-                    case pipeplace:
-                        placePipe();
+                    //case pipepickup     : pickUpPipe(param);
+                    // TODO onClick ből paraméter. Szintén nem egyszerűbb?
+                    // TODO Vagy ez már összemossa a grafikus részt a működéssel?
+                case pipeplace:
+                    placePipe();
+                    break;
 
-                    case pumppickup:
-                        pickUpPump();
-                    case pumpplace:
-                        placePump();
+                case pumppickup:
+                    pickUpPump();
+                    break;
+                case pumpplace:
+                    placePump();
+                    break;
 
-                    case sticky:
-                        useStickyGoo();
-
-
+                case sticky:
+                    useStickyGoo();
+                    break;
         }
-            numberOfActions--;
+
+        currentAction = Action.nothing;
+        numberOfActions--;
         }
         numberOfActions = 2;
     }
