@@ -6,6 +6,7 @@ import main.Main;
 import main.graphics.GUIManager;
 import main.graphics.GUIObject;
 import main.logging.Logger;
+import main.map.Pipe;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
@@ -60,8 +61,10 @@ public class Saboteur extends Player {
                 case breakelement   : mapElement.breakElement();
                 break;
 
-                //case configure      : configurePump(param);
-                // TODO onClick 2x paraméternek. Itt amúgy nem kéne inkább a függvénybe bekérni?
+                case configure      :
+                    configurePump((Pipe)Controller.SELECTED_ELEMENT, (Pipe)Controller.SECOND_SELECTED_ELEMENT);
+                    Controller.SECOND_SELECTED_ELEMENT = null;
+                    break;
 
                 case sticky         : useStickyGoo();
                 break;
