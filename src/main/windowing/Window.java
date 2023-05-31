@@ -69,6 +69,9 @@ public class Window extends JFrame implements ActionListener, KeyListener, Compo
             gameView.repaint();
             gameView.start();
         }
+        /*else if(e.getSource().equals(pauseMenu.bOptions)){
+            switchPanel("Options"); Options menüből mindenféle képpen a főmenübe lép vissza.
+        }*/
         else if(e.getSource().equals(pauseMenu.bExitToMain)){
             switchPanel("MainMenu");
             GUIManager.getInstance().clearMap();

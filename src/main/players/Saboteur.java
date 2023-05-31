@@ -54,29 +54,21 @@ public class Saboteur extends Player {
         Logger.log("log.txt", getLogID()+"'s turn", false);
         if(numberOfActions > 0) {
             Logger.log("log.txt", numberOfActions+" actions left", false);
-
-            switch(currentAction){
-                case step : Controller.SELECTED_ELEMENT.acceptPlayer(this);
-                break;
-
-                case breakelement   : mapElement.breakElement();
-                break;
-
-                case configure      :
-                    if(Controller.SECOND_SELECTED_ELEMENT != null)
-                        configurePump((Pipe)Controller.SELECTED_ELEMENT, (Pipe)Controller.SECOND_SELECTED_ELEMENT);
-                    Controller.SECOND_SELECTED_ELEMENT = null;
-                    break;
-
-                case sticky         : useStickyGoo();
-                break;
-                case slippery       : useSlipperyGoo();
-                break;
-
-                case endturn:
-                    numberOfActions = 0;
-                    break;
+            switch (currentAction) {
+                case breakelement -> mapElement.breakElement();
+                case sticky -> useStickyGoo();
+                case slippery -> useSlipperyGoo();
+                case endturn -> numberOfActions = 0;
             }
+            if (Controller.SELECTED_ELEMENT != null)
+                switch (currentAction) {
+                    case step -> Controller.SELECTED_ELEMENT.acceptPlayer(this);
+                    case configure -> {
+                        if (Controller.SECOND_SELECTED_ELEMENT != null)
+                            configurePump((Pipe) Controller.SELECTED_ELEMENT, (Pipe) Controller.SECOND_SELECTED_ELEMENT);
+                        Controller.SECOND_SELECTED_ELEMENT = null;
+                    }
+                }
             if(stuck > 0 ) {
                 stuck--;
             }

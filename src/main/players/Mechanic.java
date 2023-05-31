@@ -155,48 +155,32 @@ public class Mechanic extends Player {
         Logger.log("log.txt", getLogID()+"'s turn", false);
         if(numberOfActions > 0) {
             Logger.log("log.txt", numberOfActions + " actions left", false);
-
             switch (currentAction) {
-                case step : Controller.SELECTED_ELEMENT.acceptPlayer(this);
-                    break;
 
-                case heal:
-                    mapElement.heal();
-                    break;
+                case sticky -> useStickyGoo();
+                case endturn -> numberOfActions = 0;
+                case heal -> mapElement.heal();
+                case breakelement -> mapElement.breakElement();
+                case pipeplace -> placePipe();
+            }
+            if (Controller.SELECTED_ELEMENT != null)
+                switch (currentAction) {
+                    case step -> Controller.SELECTED_ELEMENT.acceptPlayer(this);
+                    case configure -> {
+                        if (Controller.SECOND_SELECTED_ELEMENT != null)
+                            configurePump((Pipe) Controller.SELECTED_ELEMENT, (Pipe) Controller.SECOND_SELECTED_ELEMENT);
+                        Controller.SECOND_SELECTED_ELEMENT = null;
+                    }
+                    case pipepickup -> pickUpPipe((Pipe) Controller.SELECTED_ELEMENT);
 
-                case breakelement:
-                    mapElement.breakElement();
-                    break;
-
-                case configure      :
-                    if(Controller.SECOND_SELECTED_ELEMENT != null)
-                        configurePump((Pipe)Controller.SELECTED_ELEMENT, (Pipe)Controller.SECOND_SELECTED_ELEMENT);
-                    Controller.SECOND_SELECTED_ELEMENT = null;
-                    break;
-
-                case pipepickup     :
-                    pickUpPipe((Pipe)Controller.SELECTED_ELEMENT);
-                    break;
-
-                case pipeplace:
-                    placePipe();
-                    break;
-
-                case pumppickup:
+                /*case pumppickup:
                     //pickUpPump();
                     break;
                 case pumpplace:
                    //placePump();
-                    break;
+                    break;*/
 
-                case sticky:
-                    useStickyGoo();
-                    break;
-
-                case endturn:
-                    numberOfActions = 0;
-                    break;
-            }
+                }
             if(stuck > 0 ) {
                 stuck--;
             }
