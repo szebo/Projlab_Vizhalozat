@@ -21,7 +21,7 @@ public class GameView extends JPanel implements MouseListener, ActionListener {
     JButton menu;
 
     /**
-     * A pumpán végezhető akciókat kijelző felület
+     * Az elemen végezhető akciókat kijelző felület
      * */
     public static JLabel actions;
 
@@ -49,16 +49,16 @@ public class GameView extends JPanel implements MouseListener, ActionListener {
         pActions.setBackground(new Color(230, 230, 150));
 
         JPanel pControl = new JPanel();
-        pControl.add(new JLabel("Cyan: Team Mechanic | Orange: Team Saboteur | Click + Space - Move " +
+        pControl.add(new JLabel("<html>Cyan: Team Mechanic | Orange: Team Saboteur | Click + Space - Move " +
                 "| ENTER - End turn  |  A - Heal | S - Configure | D - break | Q - Pick up pipe | W - Place Pipe |" +
-                " E - Make Pipe Sticky | R - Make Pipe Slippery (Saboteur)"));
+                "<br> E - Make Pipe Sticky | R - Make Pipe Slippery (Saboteur) | R - Pick up Pump (Mechanic) | F - Place Pump</html>"));
         pControl.setOpaque(false);
         pControl.setBackground(new Color(230, 230, 150));
 
         GUIManager.getInstance().setGraphics(this);
 
         addMouseListener(this);
-        add(pControl, BorderLayout.SOUTH);
+        add(pControl, BorderLayout.NORTH);
         add(pMenu, BorderLayout.WEST);
         add(pActions, BorderLayout.EAST);
     }
