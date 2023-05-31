@@ -22,7 +22,7 @@ public class Logger {
                 LocalDateTime now = LocalDateTime.now();
                 File logFile = new File(Main.rootfolder + File.separator + "files" + File.separator + "logs" + File.separator + file);
                 if (!logFile.exists()) {
-                    if(!logFile.getParentFile().mkdirs())throw new RuntimeException("Error while creating directories to logs.");
+                    if(logFile.getParentFile().mkdirs())System.out.println("Directory and Parent Directories were created to log files.");
                     if(logFile.createNewFile()) System.out.println("A log file was missing and created!");
                 }
                 BufferedWriter writer = new BufferedWriter(new FileWriter(logFile, true));
