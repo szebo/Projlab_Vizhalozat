@@ -173,14 +173,6 @@ public class PipeGUIObject extends GUIObject{
 
     }
 
-    private double differenceFromHorizontal(Point p1, Point p2){
-        Point vector = new Point(p1.x-p2.x, p1.y-p2.y);
-        return vector.x;
-    }
-
-    private void drawWorking(Point point){
-    }
-
     /**
      * Pozíció getter
      * @return Pozíció
